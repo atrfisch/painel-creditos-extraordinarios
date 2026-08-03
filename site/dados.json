@@ -1,0 +1,1578 @@
+{
+  "atualizado_em": "2026-08-03T20:20:01+00:00",
+  "anos": [
+    2026
+  ],
+  "fontes": {
+    "legislativo": "Congresso Nacional — Propostas Orçamentárias (PLNs e MPVs)",
+    "vigencia": "Dados Abertos do Senado + cálculo art. 62 da Constituição",
+    "execucao": "SIOP/SOF via pacote orcamentoBR"
+  },
+  "uo_sem_correspondencia": [
+    "Advocacia gerla da Uniao",
+    "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+    "Departamento Nacional de Obras Contra as Secas",
+    "Fundo Nacional da Aviação Civil",
+    "Fundo de Garantia à Exportação",
+    "Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis",
+    "Ministério da Agricultura e Pecuária",
+    "Ministério da Integração e do Desenvolvimento Regional",
+    "Ministério das Cidades",
+    "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+    "Recursos sob Sup. do Fundo Nac. de Desenv. Científico e Tecnológico/FNDCT",
+    "Recursos sob Supervisão do Instituto Nacional de Colonização e Reforma Agrária/INCRA"
+  ],
+  "medidas": [
+    {
+      "identificacao": "MPV 1381/2026",
+      "especie": "MPV",
+      "numero": 1381,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Subvenções à produção e à importação de combustíveis",
+      "valor_total": 3473000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-07-31",
+      "emendas_fim": "2026-08-10",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
+      "norma": null,
+      "codigo_materia": "175319",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175319",
+      "unidades": [
+        {
+          "orgao": "Ministério de Minas e Energia",
+          "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+          "codigo_uo": null,
+          "valor_credito": 3473000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-07-31",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-09-29",
+      "vigencia_fim": "2026-11-28",
+      "vigente": true,
+      "dias_para_vigencia": 117,
+      "dias_para_emendas": 7,
+      "emendas_abertas": true,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1380/2026",
+      "especie": "MPV",
+      "numero": 1380,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Subvenção econômica à produção e à importação de combustíveis derivados de petróleo",
+      "valor_total": 3330000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-07-23",
+      "emendas_fim": "2026-08-10",
+      "emendas_total": 1,
+      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
+      "norma": null,
+      "codigo_materia": "175266",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175266",
+      "unidades": [
+        {
+          "orgao": "Ministério de Minas e Energia",
+          "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+          "codigo_uo": null,
+          "valor_credito": 3330000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-07-23",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-09-29",
+      "vigencia_fim": "2026-11-28",
+      "vigente": true,
+      "dias_para_vigencia": 117,
+      "dias_para_emendas": 7,
+      "emendas_abertas": true,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1378/2026",
+      "especie": "MPV",
+      "numero": 1378,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Ressarcimento de beneficiários do INSS",
+      "valor_total": 547000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-07-21",
+      "emendas_fim": "2026-08-10",
+      "emendas_total": 3,
+      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
+      "norma": null,
+      "codigo_materia": "175246",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175246",
+      "unidades": [
+        {
+          "orgao": "MINISTÉRIO DA PREVIDÊNCIA SOCIAL",
+          "unidade": "Instituto Nacional do Seguro Social",
+          "codigo_uo": "NA",
+          "valor_credito": 547000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        }
+      ],
+      "publicacao": "2026-07-21",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-09-29",
+      "vigencia_fim": "2026-11-28",
+      "vigente": true,
+      "dias_para_vigencia": 117,
+      "dias_para_emendas": 7,
+      "emendas_abertas": true,
+      "execucao": {
+        "dotacao_atual": 80426856207.0,
+        "empenhado": 60294028048.0,
+        "liquidado": 55487108616.0,
+        "pago": 55487108616.0,
+        "pct_empenhado": 75.0,
+        "pct_pago": 69.0,
+        "cobertura": 100.0
+      }
+    },
+    {
+      "identificacao": "MPV 1377/2026",
+      "especie": "MPV",
+      "numero": 1377,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Apoio a projetos para desenvolvimento de novas tecnologias por produtores rurais e financiamento do Desenrola Adimplentes, do Fies, entre outros",
+      "valor_total": 13285000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-07-16",
+      "emendas_fim": "2026-08-07",
+      "emendas_total": 0,
+      "situacao": "MATÉRIA DESPACHADA",
+      "norma": null,
+      "codigo_materia": "175215",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175215",
+      "unidades": [
+        {
+          "orgao": "Ministério da Agricultura e Pecuária",
+          "unidade": "Ministério da Agricultura e Pecuária",
+          "codigo_uo": null,
+          "valor_credito": 270000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        },
+        {
+          "orgao": "Advocacia-Geral da União",
+          "unidade": "Advocacia gerla da Uniao",
+          "codigo_uo": null,
+          "valor_credito": 15000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        },
+        {
+          "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
+          "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+          "codigo_uo": "NA",
+          "valor_credito": 4000000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        },
+        {
+          "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
+          "unidade": "Recursos sob Sup. do Fundo Nac. de Desenv. Científico e Tecnológico/FNDCT",
+          "codigo_uo": null,
+          "valor_credito": 9000000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-07-16",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-09-27",
+      "vigencia_fim": "2026-11-26",
+      "vigente": true,
+      "dias_para_vigencia": 115,
+      "dias_para_emendas": 4,
+      "emendas_abertas": true,
+      "execucao": {
+        "dotacao_atual": 80426856207.0,
+        "empenhado": 60294028048.0,
+        "liquidado": 55487108616.0,
+        "pago": 55487108616.0,
+        "pct_empenhado": 75.0,
+        "pct_pago": 69.0,
+        "cobertura": 25.0
+      }
+    },
+    {
+      "identificacao": "MPV 1372/2026",
+      "especie": "MPV",
+      "numero": 1372,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Subvenção econômica aos importadores de óleo diesel de uso rodoviário",
+      "valor_total": 550000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-06-29",
+      "emendas_fim": "2026-07-06",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
+      "norma": null,
+      "codigo_materia": "174900",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174900",
+      "unidades": [
+        {
+          "orgao": "MINISTÉRIO DE MINAS E ENERGIA",
+          "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+          "codigo_uo": null,
+          "valor_credito": 550000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-06-29",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-09-10",
+      "vigencia_fim": "2026-11-09",
+      "vigente": true,
+      "dias_para_vigencia": 98,
+      "dias_para_emendas": -28,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1371/2026",
+      "especie": "MPV",
+      "numero": 1371,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "",
+      "valor_total": 2000000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-06-23",
+      "emendas_fim": "2026-06-30",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
+      "norma": null,
+      "codigo_materia": "174852",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174852",
+      "unidades": [
+        {
+          "orgao": "Encargos Financeiros da União",
+          "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+          "codigo_uo": "NA",
+          "valor_credito": 2000000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        }
+      ],
+      "publicacao": "2026-06-23",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-09-04",
+      "vigencia_fim": "2026-11-03",
+      "vigente": true,
+      "dias_para_vigencia": 92,
+      "dias_para_emendas": -34,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 80426856207.0,
+        "empenhado": 60294028048.0,
+        "liquidado": 55487108616.0,
+        "pago": 55487108616.0,
+        "pct_empenhado": 75.0,
+        "pct_pago": 69.0,
+        "cobertura": 100.0
+      }
+    },
+    {
+      "identificacao": "MPV 1368/2026",
+      "especie": "MPV",
+      "numero": 1368,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Empréstimo a companhias aéreas brasileiras para neutralizar o impacto no custo do querosene de aviação (QAV)",
+      "valor_total": 8000000000.0,
+      "relator": "Senador Eduardo Gomes (PL/TO)",
+      "emendas_inicio": "2026-06-19",
+      "emendas_fim": "2026-06-25",
+      "emendas_total": 2,
+      "situacao": "MATÉRIA COM A RELATORIA",
+      "norma": null,
+      "codigo_materia": "174784",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174784",
+      "unidades": [
+        {
+          "orgao": "Ministério de Portos e Aeroportos",
+          "unidade": "Fundo Nacional da Aviação Civil",
+          "codigo_uo": null,
+          "valor_credito": 8000000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-06-19",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-08-31",
+      "vigencia_fim": "2026-10-30",
+      "vigente": true,
+      "dias_para_vigencia": 88,
+      "dias_para_emendas": -39,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1367/2026",
+      "especie": "MPV",
+      "numero": 1367,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Ações de combate a incêndios florestais e fiscalização ambiental",
+      "valor_total": 337483432.0,
+      "relator": "Deputado Federal Jilmar Tatto (PT/SP)",
+      "emendas_inicio": "2026-06-15",
+      "emendas_fim": "2026-06-22",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO LEITURA",
+      "norma": null,
+      "codigo_materia": "174624",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174624",
+      "unidades": [
+        {
+          "orgao": "Ministério do Meio Ambiente e Mudança do Clima",
+          "unidade": "Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis",
+          "codigo_uo": null,
+          "valor_credito": 194417722.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        },
+        {
+          "orgao": "Ministério do Meio Ambiente e Mudança do Clima",
+          "unidade": "Instituto Chico Mendes de Conservação da Biodiversidade",
+          "codigo_uo": "NA",
+          "valor_credito": 143065710.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        }
+      ],
+      "publicacao": "2026-06-15",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-08-27",
+      "vigencia_fim": "2026-10-26",
+      "vigente": true,
+      "dias_para_vigencia": 84,
+      "dias_para_emendas": -42,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 80426856207.0,
+        "empenhado": 60294028048.0,
+        "liquidado": 55487108616.0,
+        "pago": 55487108616.0,
+        "pct_empenhado": 75.0,
+        "pct_pago": 69.0,
+        "cobertura": 50.0
+      }
+    },
+    {
+      "identificacao": "MPV 1365/2026",
+      "especie": "MPV",
+      "numero": 1365,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Financiamento de capital de giro para companhias aéreas",
+      "valor_total": 1000000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-06-08",
+      "emendas_fim": "2026-06-15",
+      "emendas_total": 12,
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
+      "norma": null,
+      "codigo_materia": "174454",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174454",
+      "unidades": [
+        {
+          "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
+          "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+          "codigo_uo": "NA",
+          "valor_credito": 1000000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        }
+      ],
+      "publicacao": "2026-06-08",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-08-20",
+      "vigencia_fim": "2026-10-19",
+      "vigente": true,
+      "dias_para_vigencia": 77,
+      "dias_para_emendas": -49,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 80426856207.0,
+        "empenhado": 60294028048.0,
+        "liquidado": 55487108616.0,
+        "pago": 55487108616.0,
+        "pct_empenhado": 75.0,
+        "pct_pago": 69.0,
+        "cobertura": 100.0
+      }
+    },
+    {
+      "identificacao": "MPV 1364/2026",
+      "especie": "MPV",
+      "numero": 1364,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Segurança alimentar de famílias atingidas por eventos climáticos extremos em Pernambuco e na Paraíba",
+      "valor_total": 49200000.0,
+      "relator": "Deputado Federal Lucas Ramos (PSB/PE)",
+      "emendas_inicio": "2026-06-02",
+      "emendas_fim": "2026-06-08",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO LEITURA",
+      "norma": null,
+      "codigo_materia": "174408",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174408",
+      "unidades": [
+        {
+          "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+          "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+          "codigo_uo": null,
+          "valor_credito": 49200000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-06-02",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-08-14",
+      "vigencia_fim": "2026-10-13",
+      "vigente": true,
+      "dias_para_vigencia": 71,
+      "dias_para_emendas": -56,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1362/2026",
+      "especie": "MPV",
+      "numero": 1362,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Financiamento para compra de táxis e carros de aplicativos pelo Programa Move Brasil",
+      "valor_total": 30000000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-05-26",
+      "emendas_fim": "2026-06-01",
+      "emendas_total": 6,
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
+      "norma": null,
+      "codigo_materia": "174301",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174301",
+      "unidades": [
+        {
+          "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
+          "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+          "codigo_uo": "NA",
+          "valor_credito": 30000000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        }
+      ],
+      "publicacao": "2026-05-26",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-08-07",
+      "vigencia_fim": "2026-10-06",
+      "vigente": true,
+      "dias_para_vigencia": 64,
+      "dias_para_emendas": -63,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 80426856207.0,
+        "empenhado": 60294028048.0,
+        "liquidado": 55487108616.0,
+        "pago": 55487108616.0,
+        "pct_empenhado": 75.0,
+        "pct_pago": 69.0,
+        "cobertura": 100.0
+      }
+    },
+    {
+      "identificacao": "MPV 1361/2026",
+      "especie": "MPV",
+      "numero": 1361,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Complementação do apoio financeiro às famílias atingidas por eventos climáticos extremos na Zona da Mata/MG",
+      "valor_total": 75344207.0,
+      "relator": "Deputada Federal Greyce Elias (PL/MG)",
+      "emendas_inicio": "2026-05-20",
+      "emendas_fim": "2026-05-26",
+      "emendas_total": 6,
+      "situacao": "AGUARDANDO LEITURA",
+      "norma": null,
+      "codigo_materia": "174255",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174255",
+      "unidades": [
+        {
+          "orgao": "MINISTÉRIO DA INTEGRAÇÃO E DO DESENVOLVIMENTO REGIONAL",
+          "unidade": "Ministério da Integração e do Desenvolvimento Regional",
+          "codigo_uo": null,
+          "valor_credito": 75344207.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-05-20",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-08-01",
+      "vigencia_fim": "2026-09-30",
+      "vigente": true,
+      "dias_para_vigencia": 58,
+      "dias_para_emendas": -69,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1356/2026",
+      "especie": "MPV",
+      "numero": 1356,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Ações emergenciais de proteção e defesa civil em regiões atingidas por desastres naturais",
+      "valor_total": 305000000.0,
+      "relator": "Senadora Tereza Cristina (PP/MS)",
+      "emendas_inicio": "2026-05-04",
+      "emendas_fim": "2026-05-11",
+      "emendas_total": 0,
+      "situacao": "PRONTA PARA A PAUTA NA COMISSÃO",
+      "norma": null,
+      "codigo_materia": "173847",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/173847",
+      "unidades": [
+        {
+          "orgao": "Ministério da Integração e do Desenvolvimento Regional",
+          "unidade": "Ministério da Integração e do Desenvolvimento Regional",
+          "codigo_uo": null,
+          "valor_credito": 305000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-05-04",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-07-02",
+      "vigencia_fim": "2026-09-14",
+      "vigente": true,
+      "dias_para_vigencia": 42,
+      "dias_para_emendas": -84,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1354/2026",
+      "especie": "MPV",
+      "numero": 1354,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Ampliação do FGI para financiamento de caminhões e ônibus sustentáveis",
+      "valor_total": 17000000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-04-30",
+      "emendas_fim": "2026-05-06",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
+      "norma": null,
+      "codigo_materia": "173833",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/173833",
+      "unidades": [
+        {
+          "orgao": "Encargos Financeiros da União",
+          "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+          "codigo_uo": "NA",
+          "valor_credito": 2500000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        },
+        {
+          "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
+          "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+          "codigo_uo": "NA",
+          "valor_credito": 14500000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        }
+      ],
+      "publicacao": "2026-04-30",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-06-28",
+      "vigencia_fim": "2026-09-10",
+      "vigente": true,
+      "dias_para_vigencia": 38,
+      "dias_para_emendas": -89,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 160853712414.0,
+        "empenhado": 120588056096.0,
+        "liquidado": 110974217232.0,
+        "pago": 110974217232.0,
+        "pct_empenhado": 75.0,
+        "pct_pago": 69.0,
+        "cobertura": 100.0
+      }
+    },
+    {
+      "identificacao": "MPV 1352/2026",
+      "especie": "MPV",
+      "numero": 1352,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Linhas de crédito para exportadores abrangidos pelo Plano Brasil Soberano",
+      "valor_total": 5000000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-04-29",
+      "emendas_fim": "2026-05-05",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
+      "norma": null,
+      "codigo_materia": "173791",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/173791",
+      "unidades": [
+        {
+          "orgao": "Encargos Financeiros da União",
+          "unidade": "Fundo de Garantia à Exportação",
+          "codigo_uo": null,
+          "valor_credito": 5000000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-04-29",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-06-27",
+      "vigencia_fim": "2026-09-09",
+      "vigente": true,
+      "dias_para_vigencia": 37,
+      "dias_para_emendas": -90,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1351/2026",
+      "especie": "MPV",
+      "numero": 1351,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Subvenção à Importação de GLP",
+      "valor_total": 330000000.0,
+      "relator": "Deputado Federal Hugo Leal (PSD/RJ)",
+      "emendas_inicio": "2026-04-28",
+      "emendas_fim": "2026-05-04",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO LEITURA",
+      "norma": null,
+      "codigo_materia": "173764",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/173764",
+      "unidades": [
+        {
+          "orgao": "Ministério de Minas e Energia",
+          "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+          "codigo_uo": null,
+          "valor_credito": 330000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-04-28",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-06-26",
+      "vigencia_fim": "2026-09-08",
+      "vigente": true,
+      "dias_para_vigencia": 36,
+      "dias_para_emendas": -91,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1347/2026",
+      "especie": "MPV",
+      "numero": 1347,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Ações de defesa civil e recuperação de desastres climáticos no país",
+      "valor_total": 285000000.0,
+      "relator": "Senador Marcelo Castro (MDB/PI)",
+      "emendas_inicio": "2026-03-27",
+      "emendas_fim": "2026-04-06",
+      "emendas_total": 1,
+      "situacao": "SEM EFICÁCIA",
+      "norma": null,
+      "codigo_materia": "173377",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/173377",
+      "unidades": [
+        {
+          "orgao": "MINISTÉRIO DA INTEGRAÇÃO E DO DESENVOLVIMENTO REGIONAL",
+          "unidade": "Ministério da Integração e do Desenvolvimento Regional",
+          "codigo_uo": null,
+          "valor_credito": 285000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-03-27",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-05-25",
+      "vigencia_fim": "2026-08-07",
+      "vigente": false,
+      "dias_para_vigencia": 4,
+      "dias_para_emendas": -119,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1346/2026",
+      "especie": "MPV",
+      "numero": 1346,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Reconstrução e apoio a famílias afetadas por tornados no Paraná",
+      "valor_total": 20429000.0,
+      "relator": "Deputado Federal Ricardo Barros (PP/PR)",
+      "emendas_inicio": "2026-03-27",
+      "emendas_fim": "2026-04-06",
+      "emendas_total": 1,
+      "situacao": "SEM EFICÁCIA",
+      "norma": null,
+      "codigo_materia": "173376",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/173376",
+      "unidades": [
+        {
+          "orgao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
+          "unidade": "Instituto Nacional de Colonização e Reforma Agrária – INCRA",
+          "codigo_uo": "NA",
+          "valor_credito": 4000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        },
+        {
+          "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
+          "unidade": "Recursos sob Supervisão do Instituto Nacional de Colonização e Reforma Agrária/INCRA",
+          "codigo_uo": null,
+          "valor_credito": 16429000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-03-27",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-05-25",
+      "vigencia_fim": "2026-08-07",
+      "vigente": false,
+      "dias_para_vigencia": 4,
+      "dias_para_emendas": -119,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 80426856207.0,
+        "empenhado": 60294028048.0,
+        "liquidado": 55487108616.0,
+        "pago": 55487108616.0,
+        "pct_empenhado": 75.0,
+        "pct_pago": 69.0,
+        "cobertura": 50.0
+      }
+    },
+    {
+      "identificacao": "MPV 1344/2026",
+      "especie": "MPV",
+      "numero": 1344,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Subsídio ao Diesel",
+      "valor_total": 10000000.0,
+      "relator": "Senador Carlos Fávaro (PSD/MT)",
+      "emendas_inicio": "2026-03-19",
+      "emendas_fim": "2026-03-25",
+      "emendas_total": 6,
+      "situacao": "SEM EFICÁCIA",
+      "norma": null,
+      "codigo_materia": "173213",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/173213",
+      "unidades": [
+        {
+          "orgao": "MINISTÉRIO DE MINAS E ENERGIA",
+          "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+          "codigo_uo": null,
+          "valor_credito": 10000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-03-19",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-05-17",
+      "vigencia_fim": "2026-07-16",
+      "vigente": false,
+      "dias_para_vigencia": -18,
+      "dias_para_emendas": -131,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1342/2026",
+      "especie": "MPV",
+      "numero": 1342,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Ações para contornar danos causados pelas mudanças climáticas em Minas Gerais",
+      "valor_total": 1305000000.0,
+      "relator": "Deputado Federal Igor Timo (UNIÃO/MG)",
+      "emendas_inicio": "2026-03-18",
+      "emendas_fim": "2026-03-24",
+      "emendas_total": 0,
+      "situacao": "SEM EFICÁCIA",
+      "norma": null,
+      "codigo_materia": "173107",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/173107",
+      "unidades": [
+        {
+          "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+          "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+          "codigo_uo": null,
+          "valor_credito": 3000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        },
+        {
+          "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+          "unidade": "Fundo Nacional de Assistência Social",
+          "codigo_uo": "NA",
+          "valor_credito": 2000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        },
+        {
+          "orgao": "MINISTÉRIO DAS CIDADES",
+          "unidade": "Ministério das Cidades",
+          "codigo_uo": null,
+          "valor_credito": 500000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        },
+        {
+          "orgao": "Encargos Financeiros da União",
+          "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+          "codigo_uo": "NA",
+          "valor_credito": 300000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        },
+        {
+          "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
+          "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+          "codigo_uo": "NA",
+          "valor_credito": 500000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 80426856207.0,
+            "empenhado": 60294028048.0,
+            "liquidado": 55487108616.0,
+            "pago": 55487108616.0,
+            "acoes": 1
+          },
+          "unidade_total": {
+            "dotacao_inicial": 6344324749874.0,
+            "dotacao_atual": 6492032033005.0,
+            "empenhado": 4353810267523.0,
+            "liquidado": 3405101236263.0,
+            "pago": 3334189738047.0,
+            "acoes": 1
+          }
+        }
+      ],
+      "publicacao": "2026-03-18",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-05-16",
+      "vigencia_fim": "2026-07-15",
+      "vigente": false,
+      "dias_para_vigencia": -19,
+      "dias_para_emendas": -132,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 241280568621.0,
+        "empenhado": 180882084144.0,
+        "liquidado": 166461325848.0,
+        "pago": 166461325848.0,
+        "pct_empenhado": 75.0,
+        "pct_pago": 69.0,
+        "cobertura": 60.0
+      }
+    },
+    {
+      "identificacao": "MPV 1339/2026",
+      "especie": "MPV",
+      "numero": 1339,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Ações de proteção e defesa civil e apoio financeiro a famílias em municípios da Zona da Mata (MG)",
+      "valor_total": 266512000.0,
+      "relator": "Senador Rogério Carvalho (PT/SE)",
+      "emendas_inicio": "2026-03-09",
+      "emendas_fim": "2026-03-16",
+      "emendas_total": 0,
+      "situacao": "TRANSFORMADA EM NORMA JURÍDICA",
+      "norma": "Lei nº 15.458 de 03/07/2026",
+      "codigo_materia": "172954",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/172954",
+      "unidades": [
+        {
+          "orgao": "MINISTÉRIO DA INTEGRAÇÃO E DO DESENVOLVIMENTO REGIONAL",
+          "unidade": "Ministério da Integração e do Desenvolvimento Regional",
+          "codigo_uo": null,
+          "valor_credito": 266512000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-07-06",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-09-17",
+      "vigencia_fim": "2026-11-16",
+      "vigente": false,
+      "dias_para_vigencia": 105,
+      "dias_para_emendas": -140,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    },
+    {
+      "identificacao": "MPV 1333/2026",
+      "especie": "MPV",
+      "numero": 1333,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "Ações de proteção e defesa civil, bem como de segurança hídrica",
+      "valor_total": 250000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-02-02",
+      "emendas_fim": "2026-02-09",
+      "emendas_total": 1,
+      "situacao": "SEM EFICÁCIA",
+      "norma": null,
+      "codigo_materia": "172340",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/172340",
+      "unidades": [
+        {
+          "orgao": "MINISTÉRIO DA INTEGRAÇÃO E DO DESENVOLVIMENTO REGIONAL",
+          "unidade": "Ministério da Integração e do Desenvolvimento Regional",
+          "codigo_uo": null,
+          "valor_credito": 220000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        },
+        {
+          "orgao": "Ministério da Integração e do Desenvolvimento Regional",
+          "unidade": "Departamento Nacional de Obras Contra as Secas",
+          "codigo_uo": null,
+          "valor_credito": 30000000.0,
+          "criterio": "ações abertas por crédito",
+          "execucao": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          },
+          "unidade_total": {
+            "dotacao_inicial": 0,
+            "dotacao_atual": 0,
+            "empenhado": 0,
+            "liquidado": 0,
+            "pago": 0,
+            "acoes": 0
+          }
+        }
+      ],
+      "publicacao": "2026-01-07",
+      "vigencia_fonte": "senado",
+      "vigencia_60": "2026-04-02",
+      "vigencia_fim": "2026-06-01",
+      "vigente": false,
+      "dias_para_vigencia": -63,
+      "dias_para_emendas": -175,
+      "emendas_abertas": false,
+      "execucao": {
+        "dotacao_atual": 0,
+        "empenhado": 0,
+        "liquidado": 0,
+        "pago": 0,
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0,
+        "cobertura": 0.0
+      }
+    }
+  ]
+}
