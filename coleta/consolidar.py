@@ -1,159 +1,223 @@
 """
-Prazo de vigência das MPs de crédito extraordinário.
+Junta a coleta legislativa com a execução orçamentária e grava site/dados.json.
 
-A tabela de propostas do Congresso não traz a vigência. Aqui ela é reconstruída
-em três camadas, da mais confiável para a menos:
+O cruzamento é feito pela unidade orçamentária. A tabela do Congresso traz a UO
+pelo nome (às vezes com erro de digitação), e o SIOP traz código e descrição —
+então o casamento é por nome normalizado, com `config/de_para_uo.csv` para os
+casos que o normalizador não resolve.
 
-1. `config/vigencia_manual.csv` — datas oficiais que você tenha conferido no
-   Ato do Presidente da Mesa do CN. Sempre vence.
-2. Dados Abertos do Senado — data de apresentação da matéria.
-3. Início da janela de emendas raspada da própria tabela, que na prática
-   coincide com a publicação no DOU.
+Dentro de cada UO, o painel separa dois recortes:
 
-Sobre a data-limite, art. 62 da Constituição: 60 dias de vigência, prorrogados
-automaticamente uma única vez por mais 60, com a contagem **suspensa durante o
-recesso** do Congresso. O cálculo abaixo percorre dia a dia e pula o recesso.
-É uma estimativa: para MPs em que a data exata importa, registre-a no CSV.
+- **ações abertas por crédito**: dotação inicial zero e dotação atual positiva.
+  É o recorte mais próximo do crédito extraordinário, embora também capture
+  créditos especiais na mesma unidade.
+- **total da unidade**: contexto, para dimensionar o peso do crédito.
+
+Para atribuição exata, preencha `config/de_para_acoes.csv` com as ações listadas
+no anexo da MP; quando houver linha para a matéria, ela substitui a heurística.
 """
 
 from __future__ import annotations
 
 import csv
 import json
+import re
 import sys
-import time
-from datetime import date, timedelta
+import unicodedata
+from collections import defaultdict
+from datetime import date, datetime
 from pathlib import Path
 
-import requests
+DADOS = Path("dados")
+CONFIG = Path("config")
+SAIDA = Path("site/dados.json")
 
-API_MATERIA = "https://legis.senado.leg.br/dadosabertos/materia/{codigo}"
-HEADERS = {"Accept": "application/json",
-           "User-Agent": "painel-creditos-extraordinarios/1.0"}
-
-# Recessos do Congresso Nacional (art. 57 da Constituição).
-RECESSOS = [((12, 23), (12, 31)), ((1, 1), (2, 1)), ((7, 18), (7, 31))]
-
-PRAZO_INICIAL = 60
-PRAZO_PRORROGADO = 120
+ABERTAS_POR_CREDITO = "aberta_por_credito"
 
 
-def em_recesso(d: date) -> bool:
-    for (mi, di), (mf, df) in RECESSOS:
-        if (d.month, d.day) >= (mi, di) and (d.month, d.day) <= (mf, df):
-            return True
-    return False
+def normalizar(txt: str) -> str:
+    txt = unicodedata.normalize("NFKD", txt or "")
+    txt = "".join(c for c in txt if not unicodedata.combining(c))
+    txt = txt.lower()
+    txt = re.sub(r"^\s*\d{4,6}\s*[-–]\s*", "", txt)          # "32401 - ANSN"
+    txt = re.sub(r"[^a-z0-9 ]", " ", txt)
+    txt = re.sub(r"\b(recursos sob (a )?supervisao d[oae]s?)\b", "rsv", txt)
+    txt = re.sub(r"\b(ministerio|secretaria|fundo|instituto|agencia|nacional|federal|"
+                 r"da|de|do|das|dos|e|em|para|geral)\b", " ", txt)
+    return re.sub(r"\s+", " ", txt).strip()
 
 
-def somar_dias_uteis_de_vigencia(inicio: date, dias: int) -> date:
-    """Data em que se completa o n-ésimo dia de vigência, pulando recesso.
-
-    O dia da publicação conta como dia 1.
-    """
-    contados = 0
-    d = inicio
-    limite = inicio + timedelta(days=dias + 400)
-    while d <= limite:
-        if not em_recesso(d):
-            contados += 1
-            if contados >= dias:
-                return d
-        d += timedelta(days=1)
-    return d
-
-
-def _busca_chave(obj, chave: str):
-    """Procura recursivamente uma chave no JSON do Senado."""
-    if isinstance(obj, dict):
-        for k, v in obj.items():
-            if k.lower() == chave.lower() and isinstance(v, str) and v.strip():
-                return v.strip()
-            achado = _busca_chave(v, chave)
-            if achado:
-                return achado
-    elif isinstance(obj, list):
-        for item in obj:
-            achado = _busca_chave(item, chave)
-            if achado:
-                return achado
-    return None
-
-
-def data_apresentacao_senado(codigo: str) -> str | None:
-    try:
-        r = requests.get(API_MATERIA.format(codigo=codigo), headers=HEADERS, timeout=45)
-        if r.status_code != 200:
-            return None
-        dados = r.json()
-    except Exception:  # noqa: BLE001
-        return None
-    for chave in ("DataApresentacao", "DataLeitura", "DataPublicacao"):
-        valor = _busca_chave(dados, chave)
-        if valor and len(valor) >= 10:
-            return valor[:10]
-    return None
-
-
-def carregar_manual(caminho: Path) -> dict[str, dict]:
+def ler_csv(caminho: Path) -> list[dict]:
     if not caminho.exists():
-        return {}
-    manual: dict[str, dict] = {}
-    with caminho.open(encoding="utf-8") as f:
-        for linha in csv.DictReader(f):
-            ident = (linha.get("identificacao") or "").strip()
-            if ident:
-                manual[ident] = {k: (v or "").strip() for k, v in linha.items()}
-    return manual
+        return []
+    with caminho.open(encoding="utf-8-sig") as f:
+        return list(csv.DictReader(f))
 
 
-def enriquecer(propostas: list[dict], manual: dict[str, dict]) -> list[dict]:
-    for p in propostas:
-        if not p.get("tipo", "").lower().startswith("crédito extraordin"):
+def num(v) -> float:
+    if v in (None, "", "NA"):
+        return 0.0
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def carregar_siop(ano: int) -> list[dict]:
+    linhas = ler_csv(DADOS / f"siop_{ano}.csv")
+    saida = []
+    for l in linhas:
+        codigo = (l.get("codigo_uo") or "").strip()
+        if not codigo:
             continue
+        saida.append({
+            "codigo_uo": codigo.zfill(5) if codigo.isdigit() else codigo,
+            "unidade": (l.get("unidade") or "").strip(),
+            "codigo_acao": (l.get("codigo_acao") or "").strip(),
+            "acao": (l.get("acao") or "").strip(),
+            "loa": num(l.get("loa")),
+            "atual": num(l.get("loa_mais_credito")),
+            "empenhado": num(l.get("empenhado")),
+            "liquidado": num(l.get("liquidado")),
+            "pago": num(l.get("pago")),
+        })
+    return saida
 
-        ident = p["identificacao"]
-        registro = manual.get(ident, {})
-        fonte = None
-        publicacao = registro.get("publicacao") or None
-        if publicacao:
-            fonte = "manual"
 
-        if not publicacao and p.get("codigo_materia"):
-            publicacao = data_apresentacao_senado(p["codigo_materia"])
-            if publicacao:
-                fonte = "senado"
-            time.sleep(0.4)
+def indice_uo(siop: list[dict], de_para: list[dict]) -> dict[str, str]:
+    """nome normalizado -> código da UO"""
+    indice: dict[str, str] = {}
+    for l in siop:
+        chave = normalizar(l["unidade"])
+        if chave:
+            indice.setdefault(chave, l["codigo_uo"])
+    for l in de_para:
+        nome = normalizar(l.get("nome_congresso", ""))
+        codigo = (l.get("codigo_uo") or "").strip()
+        if nome and codigo:
+            indice[nome] = codigo.zfill(5)
+    return indice
 
-        if not publicacao:
-            publicacao = p.get("emendas_inicio")
-            if publicacao:
-                fonte = "estimado (início do prazo de emendas)"
 
-        p["publicacao"] = publicacao
-        p["vigencia_fonte"] = fonte
+def agregar(linhas: list[dict]) -> dict:
+    return {
+        "dotacao_inicial": round(sum(l["loa"] for l in linhas), 2),
+        "dotacao_atual": round(sum(l["atual"] for l in linhas), 2),
+        "empenhado": round(sum(l["empenhado"] for l in linhas), 2),
+        "liquidado": round(sum(l["liquidado"] for l in linhas), 2),
+        "pago": round(sum(l["pago"] for l in linhas), 2),
+        "acoes": len({l["codigo_acao"] for l in linhas if l["codigo_acao"]}),
+    }
 
-        if registro.get("vigencia_fim"):
-            p["vigencia_60"] = registro.get("vigencia_60") or None
-            p["vigencia_fim"] = registro["vigencia_fim"]
-            p["vigencia_fonte"] = "manual"
-        elif publicacao:
-            inicio = date.fromisoformat(publicacao)
-            p["vigencia_60"] = somar_dias_uteis_de_vigencia(inicio, PRAZO_INICIAL).isoformat()
-            p["vigencia_fim"] = somar_dias_uteis_de_vigencia(inicio, PRAZO_PRORROGADO).isoformat()
-        else:
-            p["vigencia_60"] = None
-            p["vigencia_fim"] = None
-    return propostas
+
+def dias_ate(alvo: str | None, hoje: date) -> int | None:
+    if not alvo:
+        return None
+    return (date.fromisoformat(alvo) - hoje).days
 
 
 def main() -> None:
-    entrada = Path("dados/congresso.json")
-    propostas = json.loads(entrada.read_text(encoding="utf-8"))
-    manual = carregar_manual(Path("config/vigencia_manual.csv"))
-    propostas = enriquecer(propostas, manual)
-    entrada.write_text(json.dumps(propostas, ensure_ascii=False, indent=2), encoding="utf-8")
-    com_data = sum(1 for p in propostas if p.get("vigencia_fim"))
-    print(f"vigência calculada para {com_data} matérias", file=sys.stderr)
+    hoje = date.today()
+    propostas = json.loads((DADOS / "congresso.json").read_text(encoding="utf-8"))
+    mpvs = [p for p in propostas if p.get("tipo", "").lower().startswith("crédito extraordin")]
+
+    de_para_uo = ler_csv(CONFIG / "de_para_uo.csv")
+    de_para_acoes = defaultdict(set)
+    for l in ler_csv(CONFIG / "de_para_acoes.csv"):
+        ident = (l.get("identificacao") or "").strip()
+        acao = (l.get("codigo_acao") or "").strip()
+        if ident and acao:
+            de_para_acoes[ident].add(acao)
+
+    anos = sorted({p["ano"] for p in mpvs})
+    siop_por_ano = {ano: carregar_siop(ano) for ano in anos}
+    indices = {ano: indice_uo(linhas, de_para_uo) for ano, linhas in siop_por_ano.items()}
+
+    nao_casadas: set[str] = set()
+    registros = []
+
+    for p in mpvs:
+        siop = siop_por_ano.get(p["ano"], [])
+        indice = indices.get(p["ano"], {})
+        por_uo = defaultdict(list)
+        for l in siop:
+            por_uo[l["codigo_uo"]].append(l)
+
+        unidades = []
+        for u in p.get("unidades", []):
+            codigo = indice.get(normalizar(u["unidade"]))
+            if not codigo:
+                nao_casadas.add(u["unidade"])
+            linhas = por_uo.get(codigo, []) if codigo else []
+            fixadas = de_para_acoes.get(p["identificacao"])
+            if fixadas:
+                recorte = [l for l in linhas if l["codigo_acao"] in fixadas]
+                criterio = "de-para manual"
+            else:
+                recorte = [l for l in linhas if l["loa"] == 0 and l["atual"] > 0]
+                criterio = "ações abertas por crédito"
+            unidades.append({
+                "orgao": u["orgao"],
+                "unidade": u["unidade"],
+                "codigo_uo": codigo,
+                "valor_credito": u["valor"],
+                "criterio": criterio,
+                "execucao": agregar(recorte),
+                "unidade_total": agregar(linhas),
+            })
+
+        soma = lambda campo, chave: round(  # noqa: E731
+            sum(u[chave][campo] for u in unidades), 2)
+        execucao = {
+            "dotacao_atual": soma("dotacao_atual", "execucao"),
+            "empenhado": soma("empenhado", "execucao"),
+            "liquidado": soma("liquidado", "execucao"),
+            "pago": soma("pago", "execucao"),
+        }
+        base = execucao["dotacao_atual"] or p.get("valor_total") or 0
+        execucao["pct_empenhado"] = round(100 * execucao["empenhado"] / base, 1) if base else None
+        execucao["pct_pago"] = round(100 * execucao["pago"] / base, 1) if base else None
+        execucao["cobertura"] = round(
+            100 * sum(1 for u in unidades if u["codigo_uo"]) / len(unidades), 0
+        ) if unidades else 0
+
+        vigente = None
+        if p.get("vigencia_fim"):
+            vigente = p["vigencia_fim"] >= hoje.isoformat() and p.get("situacao") not in (
+                "SEM EFICÁCIA", "TRANSFORMADA EM NORMA JURÍDICA", "REJEITADA", "ARQUIVADA")
+
+        registros.append({
+            **p,
+            "vigente": vigente,
+            "dias_para_vigencia": dias_ate(p.get("vigencia_fim"), hoje),
+            "dias_para_emendas": dias_ate(p.get("emendas_fim"), hoje),
+            "emendas_abertas": bool(
+                p.get("emendas_fim") and p["emendas_fim"] >= hoje.isoformat()),
+            "unidades": unidades,
+            "execucao": execucao,
+        })
+
+    registros.sort(key=lambda r: (r["ano"], r["numero"]), reverse=True)
+
+    SAIDA.parent.mkdir(parents=True, exist_ok=True)
+    SAIDA.write_text(json.dumps({
+        "atualizado_em": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "anos": anos,
+        "fontes": {
+            "legislativo": "Congresso Nacional — Propostas Orçamentárias (PLNs e MPVs)",
+            "vigencia": "Dados Abertos do Senado + cálculo art. 62 da Constituição",
+            "execucao": "SIOP/SOF via pacote orcamentoBR",
+        },
+        "uo_sem_correspondencia": sorted(nao_casadas),
+        "medidas": registros,
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    print(f"{len(registros)} MPs de crédito extraordinário -> {SAIDA}", file=sys.stderr)
+    if nao_casadas:
+        print("UOs sem correspondência no SIOP (adicione em config/de_para_uo.csv):",
+              file=sys.stderr)
+        for nome in sorted(nao_casadas):
+            print(f"  - {nome}", file=sys.stderr)
 
 
 if __name__ == "__main__":

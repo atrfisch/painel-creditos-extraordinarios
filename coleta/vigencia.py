@@ -1,261 +1,159 @@
 """
-Coleta a tabela de Propostas Orçamentárias (PLNs e MPVs) do Congresso Nacional.
+Prazo de vigência das MPs de crédito extraordinário.
 
-Fonte: https://www.congressonacional.leg.br/web/orcamento/acompanhe/propostas
+A tabela de propostas do Congresso não traz a vigência. Aqui ela é reconstruída
+em três camadas, da mais confiável para a menos:
 
-A página é renderizada no servidor (não precisa de navegador). O parser abaixo é
-deliberadamente tolerante: em vez de depender de classes CSS do Liferay, ele
-ancora cada registro no link da matéria (.../materia/<codigo>) e lê o restante
-por expressões regulares sobre o texto da linha. Se o layout mudar, o que quebra
-é um campo, não a coleta inteira.
+1. `config/vigencia_manual.csv` — datas oficiais que você tenha conferido no
+   Ato do Presidente da Mesa do CN. Sempre vence.
+2. Dados Abertos do Senado — data de apresentação da matéria.
+3. Início da janela de emendas raspada da própria tabela, que na prática
+   coincide com a publicação no DOU.
+
+Sobre a data-limite, art. 62 da Constituição: 60 dias de vigência, prorrogados
+automaticamente uma única vez por mais 60, com a contagem **suspensa durante o
+recesso** do Congresso. O cálculo abaixo percorre dia a dia e pula o recesso.
+É uma estimativa: para MPs em que a data exata importa, registre-a no CSV.
 """
 
 from __future__ import annotations
 
+import csv
 import json
-import re
 import sys
 import time
-from dataclasses import dataclass, asdict, field
+from datetime import date, timedelta
 from pathlib import Path
 
 import requests
-from bs4 import BeautifulSoup
 
-URL = "https://www.congressonacional.leg.br/web/orcamento/acompanhe/propostas"
-HEADERS = {
-    "User-Agent": "painel-creditos-extraordinarios/1.0 (+github pages; contato via repositorio)",
-    "Accept-Language": "pt-BR,pt;q=0.9",
-}
+API_MATERIA = "https://legis.senado.leg.br/dadosabertos/materia/{codigo}"
+HEADERS = {"Accept": "application/json",
+           "User-Agent": "painel-creditos-extraordinarios/1.0"}
 
-RE_IDENT = re.compile(r"^\s*(MPV|PLN)\s*(\d+)\s*/\s*(\d{4})\s*$", re.I)
-RE_MATERIA = re.compile(r"/materia/(\d+)")
-RE_TIPO = re.compile(r"\((Crédito Extraordinário|Crédito Especial|Crédito Suplementar|"
-                     r"Alteração da LOA|Alteração da LDO|Lei de Diretrizes Orçamentárias|"
-                     r"Lei Orçamentária Anual|Plano Plurianual)\)", re.I)
-RE_PRAZO = re.compile(r"Prazo:\s*de\s*(\d{2}/\d{2}/\d{4})\s*a\s*(\d{2}/\d{2}/\d{4})")
-RE_TOTAL = re.compile(r"Total:\s*(\d+)")
-RE_RELATOR = re.compile(r"Relator:\s*((?:Senador|Senadora|Deputado|Deputada)[^|\n]*?\([^)]*\))")
-RE_VALOR = re.compile(r"\b\d{1,3}(?:\.\d{3})*,\d{2}\b")
-RE_LEI = re.compile(r"Lei\s+n[ºo°]\s*([\d.]+)\s*,?\s*de\s*(\d{2}/\d{2}/\d{4})", re.I)
+# Recessos do Congresso Nacional (art. 57 da Constituição).
+RECESSOS = [((12, 23), (12, 31)), ((1, 1), (2, 1)), ((7, 18), (7, 31))]
 
-SITUACOES = [
-    "AGUARDANDO DESPACHO",
-    "MATÉRIA DESPACHADA",
-    "AGUARDANDO RECEBIMENTO DE EMENDAS",
-    "AGUARDANDO DESIGNAÇÃO DO RELATOR",
-    "MATÉRIA COM A RELATORIA",
-    "AGUARDANDO LEITURA",
-    "PRONTA PARA A PAUTA NA COMISSÃO",
-    "PRONTO PARA A PAUTA NA COMISSÃO",
-    "PRONTO PARA DELIBERAÇÃO DO PLENÁRIO",
-    "PRONTA PARA DELIBERAÇÃO DO PLENÁRIO",
-    "TRANSFORMADA EM NORMA JURÍDICA",
-    "SEM EFICÁCIA",
-    "REJEITADA",
-    "PREJUDICADA",
-    "ARQUIVADA",
-    "DEVOLVIDA",
-]
+PRAZO_INICIAL = 60
+PRAZO_PRORROGADO = 120
 
 
-@dataclass
-class UnidadeOrcamentaria:
-    orgao: str
-    unidade: str
-    valor: float
+def em_recesso(d: date) -> bool:
+    for (mi, di), (mf, df) in RECESSOS:
+        if (d.month, d.day) >= (mi, di) and (d.month, d.day) <= (mf, df):
+            return True
+    return False
 
 
-@dataclass
-class Proposta:
-    identificacao: str
-    especie: str            # MPV | PLN
-    numero: int
-    ano: int
-    tipo: str               # Crédito Extraordinário, Crédito Especial, ...
-    ementa: str
-    valor_total: float | None
-    relator: str | None
-    emendas_inicio: str | None      # ISO
-    emendas_fim: str | None         # ISO
-    emendas_total: int | None
-    situacao: str | None
-    norma: str | None
-    codigo_materia: str | None
-    url_materia: str | None
-    unidades: list[UnidadeOrcamentaria] = field(default_factory=list)
+def somar_dias_uteis_de_vigencia(inicio: date, dias: int) -> date:
+    """Data em que se completa o n-ésimo dia de vigência, pulando recesso.
 
-
-def _num(txt: str) -> float:
-    return float(txt.replace(".", "").replace(",", "."))
-
-
-def _iso(br: str) -> str:
-    d, m, a = br.split("/")
-    return f"{a}-{m}-{d}"
-
-
-def _limpa(txt: str) -> str:
-    return re.sub(r"\s+", " ", txt or "").strip()
-
-
-def baixar(ano: int, tentativas: int = 3) -> str:
-    """Baixa o HTML da página para um ano de apresentação.
-
-    A página aceita o ano por querystring; se o parâmetro for ignorado pelo
-    portal, a resposta cai no ano corrente e o filtro por ano é aplicado
-    depois, na consolidação.
+    O dia da publicação conta como dia 1.
     """
-    erro = None
-    for i in range(tentativas):
-        try:
-            r = requests.get(URL, params={"ano": ano}, headers=HEADERS, timeout=90)
-            r.raise_for_status()
-            r.encoding = r.apparent_encoding or "utf-8"
-            return r.text
-        except Exception as e:  # noqa: BLE001
-            erro = e
-            time.sleep(3 * (i + 1))
-    raise RuntimeError(f"falha ao baixar propostas de {ano}: {erro}")
+    contados = 0
+    d = inicio
+    limite = inicio + timedelta(days=dias + 400)
+    while d <= limite:
+        if not em_recesso(d):
+            contados += 1
+            if contados >= dias:
+                return d
+        d += timedelta(days=1)
+    return d
 
 
-def _unidades_da_linha(tr) -> list[UnidadeOrcamentaria]:
-    """Lê a tabela aninhada com Órgão / Unidade Orçamentária / Valor."""
-    unidades: list[UnidadeOrcamentaria] = []
-    for tabela in tr.find_all("table"):
-        cabecalho = _limpa(tabela.get_text(" ")).lower()
-        if "unidade" not in cabecalho:
-            continue
-        for linha in tabela.find_all("tr"):
-            celulas = [_limpa(td.get_text(" ")) for td in linha.find_all(["td", "th"])]
-            if len(celulas) < 3:
-                continue
-            if "unidade" in celulas[1].lower() and "valor" in celulas[2].lower():
-                continue  # cabeçalho
-            m = RE_VALOR.search(celulas[2])
-            if not m:
-                continue
-            unidades.append(UnidadeOrcamentaria(
-                orgao=celulas[0], unidade=celulas[1], valor=_num(m.group(0))
-            ))
-    return unidades
+def _busca_chave(obj, chave: str):
+    """Procura recursivamente uma chave no JSON do Senado."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k.lower() == chave.lower() and isinstance(v, str) and v.strip():
+                return v.strip()
+            achado = _busca_chave(v, chave)
+            if achado:
+                return achado
+    elif isinstance(obj, list):
+        for item in obj:
+            achado = _busca_chave(item, chave)
+            if achado:
+                return achado
+    return None
 
 
-def _situacao_do_texto(texto: str) -> str | None:
-    achadas = [(texto.rfind(s), s) for s in SITUACOES if s in texto]
-    achadas = [(p, s) for p, s in achadas if p >= 0]
-    if not achadas:
+def data_apresentacao_senado(codigo: str) -> str | None:
+    try:
+        r = requests.get(API_MATERIA.format(codigo=codigo), headers=HEADERS, timeout=45)
+        if r.status_code != 200:
+            return None
+        dados = r.json()
+    except Exception:  # noqa: BLE001
         return None
-    # a situação aparece no fim da linha; em caso de sobreposição, a mais longa vence
-    pos = max(p for p, _ in achadas)
-    candidatas = [s for p, s in achadas if p == pos]
-    return max(candidatas, key=len)
+    for chave in ("DataApresentacao", "DataLeitura", "DataPublicacao"):
+        valor = _busca_chave(dados, chave)
+        if valor and len(valor) >= 10:
+            return valor[:10]
+    return None
 
 
-def parsear(html: str) -> list[Proposta]:
-    sopa = BeautifulSoup(html, "html.parser")
-    propostas: list[Proposta] = []
-    vistos: set[str] = set()
+def carregar_manual(caminho: Path) -> dict[str, dict]:
+    if not caminho.exists():
+        return {}
+    manual: dict[str, dict] = {}
+    with caminho.open(encoding="utf-8") as f:
+        for linha in csv.DictReader(f):
+            ident = (linha.get("identificacao") or "").strip()
+            if ident:
+                manual[ident] = {k: (v or "").strip() for k, v in linha.items()}
+    return manual
 
-    for link in sopa.find_all("a", href=True):
-        rotulo = _limpa(link.get_text(" "))
-        ident = RE_IDENT.match(rotulo)
-        if not ident:
+
+def enriquecer(propostas: list[dict], manual: dict[str, dict]) -> list[dict]:
+    for p in propostas:
+        if not p.get("tipo", "").lower().startswith("crédito extraordin"):
             continue
-        if not RE_MATERIA.search(link["href"]):
-            continue
 
-        tr = link.find_parent("tr")
-        if tr is None:
-            continue
-        # a linha do registro é a mais externa que contém este link
-        while tr.find_parent("tr") is not None:
-            tr = tr.find_parent("tr")
+        ident = p["identificacao"]
+        registro = manual.get(ident, {})
+        fonte = None
+        publicacao = registro.get("publicacao") or None
+        if publicacao:
+            fonte = "manual"
 
-        especie, numero, ano = ident.group(1).upper(), int(ident.group(2)), int(ident.group(3))
-        chave = f"{especie} {numero}/{ano}"
-        if chave in vistos:
-            continue
-        vistos.add(chave)
+        if not publicacao and p.get("codigo_materia"):
+            publicacao = data_apresentacao_senado(p["codigo_materia"])
+            if publicacao:
+                fonte = "senado"
+            time.sleep(0.4)
 
-        texto = _limpa(tr.get_text(" "))
-        codigo = RE_MATERIA.search(link["href"]).group(1)
+        if not publicacao:
+            publicacao = p.get("emendas_inicio")
+            if publicacao:
+                fonte = "estimado (início do prazo de emendas)"
 
-        # ementa: o texto logo após "(Tipo)" na primeira célula
-        celulas = tr.find_all("td", recursive=False) or tr.find_all("td")
-        primeira = _limpa(celulas[0].get_text(" ")) if celulas else texto
-        tipo_m = RE_TIPO.search(primeira) or RE_TIPO.search(texto)
-        tipo = tipo_m.group(1) if tipo_m else ""
-        ementa = ""
-        if tipo_m and tipo_m.re is RE_TIPO:
-            depois = primeira[primeira.find(tipo_m.group(0)) + len(tipo_m.group(0)):]
-            ementa = _limpa(depois)
-        ementa = re.sub(r"^(Crédito\s+[Ee]xtraordinári[oa]|Crédito\s+[Ee]special|"
-                        r"Crédito\s+[Ss]uplementar)\s*[-–—]\s*", "", ementa).strip()
+        p["publicacao"] = publicacao
+        p["vigencia_fonte"] = fonte
 
-        unidades = _unidades_da_linha(tr)
-
-        valor_total = None
-        soma_uo = sum(u.valor for u in unidades)
-        valores = [_num(v) for v in RE_VALOR.findall(texto)]
-        if valores:
-            # o valor total é o maior da linha e costuma bater com a soma das UOs
-            valor_total = max(valores)
-        if soma_uo and (valor_total is None or abs(valor_total - soma_uo) > 1):
-            valor_total = round(soma_uo, 2)
-
-        prazo = RE_PRAZO.search(texto)
-        total = RE_TOTAL.search(texto)
-        relator = RE_RELATOR.search(texto)
-        lei = RE_LEI.search(texto)
-
-        propostas.append(Proposta(
-            identificacao=chave,
-            especie=especie,
-            numero=numero,
-            ano=ano,
-            tipo=tipo,
-            ementa=ementa,
-            valor_total=valor_total,
-            relator=_limpa(relator.group(1)) if relator else None,
-            emendas_inicio=_iso(prazo.group(1)) if prazo else None,
-            emendas_fim=_iso(prazo.group(2)) if prazo else None,
-            emendas_total=int(total.group(1)) if total else None,
-            situacao=_situacao_do_texto(texto),
-            norma=f"Lei nº {lei.group(1)} de {lei.group(2)}" if lei else None,
-            codigo_materia=codigo,
-            url_materia=link["href"] if link["href"].startswith("http")
-            else "https://www25.senado.leg.br" + link["href"],
-            unidades=unidades,
-        ))
-
+        if registro.get("vigencia_fim"):
+            p["vigencia_60"] = registro.get("vigencia_60") or None
+            p["vigencia_fim"] = registro["vigencia_fim"]
+            p["vigencia_fonte"] = "manual"
+        elif publicacao:
+            inicio = date.fromisoformat(publicacao)
+            p["vigencia_60"] = somar_dias_uteis_de_vigencia(inicio, PRAZO_INICIAL).isoformat()
+            p["vigencia_fim"] = somar_dias_uteis_de_vigencia(inicio, PRAZO_PRORROGADO).isoformat()
+        else:
+            p["vigencia_60"] = None
+            p["vigencia_fim"] = None
     return propostas
 
 
-def coletar(anos: list[int]) -> list[Proposta]:
-    todas: dict[str, Proposta] = {}
-    for ano in anos:
-        html = baixar(ano)
-        achadas = parsear(html)
-        print(f"  {ano}: {len(achadas)} propostas na página", file=sys.stderr)
-        for p in achadas:
-            todas.setdefault(p.identificacao, p)
-        time.sleep(1.5)
-    return list(todas.values())
-
-
 def main() -> None:
-    anos = [int(a) for a in sys.argv[1:]] or [2026]
-    propostas = coletar(anos)
-    saida = Path("dados/congresso.json")
-    saida.parent.mkdir(parents=True, exist_ok=True)
-    saida.write_text(
-        json.dumps([asdict(p) for p in propostas], ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-    mpvs = [p for p in propostas if p.tipo.lower().startswith("crédito extraordin")]
-    print(f"{len(propostas)} propostas ({len(mpvs)} créditos extraordinários) -> {saida}",
-          file=sys.stderr)
+    entrada = Path("dados/congresso.json")
+    propostas = json.loads(entrada.read_text(encoding="utf-8"))
+    manual = carregar_manual(Path("config/vigencia_manual.csv"))
+    propostas = enriquecer(propostas, manual)
+    entrada.write_text(json.dumps(propostas, ensure_ascii=False, indent=2), encoding="utf-8")
+    com_data = sum(1 for p in propostas if p.get("vigencia_fim"))
+    print(f"vigência calculada para {com_data} matérias", file=sys.stderr)
 
 
 if __name__ == "__main__":
