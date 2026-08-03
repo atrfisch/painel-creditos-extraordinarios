@@ -40,7 +40,14 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      name: Atualizar painel
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: release
+          use-public-rspm: true
+
+      - name: Instalar orcamentoBR
+        run: Rscript -e 'install.packages("orcamentoBR")'
+        continue-on-error: true
 
       - name: Coletar propostas do Congresso
         run: python coleta/congresso.py $ANOS
