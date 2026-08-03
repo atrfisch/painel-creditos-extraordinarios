@@ -1,0 +1,85 @@
+name: Atualizar painel
+
+on:
+  schedule:
+    - cron: "0 9,21 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      anos:
+        description: "Anos a coletar, separados por espaço"
+        default: "2026"
+  push:
+    branches: [main]
+    paths:
+      - "coleta/**"
+      - "config/**"
+      - "site/**"
+      - ".github/workflows/**"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: painel-creditos
+  cancel-in-progress: true
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    env:
+      ANOS: ${{ github.event.inputs.anos || '2026' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: release
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: cran::orcamentoBR
+
+      - name: Coletar propostas do Congresso
+        run: python coleta/congresso.py $ANOS
+
+      - name: Calcular vigência
+        run: python coleta/vigencia.py
+
+      - name: Baixar execução do SIOP
+        run: Rscript coleta/siop.R $ANOS
+        continue-on-error: true
+
+      - name: Consolidar
+        run: python coleta/consolidar.py
+
+      - name: Commitar dados
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/dados.json
+          git diff --staged --quiet || git commit -m "dados: atualização automática $(date -u +%F\ %H:%M)"
+          git push
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  publicar:
+    needs: coletar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
