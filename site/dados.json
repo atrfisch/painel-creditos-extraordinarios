@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-04T11:22:03+00:00",
+  "atualizado_em": "2026-08-05T11:18:50+00:00",
   "anos": [
     2026
   ],
@@ -69,8 +69,8 @@
       "vigencia_60": "2026-09-29",
       "vigencia_fim": "2026-11-28",
       "vigente": true,
-      "dias_para_vigencia": 116,
-      "dias_para_emendas": 6,
+      "dias_para_vigencia": 115,
+      "dias_para_emendas": 5,
       "emendas_abertas": true,
       "execucao": {
         "dotacao_atual": 0,
@@ -128,8 +128,8 @@
       "vigencia_60": "2026-09-29",
       "vigencia_fim": "2026-11-28",
       "vigente": true,
-      "dias_para_vigencia": 116,
-      "dias_para_emendas": 6,
+      "dias_para_vigencia": 115,
+      "dias_para_emendas": 5,
       "emendas_abertas": true,
       "execucao": {
         "dotacao_atual": 0,
@@ -175,9 +175,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         }
@@ -187,8 +187,8 @@
       "vigencia_60": "2026-09-29",
       "vigencia_fim": "2026-11-28",
       "vigente": true,
-      "dias_para_vigencia": 116,
-      "dias_para_emendas": 6,
+      "dias_para_vigencia": 115,
+      "dias_para_emendas": 5,
       "emendas_abertas": true,
       "execucao": {
         "dotacao_atual": 80426856207.0,
@@ -212,7 +212,7 @@
       "emendas_inicio": "2026-07-16",
       "emendas_fim": "2026-08-07",
       "emendas_total": 0,
-      "situacao": "MATÉRIA DESPACHADA",
+      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
       "norma": null,
       "codigo_materia": "175215",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175215",
@@ -280,9 +280,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         },
@@ -315,8 +315,8 @@
       "vigencia_60": "2026-09-27",
       "vigencia_fim": "2026-11-26",
       "vigente": true,
-      "dias_para_vigencia": 114,
-      "dias_para_emendas": 3,
+      "dias_para_vigencia": 113,
+      "dias_para_emendas": 2,
       "emendas_abertas": true,
       "execucao": {
         "dotacao_atual": 80426856207.0,
@@ -374,8 +374,8 @@
       "vigencia_60": "2026-09-10",
       "vigencia_fim": "2026-11-09",
       "vigente": true,
-      "dias_para_vigencia": 97,
-      "dias_para_emendas": -29,
+      "dias_para_vigencia": 96,
+      "dias_para_emendas": -30,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
@@ -421,9 +421,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         }
@@ -433,8 +433,8 @@
       "vigencia_60": "2026-09-04",
       "vigencia_fim": "2026-11-03",
       "vigente": true,
-      "dias_para_vigencia": 91,
-      "dias_para_emendas": -35,
+      "dias_para_vigencia": 90,
+      "dias_para_emendas": -36,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 80426856207.0,
@@ -492,8 +492,8 @@
       "vigencia_60": "2026-08-31",
       "vigencia_fim": "2026-10-30",
       "vigente": true,
-      "dias_para_vigencia": 87,
-      "dias_para_emendas": -40,
+      "dias_para_vigencia": 86,
+      "dias_para_emendas": -41,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
@@ -562,9 +562,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         }
@@ -574,8 +574,8 @@
       "vigencia_60": "2026-08-27",
       "vigencia_fim": "2026-10-26",
       "vigente": true,
-      "dias_para_vigencia": 83,
-      "dias_para_emendas": -43,
+      "dias_para_vigencia": 82,
+      "dias_para_emendas": -44,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 80426856207.0,
@@ -621,9 +621,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         }
@@ -633,8 +633,8 @@
       "vigencia_60": "2026-08-20",
       "vigencia_fim": "2026-10-19",
       "vigente": true,
-      "dias_para_vigencia": 76,
-      "dias_para_emendas": -50,
+      "dias_para_vigencia": 75,
+      "dias_para_emendas": -51,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 80426856207.0,
@@ -692,8 +692,8 @@
       "vigencia_60": "2026-08-14",
       "vigencia_fim": "2026-10-13",
       "vigente": true,
-      "dias_para_vigencia": 70,
-      "dias_para_emendas": -57,
+      "dias_para_vigencia": 69,
+      "dias_para_emendas": -58,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
@@ -739,9 +739,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         }
@@ -751,8 +751,8 @@
       "vigencia_60": "2026-08-07",
       "vigencia_fim": "2026-10-06",
       "vigente": true,
-      "dias_para_vigencia": 63,
-      "dias_para_emendas": -64,
+      "dias_para_vigencia": 62,
+      "dias_para_emendas": -65,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 80426856207.0,
@@ -810,8 +810,8 @@
       "vigencia_60": "2026-08-01",
       "vigencia_fim": "2026-09-30",
       "vigente": true,
-      "dias_para_vigencia": 57,
-      "dias_para_emendas": -70,
+      "dias_para_vigencia": 56,
+      "dias_para_emendas": -71,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
@@ -869,8 +869,8 @@
       "vigencia_60": "2026-07-02",
       "vigencia_fim": "2026-09-14",
       "vigente": true,
-      "dias_para_vigencia": 41,
-      "dias_para_emendas": -85,
+      "dias_para_vigencia": 40,
+      "dias_para_emendas": -86,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
@@ -916,9 +916,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         },
@@ -939,9 +939,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         }
@@ -951,8 +951,8 @@
       "vigencia_60": "2026-06-28",
       "vigencia_fim": "2026-09-10",
       "vigente": true,
-      "dias_para_vigencia": 37,
-      "dias_para_emendas": -90,
+      "dias_para_vigencia": 36,
+      "dias_para_emendas": -91,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 160853712414.0,
@@ -1010,8 +1010,8 @@
       "vigencia_60": "2026-06-27",
       "vigencia_fim": "2026-09-09",
       "vigente": true,
-      "dias_para_vigencia": 36,
-      "dias_para_emendas": -91,
+      "dias_para_vigencia": 35,
+      "dias_para_emendas": -92,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
@@ -1069,8 +1069,8 @@
       "vigencia_60": "2026-06-26",
       "vigencia_fim": "2026-09-08",
       "vigente": true,
-      "dias_para_vigencia": 35,
-      "dias_para_emendas": -92,
+      "dias_para_vigencia": 34,
+      "dias_para_emendas": -93,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
@@ -1128,8 +1128,8 @@
       "vigencia_60": "2026-05-25",
       "vigencia_fim": "2026-08-07",
       "vigente": false,
-      "dias_para_vigencia": 3,
-      "dias_para_emendas": -120,
+      "dias_para_vigencia": 2,
+      "dias_para_emendas": -121,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
@@ -1175,9 +1175,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         },
@@ -1210,8 +1210,8 @@
       "vigencia_60": "2026-05-25",
       "vigencia_fim": "2026-08-07",
       "vigente": false,
-      "dias_para_vigencia": 3,
-      "dias_para_emendas": -120,
+      "dias_para_vigencia": 2,
+      "dias_para_emendas": -121,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 80426856207.0,
@@ -1269,8 +1269,8 @@
       "vigencia_60": "2026-05-17",
       "vigencia_fim": "2026-07-16",
       "vigente": false,
-      "dias_para_vigencia": -19,
-      "dias_para_emendas": -132,
+      "dias_para_vigencia": -20,
+      "dias_para_emendas": -133,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
@@ -1339,9 +1339,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         },
@@ -1385,9 +1385,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         },
@@ -1408,9 +1408,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4353810267523.0,
-            "liquidado": 3405101236263.0,
-            "pago": 3334189738047.0,
+            "empenhado": 4355432030820.0,
+            "liquidado": 3449672000330.0,
+            "pago": 3409187248706.0,
             "acoes": 1
           }
         }
@@ -1420,8 +1420,8 @@
       "vigencia_60": "2026-05-16",
       "vigencia_fim": "2026-07-15",
       "vigente": false,
-      "dias_para_vigencia": -20,
-      "dias_para_emendas": -133,
+      "dias_para_vigencia": -21,
+      "dias_para_emendas": -134,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 241280568621.0,
@@ -1479,8 +1479,8 @@
       "vigencia_60": "2026-09-17",
       "vigencia_fim": "2026-11-16",
       "vigente": false,
-      "dias_para_vigencia": 104,
-      "dias_para_emendas": -141,
+      "dias_para_vigencia": 103,
+      "dias_para_emendas": -142,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
@@ -1561,8 +1561,8 @@
       "vigencia_60": "2026-04-02",
       "vigencia_fim": "2026-06-01",
       "vigente": false,
-      "dias_para_vigencia": -64,
-      "dias_para_emendas": -176,
+      "dias_para_vigencia": -65,
+      "dias_para_emendas": -177,
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 0,
