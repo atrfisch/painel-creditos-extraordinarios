@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-05T11:18:50+00:00",
+  "atualizado_em": "2026-08-05T22:10:33+00:00",
   "anos": [
     2026
   ],
@@ -167,7 +167,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -175,9 +175,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         }
@@ -192,10 +192,10 @@
       "emendas_abertas": true,
       "execucao": {
         "dotacao_atual": 80426856207.0,
-        "empenhado": 60294028048.0,
+        "empenhado": 60841028048.0,
         "liquidado": 55487108616.0,
         "pago": 55487108616.0,
-        "pct_empenhado": 75.0,
+        "pct_empenhado": 75.6,
         "pct_pago": 69.0,
         "cobertura": 100.0
       }
@@ -272,7 +272,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -280,9 +280,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         },
@@ -320,10 +320,10 @@
       "emendas_abertas": true,
       "execucao": {
         "dotacao_atual": 80426856207.0,
-        "empenhado": 60294028048.0,
+        "empenhado": 60841028048.0,
         "liquidado": 55487108616.0,
         "pago": 55487108616.0,
-        "pct_empenhado": 75.0,
+        "pct_empenhado": 75.6,
         "pct_pago": 69.0,
         "cobertura": 25.0
       }
@@ -413,7 +413,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -421,9 +421,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         }
@@ -438,10 +438,10 @@
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 80426856207.0,
-        "empenhado": 60294028048.0,
+        "empenhado": 60841028048.0,
         "liquidado": 55487108616.0,
         "pago": 55487108616.0,
-        "pct_empenhado": 75.0,
+        "pct_empenhado": 75.6,
         "pct_pago": 69.0,
         "cobertura": 100.0
       }
@@ -554,7 +554,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -562,9 +562,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         }
@@ -579,10 +579,10 @@
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 80426856207.0,
-        "empenhado": 60294028048.0,
+        "empenhado": 60841028048.0,
         "liquidado": 55487108616.0,
         "pago": 55487108616.0,
-        "pct_empenhado": 75.0,
+        "pct_empenhado": 75.6,
         "pct_pago": 69.0,
         "cobertura": 50.0
       }
@@ -613,7 +613,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -621,9 +621,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         }
@@ -638,10 +638,10 @@
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 80426856207.0,
-        "empenhado": 60294028048.0,
+        "empenhado": 60841028048.0,
         "liquidado": 55487108616.0,
         "pago": 55487108616.0,
-        "pct_empenhado": 75.0,
+        "pct_empenhado": 75.6,
         "pct_pago": 69.0,
         "cobertura": 100.0
       }
@@ -731,7 +731,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -739,9 +739,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         }
@@ -756,10 +756,10 @@
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 80426856207.0,
-        "empenhado": 60294028048.0,
+        "empenhado": 60841028048.0,
         "liquidado": 55487108616.0,
         "pago": 55487108616.0,
-        "pct_empenhado": 75.0,
+        "pct_empenhado": 75.6,
         "pct_pago": 69.0,
         "cobertura": 100.0
       }
@@ -908,7 +908,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -916,9 +916,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         },
@@ -931,7 +931,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -939,9 +939,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         }
@@ -956,10 +956,10 @@
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 160853712414.0,
-        "empenhado": 120588056096.0,
+        "empenhado": 121682056096.0,
         "liquidado": 110974217232.0,
         "pago": 110974217232.0,
-        "pct_empenhado": 75.0,
+        "pct_empenhado": 75.6,
         "pct_pago": 69.0,
         "cobertura": 100.0
       }
@@ -1167,7 +1167,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -1175,9 +1175,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         },
@@ -1215,10 +1215,10 @@
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 80426856207.0,
-        "empenhado": 60294028048.0,
+        "empenhado": 60841028048.0,
         "liquidado": 55487108616.0,
         "pago": 55487108616.0,
-        "pct_empenhado": 75.0,
+        "pct_empenhado": 75.6,
         "pct_pago": 69.0,
         "cobertura": 50.0
       }
@@ -1331,7 +1331,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -1339,9 +1339,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         },
@@ -1377,7 +1377,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -1385,9 +1385,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         },
@@ -1400,7 +1400,7 @@
           "execucao": {
             "dotacao_inicial": 0.0,
             "dotacao_atual": 80426856207.0,
-            "empenhado": 60294028048.0,
+            "empenhado": 60841028048.0,
             "liquidado": 55487108616.0,
             "pago": 55487108616.0,
             "acoes": 1
@@ -1408,9 +1408,9 @@
           "unidade_total": {
             "dotacao_inicial": 6344324749874.0,
             "dotacao_atual": 6492032033005.0,
-            "empenhado": 4355432030820.0,
-            "liquidado": 3449672000330.0,
-            "pago": 3409187248706.0,
+            "empenhado": 4358445449246.0,
+            "liquidado": 3460918442178.0,
+            "pago": 3433013919772.0,
             "acoes": 1
           }
         }
@@ -1425,10 +1425,10 @@
       "emendas_abertas": false,
       "execucao": {
         "dotacao_atual": 241280568621.0,
-        "empenhado": 180882084144.0,
+        "empenhado": 182523084144.0,
         "liquidado": 166461325848.0,
         "pago": 166461325848.0,
-        "pct_empenhado": 75.0,
+        "pct_empenhado": 75.6,
         "pct_pago": 69.0,
         "cobertura": 60.0
       }
