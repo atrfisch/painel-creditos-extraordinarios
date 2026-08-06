@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-06T11:20:58+00:00",
+  "atualizado_em": "2026-08-06T14:28:21+00:00",
   "anos": [
     2026
   ],
@@ -45,22 +45,20 @@
           "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
           "codigo_uo": null,
           "valor_credito": 3473000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -69,17 +67,24 @@
       "vigencia_60": "2026-09-29",
       "vigencia_fim": "2026-11-28",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
       "dias_para_vigencia": 114,
       "dias_para_emendas": 4,
       "emendas_abertas": true,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -104,22 +109,20 @@
           "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
           "codigo_uo": null,
           "valor_credito": 3330000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -128,17 +131,24 @@
       "vigencia_60": "2026-09-29",
       "vigencia_fim": "2026-11-28",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
       "dias_para_vigencia": 114,
       "dias_para_emendas": 4,
       "emendas_abertas": true,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -163,22 +173,126 @@
           "unidade": "Instituto Nacional do Seguro Social",
           "codigo_uo": "NA",
           "valor_credito": 547000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1377/2026",
+            "MPV 1371/2026",
+            "MPV 1367/2026",
+            "MPV 1365/2026",
+            "MPV 1362/2026",
+            "MPV 1354/2026",
+            "MPV 1346/2026",
+            "MPV 1342/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0028,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 547000000.0,
+            "empenhado": 294728065.34,
+            "liquidado": 193746748.5,
+            "pago": 192406352.32,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         }
       ],
@@ -187,17 +301,24 @@
       "vigencia_60": "2026-09-29",
       "vigencia_fim": "2026-11-28",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
       "dias_para_vigencia": 114,
       "dias_para_emendas": 4,
       "emendas_abertas": true,
       "execucao": {
-        "dotacao_atual": 80426856207.0,
-        "empenhado": 60841028048.0,
-        "liquidado": 55487108616.0,
-        "pago": 55487108616.0,
-        "pct_empenhado": 75.6,
-        "pct_pago": 69.0,
-        "cobertura": 100.0
+        "modo": "piso",
+        "rateado": true,
+        "ambigua": true,
+        "base": 547000000.0,
+        "dotacao_atual": 2329457212458.0,
+        "credito_no_ano": 193492452615.0,
+        "empenhado": 294728065.34,
+        "liquidado": 193746748.5,
+        "pago": 192406352.32,
+        "cobertura": 100,
+        "pct_empenhado": 53.9,
+        "pct_pago": 35.2
       }
     },
     {
@@ -222,22 +343,20 @@
           "unidade": "Ministério da Agricultura e Pecuária",
           "codigo_uo": null,
           "valor_credito": 270000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         },
         {
@@ -245,22 +364,20 @@
           "unidade": "Advocacia gerla da Uniao",
           "codigo_uo": null,
           "valor_credito": 15000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         },
         {
@@ -268,22 +385,126 @@
           "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
           "codigo_uo": "NA",
           "valor_credito": 4000000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1371/2026",
+            "MPV 1367/2026",
+            "MPV 1365/2026",
+            "MPV 1362/2026",
+            "MPV 1354/2026",
+            "MPV 1346/2026",
+            "MPV 1342/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0207,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 4000000000.0,
+            "empenhado": 2155232653.33,
+            "liquidado": 1416795235.86,
+            "pago": 1406993435.6,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         },
         {
@@ -291,22 +512,20 @@
           "unidade": "Recursos sob Sup. do Fundo Nac. de Desenv. Científico e Tecnológico/FNDCT",
           "codigo_uo": null,
           "valor_credito": 9000000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -315,17 +534,24 @@
       "vigencia_60": "2026-09-27",
       "vigencia_fim": "2026-11-26",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
       "dias_para_vigencia": 112,
       "dias_para_emendas": 1,
       "emendas_abertas": true,
       "execucao": {
-        "dotacao_atual": 80426856207.0,
-        "empenhado": 60841028048.0,
-        "liquidado": 55487108616.0,
-        "pago": 55487108616.0,
-        "pct_empenhado": 75.6,
-        "pct_pago": 69.0,
-        "cobertura": 25.0
+        "modo": "piso",
+        "rateado": true,
+        "ambigua": true,
+        "base": 4000000000.0,
+        "dotacao_atual": 2329457212458.0,
+        "credito_no_ano": 193492452615.0,
+        "empenhado": 2155232653.33,
+        "liquidado": 1416795235.86,
+        "pago": 1406993435.6,
+        "cobertura": 25,
+        "pct_empenhado": 53.9,
+        "pct_pago": 35.2
       }
     },
     {
@@ -350,22 +576,20 @@
           "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
           "codigo_uo": null,
           "valor_credito": 550000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -374,17 +598,24 @@
       "vigencia_60": "2026-09-10",
       "vigencia_fim": "2026-11-09",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
       "dias_para_vigencia": 95,
       "dias_para_emendas": -31,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -409,22 +640,126 @@
           "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
           "codigo_uo": "NA",
           "valor_credito": 2000000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1377/2026",
+            "MPV 1367/2026",
+            "MPV 1365/2026",
+            "MPV 1362/2026",
+            "MPV 1354/2026",
+            "MPV 1346/2026",
+            "MPV 1342/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0103,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 2000000000.0,
+            "empenhado": 1077616326.66,
+            "liquidado": 708397617.93,
+            "pago": 703496717.8,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         }
       ],
@@ -433,17 +768,24 @@
       "vigencia_60": "2026-09-04",
       "vigencia_fim": "2026-11-03",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
       "dias_para_vigencia": 89,
       "dias_para_emendas": -37,
       "emendas_abertas": false,
       "execucao": {
-        "dotacao_atual": 80426856207.0,
-        "empenhado": 60841028048.0,
-        "liquidado": 55487108616.0,
-        "pago": 55487108616.0,
-        "pct_empenhado": 75.6,
-        "pct_pago": 69.0,
-        "cobertura": 100.0
+        "modo": "piso",
+        "rateado": true,
+        "ambigua": true,
+        "base": 2000000000.0,
+        "dotacao_atual": 2329457212458.0,
+        "credito_no_ano": 193492452615.0,
+        "empenhado": 1077616326.66,
+        "liquidado": 708397617.93,
+        "pago": 703496717.8,
+        "cobertura": 100,
+        "pct_empenhado": 53.9,
+        "pct_pago": 35.2
       }
     },
     {
@@ -468,22 +810,20 @@
           "unidade": "Fundo Nacional da Aviação Civil",
           "codigo_uo": null,
           "valor_credito": 8000000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -492,17 +832,24 @@
       "vigencia_60": "2026-08-31",
       "vigencia_fim": "2026-10-30",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": false,
       "dias_para_vigencia": 85,
       "dias_para_emendas": -42,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -527,22 +874,20 @@
           "unidade": "Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis",
           "codigo_uo": null,
           "valor_credito": 194417722.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         },
         {
@@ -550,22 +895,126 @@
           "unidade": "Instituto Chico Mendes de Conservação da Biodiversidade",
           "codigo_uo": "NA",
           "valor_credito": 143065710.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1377/2026",
+            "MPV 1371/2026",
+            "MPV 1365/2026",
+            "MPV 1362/2026",
+            "MPV 1354/2026",
+            "MPV 1346/2026",
+            "MPV 1342/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0007,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 143065710.0,
+            "empenhado": 77084972.44,
+            "liquidado": 50673704.09,
+            "pago": 50323128.71,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         }
       ],
@@ -574,17 +1023,24 @@
       "vigencia_60": "2026-08-27",
       "vigencia_fim": "2026-10-26",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": false,
       "dias_para_vigencia": 81,
       "dias_para_emendas": -45,
       "emendas_abertas": false,
       "execucao": {
-        "dotacao_atual": 80426856207.0,
-        "empenhado": 60841028048.0,
-        "liquidado": 55487108616.0,
-        "pago": 55487108616.0,
-        "pct_empenhado": 75.6,
-        "pct_pago": 69.0,
-        "cobertura": 50.0
+        "modo": "piso",
+        "rateado": true,
+        "ambigua": true,
+        "base": 143065710.0,
+        "dotacao_atual": 2329457212458.0,
+        "credito_no_ano": 193492452615.0,
+        "empenhado": 77084972.44,
+        "liquidado": 50673704.09,
+        "pago": 50323128.71,
+        "cobertura": 50,
+        "pct_empenhado": 53.9,
+        "pct_pago": 35.2
       }
     },
     {
@@ -609,22 +1065,126 @@
           "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
           "codigo_uo": "NA",
           "valor_credito": 1000000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1377/2026",
+            "MPV 1371/2026",
+            "MPV 1367/2026",
+            "MPV 1362/2026",
+            "MPV 1354/2026",
+            "MPV 1346/2026",
+            "MPV 1342/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0052,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 1000000000.0,
+            "empenhado": 538808163.33,
+            "liquidado": 354198808.97,
+            "pago": 351748358.9,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         }
       ],
@@ -633,17 +1193,24 @@
       "vigencia_60": "2026-08-20",
       "vigencia_fim": "2026-10-19",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
       "dias_para_vigencia": 74,
       "dias_para_emendas": -52,
       "emendas_abertas": false,
       "execucao": {
-        "dotacao_atual": 80426856207.0,
-        "empenhado": 60841028048.0,
-        "liquidado": 55487108616.0,
-        "pago": 55487108616.0,
-        "pct_empenhado": 75.6,
-        "pct_pago": 69.0,
-        "cobertura": 100.0
+        "modo": "piso",
+        "rateado": true,
+        "ambigua": true,
+        "base": 1000000000.0,
+        "dotacao_atual": 2329457212458.0,
+        "credito_no_ano": 193492452615.0,
+        "empenhado": 538808163.33,
+        "liquidado": 354198808.97,
+        "pago": 351748358.9,
+        "cobertura": 100,
+        "pct_empenhado": 53.9,
+        "pct_pago": 35.2
       }
     },
     {
@@ -668,22 +1235,20 @@
           "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
           "codigo_uo": null,
           "valor_credito": 49200000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -692,17 +1257,24 @@
       "vigencia_60": "2026-08-14",
       "vigencia_fim": "2026-10-13",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": false,
       "dias_para_vigencia": 68,
       "dias_para_emendas": -59,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -727,22 +1299,126 @@
           "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
           "codigo_uo": "NA",
           "valor_credito": 30000000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1377/2026",
+            "MPV 1371/2026",
+            "MPV 1367/2026",
+            "MPV 1365/2026",
+            "MPV 1354/2026",
+            "MPV 1346/2026",
+            "MPV 1342/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.155,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 30000000000.0,
+            "empenhado": 16164244899.95,
+            "liquidado": 10625964268.96,
+            "pago": 10552450767.02,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         }
       ],
@@ -751,17 +1427,24 @@
       "vigencia_60": "2026-08-07",
       "vigencia_fim": "2026-10-06",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
       "dias_para_vigencia": 61,
       "dias_para_emendas": -66,
       "emendas_abertas": false,
       "execucao": {
-        "dotacao_atual": 80426856207.0,
-        "empenhado": 60841028048.0,
-        "liquidado": 55487108616.0,
-        "pago": 55487108616.0,
-        "pct_empenhado": 75.6,
-        "pct_pago": 69.0,
-        "cobertura": 100.0
+        "modo": "piso",
+        "rateado": true,
+        "ambigua": true,
+        "base": 30000000000.0,
+        "dotacao_atual": 2329457212458.0,
+        "credito_no_ano": 193492452615.0,
+        "empenhado": 16164244899.95,
+        "liquidado": 10625964268.96,
+        "pago": 10552450767.02,
+        "cobertura": 100,
+        "pct_empenhado": 53.9,
+        "pct_pago": 35.2
       }
     },
     {
@@ -786,22 +1469,20 @@
           "unidade": "Ministério da Integração e do Desenvolvimento Regional",
           "codigo_uo": null,
           "valor_credito": 75344207.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -810,17 +1491,24 @@
       "vigencia_60": "2026-08-01",
       "vigencia_fim": "2026-09-30",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": false,
       "dias_para_vigencia": 55,
       "dias_para_emendas": -72,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -845,22 +1533,20 @@
           "unidade": "Ministério da Integração e do Desenvolvimento Regional",
           "codigo_uo": null,
           "valor_credito": 305000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -869,17 +1555,24 @@
       "vigencia_60": "2026-07-02",
       "vigencia_fim": "2026-09-14",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": false,
       "dias_para_vigencia": 39,
       "dias_para_emendas": -87,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -904,22 +1597,126 @@
           "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
           "codigo_uo": "NA",
           "valor_credito": 2500000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1377/2026",
+            "MPV 1371/2026",
+            "MPV 1367/2026",
+            "MPV 1365/2026",
+            "MPV 1362/2026",
+            "MPV 1346/2026",
+            "MPV 1342/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0129,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 2500000000.0,
+            "empenhado": 1347020408.33,
+            "liquidado": 885497022.41,
+            "pago": 879370897.25,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         },
         {
@@ -927,22 +1724,126 @@
           "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
           "codigo_uo": "NA",
           "valor_credito": 14500000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1377/2026",
+            "MPV 1371/2026",
+            "MPV 1367/2026",
+            "MPV 1365/2026",
+            "MPV 1362/2026",
+            "MPV 1346/2026",
+            "MPV 1342/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0749,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 14500000000.0,
+            "empenhado": 7812718368.31,
+            "liquidado": 5135882730.0,
+            "pago": 5100351204.06,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         }
       ],
@@ -951,17 +1852,24 @@
       "vigencia_60": "2026-06-28",
       "vigencia_fim": "2026-09-10",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
       "dias_para_vigencia": 35,
       "dias_para_emendas": -92,
       "emendas_abertas": false,
       "execucao": {
-        "dotacao_atual": 160853712414.0,
-        "empenhado": 121682056096.0,
-        "liquidado": 110974217232.0,
-        "pago": 110974217232.0,
-        "pct_empenhado": 75.6,
-        "pct_pago": 69.0,
-        "cobertura": 100.0
+        "modo": "piso",
+        "rateado": true,
+        "ambigua": true,
+        "base": 17000000000.0,
+        "dotacao_atual": 4658914424916.0,
+        "credito_no_ano": 386984905230.0,
+        "empenhado": 9159738776.64,
+        "liquidado": 6021379752.41,
+        "pago": 5979722101.31,
+        "cobertura": 100,
+        "pct_empenhado": 53.9,
+        "pct_pago": 35.2
       }
     },
     {
@@ -986,22 +1894,20 @@
           "unidade": "Fundo de Garantia à Exportação",
           "codigo_uo": null,
           "valor_credito": 5000000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -1010,17 +1916,24 @@
       "vigencia_60": "2026-06-27",
       "vigencia_fim": "2026-09-09",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
       "dias_para_vigencia": 34,
       "dias_para_emendas": -93,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -1045,22 +1958,20 @@
           "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
           "codigo_uo": null,
           "valor_credito": 330000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -1069,17 +1980,24 @@
       "vigencia_60": "2026-06-26",
       "vigencia_fim": "2026-09-08",
       "vigente": true,
+      "encerrada": false,
+      "sem_relator": false,
       "dias_para_vigencia": 33,
       "dias_para_emendas": -94,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -1104,22 +2022,20 @@
           "unidade": "Ministério da Integração e do Desenvolvimento Regional",
           "codigo_uo": null,
           "valor_credito": 285000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -1128,17 +2044,24 @@
       "vigencia_60": "2026-05-25",
       "vigencia_fim": "2026-08-07",
       "vigente": false,
+      "encerrada": true,
+      "sem_relator": false,
       "dias_para_vigencia": 1,
       "dias_para_emendas": -122,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -1163,22 +2086,126 @@
           "unidade": "Instituto Nacional de Colonização e Reforma Agrária – INCRA",
           "codigo_uo": "NA",
           "valor_credito": 4000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1377/2026",
+            "MPV 1371/2026",
+            "MPV 1367/2026",
+            "MPV 1365/2026",
+            "MPV 1362/2026",
+            "MPV 1354/2026",
+            "MPV 1342/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 4000000.0,
+            "empenhado": 2155232.65,
+            "liquidado": 1416795.24,
+            "pago": 1406993.44,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         },
         {
@@ -1186,22 +2213,20 @@
           "unidade": "Recursos sob Supervisão do Instituto Nacional de Colonização e Reforma Agrária/INCRA",
           "codigo_uo": null,
           "valor_credito": 16429000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -1210,17 +2235,24 @@
       "vigencia_60": "2026-05-25",
       "vigencia_fim": "2026-08-07",
       "vigente": false,
+      "encerrada": true,
+      "sem_relator": false,
       "dias_para_vigencia": 1,
       "dias_para_emendas": -122,
       "emendas_abertas": false,
       "execucao": {
-        "dotacao_atual": 80426856207.0,
-        "empenhado": 60841028048.0,
-        "liquidado": 55487108616.0,
-        "pago": 55487108616.0,
-        "pct_empenhado": 75.6,
-        "pct_pago": 69.0,
-        "cobertura": 50.0
+        "modo": "piso",
+        "rateado": true,
+        "ambigua": true,
+        "base": 4000000.0,
+        "dotacao_atual": 2329457212458.0,
+        "credito_no_ano": 193492452615.0,
+        "empenhado": 2155232.65,
+        "liquidado": 1416795.24,
+        "pago": 1406993.44,
+        "cobertura": 50,
+        "pct_empenhado": 53.9,
+        "pct_pago": 35.2
       }
     },
     {
@@ -1245,22 +2277,20 @@
           "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
           "codigo_uo": null,
           "valor_credito": 10000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -1269,17 +2299,24 @@
       "vigencia_60": "2026-05-17",
       "vigencia_fim": "2026-07-16",
       "vigente": false,
+      "encerrada": true,
+      "sem_relator": false,
       "dias_para_vigencia": -21,
       "dias_para_emendas": -134,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -1304,22 +2341,20 @@
           "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
           "codigo_uo": null,
           "valor_credito": 3000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         },
         {
@@ -1327,22 +2362,126 @@
           "unidade": "Fundo Nacional de Assistência Social",
           "codigo_uo": "NA",
           "valor_credito": 2000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1377/2026",
+            "MPV 1371/2026",
+            "MPV 1367/2026",
+            "MPV 1365/2026",
+            "MPV 1362/2026",
+            "MPV 1354/2026",
+            "MPV 1346/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 2000000.0,
+            "empenhado": 1077616.33,
+            "liquidado": 708397.62,
+            "pago": 703496.72,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         },
         {
@@ -1350,22 +2489,20 @@
           "unidade": "Ministério das Cidades",
           "codigo_uo": null,
           "valor_credito": 500000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         },
         {
@@ -1373,22 +2510,126 @@
           "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
           "codigo_uo": "NA",
           "valor_credito": 300000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1377/2026",
+            "MPV 1371/2026",
+            "MPV 1367/2026",
+            "MPV 1365/2026",
+            "MPV 1362/2026",
+            "MPV 1354/2026",
+            "MPV 1346/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0016,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 300000000.0,
+            "empenhado": 161642449.0,
+            "liquidado": 106259642.69,
+            "pago": 105524507.67,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         },
         {
@@ -1396,22 +2637,126 @@
           "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
           "codigo_uo": "NA",
           "valor_credito": 500000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [
+            "MPV 1378/2026",
+            "MPV 1377/2026",
+            "MPV 1371/2026",
+            "MPV 1367/2026",
+            "MPV 1365/2026",
+            "MPV 1362/2026",
+            "MPV 1354/2026",
+            "MPV 1346/2026"
+          ],
           "execucao": {
-            "dotacao_inicial": 0.0,
-            "dotacao_atual": 80426856207.0,
-            "empenhado": 60841028048.0,
-            "liquidado": 55487108616.0,
-            "pago": 55487108616.0,
-            "acoes": 1
-          },
-          "unidade_total": {
-            "dotacao_inicial": 6344324749874.0,
-            "dotacao_atual": 6492032033005.0,
-            "empenhado": 4358445449246.0,
-            "liquidado": 3460918442178.0,
-            "pago": 3433013919772.0,
-            "acoes": 1
+            "modo": "piso",
+            "fator": 0.0026,
+            "rateado": true,
+            "dotacao_inicial": 2135964759843.0,
+            "dotacao_atual": 2329457212458.0,
+            "credito_no_ano": 193492452615.0,
+            "base": 500000000.0,
+            "empenhado": 269404081.67,
+            "liquidado": 177099404.48,
+            "pago": 175874179.45,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
+                "dotacao_inicial": 0.0,
+                "credito": 30000000000.0,
+                "empenhado": 30000000000.0,
+                "pago": 30000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de operações de crédito reembolsável no âmbito do Programa Minha Casa, Minha Vida (Lei nº 12.351, de 2010)",
+                "dotacao_inicial": 24762323258.0,
+                "credito": 20000000000.0,
+                "empenhado": 34762323258.0,
+                "pago": 20987118035.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Transferências das Participações pela Produção de Petróleo e Gás Natural (Lei nº 9.478, de 1997)",
+                "dotacao_inicial": 60237855246.0,
+                "credito": 17622682351.0,
+                "empenhado": 31197158860.0,
+                "pago": 31174352940.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
+                "dotacao_inicial": 0.0,
+                "credito": 14500000000.0,
+                "empenhado": 14500000000.0,
+                "pago": 14500000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 10000000000.0,
+                "empenhado": 7000000000.0,
+                "pago": 6645240605.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Serviços da Dívida Pública Federal Interna",
+                "dotacao_inicial": 1011564437191.0,
+                "credito": 9846000000.0,
+                "empenhado": 607009459721.0,
+                "pago": 595223888864.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
+                "dotacao_inicial": 0.0,
+                "credito": 9000000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
+                "dotacao_inicial": 1565040568.0,
+                "credito": 8000000000.0,
+                "empenhado": 9565040568.0,
+                "pago": 7999163365.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
+                "dotacao_inicial": 10000000000.0,
+                "credito": 5000000000.0,
+                "empenhado": 15000000000.0,
+                "pago": 15000000000.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
+                "dotacao_inicial": 0.0,
+                "credito": 4330000000.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
+                "dotacao_inicial": 0.0,
+                "credito": 3000000000.0,
+                "empenhado": 3000000000.0,
+                "pago": 0.0
+              },
+              {
+                "codigo": "NA",
+                "acao": "Apoio à produção habitacional de interesse social",
+                "dotacao_inicial": 901160214.0,
+                "credito": 2875839786.0,
+                "empenhado": 1539093293.0,
+                "pago": 900096784.0
+              }
+            ]
           }
         }
       ],
@@ -1420,17 +2765,24 @@
       "vigencia_60": "2026-05-16",
       "vigencia_fim": "2026-07-15",
       "vigente": false,
+      "encerrada": true,
+      "sem_relator": false,
       "dias_para_vigencia": -22,
       "dias_para_emendas": -135,
       "emendas_abertas": false,
       "execucao": {
-        "dotacao_atual": 241280568621.0,
-        "empenhado": 182523084144.0,
-        "liquidado": 166461325848.0,
-        "pago": 166461325848.0,
-        "pct_empenhado": 75.6,
-        "pct_pago": 69.0,
-        "cobertura": 60.0
+        "modo": "piso",
+        "rateado": true,
+        "ambigua": true,
+        "base": 802000000.0,
+        "dotacao_atual": 6988371637374.0,
+        "credito_no_ano": 580477357845.0,
+        "empenhado": 432124147.0,
+        "liquidado": 284067444.79,
+        "pago": 282102183.84,
+        "cobertura": 60,
+        "pct_empenhado": 53.9,
+        "pct_pago": 35.2
       }
     },
     {
@@ -1446,7 +2798,7 @@
       "emendas_fim": "2026-03-16",
       "emendas_total": 0,
       "situacao": "TRANSFORMADA EM NORMA JURÍDICA",
-      "norma": "Lei nº 15.458 de 03/07/2026",
+      "norma": null,
       "codigo_materia": "172954",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/172954",
       "unidades": [
@@ -1455,22 +2807,20 @@
           "unidade": "Ministério da Integração e do Desenvolvimento Regional",
           "codigo_uo": null,
           "valor_credito": 266512000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -1479,17 +2829,24 @@
       "vigencia_60": "2026-09-17",
       "vigencia_fim": "2026-11-16",
       "vigente": false,
+      "encerrada": true,
+      "sem_relator": false,
       "dias_para_vigencia": 102,
       "dias_para_emendas": -143,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     },
     {
@@ -1514,22 +2871,20 @@
           "unidade": "Ministério da Integração e do Desenvolvimento Regional",
           "codigo_uo": null,
           "valor_credito": 220000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         },
         {
@@ -1537,22 +2892,20 @@
           "unidade": "Departamento Nacional de Obras Contra as Secas",
           "codigo_uo": null,
           "valor_credito": 30000000.0,
-          "criterio": "ações abertas por crédito",
+          "outras_mps": [],
           "execucao": {
+            "modo": "direta",
+            "fator": 0.0,
+            "rateado": false,
             "dotacao_inicial": 0,
             "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
-          },
-          "unidade_total": {
-            "dotacao_inicial": 0,
-            "dotacao_atual": 0,
-            "empenhado": 0,
-            "liquidado": 0,
-            "pago": 0,
-            "acoes": 0
+            "credito_no_ano": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
           }
         }
       ],
@@ -1561,17 +2914,24 @@
       "vigencia_60": "2026-04-02",
       "vigencia_fim": "2026-06-01",
       "vigente": false,
+      "encerrada": true,
+      "sem_relator": true,
       "dias_para_vigencia": -66,
       "dias_para_emendas": -178,
       "emendas_abertas": false,
       "execucao": {
+        "modo": "direta",
+        "rateado": false,
+        "ambigua": false,
+        "base": 0.0,
         "dotacao_atual": 0,
-        "empenhado": 0,
-        "liquidado": 0,
-        "pago": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0,
-        "cobertura": 0.0
+        "credito_no_ano": 0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "cobertura": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
       }
     }
   ]
