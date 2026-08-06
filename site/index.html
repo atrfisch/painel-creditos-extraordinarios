@@ -157,6 +157,9 @@ table.uos td{padding:6px 8px;border-bottom:1px solid var(--linha);vertical-align
 table.uos td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;
   white-space:nowrap}
 .sem-dado{color:var(--suave)}
+.prazos{display:flex;flex-wrap:wrap;gap:4px 18px;margin:10px 0 0;
+  font-family:var(--mono);font-size:11.5px;color:var(--suave)}
+.prazos b{color:var(--tinta);font-weight:500}
 .acao{font-size:12px;color:var(--suave);margin-top:3px;padding-left:10px;
   border-left:2px solid var(--linha)}
 .acao .cod{font-family:var(--mono);font-size:11px;color:var(--tinta)}
@@ -364,6 +367,18 @@ function tabelaUOs(m){
   </details>`;
 }
 
+function prazosOficiais(m){
+  const itens = [];
+  if(m.inicio_periodo_atual && m.fim_periodo_atual)
+    itens.push(`<span>Deliberação <b>${dia(m.inicio_periodo_atual)}–${dia(m.fim_periodo_atual)}</b>${m.prorrogada?' (prorrogada)':''}</span>`);
+  if(m.emendas_inicio && m.emendas_fim)
+    itens.push(`<span>Emendas <b>${dia(m.emendas_inicio)}–${dia(m.emendas_fim)}</b></span>`);
+  if(m.urgencia) itens.push(`<span>Urgência <b>a partir de ${dia(m.urgencia)}</b></span>`);
+  if(!m.prorrogada && m.vigencia_fim)
+    itens.push(`<span>Caduca <b>${dia(m.vigencia_fim)}</b> se prorrogada</span>`);
+  return itens.length ? `<div class="prazos">${itens.join('')}</div>` : '';
+}
+
 function ficha(m){
   const est = estado(m);
   const selo = est==='urgente'?'selo--urgente':est==='encerrada'?'selo--fim':'selo--ativo';
@@ -382,6 +397,7 @@ function ficha(m){
       <span class="regua-rot">Vigência</span>${reguaVigencia(m)}
       <span class="regua-rot">Execução</span>${reguaExecucao(m)}
     </div>
+    ${prazosOficiais(m)}
     <div class="meta">
       <span class="campo">Relator <b>${esc(m.relator||'não designado')}</b></span>
       <span class="campo">Emendas <b>${esc(emendas)}</b></span>
