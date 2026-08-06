@@ -55,6 +55,26 @@ def main() -> int:
     if not a or a.emendas_inicio != "2026-07-31" or len(a.unidades) > 1:
         falhas.append("o corte entre registros não segurou com HTML quebrado")
 
+    # prazos: a página traz as datas em duas disposições
+    from anexos import _janela, RE_URGENCIA, ROTULO_DELIB, ROTULO_EMENDAS  # noqa: E402
+    abertos = ("Prazos abertos 31/07/2026 - 28/09/2026: Deliberação da Medida Provisória "
+               "(Art. 10 da Res. 1/2002-CN) 31/07/2026 - 10/08/2026: Apresentação de Emendas "
+               "à Medida Provisória Regime de Urgência 14/09/2026 em diante")
+    calendario = ("Deliberação da Medida Provisória: 21/07/2026 a 18/09/2026 "
+                  "Apresentação de emendas: 21/07/2026 a 10/08/2026 "
+                  "Regime de urgência, a partir de: 04/09/2026")
+    if _janela(abertos, ROTULO_DELIB) != ("31/07/2026", "28/09/2026"):
+        falhas.append("prazos no formato 'Prazos abertos' (datas antes do rótulo) não lidos")
+    if _janela(calendario, ROTULO_DELIB) != ("21/07/2026", "18/09/2026"):
+        falhas.append("prazos no formato 'Calendário' (datas depois do rótulo) não lidos")
+    if _janela(abertos, ROTULO_EMENDAS) != ("31/07/2026", "10/08/2026"):
+        falhas.append("janela de emendas não lida no formato 'Prazos abertos'")
+    for texto, esperado in ((abertos, "14/09/2026"), (calendario, "04/09/2026")):
+        m = RE_URGENCIA.search(texto)
+        achado = next((g for g in m.groups() if g), None) if m else None
+        if achado != esperado:
+            falhas.append(f"regime de urgência: {achado} (esperado {esperado})")
+
     # o anexo da MP: programática exata a partir do texto real do PDF
     from anexos import parsear_anexo  # noqa: E402
     prog = parsear_anexo((RAIZ / "tests/anexo_1378.txt").read_text(encoding="utf-8"))
@@ -112,8 +132,15 @@ def main() -> int:
         if abs(junto - 2_500_000_000) > 1:
             falhas.append(f"as parcelas não fecham o total: {junto:,.0f}")
 
+        # datas conferidas na página da MPV 1381/2026
         if anp.get("vigencia_60") != "2026-09-28" or anp.get("vigencia_fim") != "2026-11-27":
             falhas.append(f"vigência: 60d={anp.get('vigencia_60')} fim={anp.get('vigencia_fim')}")
+        if anp.get("inicio_periodo_atual") != "2026-07-31":
+            falhas.append("início da deliberação não veio da página")
+        if anp.get("publicacao") != "2026-07-31":
+            falhas.append("sem data do DOU, a publicação deveria vir do início da deliberação")
+        if anp.get("emendas_fim") != "2026-08-10" or anp.get("urgencia") != "2026-09-14":
+            falhas.append(f"prazos oficiais: emendas={anp.get('emendas_fim')} urg={anp.get('urgencia')}")
         if anp.get("prorrogada"):
             falhas.append("MP no primeiro período não deveria constar como prorrogada")
         if not anp.get("sem_relator"):
