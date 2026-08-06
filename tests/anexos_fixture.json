@@ -6,62 +6,108 @@
     "emendas_inicio_oficial": "2026-07-31",
     "emendas_fim_oficial": "2026-08-10",
     "urgencia": "2026-09-14",
+    "prorrogada": false,
+    "ato_prorrogacao": null,
     "programatica": [
       {
-        "orgao_codigo": "32000",
         "orgao": "Ministério de Minas e Energia",
-        "uo_codigo": "32263",
+        "uo_codigo": "32265",
         "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
-        "programa": "3006",
-        "acao": "00H9",
+        "programa": "0000",
+        "acao": "00YN",
         "localizador": "0001",
-        "descricao": "Subvenção a combustíveis",
-        "funcao": "25",
-        "subfuncao": "752",
+        "descricao": "Subvenção à produção de combustíveis",
         "esfera": "F",
         "gnd": "3-ODC",
         "rp": "2",
-        "modalidade": "90",
         "fonte": "1000",
-        "valor": 3473000000.0
+        "valor": 2000000000.0
+      },
+      {
+        "orgao": "Ministério de Minas e Energia",
+        "uo_codigo": "32265",
+        "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+        "programa": "0000",
+        "acao": "00YO",
+        "localizador": "0001",
+        "descricao": "Subvenção à importação de combustíveis",
+        "esfera": "F",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "fonte": "1000",
+        "valor": 1473000000.0
       }
-    ],
+    ]
+  },
+  "MPV 1380/2026": {
+    "publicacao_dou": "2026-07-28",
+    "deliberacao_inicio": "2026-07-28",
+    "deliberacao_fim": "2026-09-25",
+    "emendas_inicio_oficial": "2026-07-28",
+    "emendas_fim_oficial": "2026-08-04",
     "prorrogada": false,
-    "ato_prorrogacao": null
+    "ato_prorrogacao": null,
+    "programatica": [
+      {
+        "orgao": "Ministério de Minas e Energia",
+        "uo_codigo": "32265",
+        "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+        "programa": "0000",
+        "acao": "00YN",
+        "localizador": "0001",
+        "descricao": "Subvenção à produção de combustíveis",
+        "esfera": "F",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "fonte": "1000",
+        "valor": 1800000000.0
+      },
+      {
+        "orgao": "Ministério de Minas e Energia",
+        "uo_codigo": "32265",
+        "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+        "programa": "0000",
+        "acao": "00YO",
+        "localizador": "0001",
+        "descricao": "Subvenção à importação de combustíveis",
+        "esfera": "F",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "fonte": "1000",
+        "valor": 1530000000.0
+      }
+    ]
   },
   "MPV 1372/2026": {
     "publicacao_dou": "2026-06-29",
     "deliberacao_inicio": "2026-06-29",
     "deliberacao_fim": "2026-10-26",
+    "prorrogada": true,
+    "ato_prorrogacao": "51/2026",
     "emendas_inicio_oficial": "2026-06-29",
     "emendas_fim_oficial": "2026-07-06",
-    "urgencia": null,
     "programatica": [
       {
-        "orgao_codigo": "32000",
         "orgao": "Ministério de Minas e Energia",
-        "uo_codigo": "32263",
+        "uo_codigo": "32265",
         "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
-        "programa": "3006",
-        "acao": "00H9",
+        "programa": "0000",
+        "acao": "00Y3",
         "localizador": "0001",
-        "descricao": "Subvenção diesel",
-        "funcao": "25",
-        "subfuncao": "752",
+        "descricao": "Subvenção ao óleo diesel",
         "esfera": "F",
         "gnd": "3-ODC",
         "rp": "2",
-        "modalidade": "90",
         "fonte": "1000",
         "valor": 550000000.0
       }
-    ],
-    "prorrogada": true,
-    "ato_prorrogacao": "51/2026"
+    ]
   },
   "MPV 1367/2026": {
     "publicacao_dou": "2026-06-15",
+    "deliberacao_inicio": "2026-06-15",
     "deliberacao_fim": "2026-08-13",
+    "prorrogada": false,
     "emendas_inicio_oficial": "2026-06-15",
     "emendas_fim_oficial": "2026-06-22",
     "programatica": [
@@ -69,54 +115,80 @@
         "orgao": "Ministério do Meio Ambiente",
         "uo_codigo": "44201",
         "unidade": "IBAMA",
-        "programa": "2214",
-        "acao": "21C0",
+        "programa": "0000",
+        "acao": "214M",
         "localizador": "0001",
-        "descricao": "Incêndios",
+        "descricao": "Prevenção e combate a incêndios",
         "esfera": "F",
         "gnd": "3-ODC",
         "rp": "2",
         "fonte": "1000",
-        "valor": 194417722.0
+        "valor": 120000000.0
+      },
+      {
+        "orgao": "Ministério do Meio Ambiente",
+        "uo_codigo": "44201",
+        "unidade": "IBAMA",
+        "programa": "0000",
+        "acao": "214N",
+        "localizador": "0001",
+        "descricao": "Brigadas florestais",
+        "esfera": "F",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "fonte": "1000",
+        "valor": 74417722.0
       },
       {
         "orgao": "Ministério do Meio Ambiente",
         "uo_codigo": "44207",
         "unidade": "ICMBio",
-        "programa": "2214",
-        "acao": "21C1",
+        "programa": "0000",
+        "acao": "214P",
         "localizador": "0001",
-        "descricao": "Fiscalização",
+        "descricao": "Fiscalização ambiental",
         "esfera": "F",
-        "gnd": "4-INV",
+        "gnd": "3-ODC",
         "rp": "2",
         "fonte": "1000",
         "valor": 143065710.0
       }
-    ],
-    "deliberacao_inicio": "2026-06-15",
-    "prorrogada": false
+    ]
   },
   "MPV 1339/2026": {
     "publicacao_dou": "2026-03-09",
+    "deliberacao_inicio": "2026-03-09",
     "deliberacao_fim": "2026-05-07",
+    "prorrogada": false,
     "programatica": [
       {
         "orgao": "MIDR",
         "uo_codigo": "53101",
         "unidade": "Ministério da Integração e do Desenvolvimento Regional",
-        "programa": "2218",
-        "acao": "22BF",
-        "localizador": "0031",
-        "descricao": "Defesa civil",
+        "programa": "0000",
+        "acao": "00XZ",
+        "localizador": "0001",
+        "descricao": "Apoio financeiro a famílias",
         "esfera": "F",
         "gnd": "3-ODC",
         "rp": "2",
         "fonte": "1000",
-        "valor": 266512000.0
+        "valor": 150000000.0
+      },
+      {
+        "orgao": "MIDR",
+        "uo_codigo": "53101",
+        "unidade": "Ministério da Integração e do Desenvolvimento Regional",
+        "programa": "0000",
+        "acao": "22BO",
+        "localizador": "0001",
+        "descricao": "Ações de defesa civil",
+        "esfera": "F",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "fonte": "1000",
+        "valor": 116512000.0
       }
-    ],
-    "deliberacao_inicio": "2026-03-09",
-    "prorrogada": false
+    ]
   }
 }

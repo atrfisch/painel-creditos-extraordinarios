@@ -12,11 +12,14 @@ sys.path.insert(0, str(RAIZ / "coleta"))
 import congresso  # noqa: E402
 
 SIOP = """codigo_uo,unidade,codigo_acao,acao,loa,loa_mais_credito,empenhado,liquidado,pago
-32263,ANP,00H9,Subvenção a combustíveis,2000000000,6023000000,3100000000,2600000000,2400000000
-32263,ANP,2000,Administração da unidade,480000000,480000000,310000000,290000000,280000000
-44201,IBAMA,21C0,Prevenção e combate a incêndios,0,194417722,150000000,120000000,110000000
-44207,ICMBio,21C1,Fiscalização ambiental,0,143065710,40000000,31000000,28000000
-53101,MIDR,22BF,Defesa civil,300000000,566512000,520000000,480000000,460000000
+32265,ANP,00YN,Subvenção à produção,1000000000,4800000000,2600000000,2100000000,1900000000
+32265,ANP,00YO,Subvenção à importação,0,3003000000,900000000,700000000,650000000
+32265,ANP,2000,Administração da unidade,480000000,480000000,310000000,290000000,280000000
+44201,IBAMA,214M,Prevenção e combate a incêndios,0,120000000,90000000,70000000,66000000
+44201,IBAMA,214N,Brigadas florestais,0,74417722,60000000,50000000,44000000
+44207,ICMBio,214P,Fiscalização ambiental,0,143065710,40000000,31000000,28000000
+53101,MIDR,00XZ,Apoio financeiro a famílias,0,150000000,150000000,140000000,135000000
+53101,MIDR,22BO,Ações de defesa civil,300000000,416512000,380000000,350000000,340000000
 """
 
 
@@ -26,8 +29,8 @@ def main() -> int:
     propostas = congresso.parsear(html)
     por_id = {p.identificacao: p for p in propostas}
 
-    if len(propostas) != 5:
-        falhas.append(f"esperava 5 propostas, achei {len(propostas)}")
+    if len(propostas) != 6:
+        falhas.append(f"esperava 6 propostas, achei {len(propostas)}")
 
     mpv = por_id.get("MPV 1367/2026")
     if not mpv:
@@ -85,33 +88,36 @@ def main() -> int:
             falhas.append(f"UOs não casadas: {dados['uo_sem_correspondencia']}")
 
         anp = med.get("MPV 1381/2026", {})
-        if anp.get("execucao", {}).get("origem") != "anexo":
+        outra = med.get("MPV 1380/2026", {})
+        ex, ex2 = anp.get("execucao", {}), outra.get("execucao", {})
+
+        if ex.get("origem") != "anexo":
             falhas.append("o cruzamento deveria vir do anexo")
-        if anp.get("execucao", {}).get("acoes") != 1:
-            falhas.append("o recorte deveria conter só a ação do anexo, não toda a unidade")
-        if anp.get("vigencia_fonte", "").startswith("estimado"):
-            falhas.append("a vigência oficial da página da MP deveria prevalecer")
-        if anp.get("execucao", {}).get("modo") != "piso":
-            falhas.append("ação preexistente deveria cair no modo piso")
-        if not anp.get("execucao", {}).get("rateado"):
+        if ex.get("acoes") != 2:
+            falhas.append(f"recorte deveria ter as 2 ações do anexo, teve {ex.get('acoes')}")
+        # a ação 2000 (Administração) está na mesma UO e não pode entrar
+        if ex.get("base") != 3_473_000_000:
+            falhas.append(f"base contaminada por ação fora do anexo: {ex.get('base')}")
+        if ex.get("modo") != "piso":
+            falhas.append("ação com dotação inicial deveria puxar o modo piso")
+        if not ex.get("rateado") or not ex2.get("rateado"):
             falhas.append("duas MPs na mesma ação deveriam gerar rateio")
-        # empenhado 3,1 bi contra LOA de 2 bi → piso de 1,1 bi; a MP abriu 3,473 de 4,023 bi
-        esperado = 1_100_000_000 * (3_473_000_000 / 4_023_000_000)
-        if abs(anp.get("execucao", {}).get("empenhado", 0) - esperado) > 1:
-            falhas.append(f"rateio mal calculado: {anp.get('execucao', {}).get('empenhado')} "
-                          f"(esperado {esperado:,.0f})")
-        # as parcelas das MPs concorrentes têm de somar o total executado
-        outra = med.get("MPV 1372/2026", {})
-        junto = anp.get("execucao", {}).get("empenhado", 0) + outra.get("execucao", {}).get("empenhado", 0)
-        if abs(junto - 1_100_000_000) > 1:
+
+        # 00YN: piso de 1,6 bi rateado 2,0/3,8 ; 00YO: 0,9 bi rateado 1,473/3,003
+        esperado = 1_600_000_000 * (2 / 3.8) + 900_000_000 * (1.473 / 3.003)
+        if abs(ex.get("empenhado", 0) - esperado) > 1:
+            falhas.append(f"rateio por ação: {ex.get('empenhado')} (esperado {esperado:,.0f})")
+        # as parcelas das MPs concorrentes têm de somar o executado das ações
+        junto = ex.get("empenhado", 0) + ex2.get("empenhado", 0)
+        if abs(junto - 2_500_000_000) > 1:
             falhas.append(f"as parcelas não fecham o total: {junto:,.0f}")
-        if anp.get("execucao", {}).get("pct_empenhado") != outra.get("execucao", {}).get("pct_empenhado"):
-            falhas.append("a taxa de execução deveria ser a mesma para as MPs da mesma ação")
-        # 60 dias oficiais + 60 de prorrogação automática
+
         if anp.get("vigencia_60") != "2026-09-28" or anp.get("vigencia_fim") != "2026-11-27":
             falhas.append(f"vigência: 60d={anp.get('vigencia_60')} fim={anp.get('vigencia_fim')}")
         if anp.get("prorrogada"):
             falhas.append("MP no primeiro período não deveria constar como prorrogada")
+        if not anp.get("sem_relator"):
+            falhas.append("MPV sem relator não foi sinalizada")
 
         prorrogada = med.get("MPV 1372/2026", {})
         if not prorrogada.get("prorrogada"):
@@ -120,12 +126,16 @@ def main() -> int:
             falhas.append(f"vigência prorrogada: {prorrogada.get('vigencia_fim')}")
         if prorrogada.get("dias_para_prorrogacao") is not None:
             falhas.append("MP já prorrogada não tem prazo de prorrogação pendente")
-        if not anp.get("sem_relator"):
-            falhas.append("MPV sem relator não foi sinalizada")
 
         ibama = med.get("MPV 1367/2026", {})
         if ibama.get("execucao", {}).get("modo") != "direta":
             falhas.append("ação nova deveria cair no modo direta")
+        if ibama.get("execucao", {}).get("acoes") != 3:
+            falhas.append("as 3 ações do anexo, em 2 unidades, deveriam entrar")
+        if ibama.get("execucao", {}).get("rateado"):
+            falhas.append("ação exclusiva de uma MP não deveria ser rateada")
+        if ibama.get("execucao", {}).get("empenhado") != 190_000_000:
+            falhas.append(f"execução direta: {ibama.get('execucao', {}).get('empenhado')}")
 
     if falhas:
         print("FALHOU")
