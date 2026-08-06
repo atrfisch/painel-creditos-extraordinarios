@@ -1,388 +1,309 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Créditos extraordinários — painel de acompanhamento</title>
-<meta name="description" content="Medidas provisórias de crédito extraordinário: vigência, emendas, relatoria e execução orçamentária.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --papel:#F2F4F2; --branco:#fff; --tinta:#10161B; --suave:#5D6B75;
-  --linha:#D9DEDA; --linha-forte:#B9C2BC;
-  --processo:#1B4B5A; --execucao:#3F6B4A; --alerta:#B07A18; --vencido:#9B2F26;
-  --cond:"IBM Plex Sans Condensed",system-ui,sans-serif;
-  --corpo:"IBM Plex Sans",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,monospace;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--corpo);
-  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-a{color:var(--processo)}
-:focus-visible{outline:2px solid var(--processo);outline-offset:2px}
+"""
+Junta a coleta legislativa com a execução orçamentária e grava site/dados.json.
 
-/* ── cabeçalho ─────────────────────────────────────────── */
-.topo{border-bottom:1px solid var(--linha-forte);background:var(--branco)}
-.topo .wrap{padding-top:26px;padding-bottom:22px}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--suave);margin:0 0 8px}
-h1{font-family:var(--cond);font-size:clamp(30px,5vw,46px);font-weight:700;letter-spacing:-.015em;
-  line-height:1.02;margin:0 0 6px}
-.subtitulo{max-width:60ch;color:var(--suave);margin:0}
-.carimbo{font-family:var(--mono);font-size:11.5px;color:var(--suave);margin-top:14px}
+O cruzamento é por unidade orçamentária: a tabela do Congresso traz o nome (às
+vezes com erro de digitação), o SIOP traz código e descrição, e o casamento é por
+nome normalizado, com `config/de_para_uo.csv` para o que sobrar.
 
-/* ── indicadores ───────────────────────────────────────── */
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linha-forte);
-  border-bottom:1px solid var(--linha-forte)}
-.kpi{background:var(--branco);padding:16px 20px}
-.kpi dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--suave);margin:0 0 4px}
-.kpi dd{margin:0;font-family:var(--cond);font-size:26px;font-weight:600;letter-spacing:-.01em;
-  font-variant-numeric:tabular-nums}
-.kpi .nota{display:block;font-family:var(--corpo);font-size:12px;font-weight:400;color:var(--suave)}
-.kpi--urgente dd{color:var(--alerta)}
+Dentro da unidade, o recorte são as ações que receberam crédito no exercício
+(dotação atual maior que a inicial). A atribuição dessa execução à MP acontece em
+um de três modos:
 
-/* ── filtros ───────────────────────────────────────────── */
-.filtros{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0}
-.filtros input[type=search],.filtros select{font-family:var(--corpo);font-size:14px;
-  padding:7px 10px;border:1px solid var(--linha-forte);background:var(--branco);
-  color:var(--tinta);border-radius:2px}
-.filtros input[type=search]{flex:1;min-width:200px}
-.chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12px;
-  padding:7px 11px;border:1px solid var(--linha-forte);background:var(--branco);
-  border-radius:2px;cursor:pointer;user-select:none}
-.chip input{margin:0}
-.contagem{font-family:var(--mono);font-size:12px;color:var(--suave);margin-left:auto}
+- **direta**  — a ação nasceu do crédito (dotação inicial zero). A execução da
+  ação é a execução do crédito.
+- **piso**    — a ação já existia na LOA e foi reforçada. Não há como separar o
+  que foi executado por conta da LOA. O painel usa `empenhado − dotação inicial`
+  quando positivo: se a ação gastou além do que a LOA autorizava, o excedente
+  veio do crédito. É piso demonstrável, não estimativa.
+- **manual**  — há linha para a matéria em `config/de_para_acoes.csv`, com as
+  ações do anexo da MP. Substitui a heurística.
 
-/* ── ficha ─────────────────────────────────────────────── */
-.lista{display:flex;flex-direction:column;gap:1px;background:var(--linha-forte);
-  border-block:1px solid var(--linha-forte);margin-bottom:40px}
-.ficha{background:var(--branco);padding:18px 20px;border-left:3px solid var(--linha-forte)}
-.ficha[data-estado=vigente]{border-left-color:var(--processo)}
-.ficha[data-estado=urgente]{border-left-color:var(--alerta)}
-.ficha[data-estado=encerrada]{border-left-color:var(--linha-forte)}
-.ficha[data-estado=encerrada] .cabeca{opacity:.72}
+Quando mais de uma MP do mesmo ano incide sobre a mesma unidade, os números da
+ação são idênticos para todas elas. O painel marca esses casos como ambíguos em
+vez de repetir o valor como se fosse de cada uma.
+"""
 
-.cabeca{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
-.numero{font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:-.01em}
-.numero a{text-decoration:none;border-bottom:1px solid var(--linha-forte)}
-.numero a:hover{border-bottom-color:var(--processo)}
-.valor{font-family:var(--mono);font-size:16px;font-weight:500;margin-left:auto;
-  font-variant-numeric:tabular-nums;white-space:nowrap}
-.ementa{margin:6px 0 0;max-width:78ch;color:var(--tinta)}
-.ementa--vazia{color:var(--suave);font-style:italic}
+from __future__ import annotations
 
-/* ── régua dupla: a assinatura do painel ───────────────── */
-.reguas{margin:16px 0 12px;display:grid;grid-template-columns:88px 1fr 168px;
-  gap:8px 12px;align-items:center}
-.regua-rot{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--suave)}
-.trilho{position:relative;height:16px;background:var(--papel);
-  border:1px solid var(--linha);overflow:hidden}
-.preenche{position:absolute;inset-block:0;left:0}
-.trilho--vigencia .preenche{background:var(--processo);opacity:.86}
-.ficha[data-estado=urgente] .trilho--vigencia .preenche{background:var(--alerta)}
-.ficha[data-estado=encerrada] .trilho--vigencia .preenche{background:var(--linha-forte)}
-.marca60{position:absolute;top:0;bottom:0;width:1px;background:var(--branco);opacity:.9}
-.janela{position:absolute;top:0;bottom:0;background-image:repeating-linear-gradient(
-  45deg,rgba(255,255,255,.55) 0 3px,transparent 3px 6px);border-right:1px solid rgba(255,255,255,.7)}
-.cursor{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--tinta)}
-.trilho--execucao .empenhado{background:var(--execucao);opacity:.38}
-.trilho--execucao .pago{background:var(--execucao)}
-.regua-nota{font-family:var(--mono);font-size:11.5px;color:var(--suave);
-  font-variant-numeric:tabular-nums}
-.regua-nota b{color:var(--tinta);font-weight:500}
-.regua-nota--vazia{font-style:italic}
+import csv
+import json
+import re
+import sys
+import unicodedata
+from collections import defaultdict
+from datetime import date, datetime
+from pathlib import Path
 
-/* ── rodapé da ficha ───────────────────────────────────── */
-.meta{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;
-  padding-top:12px;border-top:1px solid var(--linha);font-size:13.5px}
-.meta span{color:var(--suave)}
-.meta b{font-weight:500;color:var(--tinta)}
-.selo{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
-  padding:3px 8px;border:1px solid var(--linha-forte);color:var(--suave);white-space:nowrap}
-.selo--ativo{border-color:var(--processo);color:var(--processo)}
-.selo--urgente{border-color:var(--alerta);color:var(--alerta)}
-.selo--fim{border-color:var(--vencido);color:var(--vencido)}
-.detalhe{margin-top:12px}
-.detalhe summary{font-family:var(--mono);font-size:11.5px;color:var(--suave);cursor:pointer}
-.detalhe summary:hover{color:var(--processo)}
-table.uos{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
-table.uos th{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--suave);text-align:left;font-weight:400;padding:5px 8px;border-bottom:1px solid var(--linha)}
-table.uos td{padding:6px 8px;border-bottom:1px solid var(--linha);vertical-align:top}
-table.uos td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;
-  white-space:nowrap}
-.sem-dado{color:var(--suave)}
+DADOS = Path("dados")
+CONFIG = Path("config")
+SAIDA = Path("site/dados.json")
 
-.vazio{background:var(--branco);padding:40px 20px;text-align:center;color:var(--suave)}
-.rodape{border-top:1px solid var(--linha-forte);background:var(--branco);padding:24px 0 48px}
-.rodape .wrap{font-size:13px;color:var(--suave)}
-.rodape p{margin:0 0 8px;max-width:78ch}
-.legenda{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:14px;font-family:var(--mono);font-size:11px}
-.legenda i{display:inline-block;width:22px;height:9px;margin-right:6px;vertical-align:middle}
+ENCERRADAS = {"SEM EFICÁCIA", "TRANSFORMADA EM NORMA JURÍDICA",
+              "REJEITADA", "ARQUIVADA", "PREJUDICADA"}
 
-@media(max-width:820px){
-  .kpis{grid-template-columns:repeat(2,1fr)}
-  .reguas{grid-template-columns:1fr;gap:4px}
-  .regua-rot{margin-top:8px}
-  .valor{margin-left:0;width:100%}
-}
-@media(prefers-reduced-motion:no-preference){
-  .preenche{transition:width .45s ease}
-}
-</style>
-</head>
-<body>
 
-<header class="topo">
-  <div class="wrap">
-    <p class="eyebrow">Congresso Nacional · SIOP/SOF</p>
-    <h1>Créditos extraordinários</h1>
-    <p class="subtitulo">Medidas provisórias que abrem crédito extraordinário, com os dois
-      relógios que correm sobre o mesmo dinheiro: o prazo constitucional de vigência e a
-      execução orçamentária.</p>
-    <p class="carimbo" id="carimbo">carregando…</p>
-  </div>
-</header>
+def normalizar(txt: str) -> str:
+    txt = unicodedata.normalize("NFKD", txt or "")
+    txt = "".join(c for c in txt if not unicodedata.combining(c))
+    txt = txt.lower()
+    txt = re.sub(r"^\s*\d{4,6}\s*[-–]\s*", "", txt)          # "32401 - ANSN"
+    txt = re.sub(r"[^a-z0-9 ]", " ", txt)
+    txt = re.sub(r"\b(recursos sob (a )?supervisao d[oae]s?)\b", "rsv", txt)
+    txt = re.sub(r"\b(ministerio|secretaria|fundo|instituto|agencia|nacional|federal|"
+                 r"da|de|do|das|dos|e|em|para|geral)\b", " ", txt)
+    return re.sub(r"\s+", " ", txt).strip()
 
-<dl class="kpis" id="kpis"></dl>
 
-<main class="wrap">
-  <div class="filtros">
-    <input type="search" id="busca" placeholder="Buscar por número, ementa, relator ou órgão"
-           aria-label="Buscar">
-    <select id="ano" aria-label="Ano"></select>
-    <select id="situacao" aria-label="Situação"><option value="">Todas as situações</option></select>
-    <label class="chip"><input type="checkbox" id="so-vigentes"> só vigentes</label>
-    <label class="chip"><input type="checkbox" id="so-emendas"> emendas abertas</label>
-    <span class="contagem" id="contagem"></span>
-  </div>
+def ler_csv(caminho: Path) -> list[dict]:
+    if not caminho.exists():
+        return []
+    with caminho.open(encoding="utf-8-sig") as f:
+        return list(csv.DictReader(f))
 
-  <section class="lista" id="lista" aria-live="polite"></section>
-</main>
 
-<footer class="rodape">
-  <div class="wrap">
-    <div class="legenda">
-      <span><i style="background:var(--processo)"></i>vigência decorrida</span>
-      <span><i style="background:repeating-linear-gradient(45deg,#B9C2BC 0 3px,#F2F4F2 3px 6px)"></i>janela de emendas</span>
-      <span><i style="background:var(--execucao);opacity:.38"></i>empenhado</span>
-      <span><i style="background:var(--execucao)"></i>pago</span>
-      <span><i style="background:var(--tinta);width:2px"></i>hoje</span>
-    </div>
-    <p><b>Vigência.</b> Sessenta dias a partir da publicação, prorrogados uma vez por igual
-      período, com a contagem suspensa no recesso (art. 62 da Constituição). Quando a data não
-      vem dos Dados Abertos do Senado, ela é estimada a partir do início do prazo de emendas —
-      cada ficha informa a origem.</p>
-    <p><b>Execução.</b> Vem do SIOP pela API da SOF, via pacote <code>orcamentoBR</code>. A API
-      não separa crédito extraordinário de suplementar ou especial, então o recorte padrão são
-      as ações da unidade orçamentária com dotação inicial zero — o que mais se aproxima do
-      crédito aberto pela MP. Para atribuição exata, fixe as ações do anexo da medida em
-      <code>config/de_para_acoes.csv</code>.</p>
-    <p>Fontes: Congresso Nacional, Propostas Orçamentárias (PLNs e MPVs); Dados Abertos do
-      Senado Federal; SIOP/Secretaria de Orçamento Federal.</p>
-  </div>
-</footer>
+def num(v) -> float:
+    if v in (None, "", "NA"):
+        return 0.0
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return 0.0
 
-<script>
-const BRL = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
-const DATA = new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'});
-const hoje = new Date(); hoje.setHours(0,0,0,0);
 
-const compacto = v => {
-  if(v==null) return '—';
-  const abs = Math.abs(v);
-  if(abs>=1e9) return 'R$ '+(v/1e9).toLocaleString('pt-BR',{maximumFractionDigits:2})+' bi';
-  if(abs>=1e6) return 'R$ '+(v/1e6).toLocaleString('pt-BR',{maximumFractionDigits:1})+' mi';
-  return BRL.format(v);
-};
-const dia = iso => iso ? DATA.format(new Date(iso+'T00:00:00')) : '—';
-const pct = (a,b) => (b>0) ? Math.max(0,Math.min(100,100*a/b)) : 0;
-const esc = s => (s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+def carregar_siop(ano: int) -> list[dict]:
+    saida = []
+    for l in ler_csv(DADOS / f"siop_{ano}.csv"):
+        codigo = (l.get("codigo_uo") or "").strip()
+        if not codigo:
+            continue
+        loa = num(l.get("loa"))
+        atual = num(l.get("loa_mais_credito"))
+        empenhado = num(l.get("empenhado"))
+        pago = num(l.get("pago"))
+        saida.append({
+            "codigo_uo": codigo.zfill(5) if codigo.isdigit() else codigo,
+            "unidade": (l.get("unidade") or "").strip(),
+            "codigo_acao": (l.get("codigo_acao") or "").strip(),
+            "acao": (l.get("acao") or "").strip(),
+            "loa": loa,
+            "atual": atual,
+            "credito": round(atual - loa, 2),
+            "empenhado": empenhado,
+            "liquidado": num(l.get("liquidado")),
+            "pago": pago,
+            # o que necessariamente veio do crédito: gasto acima do que a LOA autorizava
+            "empenhado_alem_loa": round(max(0.0, empenhado - loa), 2),
+            "liquidado_alem_loa": round(max(0.0, num(l.get("liquidado")) - loa), 2),
+            "pago_alem_loa": round(max(0.0, pago - loa), 2),
+        })
+    return saida
 
-let base = null, medidas = [];
 
-function estado(m){
-  if(m.situacao==='SEM EFICÁCIA') return 'encerrada';
-  if(m.situacao==='TRANSFORMADA EM NORMA JURÍDICA') return 'encerrada';
-  if(m.vigente===false) return 'encerrada';
-  if(m.dias_para_vigencia!=null && m.dias_para_vigencia<=15) return 'urgente';
-  return 'vigente';
-}
+def indice_uo(siop: list[dict], de_para: list[dict]) -> dict[str, str]:
+    indice: dict[str, str] = {}
+    for l in siop:
+        chave = normalizar(l["unidade"])
+        if chave:
+            indice.setdefault(chave, l["codigo_uo"])
+    for l in de_para:
+        nome = normalizar(l.get("nome_congresso", ""))
+        codigo = (l.get("codigo_uo") or "").strip()
+        if nome and codigo:
+            indice[nome] = codigo.zfill(5) if codigo.isdigit() else codigo
+    return indice
 
-function reguaVigencia(m){
-  if(!m.publicacao || !m.vigencia_fim)
-    return `<div class="trilho trilho--vigencia"></div>
-            <div class="regua-nota regua-nota--vazia">sem data de publicação</div>`;
-  const ini = new Date(m.publicacao+'T00:00:00');
-  const fim = new Date(m.vigencia_fim+'T00:00:00');
-  const total = Math.max(1, fim-ini);
-  const decorrido = pct(Math.max(0,hoje-ini), total);
-  const marca = m.vigencia_60 ? pct(new Date(m.vigencia_60+'T00:00:00')-ini, total) : null;
-  let janela = '';
-  if(m.emendas_inicio && m.emendas_fim){
-    const a = pct(new Date(m.emendas_inicio+'T00:00:00')-ini, total);
-    const b = pct(new Date(m.emendas_fim+'T00:00:00')-ini, total);
-    janela = `<div class="janela" style="left:${a}%;width:${Math.max(1.2,b-a)}%"></div>`;
-  }
-  const d = m.dias_para_vigencia;
-  let nota;
-  if(m.situacao==='TRANSFORMADA EM NORMA JURÍDICA') nota = `convertida em ${esc(m.norma||'lei')}`;
-  else if(d==null) nota = '—';
-  else if(d<0) nota = `venceu em <b>${dia(m.vigencia_fim)}</b>`;
-  else nota = `<b>${d} dia${d===1?'':'s'}</b> até ${dia(m.vigencia_fim)}`;
-  return `<div class="trilho trilho--vigencia">
-      <div class="preenche" style="width:${decorrido}%"></div>
-      ${janela}
-      ${marca!=null?`<div class="marca60" style="left:${marca}%" title="60 dias"></div>`:''}
-      ${decorrido>0&&decorrido<100?`<div class="cursor" style="left:${decorrido}%"></div>`:''}
-    </div>
-    <div class="regua-nota">${nota}</div>`;
-}
 
-function reguaExecucao(m){
-  const e = m.execucao||{};
-  const dot = e.dotacao_atual||0;
-  if(!dot) return `<div class="trilho trilho--execucao"></div>
-    <div class="regua-nota regua-nota--vazia">sem correspondência no SIOP</div>`;
-  const emp = pct(e.empenhado, dot), pg = pct(e.pago, dot);
-  return `<div class="trilho trilho--execucao">
-      <div class="preenche empenhado" style="width:${emp}%"></div>
-      <div class="preenche pago" style="width:${pg}%"></div>
-    </div>
-    <div class="regua-nota"><b>${emp.toFixed(0)}%</b> empenhado · ${pg.toFixed(0)}% pago</div>`;
-}
+def agregar(linhas: list[dict], modo: str, valor_mp: float) -> dict:
+    """Consolida as ações de uma unidade e atribui a parcela desta MP.
 
-function tabelaUOs(m){
-  const linhas = (m.unidades||[]).map(u=>{
-    const e = u.execucao||{};
-    const temSiop = u.codigo_uo && (e.dotacao_atual||0)>0;
-    return `<tr>
-      <td>${esc(u.unidade)}<br><span class="sem-dado">${esc(u.orgao)}</span></td>
-      <td class="n">${compacto(u.valor_credito)}</td>
-      <td class="n">${temSiop?compacto(e.dotacao_atual):'<span class="sem-dado">—</span>'}</td>
-      <td class="n">${temSiop?compacto(e.empenhado):'<span class="sem-dado">—</span>'}</td>
-      <td class="n">${temSiop?compacto(e.pago):'<span class="sem-dado">—</span>'}</td>
-    </tr>`;}).join('');
-  return `<details class="detalhe"><summary>Unidades orçamentárias e execução</summary>
-    <table class="uos"><thead><tr>
-      <th>Unidade</th><th class="n">Crédito na MP</th><th class="n">Dotação atual</th>
-      <th class="n">Empenhado</th><th class="n">Pago</th>
-    </tr></thead><tbody>${linhas}</tbody></table>
-    ${m.vigencia_fonte?`<p class="regua-nota" style="margin-top:8px">origem da vigência: ${esc(m.vigencia_fonte)}</p>`:''}
-  </details>`;
-}
+    Uma ação pode ter recebido crédito de mais de uma MP no mesmo exercício — a
+    ANP teve quatro em 2026. O SIOP registra um número só por ação, então repetir
+    esse número em cada ficha faria a mesma execução aparecer várias vezes.
 
-function ficha(m){
-  const est = estado(m);
-  const selo = est==='urgente'?'selo--urgente':est==='encerrada'?'selo--fim':'selo--ativo';
-  const emendas = m.emendas_fim
-    ? `${m.emendas_total??0} · prazo ${dia(m.emendas_inicio)}–${dia(m.emendas_fim)}`
-    : `${m.emendas_total??0}`;
-  return `<article class="ficha" data-estado="${est}">
-    <div class="cabeca">
-      <h2 class="numero"><a href="${esc(m.url_materia||'#')}" target="_blank" rel="noopener">${esc(m.identificacao)}</a></h2>
-      <span class="selo ${selo}">${esc(m.situacao||'sem situação')}</span>
-      <span class="valor">${compacto(m.valor_total)}</span>
-    </div>
-    <p class="ementa${m.ementa?'':' ementa--vazia'}">${esc(m.ementa||'sem ementa publicada na tabela do Congresso')}</p>
-    <div class="reguas">
-      <span class="regua-rot">Vigência</span>${reguaVigencia(m)}
-      <span class="regua-rot">Execução</span>${reguaExecucao(m)}
-    </div>
-    <div class="meta">
-      <span>Relator <b>${esc(m.relator||'não designado')}</b></span>
-      <span>Emendas <b>${esc(emendas)}</b></span>
-      ${m.emendas_abertas?'<span class="selo selo--ativo">emendas abertas</span>':''}
-    </div>
-    ${tabelaUOs(m)}
-  </article>`;
-}
+    O rateio resolve pela participação: se a MP abriu R$ 3,4 bi de um crédito
+    total de R$ 4,0 bi naquela ação, ela responde por 86% do que foi executado.
+    O denominador passa a ser o crédito da própria MP, de modo que o percentual
+    exibido é a taxa de execução do crédito — compartilhada entre as MPs, como
+    de fato é — enquanto os valores em reais ficam proporcionais a cada uma.
+    """
+    def soma(campo: str) -> float:
+        return round(sum(l[campo] for l in linhas), 2)
 
-function indicadores(lista){
-  const vig = lista.filter(m=>estado(m)!=='encerrada');
-  const total = vig.reduce((s,m)=>s+(m.valor_total||0),0);
-  const emp = vig.reduce((s,m)=>s+((m.execucao||{}).empenhado||0),0);
-  const dot = vig.reduce((s,m)=>s+((m.execucao||{}).dotacao_atual||0),0);
-  const prox = vig.filter(m=>m.dias_para_vigencia!=null&&m.dias_para_vigencia>=0)
-                  .sort((a,b)=>a.dias_para_vigencia-b.dias_para_vigencia)[0];
-  const kpis = [
-    ['Em vigência', vig.length, `de ${lista.length} no recorte`],
-    ['Valor em vigência', compacto(total), 'soma dos créditos abertos'],
-    ['Empenhado', dot?`${(100*emp/dot).toFixed(0)}%`:'—', dot?`${compacto(emp)} de ${compacto(dot)}`:'sem dados do SIOP'],
-    ['Próximo vencimento', prox?`${prox.dias_para_vigencia}d`:'—',
-      prox?`${prox.identificacao} · ${dia(prox.vigencia_fim)}`:'nenhum prazo aberto'],
-  ];
-  document.getElementById('kpis').innerHTML = kpis.map(([r,v,n],i)=>
-    `<div class="kpi${i===3&&prox&&prox.dias_para_vigencia<=15?' kpi--urgente':''}">
-       <dt>${r}</dt><dd>${v}<span class="nota">${n}</span></dd></div>`).join('');
-}
+    credito_siop = soma("credito")
+    if modo == "piso":
+        emp, liq, pg = (soma("empenhado_alem_loa"), soma("liquidado_alem_loa"),
+                        soma("pago_alem_loa"))
+    else:
+        emp, liq, pg = soma("empenhado"), soma("liquidado"), soma("pago")
 
-function render(){
-  const q = document.getElementById('busca').value.trim().toLowerCase();
-  const ano = document.getElementById('ano').value;
-  const sit = document.getElementById('situacao').value;
-  const soVig = document.getElementById('so-vigentes').checked;
-  const soEme = document.getElementById('so-emendas').checked;
+    fator = min(1.0, valor_mp / credito_siop) if credito_siop > 0 else 0.0
+    parcela = lambda v: round(v * fator, 2)  # noqa: E731
 
-  const lista = medidas.filter(m=>{
-    if(ano && String(m.ano)!==ano) return false;
-    if(sit && m.situacao!==sit) return false;
-    if(soVig && estado(m)==='encerrada') return false;
-    if(soEme && !m.emendas_abertas) return false;
-    if(q){
-      const alvo = [m.identificacao,m.ementa,m.relator,m.situacao,
-        ...(m.unidades||[]).flatMap(u=>[u.unidade,u.orgao])].join(' ').toLowerCase();
-      if(!alvo.includes(q)) return false;
+    return {
+        "modo": modo,
+        "fator": round(fator, 4),
+        "rateado": bool(credito_siop > 0 and fator < 0.999),
+        "dotacao_inicial": soma("loa"),
+        "dotacao_atual": soma("atual"),
+        "credito_no_ano": credito_siop,
+        "base": round(valor_mp, 2) if credito_siop > 0 else 0.0,
+        "empenhado": parcela(emp),
+        "liquidado": parcela(liq),
+        "pago": parcela(pg),
+        "acoes": len({l["codigo_acao"] for l in linhas if l["codigo_acao"]}),
+        "detalhe_acoes": [
+            {"codigo": l["codigo_acao"], "acao": l["acao"], "dotacao_inicial": l["loa"],
+             "credito": l["credito"], "empenhado": l["empenhado"], "pago": l["pago"]}
+            for l in sorted(linhas, key=lambda x: -x["credito"])[:12]
+        ],
     }
-    return true;
-  });
 
-  indicadores(lista);
-  document.getElementById('contagem').textContent =
-    `${lista.length} de ${medidas.length} medidas`;
-  document.getElementById('lista').innerHTML = lista.length
-    ? lista.map(ficha).join('')
-    : '<p class="vazio">Nenhuma medida provisória corresponde a esses filtros. Limpe a busca ou troque o ano.</p>';
-}
 
-async function iniciar(){
-  try{
-    const r = await fetch('dados.json?v='+Date.now());
-    if(!r.ok) throw new Error(r.status);
-    base = await r.json();
-  }catch(e){
-    document.getElementById('carimbo').textContent =
-      'Não foi possível carregar dados.json. Rode a coleta e publique o arquivo em site/.';
-    document.getElementById('lista').innerHTML =
-      '<p class="vazio">Sem dados para exibir ainda.</p>';
-    return;
-  }
-  medidas = base.medidas||[];
-  const dt = new Date(base.atualizado_em);
-  document.getElementById('carimbo').textContent =
-    `Atualizado em ${DATA.format(dt)}, ${dt.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})} · ${medidas.length} medidas provisórias`;
+def dias_ate(alvo: str | None, hoje: date) -> int | None:
+    return (date.fromisoformat(alvo) - hoje).days if alvo else None
 
-  const anos = [...new Set(medidas.map(m=>m.ano))].sort((a,b)=>b-a);
-  document.getElementById('ano').innerHTML =
-    '<option value="">Todos os anos</option>'+anos.map(a=>`<option>${a}</option>`).join('');
-  if(anos.length) document.getElementById('ano').value = String(anos[0]);
 
-  const sits = [...new Set(medidas.map(m=>m.situacao).filter(Boolean))].sort();
-  document.getElementById('situacao').insertAdjacentHTML('beforeend',
-    sits.map(s=>`<option>${esc(s)}</option>`).join(''));
+def main() -> None:
+    hoje = date.today()
+    propostas = json.loads((DADOS / "congresso.json").read_text(encoding="utf-8"))
+    mpvs = [p for p in propostas if p.get("tipo", "").lower().startswith("crédito extraordin")]
 
-  ['busca','ano','situacao','so-vigentes','so-emendas'].forEach(id=>{
-    const el = document.getElementById(id);
-    el.addEventListener(el.type==='search'?'input':'change', render);
-  });
-  render();
-}
-iniciar();
-</script>
-</body>
-</html>
+    de_para_uo = ler_csv(CONFIG / "de_para_uo.csv")
+    de_para_acoes = defaultdict(set)
+    for l in ler_csv(CONFIG / "de_para_acoes.csv"):
+        ident = (l.get("identificacao") or "").strip()
+        acao = (l.get("codigo_acao") or "").strip()
+        if ident and acao:
+            de_para_acoes[ident].add(acao)
+
+    anos = sorted({p["ano"] for p in mpvs})
+    siop_por_ano = {ano: carregar_siop(ano) for ano in anos}
+    indices = {ano: indice_uo(l, de_para_uo) for ano, l in siop_por_ano.items()}
+
+    # quais MPs disputam a mesma unidade no mesmo ano
+    codigo_por_mp: dict[str, set[str]] = {}
+    for p in mpvs:
+        idx = indices.get(p["ano"], {})
+        codigo_por_mp[p["identificacao"]] = {
+            c for c in (idx.get(normalizar(u["unidade"])) for u in p.get("unidades", [])) if c
+        }
+    concorrentes: dict[tuple, list[str]] = defaultdict(list)
+    for p in mpvs:
+        for c in codigo_por_mp[p["identificacao"]]:
+            concorrentes[(p["ano"], c)].append(p["identificacao"])
+
+    nao_casadas: set[str] = set()
+    registros = []
+
+    for p in mpvs:
+        siop = siop_por_ano.get(p["ano"], [])
+        indice = indices.get(p["ano"], {})
+        por_uo = defaultdict(list)
+        for l in siop:
+            por_uo[l["codigo_uo"]].append(l)
+
+        fixadas = de_para_acoes.get(p["identificacao"])
+        unidades: list[dict] = []
+        ambigua = False
+
+        for u in p.get("unidades", []):
+            codigo = indice.get(normalizar(u["unidade"]))
+            if not codigo:
+                nao_casadas.add(u["unidade"])
+            linhas = por_uo.get(codigo, []) if codigo else []
+
+            if fixadas:
+                recorte = [l for l in linhas if l["codigo_acao"] in fixadas]
+                modo = "manual"
+            else:
+                recorte = [l for l in linhas if l["credito"] > 0]
+                if recorte and all(l["loa"] == 0 for l in recorte):
+                    modo = "direta"
+                elif recorte:
+                    modo = "piso"
+                else:
+                    modo = "direta"
+
+            outras = [i for i in concorrentes.get((p["ano"], codigo), [])
+                      if i != p["identificacao"]] if codigo else []
+            if outras and modo != "manual":
+                ambigua = True
+
+            unidades.append({
+                "orgao": u["orgao"],
+                "unidade": u["unidade"],
+                "codigo_uo": codigo,
+                "valor_credito": u["valor"],
+                "outras_mps": outras,
+                "execucao": agregar(recorte, modo, u["valor"]),
+            })
+
+        def soma(campo: str) -> float:
+            return round(sum(u["execucao"][campo] for u in unidades), 2)
+
+        modos = {u["execucao"]["modo"] for u in unidades} or {"direta"}
+        modo_mp = "manual" if "manual" in modos else ("piso" if "piso" in modos else "direta")
+        base = soma("base")
+        rateado = any(u["execucao"]["rateado"] for u in unidades)
+        execucao = {
+            "modo": modo_mp,
+            "rateado": rateado,
+            "ambigua": ambigua,
+            "base": base,
+            "dotacao_atual": soma("dotacao_atual"),
+            "credito_no_ano": soma("credito_no_ano"),
+            "empenhado": soma("empenhado"),
+            "liquidado": soma("liquidado"),
+            "pago": soma("pago"),
+            "cobertura": round(100 * sum(1 for u in unidades if u["codigo_uo"]) / len(unidades))
+            if unidades else 0,
+        }
+        execucao["pct_empenhado"] = round(100 * execucao["empenhado"] / base, 1) if base else None
+        execucao["pct_pago"] = round(100 * execucao["pago"] / base, 1) if base else None
+
+        encerrada = p.get("situacao") in ENCERRADAS
+        vigente = None
+        if p.get("vigencia_fim"):
+            vigente = p["vigencia_fim"] >= hoje.isoformat() and not encerrada
+
+        registros.append({
+            **p,
+            "vigente": vigente,
+            "encerrada": encerrada,
+            "sem_relator": not p.get("relator"),
+            "dias_para_vigencia": dias_ate(p.get("vigencia_fim"), hoje),
+            "dias_para_emendas": dias_ate(p.get("emendas_fim"), hoje),
+            "emendas_abertas": bool(p.get("emendas_fim") and p["emendas_fim"] >= hoje.isoformat()),
+            "unidades": unidades,
+            "execucao": execucao,
+        })
+
+    registros.sort(key=lambda r: (r["ano"], r["numero"]), reverse=True)
+
+    SAIDA.parent.mkdir(parents=True, exist_ok=True)
+    SAIDA.write_text(json.dumps({
+        "atualizado_em": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "anos": anos,
+        "fontes": {
+            "legislativo": "Congresso Nacional — Propostas Orçamentárias (PLNs e MPVs)",
+            "vigencia": "Dados Abertos do Senado + cálculo art. 62 da Constituição",
+            "execucao": "SIOP/SOF via pacote orcamentoBR",
+        },
+        "uo_sem_correspondencia": sorted(nao_casadas),
+        "medidas": registros,
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    contagem: dict[str, int] = defaultdict(int)
+    for r in registros:
+        contagem[r["execucao"]["modo"]] += 1
+    print(f"{len(registros)} MPs -> {SAIDA}", file=sys.stderr)
+    print(f"  atribuição: {dict(contagem)} | rateadas: "
+          f"{sum(1 for r in registros if r['execucao']['rateado'])}", file=sys.stderr)
+    if nao_casadas:
+        print("UOs sem correspondência (adicione em config/de_para_uo.csv):", file=sys.stderr)
+        for nome in sorted(nao_casadas):
+            print(f"  - {nome}", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    main()
