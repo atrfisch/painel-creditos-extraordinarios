@@ -1,0 +1,39 @@
+{
+  "MPV 1381/2026": {
+    "publicacao_dou": "2026-07-31", "deliberacao_inicio": "2026-07-31",
+    "deliberacao_fim": "2026-09-28", "emendas_inicio_oficial": "2026-07-31",
+    "emendas_fim_oficial": "2026-08-10", "urgencia": "2026-09-14",
+    "programatica": [{"orgao_codigo":"32000","orgao":"Ministério de Minas e Energia",
+      "uo_codigo":"32263","unidade":"Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+      "programa":"3006","acao":"00H9","localizador":"0001","descricao":"Subvenção a combustíveis",
+      "funcao":"25","subfuncao":"752","esfera":"F","gnd":"3-ODC","rp":"2","modalidade":"90",
+      "fonte":"1000","valor":3473000000.0}]
+  },
+  "MPV 1372/2026": {
+    "publicacao_dou": "2026-06-29", "deliberacao_inicio": "2026-06-29",
+    "deliberacao_fim": "2026-08-27", "emendas_inicio_oficial": "2026-06-29",
+    "emendas_fim_oficial": "2026-07-06", "urgencia": null,
+    "programatica": [{"orgao_codigo":"32000","orgao":"Ministério de Minas e Energia",
+      "uo_codigo":"32263","unidade":"Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
+      "programa":"3006","acao":"00H9","localizador":"0001","descricao":"Subvenção diesel",
+      "funcao":"25","subfuncao":"752","esfera":"F","gnd":"3-ODC","rp":"2","modalidade":"90",
+      "fonte":"1000","valor":550000000.0}]
+  },
+  "MPV 1367/2026": {
+    "publicacao_dou": "2026-06-15", "deliberacao_fim": "2026-08-13",
+    "emendas_inicio_oficial": "2026-06-15", "emendas_fim_oficial": "2026-06-22",
+    "programatica": [
+      {"orgao":"Ministério do Meio Ambiente","uo_codigo":"44201","unidade":"IBAMA",
+       "programa":"2214","acao":"21C0","localizador":"0001","descricao":"Incêndios",
+       "esfera":"F","gnd":"3-ODC","rp":"2","fonte":"1000","valor":194417722.0},
+      {"orgao":"Ministério do Meio Ambiente","uo_codigo":"44207","unidade":"ICMBio",
+       "programa":"2214","acao":"21C1","localizador":"0001","descricao":"Fiscalização",
+       "esfera":"F","gnd":"4-INV","rp":"2","fonte":"1000","valor":143065710.0}]
+  },
+  "MPV 1339/2026": {
+    "publicacao_dou": "2026-03-09", "deliberacao_fim": "2026-05-07",
+    "programatica": [{"orgao":"MIDR","uo_codigo":"53101","unidade":"Ministério da Integração e do Desenvolvimento Regional",
+      "programa":"2218","acao":"22BF","localizador":"0031","descricao":"Defesa civil",
+      "esfera":"F","gnd":"3-ODC","rp":"2","fonte":"1000","valor":266512000.0}]
+  }
+}

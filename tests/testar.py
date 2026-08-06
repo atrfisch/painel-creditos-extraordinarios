@@ -12,11 +12,11 @@ sys.path.insert(0, str(RAIZ / "coleta"))
 import congresso  # noqa: E402
 
 SIOP = """codigo_uo,unidade,codigo_acao,acao,loa,loa_mais_credito,empenhado,liquidado,pago
-32263,"Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",00H9,Subvenção,2000000000,6023000000,3100000000,2600000000,2400000000
-32263,"Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",2000,Administração,480000000,480000000,310000000,290000000,280000000
-44201,Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis,21C0,Incêndios,0,194417722,150000000,120000000,110000000
-44207,Instituto Chico Mendes de Conservação da Biodiversidade,21C1,Fiscalização,0,143065710,40000000,31000000,28000000
-53101,Ministério da Integração e do Desenvolvimento Regional,22BF,Defesa civil,300000000,566512000,520000000,480000000,460000000
+32263,ANP,00H9,Subvenção a combustíveis,2000000000,6023000000,3100000000,2600000000,2400000000
+32263,ANP,2000,Administração da unidade,480000000,480000000,310000000,290000000,280000000
+44201,IBAMA,21C0,Prevenção e combate a incêndios,0,194417722,150000000,120000000,110000000
+44207,ICMBio,21C1,Fiscalização ambiental,0,143065710,40000000,31000000,28000000
+53101,MIDR,22BF,Defesa civil,300000000,566512000,520000000,480000000,460000000
 """
 
 
@@ -52,8 +52,23 @@ def main() -> int:
     if not a or a.emendas_inicio != "2026-07-31" or len(a.unidades) > 1:
         falhas.append("o corte entre registros não segurou com HTML quebrado")
 
+    # o anexo da MP: programática exata a partir do texto real do PDF
+    from anexos import parsear_anexo  # noqa: E402
+    prog = parsear_anexo((RAIZ / "tests/anexo_1378.txt").read_text(encoding="utf-8"))
+    if len(prog) != 1:
+        falhas.append(f"anexo 1378: esperava 1 linha, achei {len(prog)}")
+    elif not (prog[0]["uo_codigo"] == "33201" and prog[0]["acao"] == "00XK"
+              and prog[0]["valor"] == 547_000_000 and prog[0]["gnd"] == "3-ODC"):
+        falhas.append(f"anexo 1378 mal lido: {prog[0]}")
+
+    multi = parsear_anexo((RAIZ / "tests/anexo_multi.txt").read_text(encoding="utf-8"))
+    if [l["uo_codigo"] for l in multi] != ["44201", "44207"]:
+        falhas.append(f"anexo multi-órgão: {[l['uo_codigo'] for l in multi]}")
+
     # pipeline
     (RAIZ / "dados").mkdir(exist_ok=True)
+    import shutil
+    shutil.copy(RAIZ / "tests/anexos_fixture.json", RAIZ / "config/anexos.json")
     (RAIZ / "dados/congresso.json").write_text(
         json.dumps([asdict(p) for p in propostas], ensure_ascii=False, indent=2), encoding="utf-8")
     (RAIZ / "dados/siop_2026.csv").write_text(SIOP, encoding="utf-8")
@@ -70,6 +85,12 @@ def main() -> int:
             falhas.append(f"UOs não casadas: {dados['uo_sem_correspondencia']}")
 
         anp = med.get("MPV 1381/2026", {})
+        if anp.get("execucao", {}).get("origem") != "anexo":
+            falhas.append("o cruzamento deveria vir do anexo")
+        if anp.get("execucao", {}).get("acoes") != 1:
+            falhas.append("o recorte deveria conter só a ação do anexo, não toda a unidade")
+        if anp.get("vigencia_fonte", "").startswith("estimado"):
+            falhas.append("a vigência oficial da página da MP deveria prevalecer")
         if anp.get("execucao", {}).get("modo") != "piso":
             falhas.append("ação preexistente deveria cair no modo piso")
         if not anp.get("execucao", {}).get("rateado"):
@@ -86,8 +107,8 @@ def main() -> int:
             falhas.append(f"as parcelas não fecham o total: {junto:,.0f}")
         if anp.get("execucao", {}).get("pct_empenhado") != outra.get("execucao", {}).get("pct_empenhado"):
             falhas.append("a taxa de execução deveria ser a mesma para as MPs da mesma ação")
-        if anp.get("vigencia_fim") != "2026-11-28":
-            falhas.append(f"vigência com recesso: {anp.get('vigencia_fim')}")
+        if anp.get("vigencia_fim") != "2026-09-28":
+            falhas.append(f"vigência oficial: {anp.get('vigencia_fim')}")
         if not anp.get("sem_relator"):
             falhas.append("MPV sem relator não foi sinalizada")
 
@@ -100,8 +121,8 @@ def main() -> int:
         for f in falhas:
             print("  -", f)
         return 1
-    print(f"OK — {len(propostas)} propostas; modos de atribuição, ambiguidade, "
-          f"recesso e corte entre registros conferidos")
+    print(f"OK — {len(propostas)} propostas; anexo, cruzamento exato, rateio, "
+          f"vigência oficial e corte entre registros conferidos")
     return 0
 
 

@@ -1,0 +1,17 @@
+ 2
+ÓRGÃO: 44000 - Ministério do Meio Ambiente e Mudança do Clima
+UNIDADE: 44201 - Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis - IBAMA
+ANEXO Crédito Extraordinário
+2214 21C0 0001 Prevenção e Combate a Incêndios Florestais - Nacional (Crédito
+Extraordinário)
+18 542 194.417.722
+S 3-ODC 2 90 0 1000 194.417.722
+TOTAL - FISCAL 194.417.722
+ 3
+ÓRGÃO: 44000 - Ministério do Meio Ambiente e Mudança do Clima
+UNIDADE: 44207 - Instituto Chico Mendes de Conservação da Biodiversidade - ICMBio
+2214 21C1 0001 Fiscalização Ambiental em Unidades de Conservação - Nacional (Crédito
+Extraordinário)
+18 542 143.065.710
+S 4-INV 2 90 0 1000 143.065.710
+TOTAL - GERAL 337.483.432
