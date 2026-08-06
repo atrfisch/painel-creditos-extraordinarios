@@ -1,19 +1,22 @@
 """
 Prazo de vigência das MPs de crédito extraordinário.
 
-A tabela de propostas do Congresso não traz a vigência. Aqui ela é reconstruída
-em três camadas, da mais confiável para a menos:
+A tabela de propostas do Congresso não traz a vigência. Aqui ela é obtida em
+quatro camadas, da mais confiável para a menos:
 
-1. `config/vigencia_manual.csv` — datas oficiais que você tenha conferido no
-   Ato do Presidente da Mesa do CN. Sempre vence.
-2. Dados Abertos do Senado — data de apresentação da matéria.
-3. Início da janela de emendas raspada da própria tabela, que na prática
-   coincide com a publicação no DOU.
+1. `config/vigencia_manual.csv` — datas que você tenha conferido à mão. Vence
+   sempre.
+2. **Prazos oficiais da página da MP** (`config/anexos.json`): o Congresso
+   publica ali a janela de deliberação, que é a vigência. É a fonte boa.
+3. Dados Abertos do Senado — data de apresentação, para calcular.
+4. Início da janela de emendas raspada da tabela, como último recurso.
 
-Sobre a data-limite, art. 62 da Constituição: 60 dias de vigência, prorrogados
-automaticamente uma única vez por mais 60, com a contagem **suspensa durante o
-recesso** do Congresso. O cálculo abaixo percorre dia a dia e pula o recesso.
-É uma estimativa: para MPs em que a data exata importa, registre-a no CSV.
+O cálculo do art. 62 (60 dias prorrogáveis por 60, suspenso no recesso) ficou
+como fallback, e vale saber por quê: para a MPV 1378/2026, publicada em 21/07 e
+portanto dentro do recesso de julho, o Congresso fixou a deliberação em 21/07 a
+18/09 — sessenta dias corridos, sem suspensão —, enquanto suspendeu o prazo de
+emendas. A prática é menos direta que o texto constitucional, então a data
+oficial manda.
 """
 
 from __future__ import annotations
@@ -94,6 +97,13 @@ def data_apresentacao_senado(codigo: str) -> str | None:
     return None
 
 
+def carregar_oficiais(caminho: Path) -> dict[str, dict]:
+    """Prazos oficiais colhidos da página da MP por coleta/anexos.py."""
+    if not caminho.exists():
+        return {}
+    return json.loads(caminho.read_text(encoding="utf-8"))
+
+
 def carregar_manual(caminho: Path) -> dict[str, dict]:
     if not caminho.exists():
         return {}
@@ -106,17 +116,29 @@ def carregar_manual(caminho: Path) -> dict[str, dict]:
     return manual
 
 
-def enriquecer(propostas: list[dict], manual: dict[str, dict]) -> list[dict]:
+def enriquecer(propostas: list[dict], manual: dict[str, dict],
+               oficiais: dict[str, dict] | None = None) -> list[dict]:
+    oficiais = oficiais or {}
     for p in propostas:
         if not p.get("tipo", "").lower().startswith("crédito extraordin"):
             continue
 
         ident = p["identificacao"]
         registro = manual.get(ident, {})
+        oficial = oficiais.get(ident, {})
         fonte = None
         publicacao = registro.get("publicacao") or None
         if publicacao:
             fonte = "manual"
+
+        # a janela de emendas oficial da página da MP corrige a da tabela
+        if oficial.get("emendas_inicio_oficial"):
+            p["emendas_inicio"] = oficial["emendas_inicio_oficial"]
+        if oficial.get("emendas_fim_oficial"):
+            p["emendas_fim"] = oficial["emendas_fim_oficial"]
+
+        if not publicacao and oficial.get("publicacao_dou"):
+            publicacao, fonte = oficial["publicacao_dou"], "oficial (página da MP)"
 
         if not publicacao and p.get("codigo_materia"):
             publicacao = data_apresentacao_senado(p["codigo_materia"])
@@ -136,6 +158,12 @@ def enriquecer(propostas: list[dict], manual: dict[str, dict]) -> list[dict]:
             p["vigencia_60"] = registro.get("vigencia_60") or None
             p["vigencia_fim"] = registro["vigencia_fim"]
             p["vigencia_fonte"] = "manual"
+        elif oficial.get("deliberacao_fim"):
+            # a janela de deliberação publicada pelo Congresso é a vigência
+            p["vigencia_60"] = oficial["deliberacao_fim"]
+            p["vigencia_fim"] = oficial["deliberacao_fim"]
+            p["vigencia_fonte"] = "oficial (página da MP)"
+            p["prorrogavel"] = True
         elif publicacao:
             inicio = date.fromisoformat(publicacao)
             p["vigencia_60"] = somar_dias_uteis_de_vigencia(inicio, PRAZO_INICIAL).isoformat()
@@ -150,7 +178,8 @@ def main() -> None:
     entrada = Path("dados/congresso.json")
     propostas = json.loads(entrada.read_text(encoding="utf-8"))
     manual = carregar_manual(Path("config/vigencia_manual.csv"))
-    propostas = enriquecer(propostas, manual)
+    oficiais = carregar_oficiais(Path("config/anexos.json"))
+    propostas = enriquecer(propostas, manual, oficiais)
     entrada.write_text(json.dumps(propostas, ensure_ascii=False, indent=2), encoding="utf-8")
     com_data = sum(1 for p in propostas if p.get("vigencia_fim"))
     print(f"vigência calculada para {com_data} matérias", file=sys.stderr)
