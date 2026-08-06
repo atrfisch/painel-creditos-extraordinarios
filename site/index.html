@@ -115,6 +115,8 @@ h1{font-family:var(--cond);font-size:clamp(30px,5vw,46px);font-weight:700;letter
 .ficha[data-estado=urgente] .trilho--vigencia .preenche{background:var(--urgente)}
 .ficha[data-estado=encerrada] .trilho--vigencia .preenche{background:var(--linha-forte)}
 .marca60{position:absolute;top:0;bottom:0;width:1px;background:var(--branco);opacity:.85}
+.trilho--vigencia::after{content:'';position:absolute;inset:0;pointer-events:none}
+.marca60--vazia{background:var(--linha-forte);opacity:1}
 .janela{position:absolute;top:0;bottom:0;background-image:repeating-linear-gradient(
   45deg,rgba(255,255,255,.5) 0 3px,transparent 3px 6px)}
 .janela--aberta{background:var(--emendas);background-image:none;
@@ -143,6 +145,7 @@ h1{font-family:var(--cond);font-size:clamp(30px,5vw,46px);font-weight:700;letter
 .selo--urgente{border-color:var(--urgente);color:var(--urgente);font-weight:500}
 .selo--emendas{border-color:var(--emendas);background:var(--emendas);color:#fff;font-weight:500}
 .selo--fim{border-color:var(--vencido);color:var(--vencido)}
+.selo--prorroga{border-color:var(--processo);background:var(--processo);color:#fff}
 .selo--nota{border-style:dashed}
 .detalhe{margin-top:12px}
 .detalhe summary{font-family:var(--mono);font-size:11.5px;color:var(--suave);cursor:pointer}
@@ -239,9 +242,13 @@ table.uos td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tab
       crédito. Quando duas ou mais MPs
       alimentam a mesma ação no exercício, cada uma responde pela fração que abriu, e a ficha
       traz o selo de execução rateada.</p>
-    <p><b>Vigência.</b> Vem da janela de deliberação publicada na página da MP. O cálculo do
-      art. 62 ficou como último recurso: na prática o Congresso nem sempre suspende a contagem
-      no recesso, ainda que suspenda o prazo de emendas.</p>
+    <p><b>Vigência.</b> Vem da janela de deliberação publicada na página da MP, que é a do
+      período corrente. Como a prorrogação por mais sessenta dias é automática (art. 62, § 7º),
+      a data em que a MP de fato caduca é o fim do segundo período — a régua vai até lá, e a
+      marca no meio é o dia em que a prorrogação ocorre. Enquanto ela não é publicada, essa
+      segunda metade é projeção; depois, passa a vir do Ato da Mesa. O cálculo do art. 62 ficou
+      como último recurso: na prática o Congresso nem sempre suspende a contagem no recesso,
+      ainda que suspenda o prazo de emendas.</p>
     <p>Fontes: Congresso Nacional, Propostas Orçamentárias (PLNs e MPVs); Dados Abertos do
       Senado Federal; SIOP/Secretaria de Orçamento Federal.</p>
   </div>
@@ -291,16 +298,19 @@ function reguaVigencia(m){
       style="left:${a}%;width:${Math.max(1.5,b-a)}%"
       title="emendas de ${dia(m.emendas_inicio)} a ${dia(m.emendas_fim)}"></div>`;
   }
-  const d = m.dias_para_vigencia;
+  const d = m.dias_para_vigencia, dp = m.dias_para_prorrogacao;
   let nota;
   if(m.situacao==='TRANSFORMADA EM NORMA JURÍDICA') nota = `convertida em ${esc(m.norma||'lei')}`;
   else if(d==null) nota = '—';
-  else if(d<0) nota = `venceu em <b>${dia(m.vigencia_fim)}</b>`;
+  else if(d<0) nota = `caducou em <b>${dia(m.vigencia_fim)}</b>`;
+  else if(m.prorrogada) nota = `prorrogada · <b>${d} dia${d===1?'':'s'}</b> até ${dia(m.vigencia_fim)}`;
+  else if(dp!=null && dp>=0) nota = `prorroga em <b>${dp}d</b> · caduca ${dia(m.vigencia_fim)}`;
   else nota = `<b>${d} dia${d===1?'':'s'}</b> até ${dia(m.vigencia_fim)}`;
   return `<div class="trilho trilho--vigencia">
       <div class="preenche" style="width:${decorrido}%"></div>
       ${janela}
-      ${marca!=null?`<div class="marca60" style="left:${marca}%" title="60 dias"></div>`:''}
+      ${marca!=null?`<div class="marca60${decorrido<marca?' marca60--vazia':''}" style="left:${marca}%"
+        title="fim do primeiro período — prorrogação automática"></div>`:''}
       ${decorrido>0&&decorrido<100?`<div class="cursor" style="left:${decorrido}%"></div>`:''}
     </div>
     <div class="regua-nota">${nota}</div>`;
@@ -376,6 +386,7 @@ function ficha(m){
       <span class="campo">Relator <b>${esc(m.relator||'não designado')}</b></span>
       <span class="campo">Emendas <b>${esc(emendas)}</b></span>
       ${m.emendas_abertas?'<span class="selo selo--emendas">emendas abertas</span>':''}
+      ${m.prorrogada?`<span class="selo selo--prorroga">prorrogada${m.ato_prorrogacao?' · Ato '+esc(m.ato_prorrogacao):''}</span>`:''}
       ${(m.execucao||{}).rateado?'<span class="selo selo--nota">execução rateada</span>':''}
       ${(m.execucao||{}).origem!=='anexo'?'<span class="selo selo--nota">cruzamento aproximado</span>':''}
       ${(m.execucao||{}).modo==='piso'?'<span class="selo selo--nota">execução em piso</span>':''}
