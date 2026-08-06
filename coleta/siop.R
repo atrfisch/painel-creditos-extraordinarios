@@ -5,12 +5,11 @@
 #
 # Consulta apenas as unidades orçamentárias que aparecem nos anexos das MPs,
 # lidas de dados/uos.txt. Puxar o exercício inteiro cruzando todas as unidades
-# com todas as ações é uma consulta grande demais: ela estoura o tempo da API e,
-# como a etapa do workflow tolera erro, a falha passa despercebida e o painel
-# aparece sem execução nenhuma. Com os códigos vindos do anexo, cada consulta
-# fica pequena.
+# com todas as ações é grande demais e estoura o tempo da API.
 #
-# Grava dados/siop_<ano>.csv com uma linha por UO x Ação.
+# O script começa por uma sonda mínima. Se ela falhar, o problema é a API ou o
+# pacote; se passar e as consultas por unidade falharem, o problema é o filtro.
+# Sem essa separação não dá para saber qual das duas coisas corrigir.
 
 args <- commandArgs(trailingOnly = TRUE)
 anos <- if (length(args) > 0) as.integer(args) else as.integer(format(Sys.Date(), "%Y"))
@@ -19,19 +18,48 @@ if (!requireNamespace("orcamentoBR", quietly = TRUE)) {
   install.packages("orcamentoBR", repos = "https://cloud.r-project.org")
 }
 library(orcamentoBR)
+message("orcamentoBR ", as.character(packageVersion("orcamentoBR")))
 
 dir.create("dados", showWarnings = FALSE, recursive = TRUE)
 
 ler_uos <- function() {
-  if (!file.exists("dados/uos.txt")) return(character(0))
+  if (!file.exists("dados/uos.txt")) {
+    message("::warning::dados/uos.txt não existe — a coleta de anexos não rodou ou não achou programática")
+    return(character(0))
+  }
   uos <- trimws(readLines("dados/uos.txt", warn = FALSE))
   unique(uos[nzchar(uos)])
 }
 
+valores <- list(valorPLOA = FALSE, valorLOA = TRUE, valorLOAmaisCredito = TRUE,
+                valorEmpenhado = TRUE, valorLiquidado = TRUE, valorPago = TRUE)
+
+chamar <- function(ano, ..., url = FALSE) {
+  do.call(despesaDetalhada, c(list(exercicio = ano, incluiDescricoes = TRUE,
+                                   timeout = 600, print_url = url), valores, list(...)))
+}
+
+tentar <- function(rotulo, expr) {
+  tryCatch(expr, error = function(e) {
+    message("    ", rotulo, " falhou: ", conditionMessage(e))
+    NULL
+  })
+}
+
+# --- sonda: a API responde? ------------------------------------------------
+sondar <- function(ano) {
+  message("  sonda: consulta agregada do exercício")
+  r <- tentar("sonda", chamar(ano, url = TRUE))
+  if (is.null(r) || nrow(r) == 0) {
+    message("::error::a API do SIOP não respondeu nem à consulta mais simples para ", ano,
+            " — o problema não é o filtro por unidade")
+    return(FALSE)
+  }
+  message("    ok: ", nrow(r), " linha(s), colunas: ", paste(names(r), collapse = ", "))
+  TRUE
+}
+
 # --- mapeamento de colunas -------------------------------------------------
-# Os nomes vêm do orcamentoBR e podem variar entre versões. Tenta o nome exato
-# primeiro e só então cai para a busca por padrão, para não confundir a coluna
-# de código com a de descrição (ambas contêm "UO").
 mapear <- function(nomes, exatos, padrao) {
   for (nome in exatos) {
     hit <- nomes[tolower(nomes) == tolower(nome)]
@@ -54,13 +82,11 @@ normalizar <- function(df) {
     liquidado        = mapear(nomes, c("valorLiquidado"), "liquidad"),
     pago             = mapear(nomes, c("valorPago"), "pago")
   )
-
   faltando <- names(mapa)[is.na(mapa)]
   if (length(faltando)) {
-    message("::warning::colunas não mapeadas no retorno do SIOP: ", paste(faltando, collapse = ", "))
-    message("  colunas recebidas: ", paste(nomes, collapse = ", "))
+    message("::warning::colunas não mapeadas: ", paste(faltando, collapse = ", "),
+            " | recebidas: ", paste(nomes, collapse = ", "))
   }
-
   saida <- data.frame(matrix(NA, nrow = nrow(df), ncol = length(mapa)))
   names(saida) <- names(mapa)
   for (campo in names(mapa)) {
@@ -70,32 +96,44 @@ normalizar <- function(df) {
   saida
 }
 
+# --- consulta por unidade --------------------------------------------------
 consultar <- function(ano, uos) {
-  chamar <- function(...) {
-    despesaDetalhada(
-      exercicio = ano, Acao = TRUE, incluiDescricoes = TRUE,
-      valorPLOA = FALSE, valorLOA = TRUE, valorLOAmaisCredito = TRUE,
-      valorEmpenhado = TRUE, valorLiquidado = TRUE, valorPago = TRUE,
-      timeout = 600, ...
-    )
-  }
-
   if (!length(uos)) {
-    message("  sem lista de unidades (dados/uos.txt vazio) — consultando o exercício inteiro")
-    return(tryCatch(chamar(UO = TRUE),
-                    error = function(e) { message("  falhou: ", conditionMessage(e)); NULL }))
+    message("  sem lista de unidades — consultando o exercício inteiro por UO")
+    return(tentar("exercício inteiro", chamar(ano, UO = TRUE, Acao = TRUE)))
   }
 
-  # lotes pequenos: uma unidade problemática não derruba a coleta toda
-  lotes <- split(uos, ceiling(seq_along(uos) / 5))
   partes <- list()
+  falhas <- character(0)
+
+  # tenta em lote; alguns filtros da API não aceitam vetor, então cai para uma
+  # unidade por vez em caso de erro
+  lotes <- split(uos, ceiling(seq_along(uos) / 5))
   for (i in seq_along(lotes)) {
     lote <- lotes[[i]]
-    message("  lote ", i, "/", length(lotes), ": UO ", paste(lote, collapse = ", "))
-    parte <- tryCatch(chamar(UO = lote),
-                      error = function(e) { message("    falhou: ", conditionMessage(e)); NULL })
-    if (!is.null(parte) && nrow(parte) > 0) partes[[length(partes) + 1]] <- parte
+    message("  lote ", i, "/", length(lotes), ": ", paste(lote, collapse = ", "))
+    parte <- tentar("lote", chamar(ano, UO = lote, Acao = TRUE))
+
+    if (is.null(parte) || nrow(parte) == 0) {
+      for (uo in lote) {
+        message("    tentando UO ", uo, " isolada")
+        uma <- tentar(paste("UO", uo), chamar(ano, UO = uo, Acao = TRUE,
+                                              url = (length(partes) == 0)))
+        if (!is.null(uma) && nrow(uma) > 0) {
+          partes[[length(partes) + 1]] <- uma
+        } else {
+          falhas <- c(falhas, uo)
+        }
+        Sys.sleep(0.5)
+      }
+    } else {
+      partes[[length(partes) + 1]] <- parte
+    }
     Sys.sleep(1)
+  }
+
+  if (length(falhas)) {
+    message("::warning::sem retorno para as unidades: ", paste(falhas, collapse = ", "))
   }
   if (!length(partes)) return(NULL)
   do.call(rbind, partes)
@@ -104,8 +142,11 @@ consultar <- function(ano, uos) {
 for (ano in anos) {
   uos <- ler_uos()
   message("SIOP: exercício ", ano, " — ", length(uos), " unidade(s) do anexo")
-  bruto <- consultar(ano, uos)
+  if (length(uos)) message("  unidades: ", paste(uos, collapse = ", "))
 
+  if (!sondar(ano)) next
+
+  bruto <- consultar(ano, uos)
   if (is.null(bruto) || nrow(bruto) == 0) {
     message("::warning::SIOP não retornou dados para ", ano)
     next
@@ -115,10 +156,11 @@ for (ano in anos) {
   limpo <- normalizar(bruto)
   limpo <- limpo[!is.na(limpo$codigo_uo), , drop = FALSE]
   write.csv(limpo, sprintf("dados/siop_%d.csv", ano), row.names = FALSE, fileEncoding = "UTF-8")
-  message("  ", nrow(limpo), " linhas gravadas em dados/siop_", ano, ".csv")
+  message("  ", nrow(limpo), " linhas gravadas")
 
   soma <- suppressWarnings(sum(as.numeric(limpo$empenhado), na.rm = TRUE))
+  message("  empenho total: ", format(soma, big.mark = ".", decimal.mark = ","))
   if (!is.finite(soma) || soma == 0) {
-    message("::warning::empenho somando zero em ", ano, " — verifique o mapeamento de colunas acima")
+    message("::warning::empenho somando zero — verifique o mapeamento acima")
   }
 }

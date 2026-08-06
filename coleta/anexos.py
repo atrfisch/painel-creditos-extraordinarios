@@ -198,12 +198,27 @@ def parsear_anexo(texto: str) -> list[dict]:
 
 
 def texto_do_pdf(conteudo: bytes) -> str:
+    """Texto do PDF, tentando mais de um arranjo de layout.
+
+    O anexo é uma tabela, e extratores diferentes intercalam as colunas de
+    formas diferentes. Se o modo padrão não produzir as marcas esperadas, vale
+    tentar o modo com layout preservado antes de desistir.
+    """
     import pdfplumber
-    partes = []
-    with pdfplumber.open(io.BytesIO(conteudo)) as pdf:
-        for pagina in pdf.pages:
-            partes.append(pagina.extract_text() or "")
-    return "\n".join(partes)
+
+    def extrair(**kwargs) -> str:
+        partes = []
+        with pdfplumber.open(io.BytesIO(conteudo)) as pdf:
+            for pagina in pdf.pages:
+                partes.append(pagina.extract_text(**kwargs) or "")
+        return "\n".join(partes)
+
+    texto = extrair()
+    if not RE_UNIDADE.search(texto or ""):
+        alternativo = extrair(layout=True)
+        if RE_UNIDADE.search(alternativo or ""):
+            return alternativo
+    return texto
 
 
 def coletar(mpvs: list[dict], cache: dict) -> dict:
@@ -222,6 +237,16 @@ def coletar(mpvs: list[dict], cache: dict) -> dict:
                 sum(l["valor"] for l in registro["programatica"]), 2)
             cache[ident] = registro
             n = len(registro["programatica"])
+            if n == 0 and registro.get("documento"):
+                print(f"::warning::{ident}: anexo baixado mas sem programática legível",
+                      file=sys.stderr)
+                despejo = Path("dados") / f"anexo_{ident.replace('/', '-').replace(' ', '_')}.txt"
+                despejo.parent.mkdir(exist_ok=True)
+                try:
+                    despejo.write_text(texto_do_pdf(bruto)[:20000], encoding="utf-8")
+                    print(f"    texto salvo em {despejo} para inspeção", file=sys.stderr)
+                except Exception:  # noqa: BLE001
+                    pass
             aviso = ""
             if p.get("valor_total") and registro["total_anexo"]:
                 dif = abs(registro["total_anexo"] - p["valor_total"])
@@ -248,6 +273,9 @@ def main() -> None:
 
     com_prog = sum(1 for v in cache.values() if v.get("programatica"))
     print(f"  {len(uos)} unidades orçamentárias -> dados/uos.txt", file=sys.stderr)
+    if not uos:
+        print("::error::nenhuma programática extraída dos anexos — sem os códigos de "
+              "unidade o cruzamento com o SIOP não tem como acontecer", file=sys.stderr)
     print(f"anexos: {len(cache)} em cache ({len(cache) - antes} novos), "
           f"{com_prog} com programática", file=sys.stderr)
 
