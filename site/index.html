@@ -154,6 +154,10 @@ table.uos td{padding:6px 8px;border-bottom:1px solid var(--linha);vertical-align
 table.uos td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;
   white-space:nowrap}
 .sem-dado{color:var(--suave)}
+.acao{font-size:12px;color:var(--suave);margin-top:3px;padding-left:10px;
+  border-left:2px solid var(--linha)}
+.acao .cod{font-family:var(--mono);font-size:11px;color:var(--tinta)}
+.acao--falta{border-left-color:var(--vencido);color:var(--vencido)}
 .aviso{font-size:12.5px;color:var(--vencido);margin:8px 0 0}
 
 .vazio{background:var(--branco);padding:40px 20px;text-align:center;color:var(--suave)}
@@ -222,14 +226,22 @@ table.uos td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tab
       período, com a contagem suspensa no recesso (art. 62 da Constituição). Quando a data não
       vem dos Dados Abertos do Senado, ela é estimada a partir do início do prazo de emendas —
       cada ficha informa a origem.</p>
-    <p><b>Execução.</b> Vem do SIOP pela API da SOF, via pacote <code>orcamentoBR</code>. A API
-      não marca qual crédito abriu qual dotação, então a atribuição aparece em três modos.
+    <p><b>Programática.</b> O anexo que a Presidência envia com cada MP traz o código da
+      unidade orçamentária e o código da ação. É por esse par que a linha do SIOP é localizada —
+      cruzamento exato, sem casar nome de unidade nem presumir ações. Quando o anexo não é
+      obtido, a ficha avisa e o painel recai no método antigo, aproximado.</p>
+    <p><b>Execução.</b> Vem do SIOP pela API da SOF, via pacote <code>orcamentoBR</code>. Mesmo
+      com a ação certa, o SIOP não separa o que foi gasto por conta da LOA do que foi por conta
+      do crédito, então a atribuição aparece em dois modos.
       <b>Direta:</b> a ação nasceu do crédito, dotação inicial zero — a execução da ação é a do
       crédito. <b>Piso (≥):</b> a ação já existia na LOA e foi reforçada; o painel conta apenas
       o empenho que excede a dotação inicial, porque só esse excedente veio necessariamente do
-      crédito. <b>Manual:</b> as ações do anexo da MP foram fixadas em
-      <code>config/de_para_acoes.csv</code>. Quando duas ou mais MPs incidem sobre a mesma
-      unidade no mesmo ano, a ficha é marcada como atribuição ambígua.</p>
+      crédito. Quando duas ou mais MPs
+      alimentam a mesma ação no exercício, cada uma responde pela fração que abriu, e a ficha
+      traz o selo de execução rateada.</p>
+    <p><b>Vigência.</b> Vem da janela de deliberação publicada na página da MP. O cálculo do
+      art. 62 ficou como último recurso: na prática o Congresso nem sempre suspende a contagem
+      no recesso, ainda que suspenda o prazo de emendas.</p>
     <p>Fontes: Congresso Nacional, Propostas Orçamentárias (PLNs e MPVs); Dados Abertos do
       Senado Federal; SIOP/Secretaria de Orçamento Federal.</p>
   </div>
@@ -310,25 +322,35 @@ function reguaExecucao(m){
 function tabelaUOs(m){
   const linhas = (m.unidades||[]).map(u=>{
     const e = u.execucao||{};
-    const ok = u.codigo_uo && e.base>0;
+    const ok = (e.base||0)>0;
+    const acoes = (e.detalhe_acoes||[]).map(a=>
+      `<div class="acao"><span class="cod">${esc(a.acao)}</span> ${esc(a.descricao||'')}
+        <span class="cod">${a.modo==='piso'?'≥':''}${compacto(a.empenhado)} emp.</span>
+        ${a.fator<0.999?`<span class="cod">parcela ${(a.fator*100).toFixed(0)}%</span>`:''}</div>`).join('');
+    const ausentes = (u.acoes_ausentes||[]).length
+      ? `<div class="acao acao--falta">sem linha no SIOP: ${esc(u.acoes_ausentes.join(', '))}</div>` : '';
     return `<tr>
-      <td>${esc(u.unidade)}<br><span class="sem-dado">${esc(u.orgao)}${u.codigo_uo?' · UO '+esc(u.codigo_uo):' · sem código'}</span></td>
+      <td>${esc(u.unidade)}<br><span class="sem-dado">${esc(u.orgao)}${u.codigo_uo?' · UO '+esc(u.codigo_uo):' · sem código'}</span>
+        ${acoes}${ausentes}
+        ${(u.qualificadores||[]).length?`<div class="acao">${esc(u.qualificadores.join(' · '))}</div>`:''}</td>
       <td class="n">${compacto(u.valor_credito)}</td>
       <td class="n">${ok?compacto(e.credito_no_ano):'<span class="sem-dado">—</span>'}</td>
-      <td class="n">${ok?(e.fator*100).toFixed(0)+'%':'<span class="sem-dado">—</span>'}</td>
       <td class="n">${ok?compacto(e.empenhado):'<span class="sem-dado">—</span>'}</td>
       <td class="n">${ok?compacto(e.pago):'<span class="sem-dado">—</span>'}</td>
     </tr>`;}).join('');
-  const outras = [...new Set((m.unidades||[]).flatMap(u=>u.outras_mps||[]))];
-  return `<details class="detalhe"><summary>Unidades orçamentárias e execução</summary>
+  const ex = m.execucao||{};
+  return `<details class="detalhe"><summary>Programática e execução</summary>
     <table class="uos"><thead><tr>
-      <th>Unidade</th><th class="n">Crédito na MP</th><th class="n">Crédito no ano</th>
-      <th class="n">Parcela</th><th class="n">Empenhado</th><th class="n">Pago</th>
+      <th>Unidade e ações do anexo</th><th class="n">Crédito na MP</th>
+      <th class="n">Crédito no ano</th><th class="n">Empenhado</th><th class="n">Pago</th>
     </tr></thead><tbody>${linhas}</tbody></table>
-    ${outras.length?`<p class="aviso">A ação também recebeu crédito de ${esc(outras.join(', '))}
-      no mesmo exercício. O SIOP registra um número só, então a execução acima é a parcela
-      desta MP, proporcional ao crédito que ela abriu.</p>`:''}
-    ${m.vigencia_fonte?`<p class="regua-nota" style="margin-top:8px">origem da vigência: ${esc(m.vigencia_fonte)} · atribuição: ${esc((m.execucao||{}).modo||'—')}</p>`:''}
+    ${ex.origem!=='anexo'?`<p class="aviso">Anexo da MP não obtido: as unidades foram casadas
+      pelo nome e as ações, presumidas. Números aproximados.</p>`:''}
+    ${ex.acoes_ausentes?`<p class="aviso">${ex.acoes_ausentes} ação(ões) do anexo ainda sem
+      linha no SIOP — o crédito pode não ter sido registrado no sistema.</p>`:''}
+    <p class="regua-nota" style="margin-top:8px">vigência: ${esc(m.vigencia_fonte||'—')} ·
+      cruzamento: ${esc(ex.origem||'—')} · atribuição: ${esc(ex.modo||'—')}${ex.rateado?' com rateio':''}
+      ${m.urgencia?' · urgência a partir de '+dia(m.urgencia):''}</p>
   </details>`;
 }
 
@@ -355,6 +377,7 @@ function ficha(m){
       <span class="campo">Emendas <b>${esc(emendas)}</b></span>
       ${m.emendas_abertas?'<span class="selo selo--emendas">emendas abertas</span>':''}
       ${(m.execucao||{}).rateado?'<span class="selo selo--nota">execução rateada</span>':''}
+      ${(m.execucao||{}).origem!=='anexo'?'<span class="selo selo--nota">cruzamento aproximado</span>':''}
       ${(m.execucao||{}).modo==='piso'?'<span class="selo selo--nota">execução em piso</span>':''}
     </div>
     ${tabelaUOs(m)}
