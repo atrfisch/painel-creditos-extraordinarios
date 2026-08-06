@@ -74,6 +74,18 @@ jobs:
           git diff --staged --quiet || git commit -m "dados: atualização automática $(date -u +%F\ %H:%M)"
           git push
 
+      - name: Guardar diagnóstico
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostico
+          path: |
+            dados/uos.txt
+            dados/anexo_*.txt
+            dados/siop_*.csv
+          if-no-files-found: ignore
+          retention-days: 7
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
