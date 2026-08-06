@@ -107,8 +107,19 @@ def main() -> int:
             falhas.append(f"as parcelas não fecham o total: {junto:,.0f}")
         if anp.get("execucao", {}).get("pct_empenhado") != outra.get("execucao", {}).get("pct_empenhado"):
             falhas.append("a taxa de execução deveria ser a mesma para as MPs da mesma ação")
-        if anp.get("vigencia_fim") != "2026-09-28":
-            falhas.append(f"vigência oficial: {anp.get('vigencia_fim')}")
+        # 60 dias oficiais + 60 de prorrogação automática
+        if anp.get("vigencia_60") != "2026-09-28" or anp.get("vigencia_fim") != "2026-11-27":
+            falhas.append(f"vigência: 60d={anp.get('vigencia_60')} fim={anp.get('vigencia_fim')}")
+        if anp.get("prorrogada"):
+            falhas.append("MP no primeiro período não deveria constar como prorrogada")
+
+        prorrogada = med.get("MPV 1372/2026", {})
+        if not prorrogada.get("prorrogada"):
+            falhas.append("janela de ~120 dias deveria ser detectada como prorrogação")
+        if prorrogada.get("vigencia_fim") != "2026-10-26":
+            falhas.append(f"vigência prorrogada: {prorrogada.get('vigencia_fim')}")
+        if prorrogada.get("dias_para_prorrogacao") is not None:
+            falhas.append("MP já prorrogada não tem prazo de prorrogação pendente")
         if not anp.get("sem_relator"):
             falhas.append("MPV sem relator não foi sinalizada")
 
@@ -122,7 +133,7 @@ def main() -> int:
             print("  -", f)
         return 1
     print(f"OK — {len(propostas)} propostas; anexo, cruzamento exato, rateio, "
-          f"vigência oficial e corte entre registros conferidos")
+          f"prorrogação e corte entre registros conferidos")
     return 0
 
 
