@@ -56,12 +56,31 @@ RE_QUALIF = re.compile(
 )
 
 RE_DOU = re.compile(r"Publicação no DOU\s*:?\s*(\d{2}/\d{2}/\d{4})")
-RE_DELIB = re.compile(
-    r"Deliberação da Medida Provisória\s*:?\s*(?:de\s*)?(\d{2}/\d{2}/\d{4})\s*a\s*(\d{2}/\d{2}/\d{4})")
-RE_EMENDAS = re.compile(
-    r"Apresentação de emendas\s*:?\s*(?:de\s*)?(\d{2}/\d{2}/\d{4})\s*a\s*(\d{2}/\d{2}/\d{4})",
-    re.I)
-RE_URGENCIA = re.compile(r"Regime de urgência,? a partir de\s*:?\s*(\d{2}/\d{2}/\d{4})")
+
+# A página traz os prazos em duas disposições e nem sempre nas duas ao mesmo
+# tempo. Em "Prazos abertos" as datas vêm antes do rótulo; na seção
+# "Calendário", depois. Só a segunda lista os prazos já encerrados, então é ela
+# que vale quando existe — mas para MPs recentes às vezes só há a primeira.
+def _janela(texto: str, rotulo: str) -> tuple[str | None, str | None]:
+    depois = re.search(
+        rotulo + r"\s*:?\s*(?:de\s*)?(\d{2}/\d{2}/\d{4})\s*(?:a|-|–|até)\s*(\d{2}/\d{2}/\d{4})",
+        texto, re.I)
+    if depois:
+        return depois.group(1), depois.group(2)
+    antes = re.search(
+        r"(\d{2}/\d{2}/\d{4})\s*(?:a|-|–|até)\s*(\d{2}/\d{2}/\d{4})\s*:\s*" + rotulo,
+        texto, re.I)
+    if antes:
+        return antes.group(1), antes.group(2)
+    return None, None
+
+
+ROTULO_DELIB = r"Deliberação da Medida Provisória"
+ROTULO_EMENDAS = r"Apresentação de [Ee]mendas(?:\s+à Medida Provisória)?"
+RE_URGENCIA = re.compile(
+    r"(?:Regime de [Uu]rgência,?\s*a partir de\s*:?\s*(\d{2}/\d{2}/\d{4})"
+    r"|Regime de [Uu]rgência\s*(\d{2}/\d{2}/\d{4})\s*em diante"
+    r"|(\d{2}/\d{2}/\d{4})\s*em diante)")
 RE_ATO = re.compile(r"Ato do Presidente da Mesa do Congresso Nacional n[ºo°]?\s*([\d./-]+)", re.I)
 
 
@@ -102,10 +121,11 @@ def ler_pagina(codigo: str) -> dict:
     sopa = BeautifulSoup(html, "html.parser")
     texto = _limpa(sopa.get_text(" "))
 
-    delib = RE_DELIB.search(texto)
-    emendas = RE_EMENDAS.search(texto)
+    d_ini, d_fim = _janela(texto, ROTULO_DELIB)
+    e_ini, e_fim = _janela(texto, ROTULO_EMENDAS)
     dou = RE_DOU.search(texto)
-    urgencia = RE_URGENCIA.search(texto)
+    urg = RE_URGENCIA.search(texto)
+    urgencia = next((g for g in urg.groups() if g), None) if urg else None
 
     documento = None
     for a in sopa.find_all("a", href=True):
@@ -126,8 +146,7 @@ def ler_pagina(codigo: str) -> dict:
     # início e cerca de 120 depois da prorrogação, que o art. 62, § 7º torna
     # automática. O tamanho da janela é o indicador mais confiável de que a
     # prorrogação já ocorreu; o Ato da Mesa, quando citado, confirma.
-    inicio = _iso(delib.group(1)) if delib else None
-    fim = _iso(delib.group(2)) if delib else None
+    inicio, fim = _iso(d_ini), _iso(d_fim)
     prorrogada, ato = False, None
     if inicio and fim:
         dias = (date.fromisoformat(fim) - date.fromisoformat(inicio)).days + 1
@@ -144,9 +163,9 @@ def ler_pagina(codigo: str) -> dict:
         "deliberacao_fim": fim,
         "prorrogada": prorrogada,
         "ato_prorrogacao": ato,
-        "emendas_inicio_oficial": _iso(emendas.group(1)) if emendas else None,
-        "emendas_fim_oficial": _iso(emendas.group(2)) if emendas else None,
-        "urgencia": _iso(urgencia.group(1)) if urgencia else None,
+        "emendas_inicio_oficial": _iso(e_ini),
+        "emendas_fim_oficial": _iso(e_fim),
+        "urgencia": _iso(urgencia),
         "documento": documento,
     }
 
@@ -237,6 +256,9 @@ def coletar(mpvs: list[dict], cache: dict) -> dict:
                 sum(l["valor"] for l in registro["programatica"]), 2)
             cache[ident] = registro
             n = len(registro["programatica"])
+            if not registro.get("deliberacao_fim"):
+                print(f"::warning::{ident}: prazos oficiais não encontrados na página — "
+                      "a vigência ficará estimada", file=sys.stderr)
             if n == 0 and registro.get("documento"):
                 print(f"::warning::{ident}: anexo baixado mas sem programática legível",
                       file=sys.stderr)

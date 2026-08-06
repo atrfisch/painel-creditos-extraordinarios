@@ -139,6 +139,10 @@ def enriquecer(propostas: list[dict], manual: dict[str, dict],
 
         if not publicacao and oficial.get("publicacao_dou"):
             publicacao, fonte = oficial["publicacao_dou"], "oficial (página da MP)"
+        # o bloco "Prazos abertos" não traz a data do DOU, mas a deliberação
+        # começa no dia da publicação
+        if not publicacao and oficial.get("deliberacao_inicio"):
+            publicacao, fonte = oficial["deliberacao_inicio"], "oficial (início da deliberação)"
 
         if not publicacao and p.get("codigo_materia"):
             publicacao = data_apresentacao_senado(p["codigo_materia"])
@@ -177,6 +181,8 @@ def enriquecer(propostas: list[dict], manual: dict[str, dict],
             p["prorrogada"] = bool(oficial.get("prorrogada"))
             p["ato_prorrogacao"] = oficial.get("ato_prorrogacao")
             p["fim_periodo_atual"] = oficial["deliberacao_fim"]
+            p["inicio_periodo_atual"] = oficial.get("deliberacao_inicio")
+            p["urgencia"] = oficial.get("urgencia")
         elif publicacao:
             inicio = date.fromisoformat(publicacao)
             p["vigencia_60"] = somar_dias_uteis_de_vigencia(inicio, PRAZO_INICIAL).isoformat()

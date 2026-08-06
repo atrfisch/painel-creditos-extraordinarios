@@ -273,10 +273,11 @@ def main() -> None:
             **p,
             "vigente": vigente, "encerrada": encerrada,
             "sem_relator": not p.get("relator"),
-            "urgencia": anexo.get("urgencia"),
+            "urgencia": p.get("urgencia") or anexo.get("urgencia"),
             "prorrogada": bool(p.get("prorrogada")),
             "ato_prorrogacao": p.get("ato_prorrogacao"),
             "fim_periodo_atual": p.get("fim_periodo_atual"),
+            "inicio_periodo_atual": p.get("inicio_periodo_atual"),
             "dias_para_prorrogacao": dias_ate(p.get("vigencia_60"), hoje)
             if not p.get("prorrogada") else None,
             "dias_para_vigencia": dias_ate(p.get("vigencia_fim"), hoje),
