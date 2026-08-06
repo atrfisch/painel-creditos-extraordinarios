@@ -38,6 +38,7 @@ RE_TOTAL = re.compile(r"Total:\s*(\d+)")
 RE_RELATOR = re.compile(r"Relator:\s*((?:Senador|Senadora|Deputado|Deputada)[^|\n]*?\([^)]*\))")
 RE_VALOR = re.compile(r"\b\d{1,3}(?:\.\d{3})*,\d{2}\b")
 RE_LEI = re.compile(r"Lei\s+n[ºo°]\s*([\d.]+)\s*,?\s*de\s*(\d{2}/\d{2}/\d{4})", re.I)
+RE_OUTRA = re.compile(r"\b(?:MPV|PLN)\s*\d+\s*/\s*\d{4}\b", re.I)
 
 SITUACOES = [
     "AGUARDANDO DESPACHO",
@@ -119,10 +120,20 @@ def baixar(ano: int, tentativas: int = 3) -> str:
     raise RuntimeError(f"falha ao baixar propostas de {ano}: {erro}")
 
 
-def _unidades_da_linha(tr) -> list[UnidadeOrcamentaria]:
-    """Lê a tabela aninhada com Órgão / Unidade Orçamentária / Valor."""
+def _unidades_da_linha(tr, ate=None) -> list[UnidadeOrcamentaria]:
+    """Lê a tabela aninhada com Órgão / Unidade Orçamentária / Valor.
+
+    `ate` é o link do próximo registro: se a página vier com uma tag mal
+    fechada, a linha de um registro pode conter o seguinte, e sem esse corte
+    as unidades de um acabariam somadas às do outro.
+    """
     unidades: list[UnidadeOrcamentaria] = []
-    for tabela in tr.find_all("table"):
+    for elemento in tr.find_all(["a", "table"]):
+        if elemento is ate:
+            break
+        if elemento.name != "table":
+            continue
+        tabela = elemento
         cabecalho = _limpa(tabela.get_text(" ")).lower()
         if "unidade" not in cabecalho:
             continue
@@ -139,6 +150,21 @@ def _unidades_da_linha(tr) -> list[UnidadeOrcamentaria]:
                 orgao=celulas[0], unidade=celulas[1], valor=_num(m.group(0))
             ))
     return unidades
+
+
+def _texto_do_registro(tr, identificacao: str) -> str:
+    """Texto da linha, cortado antes da próxima matéria que apareça nela.
+
+    O próprio número se repete no rótulo do popover ("Unidades orçamentárias
+    da MPV 1381/2026"), então só interrompe em uma identificação diferente.
+    """
+    texto = _limpa(tr.get_text(" "))
+    alvo = re.sub(r"\s+", " ", identificacao)
+    for m in RE_OUTRA.finditer(texto):
+        achado = re.sub(r"\s*/\s*", "/", re.sub(r"\s+", " ", m.group(0))).upper()
+        if achado != alvo:
+            return texto[:m.start()]
+    return texto
 
 
 def _situacao_do_texto(texto: str) -> str | None:
@@ -178,12 +204,16 @@ def parsear(html: str) -> list[Proposta]:
             continue
         vistos.add(chave)
 
-        texto = _limpa(tr.get_text(" "))
         codigo = RE_MATERIA.search(link["href"]).group(1)
+        texto = _texto_do_registro(tr, chave)
+        proximo = next((a for a in tr.find_all("a", href=True)
+                        if a is not link and RE_MATERIA.search(a["href"])
+                        and RE_IDENT.match(_limpa(a.get_text(" ")))
+                        and _limpa(a.get_text(" ")).upper().replace(" ", "") != chave.replace(" ", "")), None)
 
         # ementa: o texto logo após "(Tipo)" na primeira célula
         celulas = tr.find_all("td", recursive=False) or tr.find_all("td")
-        primeira = _limpa(celulas[0].get_text(" ")) if celulas else texto
+        primeira = _texto_do_registro(celulas[0], chave) if celulas else texto
         tipo_m = RE_TIPO.search(primeira) or RE_TIPO.search(texto)
         tipo = tipo_m.group(1) if tipo_m else ""
         ementa = ""
@@ -193,7 +223,7 @@ def parsear(html: str) -> list[Proposta]:
         ementa = re.sub(r"^(Crédito\s+[Ee]xtraordinári[oa]|Crédito\s+[Ee]special|"
                         r"Crédito\s+[Ss]uplementar)\s*[-–—]\s*", "", ementa).strip()
 
-        unidades = _unidades_da_linha(tr)
+        unidades = _unidades_da_linha(tr, ate=proximo)
 
         valor_total = None
         soma_uo = sum(u.valor for u in unidades)
