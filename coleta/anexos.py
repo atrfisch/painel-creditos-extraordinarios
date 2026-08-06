@@ -29,6 +29,7 @@ import json
 import re
 import sys
 import time
+from datetime import date
 from pathlib import Path
 
 import requests
@@ -61,6 +62,7 @@ RE_EMENDAS = re.compile(
     r"Apresentação de emendas\s*:?\s*(?:de\s*)?(\d{2}/\d{2}/\d{4})\s*a\s*(\d{2}/\d{2}/\d{4})",
     re.I)
 RE_URGENCIA = re.compile(r"Regime de urgência,? a partir de\s*:?\s*(\d{2}/\d{2}/\d{4})")
+RE_ATO = re.compile(r"Ato do Presidente da Mesa do Congresso Nacional n[ºo°]?\s*([\d./-]+)", re.I)
 
 
 def _iso(br: str | None) -> str | None:
@@ -120,10 +122,28 @@ def ler_pagina(codigo: str) -> dict:
                 documento = a["href"]
                 break
 
+    # A janela de deliberação publicada é a do período corrente: 60 dias no
+    # início e cerca de 120 depois da prorrogação, que o art. 62, § 7º torna
+    # automática. O tamanho da janela é o indicador mais confiável de que a
+    # prorrogação já ocorreu; o Ato da Mesa, quando citado, confirma.
+    inicio = _iso(delib.group(1)) if delib else None
+    fim = _iso(delib.group(2)) if delib else None
+    prorrogada, ato = False, None
+    if inicio and fim:
+        dias = (date.fromisoformat(fim) - date.fromisoformat(inicio)).days + 1
+        prorrogada = dias > 90
+    if "prorrog" in texto.lower():
+        m = RE_ATO.search(texto)
+        ato = m.group(1) if m else None
+        if ato:
+            prorrogada = True
+
     return {
         "publicacao_dou": _iso(dou.group(1)) if dou else None,
-        "deliberacao_inicio": _iso(delib.group(1)) if delib else None,
-        "deliberacao_fim": _iso(delib.group(2)) if delib else None,
+        "deliberacao_inicio": inicio,
+        "deliberacao_fim": fim,
+        "prorrogada": prorrogada,
+        "ato_prorrogacao": ato,
         "emendas_inicio_oficial": _iso(emendas.group(1)) if emendas else None,
         "emendas_fim_oficial": _iso(emendas.group(2)) if emendas else None,
         "urgencia": _iso(urgencia.group(1)) if urgencia else None,
@@ -222,7 +242,12 @@ def main() -> None:
     cache = coletar(mpvs, cache)
     CACHE.parent.mkdir(parents=True, exist_ok=True)
     CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
+    uos = sorted({l["uo_codigo"] for v in cache.values() for l in v.get("programatica", [])})
+    Path("dados").mkdir(exist_ok=True)
+    Path("dados/uos.txt").write_text("\n".join(uos), encoding="utf-8")
+
     com_prog = sum(1 for v in cache.values() if v.get("programatica"))
+    print(f"  {len(uos)} unidades orçamentárias -> dados/uos.txt", file=sys.stderr)
     print(f"anexos: {len(cache)} em cache ({len(cache) - antes} novos), "
           f"{com_prog} com programática", file=sys.stderr)
 

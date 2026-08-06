@@ -159,11 +159,24 @@ def enriquecer(propostas: list[dict], manual: dict[str, dict],
             p["vigencia_fim"] = registro["vigencia_fim"]
             p["vigencia_fonte"] = "manual"
         elif oficial.get("deliberacao_fim"):
-            # a janela de deliberação publicada pelo Congresso é a vigência
-            p["vigencia_60"] = oficial["deliberacao_fim"]
-            p["vigencia_fim"] = oficial["deliberacao_fim"]
-            p["vigencia_fonte"] = "oficial (página da MP)"
-            p["prorrogavel"] = True
+            # A janela publicada é a do período corrente. A prorrogação por mais
+            # 60 dias é automática (art. 62, § 7º), então a data em que a MP de
+            # fato caduca é o fim do segundo período — antes disso, o dia 60 é
+            # só o momento em que a prorrogação acontece.
+            fim_periodo = date.fromisoformat(oficial["deliberacao_fim"])
+            if oficial.get("prorrogada"):
+                p["vigencia_60"] = (
+                    date.fromisoformat(publicacao) + timedelta(days=59)
+                ).isoformat() if publicacao else None
+                p["vigencia_fim"] = oficial["deliberacao_fim"]
+                p["vigencia_fonte"] = "oficial (prorrogada)"
+            else:
+                p["vigencia_60"] = oficial["deliberacao_fim"]
+                p["vigencia_fim"] = (fim_periodo + timedelta(days=60)).isoformat()
+                p["vigencia_fonte"] = "oficial + prorrogação projetada"
+            p["prorrogada"] = bool(oficial.get("prorrogada"))
+            p["ato_prorrogacao"] = oficial.get("ato_prorrogacao")
+            p["fim_periodo_atual"] = oficial["deliberacao_fim"]
         elif publicacao:
             inicio = date.fromisoformat(publicacao)
             p["vigencia_60"] = somar_dias_uteis_de_vigencia(inicio, PRAZO_INICIAL).isoformat()

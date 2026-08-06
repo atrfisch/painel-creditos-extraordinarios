@@ -274,6 +274,11 @@ def main() -> None:
             "vigente": vigente, "encerrada": encerrada,
             "sem_relator": not p.get("relator"),
             "urgencia": anexo.get("urgencia"),
+            "prorrogada": bool(p.get("prorrogada")),
+            "ato_prorrogacao": p.get("ato_prorrogacao"),
+            "fim_periodo_atual": p.get("fim_periodo_atual"),
+            "dias_para_prorrogacao": dias_ate(p.get("vigencia_60"), hoje)
+            if not p.get("prorrogada") else None,
             "dias_para_vigencia": dias_ate(p.get("vigencia_fim"), hoje),
             "dias_para_emendas": dias_ate(p.get("emendas_fim"), hoje),
             "emendas_abertas": bool(p.get("emendas_fim") and p["emendas_fim"] >= hoje.isoformat()),
@@ -300,6 +305,13 @@ def main() -> None:
     por_origem = defaultdict(int)
     for r in registros:
         por_origem[r["execucao"]["origem"]] += 1
+    sem_execucao = sum(1 for r in registros if not r["execucao"]["base"])
+    if registros and sem_execucao == len(registros):
+        print("::error::nenhuma MP com dados de execução — o passo do SIOP não "
+              "produziu dados/siop_*.csv ou o mapeamento de colunas falhou", file=sys.stderr)
+    elif sem_execucao:
+        print(f"::warning::{sem_execucao} de {len(registros)} MPs sem dados de execução",
+              file=sys.stderr)
     print(f"{len(registros)} MPs -> {SAIDA}", file=sys.stderr)
     print(f"  origem do cruzamento: {dict(por_origem)}", file=sys.stderr)
     if sem_anexo:
