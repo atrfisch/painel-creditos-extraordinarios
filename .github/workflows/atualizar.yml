@@ -2,7 +2,7 @@ name: Atualizar painel
 
 on:
   schedule:
-    - cron: "0 9,21 * * 1-5"
+    - cron: "0 9,21 * * 1-5"   # 06h e 18h em Brasília, dias úteis
   workflow_dispatch:
     inputs:
       anos:
@@ -45,19 +45,23 @@ jobs:
           r-version: release
           use-public-rspm: true
 
-      - name: Instalar orcamentoBR
-        run: Rscript -e 'install.packages("orcamentoBR")'
-        continue-on-error: true
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: cran::orcamentoBR
 
       - name: Coletar propostas do Congresso
         run: python coleta/congresso.py $ANOS
+
+      - name: Baixar anexos das MPs
+        run: python coleta/anexos.py
+        continue-on-error: true
 
       - name: Calcular vigência
         run: python coleta/vigencia.py
 
       - name: Baixar execução do SIOP
         run: Rscript coleta/siop.R $ANOS
-        continue-on-error: true
+        continue-on-error: true   # sem SIOP o painel ainda publica a parte legislativa
 
       - name: Consolidar
         run: python coleta/consolidar.py
@@ -66,7 +70,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add site/dados.json
+          git add site/dados.json config/anexos.json
           git diff --staged --quiet || git commit -m "dados: atualização automática $(date -u +%F\ %H:%M)"
           git push
 
