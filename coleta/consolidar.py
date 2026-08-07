@@ -37,7 +37,7 @@ from pathlib import Path
 
 DADOS = Path("dados")
 CONFIG = Path("config")
-SAIDA = Path("site/dados.json")
+SAIDA = Path("docs/dados.json")
 
 ENCERRADAS = {"SEM EFICÁCIA", "TRANSFORMADA EM NORMA JURÍDICA",
               "REJEITADA", "ARQUIVADA", "PREJUDICADA"}
