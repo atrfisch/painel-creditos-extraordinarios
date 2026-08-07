@@ -1,8 +1,12 @@
 name: Atualizar painel
 
+# O site é servido direto da pasta docs/ do repositório
+# (Settings -> Pages -> Deploy from a branch -> main -> /docs).
+# Não há job de publicação: basta o commit, e o GitHub publica sozinho.
+
 on:
   schedule:
-    - cron: "0 9,21 * * 1-5"   # 06h e 18h em Brasília, dias úteis
+    - cron: "0 9,21 * * 1-5"
   workflow_dispatch:
     inputs:
       anos:
@@ -13,17 +17,15 @@ on:
     paths:
       - "coleta/**"
       - "config/**"
-      - "site/**"
+      - "docs/index.html"
       - ".github/workflows/**"
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: painel-creditos
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   coletar:
@@ -45,9 +47,8 @@ jobs:
           r-version: release
           use-public-rspm: true
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: cran::orcamentoBR
+      - name: Instalar orcamentoBR
+        run: Rscript -e 'install.packages("orcamentoBR")'
 
       - name: Coletar propostas do Congresso
         run: python coleta/congresso.py $ANOS
@@ -61,16 +62,24 @@ jobs:
 
       - name: Baixar execução do SIOP
         run: Rscript coleta/siop.R $ANOS
-        continue-on-error: true   # sem SIOP o painel ainda publica a parte legislativa
+        continue-on-error: true
 
       - name: Consolidar
         run: python coleta/consolidar.py
 
-      - name: Commitar dados
+      - name: Conferir o pacote do site
+        run: |
+          test -f docs/index.html || { echo "::error::docs/index.html não existe"; exit 1; }
+          head -c 200 docs/index.html | grep -qi '<!doctype html' \
+            || { echo "::error::docs/index.html não é HTML"; exit 1; }
+          test -s docs/dados.json || { echo "::error::docs/dados.json vazio"; exit 1; }
+          python -c "import json;d=json.load(open('docs/dados.json',encoding='utf-8'));print(len(d['medidas']),'medidas no arquivo')"
+
+      - name: Publicar
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add site/dados.json config/anexos.json
+          git add docs/dados.json config/anexos.json
           git diff --staged --quiet || git commit -m "dados: atualização automática $(date -u +%F\ %H:%M)"
           git push
 
@@ -85,17 +94,3 @@ jobs:
             dados/siop_*.csv
           if-no-files-found: ignore
           retention-days: 7
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-
-  publicar:
-    needs: coletar
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
-    steps:
-      - id: deploy
-        uses: actions/deploy-pages@v4
