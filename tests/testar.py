@@ -100,7 +100,7 @@ def main() -> int:
         if r.returncode != 0:
             falhas.append(f"{etapa}: {r.stderr[-400:]}")
 
-    saida = RAIZ / "site/dados.json"
+    saida = RAIZ / "docs/dados.json"
     if saida.exists():
         dados = json.loads(saida.read_text(encoding="utf-8"))
         med = {m["identificacao"]: m for m in dados["medidas"]}
@@ -148,11 +148,25 @@ def main() -> int:
 
         prorrogada = med.get("MPV 1372/2026", {})
         if not prorrogada.get("prorrogada"):
-            falhas.append("janela de ~120 dias deveria ser detectada como prorrogação")
+            falhas.append("janela na posição dos 120 dias deveria indicar prorrogação")
         if prorrogada.get("vigencia_fim") != "2026-10-26":
             falhas.append(f"vigência prorrogada: {prorrogada.get('vigencia_fim')}")
         if prorrogada.get("dias_para_prorrogacao") is not None:
             falhas.append("MP já prorrogada não tem prazo de prorrogação pendente")
+
+        # a página cita um Ato da Mesa, mas a janela está na posição dos 60 dias:
+        # citar não é ter sido prorrogada
+        if outra.get("prorrogada"):
+            falhas.append("menção a Ato da Mesa não pode marcar prorrogação sozinha")
+        if outra.get("ato_prorrogacao") is not None:
+            falhas.append("Ato só deve aparecer em MP efetivamente prorrogada")
+
+        # primeiro período encerrado não é caducidade: a prorrogação é automática
+        recem = med.get("MPV 1367/2026", {})
+        if recem.get("vigencia_60") != "2026-08-13" or recem.get("vigencia_fim") != "2026-10-12":
+            falhas.append(f"períodos: 60d={recem.get('vigencia_60')} fim={recem.get('vigencia_fim')}")
+        if (recem.get("dias_para_vigencia") or 0) < 0:
+            falhas.append("MP com 1º período vencendo não pode constar como caducada")
 
         ibama = med.get("MPV 1367/2026", {})
         if ibama.get("execucao", {}).get("modo") != "direta":
