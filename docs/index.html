@@ -115,6 +115,7 @@ h1{font-family:var(--cond);font-size:clamp(30px,5vw,46px);font-weight:700;letter
 .ficha[data-estado=urgente] .trilho--vigencia .preenche{background:var(--urgente)}
 .ficha[data-estado=encerrada] .trilho--vigencia .preenche{background:var(--linha-forte)}
 .marca60{position:absolute;top:0;bottom:0;width:1px;background:var(--branco);opacity:.85}
+.marca-urg{position:absolute;top:0;bottom:0;width:0;border-left:2px dotted var(--emendas)}
 .trilho--vigencia::after{content:'';position:absolute;inset:0;pointer-events:none}
 .marca60--vazia{background:var(--linha-forte);opacity:1}
 .janela{position:absolute;top:0;bottom:0;background-image:repeating-linear-gradient(
@@ -226,6 +227,7 @@ table.uos td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tab
       <span><i style="background:repeating-linear-gradient(45deg,#B9C2BC 0 3px,#F2F4F2 3px 6px)"></i>janela de emendas encerrada</span>
       <span><i style="background:var(--execucao);opacity:.35"></i>empenhado</span>
       <span><i style="background:var(--execucao)"></i>pago</span>
+      <span><i style="border-left:2px dotted var(--emendas);width:2px;height:11px"></i>regime de urgência</span>
       <span><i style="background:var(--tinta);width:2px"></i>hoje</span>
     </div>
     <p><b>Vigência.</b> Sessenta dias a partir da publicação, prorrogados uma vez por igual
@@ -293,6 +295,7 @@ function reguaVigencia(m){
   const total = Math.max(1, fim-ini);
   const decorrido = pct(Math.max(0,hoje-ini), total);
   const marca = m.vigencia_60 ? pct(new Date(m.vigencia_60+'T00:00:00')-ini, total) : null;
+  const urg = m.urgencia ? pct(new Date(m.urgencia+'T00:00:00')-ini, total) : null;
   let janela = '';
   if(m.emendas_inicio && m.emendas_fim){
     const a = pct(new Date(m.emendas_inicio+'T00:00:00')-ini, total);
@@ -314,6 +317,8 @@ function reguaVigencia(m){
       ${janela}
       ${marca!=null?`<div class="marca60${decorrido<marca?' marca60--vazia':''}" style="left:${marca}%"
         title="fim do primeiro período — prorrogação automática"></div>`:''}
+      ${urg!=null?`<div class="marca-urg" style="left:${urg}%"
+        title="regime de urgência — sobrestamento da pauta"></div>`:''}
       ${decorrido>0&&decorrido<100?`<div class="cursor" style="left:${decorrido}%"></div>`:''}
     </div>
     <div class="regua-nota">${nota}</div>`;
@@ -367,6 +372,22 @@ function tabelaUOs(m){
   </details>`;
 }
 
+function fasePrazo(m){
+  if(m.situacao==='TRANSFORMADA EM NORMA JURÍDICA') return null;
+  const hj = hoje.toISOString().slice(0,10);
+  if(m.vigencia_fim && m.vigencia_fim < hj) return ['fim','caducada'];
+  if(m.emendas_abertas && m.emendas_fim)
+    return ['emendas',`emendas até ${curta(m.emendas_fim)}`];
+  if(m.urgencia && m.urgencia <= hj) return ['urgente','em regime de urgência'];
+  if(m.urgencia && m.dias_para_urgencia!=null && m.dias_para_urgencia<=30)
+    return ['urgente',`urgência em ${m.dias_para_urgencia}d`];
+  if(!m.prorrogada && m.dias_para_prorrogacao!=null && m.dias_para_prorrogacao>=0
+     && m.dias_para_prorrogacao<=15)
+    return ['ativo',`prorroga em ${m.dias_para_prorrogacao}d`];
+  if(m.prorrogada) return ['ativo','em prorrogação'];
+  return ['ativo','1º período'];
+}
+
 function prazosOficiais(m){
   const itens = [];
   if(m.inicio_periodo_atual && m.fim_periodo_atual)
@@ -403,6 +424,7 @@ function ficha(m){
       <span class="campo">Emendas <b>${esc(emendas)}</b></span>
       ${m.emendas_abertas?'<span class="selo selo--emendas">emendas abertas</span>':''}
       ${m.prorrogada?`<span class="selo selo--prorroga">prorrogada${m.ato_prorrogacao?' · Ato '+esc(m.ato_prorrogacao):''}</span>`:''}
+      ${(()=>{const f=fasePrazo(m);return f?`<span class="selo selo--${f[0]==='fim'?'fim':f[0]==='emendas'?'emendas':f[0]==='urgente'?'urgente':'ativo'}">${esc(f[1])}</span>`:'';})()}
       ${(m.execucao||{}).rateado?'<span class="selo selo--nota">execução rateada</span>':''}
       ${(m.execucao||{}).origem!=='anexo'?'<span class="selo selo--nota">cruzamento aproximado</span>':''}
       ${(m.execucao||{}).modo==='piso'?'<span class="selo selo--nota">execução em piso</span>':''}
