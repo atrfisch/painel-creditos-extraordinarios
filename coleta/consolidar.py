@@ -1,5 +1,5 @@
 """
-Junta a coleta legislativa com a execução orçamentária e grava site/dados.json.
+Junta a coleta legislativa com a execução orçamentária e grava docs/dados.json.
 
 O cruzamento tem duas vias, e a primeira é a boa:
 
@@ -280,6 +280,7 @@ def main() -> None:
             "inicio_periodo_atual": p.get("inicio_periodo_atual"),
             "dias_para_prorrogacao": dias_ate(p.get("vigencia_60"), hoje)
             if not p.get("prorrogada") else None,
+            "dias_para_urgencia": dias_ate(p.get("urgencia"), hoje),
             "dias_para_vigencia": dias_ate(p.get("vigencia_fim"), hoje),
             "dias_para_emendas": dias_ate(p.get("emendas_fim"), hoje),
             "emendas_abertas": bool(p.get("emendas_fim") and p["emendas_fim"] >= hoje.isoformat()),

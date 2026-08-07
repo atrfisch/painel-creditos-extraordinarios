@@ -147,21 +147,24 @@ def ler_pagina(codigo: str) -> dict:
     # automática. O tamanho da janela é o indicador mais confiável de que a
     # prorrogação já ocorreu; o Ato da Mesa, quando citado, confirma.
     inicio, fim = _iso(d_ini), _iso(d_fim)
-    prorrogada, ato = False, None
-    if inicio and fim:
-        dias = (date.fromisoformat(fim) - date.fromisoformat(inicio)).days + 1
-        prorrogada = dias > 90
-    if "prorrog" in texto.lower():
-        m = RE_ATO.search(texto)
-        ato = m.group(1) if m else None
-        if ato:
-            prorrogada = True
+
+    # O número do Ato da Mesa só é aproveitado quando "prorrog" aparece perto
+    # dele. A palavra ocorre solta em quase toda página — no art. 62 citado no
+    # despacho, em títulos de seção — e tomá-la como sinal marcava MPs como
+    # prorrogadas sem terem sido, o que fazia a caducidade colapsar para o fim
+    # do primeiro período. Quem decide se houve prorrogação é vigencia.py, pela
+    # posição da janela publicada; aqui só se guarda a referência.
+    ato = None
+    for m in RE_ATO.finditer(texto):
+        vizinhanca = texto[max(0, m.start() - 250):m.end() + 250].lower()
+        if "prorrog" in vizinhanca:
+            ato = m.group(1)
+            break
 
     return {
         "publicacao_dou": _iso(dou.group(1)) if dou else None,
         "deliberacao_inicio": inicio,
         "deliberacao_fim": fim,
-        "prorrogada": prorrogada,
         "ato_prorrogacao": ato,
         "emendas_inicio_oficial": _iso(e_ini),
         "emendas_fim_oficial": _iso(e_fim),

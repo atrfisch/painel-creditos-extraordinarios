@@ -162,24 +162,32 @@ def enriquecer(propostas: list[dict], manual: dict[str, dict],
             p["vigencia_60"] = registro.get("vigencia_60") or None
             p["vigencia_fim"] = registro["vigencia_fim"]
             p["vigencia_fonte"] = "manual"
-        elif oficial.get("deliberacao_fim"):
-            # A janela publicada é a do período corrente. A prorrogação por mais
-            # 60 dias é automática (art. 62, § 7º), então a data em que a MP de
-            # fato caduca é o fim do segundo período — antes disso, o dia 60 é
-            # só o momento em que a prorrogação acontece.
-            fim_periodo = date.fromisoformat(oficial["deliberacao_fim"])
-            if oficial.get("prorrogada"):
-                p["vigencia_60"] = (
-                    date.fromisoformat(publicacao) + timedelta(days=59)
-                ).isoformat() if publicacao else None
-                p["vigencia_fim"] = oficial["deliberacao_fim"]
+        elif oficial.get("deliberacao_fim") and publicacao:
+            # A página publica a janela do período corrente, sem dizer qual é.
+            # Os dois marcos saem da publicação: 60 e 120 dias, contando o dia
+            # da publicação como dia 1 — confere com as páginas verificadas.
+            # A janela publicada só precisa indicar de qual dos dois se trata,
+            # e isso é a distância até cada um, não a presença de uma palavra.
+            base = date.fromisoformat(publicacao)
+            marco_60 = base + timedelta(days=59)
+            marco_120 = base + timedelta(days=119)
+            fim_publicado = date.fromisoformat(oficial["deliberacao_fim"])
+
+            perto_60 = abs((fim_publicado - marco_60).days)
+            perto_120 = abs((fim_publicado - marco_120).days)
+            prorrogada = perto_120 < perto_60
+
+            if prorrogada:
+                p["vigencia_fim"] = fim_publicado.isoformat()
+                p["vigencia_60"] = (fim_publicado - timedelta(days=60)).isoformat()
                 p["vigencia_fonte"] = "oficial (prorrogada)"
             else:
-                p["vigencia_60"] = oficial["deliberacao_fim"]
-                p["vigencia_fim"] = (fim_periodo + timedelta(days=60)).isoformat()
+                p["vigencia_60"] = fim_publicado.isoformat()
+                p["vigencia_fim"] = (fim_publicado + timedelta(days=60)).isoformat()
                 p["vigencia_fonte"] = "oficial + prorrogação projetada"
-            p["prorrogada"] = bool(oficial.get("prorrogada"))
-            p["ato_prorrogacao"] = oficial.get("ato_prorrogacao")
+
+            p["prorrogada"] = prorrogada
+            p["ato_prorrogacao"] = oficial.get("ato_prorrogacao") if prorrogada else None
             p["fim_periodo_atual"] = oficial["deliberacao_fim"]
             p["inicio_periodo_atual"] = oficial.get("deliberacao_inicio")
             p["urgencia"] = oficial.get("urgencia")
