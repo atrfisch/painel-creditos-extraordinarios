@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-10T10:14:15+00:00",
+  "atualizado_em": "2026-08-10T21:38:33+00:00",
   "anos": [
     2026
   ],
@@ -312,7 +312,7 @@
       "emendas_inicio": "2026-07-16",
       "emendas_fim": "2026-08-07",
       "emendas_total": 0,
-      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
       "norma": null,
       "codigo_materia": "175215",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175215",
