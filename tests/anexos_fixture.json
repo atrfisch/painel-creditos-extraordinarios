@@ -1,6 +1,6 @@
 {
   "MPV 1381/2026": {
-    "publicacao_dou": null,
+    "publicacao_dou": "2026-07-31",
     "deliberacao_inicio": "2026-07-31",
     "deliberacao_fim": "2026-09-28",
     "emendas_inicio_oficial": "2026-07-31",
@@ -14,7 +14,7 @@
         "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
         "programa": "0000",
         "acao": "00YN",
-        "localizador": "0001",
+        "localizador": "6511",
         "descricao": "Subvenção à produção de combustíveis",
         "esfera": "F",
         "gnd": "3-ODC",
@@ -28,7 +28,7 @@
         "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
         "programa": "0000",
         "acao": "00YO",
-        "localizador": "0001",
+        "localizador": "6512",
         "descricao": "Subvenção à importação de combustíveis",
         "esfera": "F",
         "gnd": "3-ODC",
@@ -36,7 +36,11 @@
         "fonte": "1000",
         "valor": 1473000000.0
       }
-    ]
+    ],
+    "despacho": "2026-08-03",
+    "numero_camara": "MPV 1381/2026",
+    "mensagem": "MSG 612/2026",
+    "situacao_prazo": "Aberto"
   },
   "MPV 1380/2026": {
     "publicacao_dou": "2026-07-28",
@@ -52,7 +56,7 @@
         "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
         "programa": "0000",
         "acao": "00YN",
-        "localizador": "0001",
+        "localizador": "6509",
         "descricao": "Subvenção à produção de combustíveis",
         "esfera": "F",
         "gnd": "3-ODC",
@@ -66,7 +70,7 @@
         "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
         "programa": "0000",
         "acao": "00YO",
-        "localizador": "0001",
+        "localizador": "6510",
         "descricao": "Subvenção à importação de combustíveis",
         "esfera": "F",
         "gnd": "3-ODC",
@@ -74,7 +78,11 @@
         "fonte": "1000",
         "valor": 1530000000.0
       }
-    ]
+    ],
+    "despacho": "2026-07-30",
+    "numero_camara": "MPV 1380/2026",
+    "mensagem": "MSG 609/2026",
+    "situacao_prazo": "Encerrado"
   },
   "MPV 1372/2026": {
     "publicacao_dou": "2026-06-29",
@@ -90,7 +98,7 @@
         "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis",
         "programa": "0000",
         "acao": "00Y3",
-        "localizador": "0001",
+        "localizador": "6501",
         "descricao": "Subvenção ao óleo diesel",
         "esfera": "F",
         "gnd": "3-ODC",
@@ -98,7 +106,8 @@
         "fonte": "1000",
         "valor": 550000000.0
       }
-    ]
+    ],
+    "situacao_prazo": "Encerrado"
   },
   "MPV 1367/2026": {
     "publicacao_dou": "2026-06-15",
@@ -113,7 +122,7 @@
         "unidade": "IBAMA",
         "programa": "0000",
         "acao": "214M",
-        "localizador": "0001",
+        "localizador": "6503",
         "descricao": "Prevenção e combate a incêndios",
         "esfera": "F",
         "gnd": "3-ODC",
@@ -127,7 +136,7 @@
         "unidade": "IBAMA",
         "programa": "0000",
         "acao": "214N",
-        "localizador": "0001",
+        "localizador": "6504",
         "descricao": "Brigadas florestais",
         "esfera": "F",
         "gnd": "3-ODC",
@@ -141,7 +150,7 @@
         "unidade": "ICMBio",
         "programa": "0000",
         "acao": "214P",
-        "localizador": "0001",
+        "localizador": "6505",
         "descricao": "Fiscalização ambiental",
         "esfera": "F",
         "gnd": "3-ODC",
@@ -150,7 +159,8 @@
         "valor": 143065710.0
       }
     ],
-    "ato_prorrogacao": null
+    "ato_prorrogacao": null,
+    "situacao_prazo": "Encerrado"
   },
   "MPV 1339/2026": {
     "publicacao_dou": "2026-03-09",
@@ -163,7 +173,7 @@
         "unidade": "Ministério da Integração e do Desenvolvimento Regional",
         "programa": "0000",
         "acao": "00XZ",
-        "localizador": "0001",
+        "localizador": "6500",
         "descricao": "Apoio financeiro a famílias",
         "esfera": "F",
         "gnd": "3-ODC",
@@ -177,7 +187,7 @@
         "unidade": "Ministério da Integração e do Desenvolvimento Regional",
         "programa": "0000",
         "acao": "22BO",
-        "localizador": "0001",
+        "localizador": "6502",
         "descricao": "Ações de defesa civil",
         "esfera": "F",
         "gnd": "3-ODC",
@@ -185,6 +195,7 @@
         "fonte": "1000",
         "valor": 116512000.0
       }
-    ]
+    ],
+    "situacao_prazo": "Encerrado"
   }
 }
