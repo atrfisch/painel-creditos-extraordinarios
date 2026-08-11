@@ -129,6 +129,9 @@ consultar <- function(ano, uos) {
     uo <- uos[i]
     parte <- tentar(paste("UO", uo),
                     do.call(chamar, c(list(ano, UO = uo, url = (i == 1)), dimensoes)))
+    if (i == 1 && !is.null(parte)) {
+      message("  colunas devolvidas pela API: ", paste(names(parte), collapse = ", "))
+    }
     if (!is.null(parte) && nrow(parte) > 0) {
       message("  UO ", uo, ": ", nrow(parte), " ações")
       partes[[length(partes) + 1]] <- parte
@@ -170,9 +173,12 @@ for (ano in anos) {
 
   soma <- suppressWarnings(sum(as.numeric(limpo$empenhado), na.rm = TRUE))
   message("  empenho total: ", format(soma, big.mark = ".", decimal.mark = ",", scientific = FALSE))
-  if (all(is.na(limpo$codigo_subtitulo))) {
-    message("::warning::sem coluna de subtítulo no retorno — o cruzamento cairá ",
-            "no nível da ação, sem separar o crédito extraordinário da LOA")
+  vazios <- sum(is.na(limpo$codigo_subtitulo) | !nzchar(limpo$codigo_subtitulo))
+  message("  subtítulo preenchido em ", nrow(limpo) - vazios, " de ", nrow(limpo), " linhas")
+  if (vazios == nrow(limpo)) {
+    message("::error::a API não devolveu subtítulo. Sem essa dimensão o crédito ",
+            "extraordinário não se separa da LOA e os números não mudam. ",
+            "Compare a lista de colunas acima com os nomes esperados em normalizar().")
   }
   if (!is.finite(soma) || soma == 0) {
     message("::error::empenho somando zero — o mapeamento de colunas acima está errado")

@@ -71,6 +71,18 @@ def num(v) -> float:
         return 0.0
 
 
+def texto(v) -> str:
+    """Campo de texto do CSV, tratando os vazios do R como ausência.
+
+    O R grava `NA` para coluna não mapeada e o Python lê a string "NA", que é
+    verdadeira. Sem esta limpeza o índice de subtítulo se monta com chaves
+    inválidas, nenhuma busca casa e o painel cai para o nível da ação sem
+    nenhum erro — devolvendo exatamente os números de antes.
+    """
+    s = (v or "").strip()
+    return "" if s.upper() in ("NA", "NAN", "NULL", "NONE") else s
+
+
 def carregar_siop(ano: int) -> list[dict]:
     saida = []
     for l in ler_csv(DADOS / f"siop_{ano}.csv"):
@@ -81,11 +93,11 @@ def carregar_siop(ano: int) -> list[dict]:
         emp, liq, pg = num(l.get("empenhado")), num(l.get("liquidado")), num(l.get("pago"))
         saida.append({
             "codigo_uo": codigo.zfill(5) if codigo.isdigit() else codigo,
-            "unidade": (l.get("unidade") or "").strip(),
-            "codigo_acao": (l.get("codigo_acao") or "").strip().upper(),
-            "acao": (l.get("acao") or "").strip(),
-            "codigo_subtitulo": (l.get("codigo_subtitulo") or "").strip(),
-            "subtitulo": (l.get("subtitulo") or "").strip(),
+            "unidade": texto(l.get("unidade")),
+            "codigo_acao": texto(l.get("codigo_acao")).upper(),
+            "acao": texto(l.get("acao")),
+            "codigo_subtitulo": texto(l.get("codigo_subtitulo")),
+            "subtitulo": texto(l.get("subtitulo")),
             "loa": loa, "atual": atual, "credito": round(atual - loa, 2),
             "empenhado": emp, "liquidado": liq, "pago": pg,
             "empenhado_alem_loa": round(max(0.0, emp - loa), 2),
@@ -258,6 +270,40 @@ def main() -> None:
         for l in linhas:
             d[l["codigo_uo"]].append(l)
         por_uo_ano[ano] = d
+
+    # Relatório do cruzamento por subtítulo. Sem ele, quando o casamento falha o
+    # painel cai para o nível da ação e devolve os mesmos números de antes, sem
+    # nenhum sinal de que a correção não entrou em vigor.
+    for ano in anos:
+        linhas = siop_por_ano.get(ano, [])
+        com_sub = [l for l in linhas if l["codigo_subtitulo"]]
+        print(f"  SIOP {ano}: {len(linhas)} linhas, {len(com_sub)} com subtítulo",
+              file=sys.stderr)
+        if linhas and not com_sub:
+            print("::error::nenhuma linha do SIOP tem subtítulo — a consulta não trouxe a "
+                  "dimensão (verifique Subtitulo=TRUE e o nome da coluna no log do siop.R). "
+                  "O cruzamento cairá no nível da ação e os números não mudarão",
+                  file=sys.stderr)
+            continue
+
+        pedidos = {(uo["codigo_uo"], a, s)
+                   for p in mpvs if p["ano"] == ano
+                   for uo in unidades_do_anexo(anexos.get(p["identificacao"]) or {}).values()
+                   for (a, s) in uo["acoes"]}
+        achados = {k for k in pedidos if k in por_subtitulo[ano]}
+        if pedidos:
+            print(f"  anexo x SIOP: {len(achados)}/{len(pedidos)} linhas casadas por subtítulo",
+                  file=sys.stderr)
+        if pedidos and not achados:
+            exemplo = sorted(pedidos)[:3]
+            disponiveis = sorted({(l["codigo_uo"], l["codigo_acao"], l["codigo_subtitulo"])
+                                  for l in com_sub})[:3]
+            print("::error::nenhum subtítulo do anexo casou com o SIOP. O painel cairá no "
+                  "nível da ação. Exemplos pedidos vs. disponíveis:", file=sys.stderr)
+            for k in exemplo:
+                print(f"    pedido:     UO {k[0]} · ação {k[1]} · subtítulo {k[2]}", file=sys.stderr)
+            for k in disponiveis:
+                print(f"    disponível: UO {k[0]} · ação {k[1]} · subtítulo {k[2]}", file=sys.stderr)
 
     nao_casadas, sem_anexo, acoes_ausentes = set(), [], []
     registros = []
