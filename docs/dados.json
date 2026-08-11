@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-11T18:39:34+00:00",
+  "atualizado_em": "2026-08-11T21:16:37+00:00",
   "anos": [
     2026
   ],
@@ -35,16 +35,17 @@
           "codigo_uo": "32265",
           "valor_credito": 3473000000.0,
           "acoes_credito": [
-            "00YN",
-            "00YO"
+            "00YN/6500",
+            "00YO/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": true,
+            "contaminadas": 0,
             "base": 3473000000.0,
             "empenhado": 8167963.1,
             "liquidado": 8167963.1,
@@ -57,7 +58,9 @@
               {
                 "acao": "00YO",
                 "descricao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 2230000000.0,
                 "credito_no_ano": 4330000000.0,
                 "fator": 0.515,
@@ -68,7 +71,9 @@
               {
                 "acao": "00YN",
                 "descricao": "Subvenção Econômica à Produção e à Importação de Combustíveis Derivados de Petróleo (Medida Provisória nº 1.358 de 2026)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 1243000000.0,
                 "credito_no_ano": 2473000000.0,
                 "fator": 0.5026,
@@ -89,6 +94,11 @@
       "fim_periodo_atual": "2026-09-28",
       "inicio_periodo_atual": "2026-07-31",
       "urgencia": "2026-09-14",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-08-03",
+      "numero_camara": "MPV 1381/2026",
+      "mensagem": "MSG 634/2026",
+      "publicacao_dou": "2026-07-31",
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
@@ -99,7 +109,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": true,
         "base": 3473000000.0,
         "credito_no_ano": 6803000000.0,
@@ -135,16 +146,17 @@
           "codigo_uo": "32265",
           "valor_credito": 3330000000.0,
           "acoes_credito": [
-            "00YN",
-            "00YO"
+            "00YN/6500",
+            "00YO/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": true,
+            "contaminadas": 0,
             "base": 3330000000.0,
             "empenhado": 8082537.9,
             "liquidado": 8082537.9,
@@ -157,7 +169,9 @@
               {
                 "acao": "00YO",
                 "descricao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.363, de 2026)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 2100000000.0,
                 "credito_no_ano": 4330000000.0,
                 "fator": 0.485,
@@ -168,7 +182,9 @@
               {
                 "acao": "00YN",
                 "descricao": "Subvenção Econômica à Produção e à Importação de Combustíveis Derivados de Petróleo (Medida Provisória nº 1.358 de 2026)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 1230000000.0,
                 "credito_no_ano": 2473000000.0,
                 "fator": 0.4974,
@@ -189,6 +205,11 @@
       "fim_periodo_atual": "2026-09-20",
       "inicio_periodo_atual": "2026-07-23",
       "urgencia": "2026-09-06",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-07-27",
+      "numero_camara": "MPV 1380/2026",
+      "mensagem": "MSG 618/2026",
+      "publicacao_dou": "2026-07-23",
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
@@ -199,7 +220,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": true,
         "base": 3330000000.0,
         "credito_no_ano": 6803000000.0,
@@ -235,15 +257,16 @@
           "codigo_uo": "33201",
           "valor_credito": 547000000.0,
           "acoes_credito": [
-            "00XK"
+            "00XK/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 1 · fonte 3049"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 547000000.0,
             "empenhado": 547000000.0,
             "liquidado": 27750926.0,
@@ -256,7 +279,9 @@
               {
                 "acao": "00XK",
                 "descricao": "Ressarcimento aos Beneficiários do Regime Geral de Previdência Social por Descontos Indevidos",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 547000000.0,
                 "credito_no_ano": 547000000.0,
                 "fator": 1.0,
@@ -277,6 +302,11 @@
       "fim_periodo_atual": "2026-09-18",
       "inicio_periodo_atual": "2026-07-21",
       "urgencia": "2026-09-04",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-07-22",
+      "numero_camara": "MPV 1378/2026",
+      "mensagem": "MSG 612/2026",
+      "publicacao_dou": "2026-07-21",
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
@@ -287,7 +317,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 547000000.0,
         "credito_no_ano": 547000000.0,
@@ -323,15 +354,16 @@
           "codigo_uo": "22101",
           "valor_credito": 270000000.0,
           "acoes_credito": [
-            "00YJ"
+            "00YJ/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 270000000.0,
             "empenhado": 0.0,
             "liquidado": 0.0,
@@ -344,7 +376,9 @@
               {
                 "acao": "00YJ",
                 "descricao": "Subvenção econômica aos produtores independentes de Cana-de-Açúcar da Região Nordeste (MP nº 1.374, de 2026)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Na Região Nordeste (Crédito Extraordinário)",
                 "valor_mp": 270000000.0,
                 "credito_no_ano": 270000000.0,
                 "fator": 1.0,
@@ -361,15 +395,16 @@
           "codigo_uo": "63101",
           "valor_credito": 15000000.0,
           "acoes_credito": [
-            "00Y2"
+            "00Y2/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 15000000.0,
             "empenhado": 15000000.0,
             "liquidado": 15000000.0,
@@ -382,7 +417,9 @@
               {
                 "acao": "00Y2",
                 "descricao": "Contribuição Voluntária à Corte Interamericana de Direitos Humanos (CIDH)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Exterior (Crédito Extraordinário)",
                 "valor_mp": 15000000.0,
                 "credito_no_ano": 15000000.0,
                 "fator": 1.0,
@@ -399,16 +436,17 @@
           "codigo_uo": "74102",
           "valor_credito": 4000000000.0,
           "acoes_credito": [
-            "00YG",
-            "00YH"
+            "00YG/6500",
+            "00YH/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 0 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 4000000000.0,
             "empenhado": 4000000000.0,
             "liquidado": 0.0,
@@ -421,7 +459,9 @@
               {
                 "acao": "00YH",
                 "descricao": "Financiamento a Beneficiários do Programa Desenrola Adimplentes",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 3000000000.0,
                 "credito_no_ano": 3000000000.0,
                 "fator": 1.0,
@@ -432,7 +472,9 @@
               {
                 "acao": "00YG",
                 "descricao": "Financiamento a Beneficiários Adimplentes do Fundo de Financiamento Estudantil – Fies",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 1000000000.0,
                 "credito_no_ano": 1000000000.0,
                 "fator": 1.0,
@@ -449,15 +491,16 @@
           "codigo_uo": "74910",
           "valor_credito": 9000000000.0,
           "acoes_credito": [
-            "00YI"
+            "00YI/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 0 · fonte 3050"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 9000000000.0,
             "empenhado": 0.0,
             "liquidado": 0.0,
@@ -470,7 +513,9 @@
               {
                 "acao": "00YI",
                 "descricao": "Financiamento de Projetos de Desenvolvimento Tecnológico de Produtores Rurais",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 9000000000.0,
                 "credito_no_ano": 9000000000.0,
                 "fator": 1.0,
@@ -491,6 +536,11 @@
       "fim_periodo_atual": "2026-09-13",
       "inicio_periodo_atual": "2026-07-16",
       "urgencia": "2026-08-30",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-07-17",
+      "numero_camara": "MPV 1377/2026",
+      "mensagem": "MSG 606/2026",
+      "publicacao_dou": "2026-07-16",
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
@@ -501,7 +551,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 13285000000.0,
         "credito_no_ano": 13285000000.0,
@@ -537,15 +588,16 @@
           "codigo_uo": "32265",
           "valor_credito": 550000000.0,
           "acoes_credito": [
-            "00Y3"
+            "00Y3/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 550000000.0,
             "empenhado": 550000000.0,
             "liquidado": 348457708.0,
@@ -558,7 +610,9 @@
               {
                 "acao": "00Y3",
                 "descricao": "Subvenção Econômica à Importação de Óleo Diesel de Uso Rodoviário (Medida Provisória nº 1.349, de 2026)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 550000000.0,
                 "credito_no_ano": 550000000.0,
                 "fator": 1.0,
@@ -579,6 +633,11 @@
       "fim_periodo_atual": "2026-08-27",
       "inicio_periodo_atual": "2026-06-29",
       "urgencia": "2026-08-13",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-06-30",
+      "numero_camara": "MPV 1372/2026",
+      "mensagem": "MSG 558/2026",
+      "publicacao_dou": "2026-06-29",
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
@@ -589,7 +648,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 550000000.0,
         "credito_no_ano": 550000000.0,
@@ -625,15 +685,16 @@
           "codigo_uo": "71101",
           "valor_credito": 2000000000.0,
           "acoes_credito": [
-            "00ED"
+            "00ED/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 2 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 2000000000.0,
             "empenhado": 2000000000.0,
             "liquidado": 2000000000.0,
@@ -646,7 +707,9 @@
               {
                 "acao": "00ED",
                 "descricao": "Integralização de cotas do Fundo Garantidor para Investimentos - FGI no âmbito do Programa Emergencial de Acesso a Crédito - PEAC-FGI",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 2000000000.0,
                 "credito_no_ano": 2000000000.0,
                 "fator": 1.0,
@@ -667,6 +730,11 @@
       "fim_periodo_atual": "2026-08-21",
       "inicio_periodo_atual": "2026-06-23",
       "urgencia": "2026-08-07",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-06-24",
+      "numero_camara": "MPV 1371/2026",
+      "mensagem": "MSG 548/2026",
+      "publicacao_dou": "2026-06-23",
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
@@ -677,7 +745,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 2000000000.0,
         "credito_no_ano": 2000000000.0,
@@ -713,34 +782,37 @@
           "codigo_uo": "68902",
           "valor_credito": 8000000000.0,
           "acoes_credito": [
-            "00X8"
+            "00X8/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 0 · fonte 1000"
           ],
           "execucao": {
-            "modo": "piso",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 8000000000.0,
             "empenhado": 8000000000.0,
-            "liquidado": 6434122797.0,
-            "pago": 6434122797.0,
+            "liquidado": 7999163365.0,
+            "pago": 7999163365.0,
             "credito_no_ano": 8000000000.0,
-            "dotacao_inicial": 1565040568.0,
-            "dotacao_atual": 9565040568.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 8000000000.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "00X8",
                 "descricao": "Apoio financeiro reembolsável mediante concessão de empréstimo a Empresas prestadoras de Serviços Aéreos Regulares no Mercado Brasileiro",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 8000000000.0,
                 "credito_no_ano": 8000000000.0,
                 "fator": 1.0,
-                "dotacao_inicial": 1565040568.0,
+                "dotacao_inicial": 0.0,
                 "empenhado": 8000000000.0,
-                "pago": 6434122797.0
+                "pago": 7999163365.0
               }
             ]
           }
@@ -755,6 +827,11 @@
       "fim_periodo_atual": "2026-08-17",
       "inicio_periodo_atual": "2026-06-19",
       "urgencia": "2026-08-03",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-06-19",
+      "numero_camara": "MPV 1368/2026",
+      "mensagem": "MSG 545/2026",
+      "publicacao_dou": "2026-06-19",
       "vigente": true,
       "encerrada": false,
       "sem_relator": false,
@@ -765,17 +842,18 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "piso",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 8000000000.0,
         "credito_no_ano": 8000000000.0,
         "empenhado": 8000000000.0,
-        "liquidado": 6434122797.0,
-        "pago": 6434122797.0,
+        "liquidado": 7999163365.0,
+        "pago": 7999163365.0,
         "acoes": 1,
         "acoes_ausentes": 0,
         "pct_empenhado": 100.0,
-        "pct_pago": 80.4
+        "pct_pago": 100.0
       }
     },
     {
@@ -801,45 +879,50 @@
           "codigo_uo": "44201",
           "valor_credito": 194417722.0,
           "acoes_credito": [
-            "214M",
-            "214N"
+            "214M/6504",
+            "214N/6502"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 3070"
           ],
           "execucao": {
-            "modo": "piso",
-            "rateado": true,
+            "modo": "exata",
+            "rateado": false,
+            "contaminadas": 0,
             "base": 194417722.0,
-            "empenhado": 155454297.13,
-            "liquidado": 0.0,
-            "pago": 0.0,
-            "credito_no_ano": 309577722.0,
-            "dotacao_inicial": 299300000.0,
-            "dotacao_atual": 608877722.0,
+            "empenhado": 189080691.0,
+            "liquidado": 14974602.0,
+            "pago": 4160860.0,
+            "credito_no_ano": 194417722.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 194417722.0,
             "acoes": 2,
             "detalhe_acoes": [
               {
                 "acao": "214M",
                 "descricao": "Prevenção e Controle de Incêndios Florestais nas Áreas Federais Prioritárias",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6504",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário - ADPF 743 e 760)",
                 "valor_mp": 149274818.0,
-                "credito_no_ano": 201289818.0,
-                "fator": 0.7416,
-                "dotacao_inicial": 66600000.0,
-                "empenhado": 133744764.04,
-                "pago": 0.0
+                "credito_no_ano": 149274818.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 143937787.0,
+                "pago": 4160860.0
               },
               {
                 "acao": "214N",
                 "descricao": "Controle e Fiscalização Ambiental",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6502",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário - ADPF 743 e 760)",
                 "valor_mp": 45142904.0,
-                "credito_no_ano": 108287904.0,
-                "fator": 0.4169,
-                "dotacao_inicial": 232700000.0,
-                "empenhado": 21709533.09,
+                "credito_no_ano": 45142904.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 45142904.0,
                 "pago": 0.0
               }
             ]
@@ -851,34 +934,37 @@
           "codigo_uo": "44207",
           "valor_credito": 143065710.0,
           "acoes_credito": [
-            "214P"
+            "214P/6504"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 3038"
           ],
           "execucao": {
-            "modo": "piso",
-            "rateado": true,
+            "modo": "exata",
+            "rateado": false,
+            "contaminadas": 0,
             "base": 143065710.0,
-            "empenhado": 119824259.55,
-            "liquidado": 0.0,
-            "pago": 0.0,
-            "credito_no_ano": 217338486.0,
-            "dotacao_inicial": 197198573.0,
-            "dotacao_atual": 414537059.0,
+            "empenhado": 129072695.0,
+            "liquidado": 16968136.0,
+            "pago": 16769013.0,
+            "credito_no_ano": 143065710.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 143065710.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "214P",
                 "descricao": "Fiscalização Ambiental e Prevenção e Combate a Incêndios Florestais",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6504",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário - ADPF 743 e 760)",
                 "valor_mp": 143065710.0,
-                "credito_no_ano": 217338486.0,
-                "fator": 0.6583,
-                "dotacao_inicial": 197198573.0,
-                "empenhado": 119824259.55,
-                "pago": 0.0
+                "credito_no_ano": 143065710.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 129072695.0,
+                "pago": 16769013.0
               }
             ]
           }
@@ -893,6 +979,11 @@
       "fim_periodo_atual": "2026-08-13",
       "inicio_periodo_atual": "2026-06-15",
       "urgencia": "2026-07-30",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-06-15",
+      "numero_camara": "MPV 1367/2026",
+      "mensagem": "MSG 522/2026",
+      "publicacao_dou": "2026-06-15",
       "vigente": true,
       "encerrada": false,
       "sem_relator": false,
@@ -903,17 +994,18 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "piso",
-        "rateado": true,
+        "modo": "exata",
+        "contaminadas": 0,
+        "rateado": false,
         "base": 337483432.0,
-        "credito_no_ano": 526916208.0,
-        "empenhado": 275278556.68,
-        "liquidado": 0.0,
-        "pago": 0.0,
+        "credito_no_ano": 337483432.0,
+        "empenhado": 318153386.0,
+        "liquidado": 31942738.0,
+        "pago": 20929873.0,
         "acoes": 3,
         "acoes_ausentes": 0,
-        "pct_empenhado": 81.6,
-        "pct_pago": 0.0
+        "pct_empenhado": 94.3,
+        "pct_pago": 6.2
       }
     },
     {
@@ -939,15 +1031,16 @@
           "codigo_uo": "74102",
           "valor_credito": 1000000000.0,
           "acoes_credito": [
-            "00Y8"
+            "00Y8/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 0 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 1000000000.0,
             "empenhado": 1000000000.0,
             "liquidado": 661453662.0,
@@ -960,7 +1053,9 @@
               {
                 "acao": "00Y8",
                 "descricao": "Financiamento Destinado a Capital de Giro aos Prestadores de Serviços Aéreos Regulares",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 1000000000.0,
                 "credito_no_ano": 1000000000.0,
                 "fator": 1.0,
@@ -981,6 +1076,11 @@
       "fim_periodo_atual": "2026-08-06",
       "inicio_periodo_atual": "2026-06-08",
       "urgencia": "2026-07-23",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-06-09",
+      "numero_camara": "MPV 1365/2026",
+      "mensagem": "MSG 504/2026",
+      "publicacao_dou": "2026-06-08",
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
@@ -991,7 +1091,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 1000000000.0,
         "credito_no_ano": 1000000000.0,
@@ -1027,46 +1128,51 @@
           "codigo_uo": "55101",
           "valor_credito": 49200000.0,
           "acoes_credito": [
-            "20GD",
-            "2798"
+            "20GD/6510",
+            "2798/6509"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 1000"
           ],
           "execucao": {
-            "modo": "piso",
-            "rateado": true,
+            "modo": "exata",
+            "rateado": false,
+            "contaminadas": 0,
             "base": 49200000.0,
-            "empenhado": 0.0,
-            "liquidado": 0.0,
-            "pago": 0.0,
-            "credito_no_ano": 69574485.0,
-            "dotacao_inicial": 902495765.0,
-            "dotacao_atual": 972070250.0,
+            "empenhado": 39425000.0,
+            "liquidado": 10885200.0,
+            "pago": 10885200.0,
+            "credito_no_ano": 49200000.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 49200000.0,
             "acoes": 2,
             "detalhe_acoes": [
               {
                 "acao": "2798",
                 "descricao": "Aquisição e Distribuição de Alimentos da Agricultura Familiar para Promoção da Segurança Alimentar e Nutricional",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6509",
+                "subtitulo_desc": "Na Região Nordeste (Crédito Extraordinário)",
                 "valor_mp": 40000000.0,
-                "credito_no_ano": 40197000.0,
-                "fator": 0.9951,
-                "dotacao_inicial": 802646550.0,
-                "empenhado": 0.0,
-                "pago": 0.0
+                "credito_no_ano": 40000000.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 30225000.0,
+                "pago": 7500000.0
               },
               {
                 "acao": "20GD",
                 "descricao": "Inclusão Produtiva Rural",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6510",
+                "subtitulo_desc": "Na Região Nordeste (Crédito Extraordinário)",
                 "valor_mp": 9200000.0,
-                "credito_no_ano": 29377485.0,
-                "fator": 0.3132,
-                "dotacao_inicial": 99849215.0,
-                "empenhado": 0.0,
-                "pago": 0.0
+                "credito_no_ano": 9200000.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 9200000.0,
+                "pago": 3385200.0
               }
             ]
           }
@@ -1081,6 +1187,11 @@
       "fim_periodo_atual": "2026-07-31",
       "inicio_periodo_atual": "2026-06-02",
       "urgencia": "2026-07-17",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-06-02",
+      "numero_camara": "MPV 1364/2026",
+      "mensagem": "MSG 500/2026",
+      "publicacao_dou": "2026-06-02",
       "vigente": true,
       "encerrada": false,
       "sem_relator": false,
@@ -1091,17 +1202,18 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "piso",
-        "rateado": true,
+        "modo": "exata",
+        "contaminadas": 0,
+        "rateado": false,
         "base": 49200000.0,
-        "credito_no_ano": 69574485.0,
-        "empenhado": 0.0,
-        "liquidado": 0.0,
-        "pago": 0.0,
+        "credito_no_ano": 49200000.0,
+        "empenhado": 39425000.0,
+        "liquidado": 10885200.0,
+        "pago": 10885200.0,
         "acoes": 2,
         "acoes_ausentes": 0,
-        "pct_empenhado": 0.0,
-        "pct_pago": 0.0
+        "pct_empenhado": 80.1,
+        "pct_pago": 22.1
       }
     },
     {
@@ -1127,15 +1239,16 @@
           "codigo_uo": "74102",
           "valor_credito": 30000000000.0,
           "acoes_credito": [
-            "00YA"
+            "00YA/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 0 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 30000000000.0,
             "empenhado": 30000000000.0,
             "liquidado": 30000000000.0,
@@ -1148,7 +1261,9 @@
               {
                 "acao": "00YA",
                 "descricao": "Financiamento a Profissionais de Transporte Remunerado Privado Individual de Passageiros, Taxistas e Cooperativas de Taxistas, para Aquisição de Veículos Automotores Novos",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 30000000000.0,
                 "credito_no_ano": 30000000000.0,
                 "fator": 1.0,
@@ -1169,6 +1284,11 @@
       "fim_periodo_atual": "2026-07-24",
       "inicio_periodo_atual": "2026-05-26",
       "urgencia": "2026-07-10",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-05-27",
+      "numero_camara": "MPV 1362/2026",
+      "mensagem": "MSG 454/2026",
+      "publicacao_dou": "2026-05-26",
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
@@ -1179,7 +1299,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 30000000000.0,
         "credito_no_ano": 30000000000.0,
@@ -1215,15 +1336,16 @@
           "codigo_uo": "53101",
           "valor_credito": 75344207.0,
           "acoes_credito": [
-            "00XZ"
+            "00XZ/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": true,
+            "contaminadas": 0,
             "base": 75344207.0,
             "empenhado": 49190200.19,
             "liquidado": 49179036.93,
@@ -1236,7 +1358,9 @@
               {
                 "acao": "00XZ",
                 "descricao": "Apoio Financeiro às Famílias Residentes nos Municípios da Zona da Mata (MG) em Decorrência de Eventos Climáticos (MP nº 1.338, de 6 de março de 2026)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "No Estado de Minas Gerais (Crédito Extraordinário)",
                 "valor_mp": 75344207.0,
                 "credito_no_ano": 111856207.0,
                 "fator": 0.6736,
@@ -1257,6 +1381,11 @@
       "fim_periodo_atual": "2026-08-03",
       "inicio_periodo_atual": "2026-05-20",
       "urgencia": "2026-07-04",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-05-20",
+      "numero_camara": "MPV 1361/2026",
+      "mensagem": "MSG 424/2026",
+      "publicacao_dou": "2026-05-20",
       "vigente": true,
       "encerrada": false,
       "sem_relator": false,
@@ -1267,7 +1396,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": true,
         "base": 75344207.0,
         "credito_no_ano": 111856207.0,
@@ -1292,7 +1422,7 @@
       "emendas_inicio": "2026-05-04",
       "emendas_fim": "2026-05-11",
       "emendas_total": 0,
-      "situacao": "PRONTA PARA A PAUTA NA COMISSÃO",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "173847",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/173847",
@@ -1303,34 +1433,37 @@
           "codigo_uo": "53101",
           "valor_credito": 305000000.0,
           "acoes_credito": [
-            "22BO"
+            "22BO/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 1000"
           ],
           "execucao": {
-            "modo": "piso",
+            "modo": "exata",
             "rateado": true,
+            "contaminadas": 0,
             "base": 305000000.0,
-            "empenhado": 169977823.24,
-            "liquidado": 11671162.09,
-            "pago": 5471721.61,
-            "credito_no_ano": 1186498436.0,
-            "dotacao_inicial": 650117877.0,
-            "dotacao_atual": 1836616313.0,
+            "empenhado": 255507422.03,
+            "liquidado": 111717346.15,
+            "pago": 106737370.49,
+            "credito_no_ano": 806616313.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 806616313.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "22BO",
                 "descricao": "Ações de Proteção e Defesa Civil",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 305000000.0,
-                "credito_no_ano": 1186498436.0,
-                "fator": 0.2571,
-                "dotacao_inicial": 650117877.0,
-                "empenhado": 169977823.24,
-                "pago": 5471721.61
+                "credito_no_ano": 806616313.0,
+                "fator": 0.3781,
+                "dotacao_inicial": 0.0,
+                "empenhado": 255507422.03,
+                "pago": 106737370.49
               }
             ]
           }
@@ -1345,6 +1478,11 @@
       "fim_periodo_atual": "2026-07-02",
       "inicio_periodo_atual": "2026-05-04",
       "urgencia": "2026-06-18",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-05-05",
+      "numero_camara": "MPV 1356/2026",
+      "mensagem": "MSG 368/2026",
+      "publicacao_dou": "2026-05-04",
       "vigente": true,
       "encerrada": false,
       "sem_relator": false,
@@ -1355,17 +1493,18 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "piso",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": true,
         "base": 305000000.0,
-        "credito_no_ano": 1186498436.0,
-        "empenhado": 169977823.24,
-        "liquidado": 11671162.09,
-        "pago": 5471721.61,
+        "credito_no_ano": 806616313.0,
+        "empenhado": 255507422.03,
+        "liquidado": 111717346.15,
+        "pago": 106737370.49,
         "acoes": 1,
         "acoes_ausentes": 0,
-        "pct_empenhado": 55.7,
-        "pct_pago": 1.8
+        "pct_empenhado": 83.8,
+        "pct_pago": 35.0
       }
     },
     {
@@ -1391,16 +1530,17 @@
           "codigo_uo": "71101",
           "valor_credito": 2500000000.0,
           "acoes_credito": [
-            "00ED",
-            "00Y7"
+            "00ED/6500",
+            "00Y7/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 2 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 2500000000.0,
             "empenhado": 2500000000.0,
             "liquidado": 2500000000.0,
@@ -1413,7 +1553,9 @@
               {
                 "acao": "00ED",
                 "descricao": "Integralização de cotas do Fundo Garantidor para Investimentos - FGI no âmbito do Programa Emergencial de Acesso a Crédito - PEAC-FGI",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 2000000000.0,
                 "credito_no_ano": 2000000000.0,
                 "fator": 1.0,
@@ -1424,7 +1566,9 @@
               {
                 "acao": "00Y7",
                 "descricao": "Integralização de Cotas do Fundo Garantidor de Operações de Comércio Exterior - FGCE",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 500000000.0,
                 "credito_no_ano": 500000000.0,
                 "fator": 1.0,
@@ -1441,15 +1585,16 @@
           "codigo_uo": "74102",
           "valor_credito": 14500000000.0,
           "acoes_credito": [
-            "00Y6"
+            "00Y6/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 0 · fonte 1000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 14500000000.0,
             "empenhado": 14500000000.0,
             "liquidado": 14500000000.0,
@@ -1462,7 +1607,9 @@
               {
                 "acao": "00Y6",
                 "descricao": "Financiamento a Pessoas Físicas e Jurídicas de Direito Privado para Aquisição de Caminhões e Caminhões tratores Novos ou Seminovos, bem como de Ônibus, Micro ônibus e Implementos Rodoviários Novos, para Renovação de Frota",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 14500000000.0,
                 "credito_no_ano": 14500000000.0,
                 "fator": 1.0,
@@ -1483,6 +1630,11 @@
       "fim_periodo_atual": "2026-06-28",
       "inicio_periodo_atual": "2026-04-30",
       "urgencia": "2026-06-14",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-05-05",
+      "numero_camara": "MPV 1354/2026",
+      "mensagem": "MSG 343/2026",
+      "publicacao_dou": "2026-04-30",
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
@@ -1493,7 +1645,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 17000000000.0,
         "credito_no_ano": 17000000000.0,
@@ -1529,32 +1682,35 @@
           "codigo_uo": "71905",
           "valor_credito": 5000000000.0,
           "acoes_credito": [
-            "00XO"
+            "00XO/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 0 · fonte 3050"
           ],
           "execucao": {
-            "modo": "piso",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 5000000000.0,
             "empenhado": 5000000000.0,
             "liquidado": 5000000000.0,
             "pago": 5000000000.0,
             "credito_no_ano": 5000000000.0,
-            "dotacao_inicial": 10000000000.0,
-            "dotacao_atual": 15000000000.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 5000000000.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "00XO",
                 "descricao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens e Serviços, bem como seus Fornecedores, abrangidos pelo Plano Brasil Soberano",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 5000000000.0,
                 "credito_no_ano": 5000000000.0,
                 "fator": 1.0,
-                "dotacao_inicial": 10000000000.0,
+                "dotacao_inicial": 0.0,
                 "empenhado": 5000000000.0,
                 "pago": 5000000000.0
               }
@@ -1571,6 +1727,11 @@
       "fim_periodo_atual": "2026-06-27",
       "inicio_periodo_atual": "2026-04-29",
       "urgencia": "2026-06-13",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-04-29",
+      "numero_camara": "MPV 1352/2026",
+      "mensagem": "MSG 330/2026",
+      "publicacao_dou": "2026-04-29",
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
@@ -1581,7 +1742,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "piso",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 5000000000.0,
         "credito_no_ano": 5000000000.0,
@@ -1617,15 +1779,16 @@
           "codigo_uo": "32265",
           "valor_credito": 330000000.0,
           "acoes_credito": [
-            "00Y4"
+            "00Y4/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 330000000.0,
             "empenhado": 330000000.0,
             "liquidado": 43945314.0,
@@ -1638,7 +1801,9 @@
               {
                 "acao": "00Y4",
                 "descricao": "Subvenção Econômica à Importação de Gás Liquefeito de Petróleo - GLP (Medida Provisória nº 1.349, de 2026)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 330000000.0,
                 "credito_no_ano": 330000000.0,
                 "fator": 1.0,
@@ -1659,6 +1824,11 @@
       "fim_periodo_atual": "2026-06-26",
       "inicio_periodo_atual": "2026-04-28",
       "urgencia": "2026-06-12",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-04-29",
+      "numero_camara": "MPV 1351/2026",
+      "mensagem": "MSG 325/2026",
+      "publicacao_dou": "2026-04-28",
       "vigente": true,
       "encerrada": false,
       "sem_relator": false,
@@ -1669,7 +1839,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 330000000.0,
         "credito_no_ano": 330000000.0,
@@ -1705,34 +1876,37 @@
           "codigo_uo": "53101",
           "valor_credito": 285000000.0,
           "acoes_credito": [
-            "22BO"
+            "22BO/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "piso",
+            "modo": "exata",
             "rateado": true,
+            "contaminadas": 0,
             "base": 285000000.0,
-            "empenhado": 158831736.47,
-            "liquidado": 10905839.99,
-            "pago": 5112920.19,
-            "credito_no_ano": 1186498436.0,
-            "dotacao_inicial": 650117877.0,
-            "dotacao_atual": 1836616313.0,
+            "empenhado": 238752836.98,
+            "liquidado": 104391618.53,
+            "pago": 99738198.66,
+            "credito_no_ano": 806616313.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 806616313.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "22BO",
                 "descricao": "Ações de Proteção e Defesa Civil",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 285000000.0,
-                "credito_no_ano": 1186498436.0,
-                "fator": 0.2402,
-                "dotacao_inicial": 650117877.0,
-                "empenhado": 158831736.47,
-                "pago": 5112920.19
+                "credito_no_ano": 806616313.0,
+                "fator": 0.3533,
+                "dotacao_inicial": 0.0,
+                "empenhado": 238752836.98,
+                "pago": 99738198.66
               }
             ]
           }
@@ -1747,6 +1921,11 @@
       "fim_periodo_atual": "2026-05-25",
       "inicio_periodo_atual": "2026-03-27",
       "urgencia": "2026-05-11",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-03-27",
+      "numero_camara": "MPV 1347/2026",
+      "mensagem": "MSG 226/2026",
+      "publicacao_dou": "2026-03-27",
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
@@ -1757,17 +1936,18 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "piso",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": true,
         "base": 285000000.0,
-        "credito_no_ano": 1186498436.0,
-        "empenhado": 158831736.47,
-        "liquidado": 10905839.99,
-        "pago": 5112920.19,
+        "credito_no_ano": 806616313.0,
+        "empenhado": 238752836.98,
+        "liquidado": 104391618.53,
+        "pago": 99738198.66,
         "acoes": 1,
         "acoes_ausentes": 0,
-        "pct_empenhado": 55.7,
-        "pct_pago": 1.8
+        "pct_empenhado": 83.8,
+        "pct_pago": 35.0
       }
     },
     {
@@ -1793,33 +1973,36 @@
           "codigo_uo": "49201",
           "valor_credito": 4000000.0,
           "acoes_credito": [
-            "211A"
+            "211A/6502"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "4-INV · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "piso",
-            "rateado": true,
+            "modo": "exata",
+            "rateado": false,
+            "contaminadas": 0,
             "base": 4000000.0,
-            "empenhado": 0.0,
+            "empenhado": 4000000.0,
             "liquidado": 0.0,
             "pago": 0.0,
-            "credito_no_ano": 23442016.0,
-            "dotacao_inicial": 86168065.0,
-            "dotacao_atual": 109610081.0,
+            "credito_no_ano": 4000000.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 4000000.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "211A",
                 "descricao": "Desenvolvimento e Gestão Ambiental para o Público da Reforma Agrária",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6502",
+                "subtitulo_desc": "No Estado do Paraná (Crédito Extraordinário)",
                 "valor_mp": 4000000.0,
-                "credito_no_ano": 23442016.0,
-                "fator": 0.1706,
-                "dotacao_inicial": 86168065.0,
-                "empenhado": 0.0,
+                "credito_no_ano": 4000000.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 4000000.0,
                 "pago": 0.0
               }
             ]
@@ -1831,32 +2014,35 @@
           "codigo_uo": "74203",
           "valor_credito": 16429000.0,
           "acoes_credito": [
-            "0427"
+            "0427/6501"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 0 · fonte 3000"
           ],
           "execucao": {
-            "modo": "piso",
-            "rateado": true,
+            "modo": "exata",
+            "rateado": false,
+            "contaminadas": 0,
             "base": 16429000.0,
             "empenhado": 16429000.0,
             "liquidado": 0.0,
             "pago": 0.0,
-            "credito_no_ano": 195888857.0,
-            "dotacao_inicial": 717839430.0,
-            "dotacao_atual": 913728287.0,
+            "credito_no_ano": 16429000.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 16429000.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "0427",
                 "descricao": "Concessão de Crédito-Instalação às Famílias Assentadas ( Lei n° 8.629, de 1993)",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6501",
+                "subtitulo_desc": "No Estado do Paraná (Crédito Extraordinário)",
                 "valor_mp": 16429000.0,
-                "credito_no_ano": 195888857.0,
-                "fator": 0.0839,
-                "dotacao_inicial": 717839430.0,
+                "credito_no_ano": 16429000.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
                 "empenhado": 16429000.0,
                 "pago": 0.0
               }
@@ -1873,6 +2059,11 @@
       "fim_periodo_atual": "2026-05-25",
       "inicio_periodo_atual": "2026-03-27",
       "urgencia": "2026-05-11",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-03-27",
+      "numero_camara": "MPV 1346/2026",
+      "mensagem": "MSG 225/2026",
+      "publicacao_dou": "2026-03-27",
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
@@ -1883,16 +2074,17 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "piso",
-        "rateado": true,
+        "modo": "exata",
+        "contaminadas": 0,
+        "rateado": false,
         "base": 20429000.0,
-        "credito_no_ano": 219330873.0,
-        "empenhado": 16429000.0,
+        "credito_no_ano": 20429000.0,
+        "empenhado": 20429000.0,
         "liquidado": 0.0,
         "pago": 0.0,
         "acoes": 2,
         "acoes_ausentes": 0,
-        "pct_empenhado": 80.4,
+        "pct_empenhado": 100.0,
         "pct_pago": 0.0
       }
     },
@@ -1919,15 +2111,16 @@
           "codigo_uo": "32265",
           "valor_credito": 10000000000.0,
           "acoes_credito": [
-            "00QU"
+            "00QU/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 10000000000.0,
             "empenhado": 7000000000.0,
             "liquidado": 6645240605.0,
@@ -1940,7 +2133,9 @@
               {
                 "acao": "00QU",
                 "descricao": "Subvenção Econômica à Comercialização de Óleo Diesel de Uso Rodoviário no Território Nacional (Medida Provisória nº 1.340, de 2026)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 10000000000.0,
                 "credito_no_ano": 10000000000.0,
                 "fator": 1.0,
@@ -1961,6 +2156,11 @@
       "fim_periodo_atual": "2026-05-17",
       "inicio_periodo_atual": "2026-03-19",
       "urgencia": "2026-05-03",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-03-20",
+      "numero_camara": "MPV 1344/2026",
+      "mensagem": "MSG 196/2026",
+      "publicacao_dou": "2026-03-19",
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
@@ -1971,7 +2171,8 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "direta",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": false,
         "base": 10000000000.0,
         "credito_no_ano": 10000000000.0,
@@ -2007,33 +2208,36 @@
           "codigo_uo": "55101",
           "valor_credito": 3000000.0,
           "acoes_credito": [
-            "21H0"
+            "21H0/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "piso",
-            "rateado": true,
+            "modo": "exata",
+            "rateado": false,
+            "contaminadas": 0,
             "base": 3000000.0,
-            "empenhado": 0.0,
+            "empenhado": 3000000.0,
             "liquidado": 0.0,
             "pago": 0.0,
-            "credito_no_ano": 14526736.0,
-            "dotacao_inicial": 23785994.0,
-            "dotacao_atual": 38312730.0,
+            "credito_no_ano": 3000000.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 3000000.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "21H0",
                 "descricao": "Proteção Socioassistencial em Emergências e Calamidades Públicas",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "No Estado de Minas Gerais (Crédito Extraordinário)",
                 "valor_mp": 3000000.0,
-                "credito_no_ano": 14526736.0,
-                "fator": 0.2065,
-                "dotacao_inicial": 23785994.0,
-                "empenhado": 0.0,
+                "credito_no_ano": 3000000.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 3000000.0,
                 "pago": 0.0
               }
             ]
@@ -2045,34 +2249,37 @@
           "codigo_uo": "55901",
           "valor_credito": 2000000.0,
           "acoes_credito": [
-            "219G"
+            "219G/6503"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "piso",
-            "rateado": true,
+            "modo": "exata",
+            "rateado": false,
+            "contaminadas": 0,
             "base": 2000000.0,
-            "empenhado": 0.0,
-            "liquidado": 0.0,
-            "pago": 0.0,
-            "credito_no_ano": -174231638.0,
-            "dotacao_inicial": 1675854863.0,
-            "dotacao_atual": 1501623225.0,
+            "empenhado": 2000000.0,
+            "liquidado": 2000000.0,
+            "pago": 2000000.0,
+            "credito_no_ano": 2000000.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 2000000.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "219G",
                 "descricao": "Estruturação da Rede de Serviços e Fortalecimento da Gestão do Sistema Único de Assistência Social (SUAS)",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6503",
+                "subtitulo_desc": "No Estado de Minas Gerais (Crédito Extraordinário)",
                 "valor_mp": 2000000.0,
-                "credito_no_ano": -174231638.0,
-                "fator": 0.0,
-                "dotacao_inicial": 1675854863.0,
-                "empenhado": 0.0,
-                "pago": 0.0
+                "credito_no_ano": 2000000.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 2000000.0,
+                "pago": 2000000.0
               }
             ]
           }
@@ -2083,34 +2290,37 @@
           "codigo_uo": "56101",
           "valor_credito": 500000000.0,
           "acoes_credito": [
-            "00AF"
+            "00AF/6502"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "piso",
-            "rateado": true,
+            "modo": "exata",
+            "rateado": false,
+            "contaminadas": 0,
             "base": 500000000.0,
-            "empenhado": 0.0,
-            "liquidado": 0.0,
-            "pago": 0.0,
-            "credito_no_ano": -2295672268.0,
-            "dotacao_inicial": 5807138041.0,
-            "dotacao_atual": 3511465773.0,
+            "empenhado": 500000000.0,
+            "liquidado": 500000000.0,
+            "pago": 500000000.0,
+            "credito_no_ano": 500000000.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 500000000.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "00AF",
                 "descricao": "Integralização de cotas ao Fundo de Arrendamento Residencial - FAR",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6502",
+                "subtitulo_desc": "No Estado de Minas Gerais (Crédito Extraordinário)",
                 "valor_mp": 500000000.0,
-                "credito_no_ano": -2295672268.0,
-                "fator": 0.0,
-                "dotacao_inicial": 5807138041.0,
-                "empenhado": 0.0,
-                "pago": 0.0
+                "credito_no_ano": 500000000.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 500000000.0,
+                "pago": 500000000.0
               }
             ]
           }
@@ -2121,15 +2331,16 @@
           "codigo_uo": "71101",
           "valor_credito": 300000000.0,
           "acoes_credito": [
-            "00Y0"
+            "00Y0/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 300000000.0,
             "empenhado": 300000000.0,
             "liquidado": 300000000.0,
@@ -2142,7 +2353,9 @@
               {
                 "acao": "00Y0",
                 "descricao": "Integralização de Cotas do Fundo Garantidor de Operações (FGO) destinada a garantir financiamento para pessoas físicas ou jurídicas afetadas pelos eventos climáticos ocorridos em fevereiro e março de 2026",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 300000000.0,
                 "credito_no_ano": 300000000.0,
                 "fator": 1.0,
@@ -2159,15 +2372,16 @@
           "codigo_uo": "74102",
           "valor_credito": 500000000.0,
           "acoes_credito": [
-            "00WH"
+            "00WH/6502"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "5-IFI · RP 0 · fonte 3042"
           ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 500000000.0,
             "empenhado": 500000000.0,
             "liquidado": 400000000.0,
@@ -2180,7 +2394,9 @@
               {
                 "acao": "00WH",
                 "descricao": "Financiamentos de Operações para Apoiar Ações de Mitigação e Adaptação às Mudanças Climáticas e de Enfrentamento de Consequências Sociais e Econômicas de Calamidades Públicas",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6502",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 500000000.0,
                 "credito_no_ano": 500000000.0,
                 "fator": 1.0,
@@ -2201,6 +2417,11 @@
       "fim_periodo_atual": "2026-05-16",
       "inicio_periodo_atual": "2026-03-18",
       "urgencia": "2026-05-02",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-03-18",
+      "numero_camara": "MPV 1342/2026",
+      "mensagem": "MSG 190/2026",
+      "publicacao_dou": "2026-03-18",
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
@@ -2211,17 +2432,18 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "piso",
-        "rateado": true,
+        "modo": "exata",
+        "contaminadas": 0,
+        "rateado": false,
         "base": 1305000000.0,
-        "credito_no_ano": -1655377170.0,
-        "empenhado": 800000000.0,
-        "liquidado": 700000000.0,
-        "pago": 700000000.0,
+        "credito_no_ano": 1305000000.0,
+        "empenhado": 1305000000.0,
+        "liquidado": 1202000000.0,
+        "pago": 1202000000.0,
         "acoes": 5,
         "acoes_ausentes": 0,
-        "pct_empenhado": 61.3,
-        "pct_pago": 53.6
+        "pct_empenhado": 100.0,
+        "pct_pago": 92.1
       }
     },
     {
@@ -2247,40 +2469,45 @@
           "codigo_uo": "53101",
           "valor_credito": 266512000.0,
           "acoes_credito": [
-            "00XZ",
-            "22BO"
+            "00XZ/6500",
+            "22BO/6507"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "3-ODC · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "piso",
+            "modo": "exata",
             "rateado": true,
+            "contaminadas": 0,
             "base": 266512000.0,
-            "empenhado": 152017697.67,
-            "liquidado": 32633494.27,
-            "pago": 27958506.37,
-            "credito_no_ano": 1298354643.0,
-            "dotacao_inicial": 650117877.0,
-            "dotacao_atual": 1948472520.0,
+            "empenhado": 173187173.81,
+            "liquidado": 83346233.07,
+            "pago": 83346233.07,
+            "credito_no_ano": 341856207.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 341856207.0,
             "acoes": 2,
             "detalhe_acoes": [
               {
                 "acao": "22BO",
                 "descricao": "Ações de Proteção e Defesa Civil",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6507",
+                "subtitulo_desc": "No Estado de Minas Gerais (Crédito Extraordinário)",
                 "valor_mp": 230000000.0,
-                "credito_no_ano": 1186498436.0,
-                "fator": 0.1938,
-                "dotacao_inicial": 650117877.0,
-                "empenhado": 128179997.85,
-                "pago": 4126216.29
+                "credito_no_ano": 230000000.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 149349474.0,
+                "pago": 59513943.0
               },
               {
                 "acao": "00XZ",
                 "descricao": "Apoio Financeiro às Famílias Residentes nos Municípios da Zona da Mata (MG) em Decorrência de Eventos Climáticos (MP nº 1.338, de 6 de março de 2026)",
-                "modo": "direta",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "No Estado de Minas Gerais (Crédito Extraordinário)",
                 "valor_mp": 36512000.0,
                 "credito_no_ano": 111856207.0,
                 "fator": 0.3264,
@@ -2301,6 +2528,11 @@
       "fim_periodo_atual": "2026-05-07",
       "inicio_periodo_atual": "2026-03-09",
       "urgencia": "2026-04-23",
+      "situacao_prazo": "Encerrado",
+      "despacho": "2026-03-09",
+      "numero_camara": "MPV 1339/2026",
+      "mensagem": "MSG 160/2026",
+      "publicacao_dou": "2026-07-06",
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
@@ -2311,17 +2543,18 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "piso",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": true,
         "base": 266512000.0,
-        "credito_no_ano": 1298354643.0,
-        "empenhado": 152017697.67,
-        "liquidado": 32633494.27,
-        "pago": 27958506.37,
+        "credito_no_ano": 341856207.0,
+        "empenhado": 173187173.81,
+        "liquidado": 83346233.07,
+        "pago": 83346233.07,
         "acoes": 2,
         "acoes_ausentes": 0,
-        "pct_empenhado": 57.0,
-        "pct_pago": 10.5
+        "pct_empenhado": 65.0,
+        "pct_pago": 31.3
       }
     },
     {
@@ -2347,34 +2580,37 @@
           "codigo_uo": "53101",
           "valor_credito": 220000000.0,
           "acoes_credito": [
-            "22BO"
+            "22BO/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "4-INV · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "piso",
+            "modo": "exata",
             "rateado": true,
+            "contaminadas": 0,
             "base": 220000000.0,
-            "empenhado": 122606954.47,
-            "liquidado": 8418543.15,
-            "pago": 3946815.59,
-            "credito_no_ano": 1186498436.0,
-            "dotacao_inicial": 650117877.0,
-            "dotacao_atual": 1836616313.0,
+            "empenhado": 184300435.57,
+            "liquidado": 80583003.78,
+            "pago": 76990890.19,
+            "credito_no_ano": 806616313.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 806616313.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "22BO",
                 "descricao": "Ações de Proteção e Defesa Civil",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 220000000.0,
-                "credito_no_ano": 1186498436.0,
-                "fator": 0.1854,
-                "dotacao_inicial": 650117877.0,
-                "empenhado": 122606954.47,
-                "pago": 3946815.59
+                "credito_no_ano": 806616313.0,
+                "fator": 0.2727,
+                "dotacao_inicial": 0.0,
+                "empenhado": 184300435.57,
+                "pago": 76990890.19
               }
             ]
           }
@@ -2385,33 +2621,36 @@
           "codigo_uo": "53204",
           "valor_credito": 30000000.0,
           "acoes_credito": [
-            "14VI"
+            "14VI/6500"
           ],
           "acoes_ausentes": [],
           "qualificadores": [
             "4-INV · RP 2 · fonte 3000"
           ],
           "execucao": {
-            "modo": "piso",
+            "modo": "exata",
             "rateado": false,
+            "contaminadas": 0,
             "base": 30000000.0,
-            "empenhado": 24297595.0,
+            "empenhado": 30000000.0,
             "liquidado": 0.0,
             "pago": 0.0,
             "credito_no_ano": 30000000.0,
-            "dotacao_inicial": 6681375.0,
-            "dotacao_atual": 36681375.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 30000000.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
                 "acao": "14VI",
                 "descricao": "Implantação de Infraestruturas para Segurança Hídrica",
-                "modo": "piso",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "No Estado de Minas Gerais (Crédito Extraordinário)",
                 "valor_mp": 30000000.0,
                 "credito_no_ano": 30000000.0,
                 "fator": 1.0,
-                "dotacao_inicial": 6681375.0,
-                "empenhado": 24297595.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 30000000.0,
                 "pago": 0.0
               }
             ]
@@ -2427,6 +2666,11 @@
       "fim_periodo_atual": "2026-04-02",
       "inicio_periodo_atual": "2026-02-02",
       "urgencia": "2026-03-19",
+      "situacao_prazo": "Encerrado",
+      "despacho": null,
+      "numero_camara": "MPV 1333/2026",
+      "mensagem": "MSG 10/2026",
+      "publicacao_dou": "2026-01-07",
       "vigente": false,
       "encerrada": true,
       "sem_relator": true,
@@ -2437,17 +2681,18 @@
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
-        "modo": "piso",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": true,
         "base": 250000000.0,
-        "credito_no_ano": 1216498436.0,
-        "empenhado": 146904549.47,
-        "liquidado": 8418543.15,
-        "pago": 3946815.59,
+        "credito_no_ano": 836616313.0,
+        "empenhado": 214300435.57,
+        "liquidado": 80583003.78,
+        "pago": 76990890.19,
         "acoes": 2,
         "acoes_ausentes": 0,
-        "pct_empenhado": 58.8,
-        "pct_pago": 1.6
+        "pct_empenhado": 85.7,
+        "pct_pago": 30.8
       }
     }
   ]
