@@ -82,6 +82,11 @@ RE_URGENCIA = re.compile(
     r"|Regime de [Uu]rgência\s*(\d{2}/\d{2}/\d{4})\s*em diante"
     r"|(\d{2}/\d{2}/\d{4})\s*em diante)")
 RE_ATO = re.compile(r"Ato do Presidente da Mesa do Congresso Nacional n[ºo°]?\s*([\d./-]+)", re.I)
+RE_SITUACAO_PRAZO = re.compile(r"Situação do prazo\s*:?\s*(Aberto|Encerrado|Suspenso)", re.I)
+RE_ULTIMO_ESTADO = re.compile(r"Último estado\s*:?\s*([A-ZÁÂÃÀÉÊÍÓÔÕÚÇ][^\n|]{3,80}?)\s*(?:Prazos|Calendário|$)")
+RE_DESPACHO = re.compile(r"Despacho\s*:?\s*(\d{2}/\d{2}/\d{4})")
+RE_NUM_CAMARA = re.compile(r"Número na Câmara\s*:?\s*(MPV?\s*\d+/\d{4})", re.I)
+RE_MSG = re.compile(r"Origem externa\s*:?\s*(MSG\s*\d+/\d{4})", re.I)
 
 
 def _iso(br: str | None) -> str | None:
@@ -161,7 +166,16 @@ def ler_pagina(codigo: str) -> dict:
             ato = m.group(1)
             break
 
+    sit = RE_SITUACAO_PRAZO.search(texto)
+    desp = RE_DESPACHO.search(texto)
+    camara = RE_NUM_CAMARA.search(texto)
+    msg = RE_MSG.search(texto)
+
     return {
+        "situacao_prazo": _limpa(sit.group(1)).capitalize() if sit else None,
+        "despacho": _iso(desp.group(1)) if desp else None,
+        "numero_camara": _limpa(camara.group(1)) if camara else None,
+        "mensagem": _limpa(msg.group(1)) if msg else None,
         "publicacao_dou": _iso(dou.group(1)) if dou else None,
         "deliberacao_inicio": inicio,
         "deliberacao_fim": fim,

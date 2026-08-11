@@ -38,6 +38,12 @@ ler_uos <- function() {
 valores <- list(valorPLOA = FALSE, valorLOA = TRUE, valorLOAmaisCredito = TRUE,
                 valorEmpenhado = TRUE, valorLiquidado = TRUE, valorPago = TRUE)
 
+# O subtítulo (localizador) é o que separa o crédito extraordinário do restante
+# da ação: o crédito abre subtítulo próprio, e é ele que o anexo da MP informa.
+# Sem essa dimensão, a consulta devolve a ação inteira somada e não há como
+# distinguir o que é do crédito do que já estava na LOA.
+dimensoes <- list(Acao = TRUE, Subtitulo = TRUE)
+
 chamar <- function(ano, ..., url = FALSE) {
   do.call(despesaDetalhada, c(list(exercicio = ano, incluiDescricoes = TRUE,
                                    timeout = 600, print_url = url), valores, list(...)))
@@ -69,6 +75,10 @@ normalizar <- function(df) {
     unidade          = mapear(nomes, c("UO_desc", "UO", "descricaoUO"), "^uo_?desc|unidade.*orcament"),
     codigo_acao      = mapear(nomes, c("Acao_cod", "codigoAcao", "cod_acao"), "^acao_?cod|^codigo.*acao"),
     acao             = mapear(nomes, c("Acao_desc", "Acao", "descricaoAcao"), "^acao_?desc|^acao$"),
+    codigo_subtitulo = mapear(nomes, c("Subtitulo_cod", "codigoSubtitulo", "Localizador_cod"),
+                              "^subtitulo_?cod|^codigo.*subtitulo|localizador.*cod"),
+    subtitulo        = mapear(nomes, c("Subtitulo_desc", "Subtitulo", "descricaoSubtitulo"),
+                              "^subtitulo_?desc|^subtitulo$|^localizador"),
     loa              = mapear(nomes, c("loa", "valorLOA"), "^loa$|dotacao.*inicial"),
     loa_mais_credito = mapear(nomes, c("loa_mais_credito", "valorLOAmaisCredito"), "credito"),
     empenhado        = mapear(nomes, c("empenhado", "valorEmpenhado"), "empenhad"),
@@ -98,6 +108,10 @@ normalizar <- function(df) {
   }
   saida$codigo_uo <- padrao_uo(saida$codigo_uo)
   saida$codigo_acao <- toupper(trimws(as.character(saida$codigo_acao)))
+  # o subtítulo tem 4 dígitos e também perde zeros à esquerda se virar número
+  sub <- trimws(as.character(saida$codigo_subtitulo))
+  n <- suppressWarnings(as.integer(sub))
+  saida$codigo_subtitulo <- ifelse(is.na(n), sub, formatC(n, width = 4, flag = "0"))
   saida
 }
 
@@ -105,7 +119,8 @@ normalizar <- function(df) {
 consultar <- function(ano, uos) {
   if (!length(uos)) {
     message("  sem lista de unidades — consultando o exercício inteiro por UO")
-    return(tentar("exercício inteiro", chamar(ano, UO = TRUE, Acao = TRUE)))
+    return(tentar("exercício inteiro",
+                  do.call(chamar, c(list(ano, UO = TRUE), dimensoes))))
   }
 
   partes <- list()
@@ -113,7 +128,7 @@ consultar <- function(ano, uos) {
   for (i in seq_along(uos)) {
     uo <- uos[i]
     parte <- tentar(paste("UO", uo),
-                    chamar(ano, UO = uo, Acao = TRUE, url = (i == 1)))
+                    do.call(chamar, c(list(ano, UO = uo, url = (i == 1)), dimensoes)))
     if (!is.null(parte) && nrow(parte) > 0) {
       message("  UO ", uo, ": ", nrow(parte), " ações")
       partes[[length(partes) + 1]] <- parte
@@ -155,6 +170,10 @@ for (ano in anos) {
 
   soma <- suppressWarnings(sum(as.numeric(limpo$empenhado), na.rm = TRUE))
   message("  empenho total: ", format(soma, big.mark = ".", decimal.mark = ",", scientific = FALSE))
+  if (all(is.na(limpo$codigo_subtitulo))) {
+    message("::warning::sem coluna de subtítulo no retorno — o cruzamento cairá ",
+            "no nível da ação, sem separar o crédito extraordinário da LOA")
+  }
   if (!is.finite(soma) || soma == 0) {
     message("::error::empenho somando zero — o mapeamento de colunas acima está errado")
   }

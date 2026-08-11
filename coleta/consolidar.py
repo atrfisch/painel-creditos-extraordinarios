@@ -84,6 +84,8 @@ def carregar_siop(ano: int) -> list[dict]:
             "unidade": (l.get("unidade") or "").strip(),
             "codigo_acao": (l.get("codigo_acao") or "").strip().upper(),
             "acao": (l.get("acao") or "").strip(),
+            "codigo_subtitulo": (l.get("codigo_subtitulo") or "").strip(),
+            "subtitulo": (l.get("subtitulo") or "").strip(),
             "loa": loa, "atual": atual, "credito": round(atual - loa, 2),
             "empenhado": emp, "liquidado": liq, "pago": pg,
             "empenhado_alem_loa": round(max(0.0, emp - loa), 2),
@@ -107,41 +109,81 @@ def indice_uo(siop: list[dict], de_para: list[dict]) -> dict[str, str]:
 
 
 def atribuir(pares: list[tuple[dict, float]]) -> dict:
-    """Atribui a execução das ações a esta MP.
+    """Atribui a execução à MP.
 
-    `pares` são (linha do SIOP, valor que esta MP abriu naquela ação).
+    `pares` são (linha do SIOP, valor que esta MP abriu naquela linha).
+
+    O modo de cada linha diz o quanto se pode afirmar sobre ela:
+
+    - **exata** — a linha foi localizada por UO + ação + subtítulo. O crédito
+      extraordinário abre subtítulo próprio, e é ele que o anexo informa, então
+      essa linha é o crédito: toda a execução dela pertence à MP. Não se
+      desconta dotação inicial, porque crédito extraordinário não reforça
+      orçamento vigente — ele é extraorçamentário e vive em linha separada.
+    - **piso (≥)** — não houve subtítulo para casar e a linha da ação mistura
+      LOA e crédito. Conta-se só o empenho que excede a dotação inicial.
+    - **direta** — sem subtítulo, mas a ação inteira nasceu do crédito
+      (dotação inicial zero), o que torna a mistura impossível.
+
+    Em qualquer modo, se mais de uma MP alimenta a mesma linha, cada uma
+    responde pela fração que abriu.
     """
     total = {"base": 0.0, "empenhado": 0.0, "liquidado": 0.0, "pago": 0.0,
              "credito_no_ano": 0.0, "dotacao_inicial": 0.0, "dotacao_atual": 0.0}
-    modos, rateado, detalhe = set(), False, []
+    modos, rateado, detalhe, contaminadas = set(), False, [], 0
 
     for linha, valor_mp in pares:
         credito = linha["credito"]
-        fator = min(1.0, valor_mp / credito) if credito > 0 else 0.0
-        modo = "direta" if linha["loa"] == 0 else "piso"
+        exata = bool(linha.get("codigo_subtitulo"))
+
+        if exata:
+            modo = "exata"
+            # o subtítulo do crédito deve ter dotação inicial zero. Se não tem,
+            # ele acumula LOA ou outro crédito, e o número deixa de ser limpo:
+            # é o caso de suplementar e extraordinário na mesma linha.
+            if linha["loa"] > 0:
+                contaminadas += 1
+                modo = "piso"
+        elif linha["loa"] == 0:
+            modo = "direta"
+        else:
+            modo = "piso"
         modos.add(modo)
+
+        fator = min(1.0, valor_mp / credito) if credito > 0 else 0.0
         if fator < 0.999:
             rateado = True
-        campos = (("empenhado", "empenhado_alem_loa"),
-                  ("liquidado", "liquidado_alem_loa"),
-                  ("pago", "pago_alem_loa"))
-        for cheio, piso in campos:
+
+        for cheio, piso in (("empenhado", "empenhado_alem_loa"),
+                            ("liquidado", "liquidado_alem_loa"),
+                            ("pago", "pago_alem_loa")):
             total[cheio] += linha[piso if modo == "piso" else cheio] * fator
         total["base"] += valor_mp
         total["credito_no_ano"] += credito
         total["dotacao_inicial"] += linha["loa"]
         total["dotacao_atual"] += linha["atual"]
+
         detalhe.append({
             "acao": linha["codigo_acao"], "descricao": linha["acao"], "modo": modo,
+            "subtitulo": linha.get("codigo_subtitulo") or None,
+            "subtitulo_desc": linha.get("subtitulo") or None,
             "valor_mp": round(valor_mp, 2), "credito_no_ano": credito,
             "fator": round(fator, 4), "dotacao_inicial": linha["loa"],
             "empenhado": round(linha["empenhado_alem_loa" if modo == "piso" else "empenhado"] * fator, 2),
             "pago": round(linha["pago_alem_loa" if modo == "piso" else "pago"] * fator, 2),
         })
 
+    if "piso" in modos:
+        modo_geral = "piso"
+    elif "exata" in modos:
+        modo_geral = "exata"
+    else:
+        modo_geral = "direta"
+
     return {
-        "modo": "piso" if "piso" in modos else "direta",
+        "modo": modo_geral,
         "rateado": rateado,
+        "contaminadas": contaminadas,
         **{k: round(v, 2) for k, v in total.items()},
         "acoes": len(detalhe),
         "detalhe_acoes": sorted(detalhe, key=lambda d: -d["valor_mp"])[:12],
@@ -149,7 +191,11 @@ def atribuir(pares: list[tuple[dict, float]]) -> dict:
 
 
 def unidades_do_anexo(anexo: dict) -> dict:
-    """Agrupa a programática do anexo por unidade orçamentária."""
+    """Agrupa a programática do anexo por unidade orçamentária.
+
+    A chave dentro da unidade é o par ação + subtítulo, porque é o subtítulo
+    que identifica a linha do crédito extraordinário dentro da ação.
+    """
     por_uo: dict[str, dict] = {}
     for l in anexo.get("programatica", []):
         uo = por_uo.setdefault(l["uo_codigo"], {
@@ -157,7 +203,8 @@ def unidades_do_anexo(anexo: dict) -> dict:
             "orgao": l.get("orgao", ""), "valor": 0.0, "acoes": defaultdict(float),
             "qualificadores": set()})
         uo["valor"] += l["valor"]
-        uo["acoes"][l["acao"].upper()] += l["valor"]
+        chave = (l["acao"].upper(), (l.get("localizador") or "").strip())
+        uo["acoes"][chave] += l["valor"]
         if l.get("gnd"):
             uo["qualificadores"].add(f"{l['gnd']} · RP {l.get('rp') or '—'} · fonte {l.get('fonte') or '—'}")
     return por_uo
@@ -184,8 +231,27 @@ def main() -> None:
     anos = sorted({p["ano"] for p in mpvs})
     siop_por_ano = {ano: carregar_siop(ano) for ano in anos}
     indices = {ano: indice_uo(l, de_para_uo) for ano, l in siop_por_ano.items()}
-    por_chave = {ano: {(l["codigo_uo"], l["codigo_acao"]): l for l in linhas}
-                 for ano, linhas in siop_por_ano.items()}
+
+    # Dois índices: o do subtítulo é o bom, o da ação é a queda quando o
+    # subtítulo não veio na consulta ou não bate com o do anexo. As linhas da
+    # ação são somadas para que a queda continue produzindo um número.
+    por_subtitulo, por_acao = {}, {}
+    for ano, linhas in siop_por_ano.items():
+        por_subtitulo[ano] = {
+            (l["codigo_uo"], l["codigo_acao"], l["codigo_subtitulo"]): l
+            for l in linhas if l["codigo_subtitulo"]
+        }
+        agrupadas: dict[tuple, dict] = {}
+        for l in linhas:
+            chave = (l["codigo_uo"], l["codigo_acao"])
+            if chave not in agrupadas:
+                agrupadas[chave] = {**l, "codigo_subtitulo": "", "subtitulo": ""}
+            else:
+                for campo in ("loa", "atual", "credito", "empenhado", "liquidado", "pago",
+                              "empenhado_alem_loa", "liquidado_alem_loa", "pago_alem_loa"):
+                    agrupadas[chave][campo] = round(agrupadas[chave][campo] + l[campo], 2)
+        por_acao[ano] = agrupadas
+
     por_uo_ano = {}
     for ano, linhas in siop_por_ano.items():
         d = defaultdict(list)
@@ -198,7 +264,8 @@ def main() -> None:
 
     for p in mpvs:
         ident = p["identificacao"]
-        chaves = por_chave.get(p["ano"], {})
+        subs = por_subtitulo.get(p["ano"], {})
+        chaves = por_acao.get(p["ano"], {})
         anexo = anexos.get(ident) or {}
         prog = unidades_do_anexo(anexo)
         unidades = []
@@ -207,17 +274,21 @@ def main() -> None:
             origem = "anexo"
             for uo in prog.values():
                 pares, faltando = [], []
-                for acao, valor in uo["acoes"].items():
-                    linha = chaves.get((uo["codigo_uo"], acao))
+                for (acao, localizador), valor in uo["acoes"].items():
+                    linha = subs.get((uo["codigo_uo"], acao, localizador))
+                    if linha is None:
+                        linha = chaves.get((uo["codigo_uo"], acao))
                     if linha:
                         pares.append((linha, valor))
                     else:
-                        faltando.append(acao)
-                        acoes_ausentes.append(f"{ident} · UO {uo['codigo_uo']} · ação {acao}")
+                        faltando.append(f"{acao}/{localizador}")
+                        acoes_ausentes.append(
+                            f"{ident} · UO {uo['codigo_uo']} · ação {acao} · subtítulo {localizador}")
                 unidades.append({
                     "orgao": uo["orgao"], "unidade": uo["unidade"],
                     "codigo_uo": uo["codigo_uo"], "valor_credito": round(uo["valor"], 2),
-                    "acoes_credito": sorted(uo["acoes"]), "acoes_ausentes": faltando,
+                    "acoes_credito": sorted(f"{a}/{s}" for a, s in uo["acoes"]),
+                    "acoes_ausentes": faltando,
                     "qualificadores": sorted(uo["qualificadores"])[:4],
                     "execucao": atribuir(pares),
                 })
@@ -248,10 +319,18 @@ def main() -> None:
             return round(sum(u["execucao"][campo] for u in unidades), 2)
 
         modos = {u["execucao"]["modo"] for u in unidades} or {"direta"}
+        if "piso" in modos:
+            modo_mp = "piso"
+        elif "exata" in modos:
+            modo_mp = "exata"
+        else:
+            modo_mp = "direta"
+        contaminadas = sum(u["execucao"].get("contaminadas", 0) for u in unidades)
         base = soma("base")
         execucao = {
             "origem": origem,
-            "modo": "piso" if "piso" in modos else "direta",
+            "modo": modo_mp,
+            "contaminadas": contaminadas,
             "rateado": any(u["execucao"]["rateado"] for u in unidades),
             "base": base,
             "credito_no_ano": soma("credito_no_ano"),
@@ -278,6 +357,11 @@ def main() -> None:
             "ato_prorrogacao": p.get("ato_prorrogacao"),
             "fim_periodo_atual": p.get("fim_periodo_atual"),
             "inicio_periodo_atual": p.get("inicio_periodo_atual"),
+            "situacao_prazo": p.get("situacao_prazo"),
+            "despacho": p.get("despacho"),
+            "numero_camara": p.get("numero_camara"),
+            "mensagem": p.get("mensagem"),
+            "publicacao_dou": p.get("publicacao_dou"),
             "dias_para_prorrogacao": dias_ate(p.get("vigencia_60"), hoje)
             if not p.get("prorrogada") else None,
             "dias_para_urgencia": dias_ate(p.get("urgencia"), hoje),
@@ -304,9 +388,11 @@ def main() -> None:
         "medidas": registros,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    por_origem = defaultdict(int)
+    por_origem, por_modo = defaultdict(int), defaultdict(int)
     for r in registros:
         por_origem[r["execucao"]["origem"]] += 1
+        por_modo[r["execucao"]["modo"]] += 1
+    contaminadas = sum(r["execucao"].get("contaminadas", 0) for r in registros)
     sem_execucao = sum(1 for r in registros if not r["execucao"]["base"])
     if registros and sem_execucao == len(registros):
         print("::error::nenhuma MP com dados de execução — o passo do SIOP não "
@@ -315,7 +401,11 @@ def main() -> None:
         print(f"::warning::{sem_execucao} de {len(registros)} MPs sem dados de execução",
               file=sys.stderr)
     print(f"{len(registros)} MPs -> {SAIDA}", file=sys.stderr)
-    print(f"  origem do cruzamento: {dict(por_origem)}", file=sys.stderr)
+    print(f"  origem do cruzamento: {dict(por_origem)} | atribuição: {dict(por_modo)}",
+          file=sys.stderr)
+    if contaminadas:
+        print(f"::warning::{contaminadas} linha(s) de subtítulo com dotação inicial acima de "
+              "zero — a linha acumula LOA ou outro crédito e caiu no modo piso", file=sys.stderr)
     if sem_anexo:
         print(f"  sem anexo (cruzamento aproximado): {', '.join(sem_anexo)}", file=sys.stderr)
     if acoes_ausentes:

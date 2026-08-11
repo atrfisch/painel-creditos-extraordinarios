@@ -191,6 +191,11 @@ def enriquecer(propostas: list[dict], manual: dict[str, dict],
             p["fim_periodo_atual"] = oficial["deliberacao_fim"]
             p["inicio_periodo_atual"] = oficial.get("deliberacao_inicio")
             p["urgencia"] = oficial.get("urgencia")
+            p["situacao_prazo"] = oficial.get("situacao_prazo")
+            p["despacho"] = oficial.get("despacho")
+            p["numero_camara"] = oficial.get("numero_camara")
+            p["mensagem"] = oficial.get("mensagem")
+            p["publicacao_dou"] = oficial.get("publicacao_dou")
         elif publicacao:
             inicio = date.fromisoformat(publicacao)
             p["vigencia_60"] = somar_dias_uteis_de_vigencia(inicio, PRAZO_INICIAL).isoformat()
