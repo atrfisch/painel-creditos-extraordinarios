@@ -79,6 +79,13 @@ def main() -> int:
         if achado != esperado:
             falhas.append(f"regime de urgência: {achado} (esperado {esperado})")
 
+    # "NA" vindo do R não pode virar chave de subtítulo válida
+    from consolidar import texto  # noqa: E402
+    if texto("NA") or texto("nan") or texto("  NA  "):
+        falhas.append("valores NA do R não estão sendo tratados como ausência")
+    if texto("6500") != "6500":
+        falhas.append("texto() está descartando valor válido")
+
     # o anexo da MP: programática exata a partir do texto real do PDF
     from anexos import parsear_anexo  # noqa: E402
     prog = parsear_anexo((RAIZ / "tests/anexo_1378.txt").read_text(encoding="utf-8"))
