@@ -94,6 +94,18 @@ h1{font-family:var(--cond);font-size:clamp(30px,5vw,46px);font-weight:700;letter
 .ficha:target{box-shadow:inset 0 0 0 2px var(--processo)}
 
 .cabeca{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.marcar{align-self:center;display:flex;cursor:pointer}
+.marcar input{width:15px;height:15px;cursor:pointer;accent-color:var(--processo)}
+.barra-sel{display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  padding:11px 14px;margin-bottom:1px;background:var(--branco);
+  border:1px solid var(--linha-forte);border-bottom:none}
+.botao-pdf{font-family:var(--cond);font-size:14px;font-weight:600;letter-spacing:.01em;
+  padding:8px 16px;border:1px solid var(--processo);background:var(--processo);
+  color:#fff;border-radius:2px;cursor:pointer}
+.botao-pdf:disabled{background:var(--papel);color:var(--suave);
+  border-color:var(--linha-forte);cursor:default}
+.botao-pdf:not(:disabled):hover{background:#123742}
+.aviso-sel{font-family:var(--mono);font-size:11.5px;color:var(--suave)}
 .numero{font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:-.01em;margin:0}
 .numero a{text-decoration:none;border-bottom:1px solid var(--linha-forte)}
 .numero a:hover{border-bottom-color:var(--processo)}
@@ -158,9 +170,12 @@ table.uos td{padding:6px 8px;border-bottom:1px solid var(--linha);vertical-align
 table.uos td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;
   white-space:nowrap}
 .sem-dado{color:var(--suave)}
-.prazos{display:flex;flex-wrap:wrap;gap:4px 18px;margin:10px 0 0;
-  font-family:var(--mono);font-size:11.5px;color:var(--suave)}
-.prazos b{color:var(--tinta);font-weight:500}
+.calendario{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin:12px 0 0;
+  font-size:12.5px;align-items:baseline}
+.calendario dt{color:var(--suave);white-space:nowrap}
+.calendario dd{margin:0;font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums}
+@media(max-width:560px){.calendario{grid-template-columns:1fr}
+  .calendario dd{margin-bottom:4px}}
 .acao{font-size:12px;color:var(--suave);margin-top:3px;padding-left:10px;
   border-left:2px solid var(--linha)}
 .acao .cod{font-family:var(--mono);font-size:11px;color:var(--tinta)}
@@ -184,6 +199,38 @@ table.uos td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tab
 }
 @media(prefers-reduced-motion:no-preference){
   .preenche{transition:width .45s ease}
+}
+
+/* ── impressão ─────────────────────────────────────────── */
+#relatorio{display:none}
+@media print{
+  @page{size:A4;margin:16mm 14mm}
+  body{background:#fff;font-size:10.5pt}
+  .topo,.kpis,.quadros,.filtros,.lista,.rodape,main{display:none !important}
+  #relatorio{display:block}
+  .rel-capa{border-bottom:2px solid var(--tinta);padding-bottom:10px;margin-bottom:18px}
+  .rel-capa h1{font-size:20pt;margin:0 0 4px}
+  .rel-capa p{margin:0;font-family:var(--mono);font-size:8.5pt;color:#444}
+  .rel-mp{page-break-inside:avoid;break-inside:avoid;
+    padding:12px 0 14px;border-bottom:1px solid #bbb}
+  .rel-mp + .rel-mp{padding-top:14px}
+  .rel-cab{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .rel-cab h2{font-size:13pt;margin:0}
+  .rel-cab .v{font-family:var(--mono);font-size:11pt}
+  .rel-ementa{margin:4px 0 8px;font-size:10pt}
+  .rel-grade{display:grid;grid-template-columns:1fr 1fr;gap:2px 22px;font-size:9pt}
+  .rel-grade div{display:flex;gap:6px}
+  .rel-grade b{font-weight:400;color:#555;min-width:132px}
+  .rel-grade span{font-family:var(--mono)}
+  table.rel-uo{width:100%;border-collapse:collapse;margin-top:8px;font-size:8.5pt}
+  table.rel-uo th{text-align:left;font-weight:500;border-bottom:1px solid #999;padding:3px 5px}
+  table.rel-uo td{border-bottom:1px solid #ddd;padding:3px 5px;vertical-align:top}
+  table.rel-uo .n{text-align:right;font-family:var(--mono);white-space:nowrap}
+  .rel-regua{margin:8px 0 4px}
+  .rel-eixo{display:flex;justify-content:space-between;font-size:7.5pt;color:#666;margin-top:2px}
+  .rel-rodape{margin-top:16px;font-size:8pt;color:#555;border-top:1px solid #999;padding-top:8px}
+  .barra-sel{display:none !important}
+  a{color:inherit;text-decoration:none}
 }
 </style>
 </head>
@@ -216,8 +263,16 @@ table.uos td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tab
     <span class="contagem" id="contagem"></span>
   </div>
 
+  <div class="barra-sel">
+    <label class="chip"><input type="checkbox" id="marcar-todas"> selecionar todas as exibidas</label>
+    <button type="button" class="botao-pdf" id="exportar" disabled>Exportar PDF</button>
+    <span class="aviso-sel" id="aviso-sel">marque as medidas que quer no relatório</span>
+  </div>
+
   <section class="lista" id="lista" aria-live="polite"></section>
 </main>
+
+<section id="relatorio" aria-hidden="true"></section>
 
 <footer class="rodape">
   <div class="wrap">
@@ -230,32 +285,31 @@ table.uos td.n{font-family:var(--mono);text-align:right;font-variant-numeric:tab
       <span><i style="border-left:2px dotted var(--emendas);width:2px;height:11px"></i>regime de urgência</span>
       <span><i style="background:var(--tinta);width:2px"></i>hoje</span>
     </div>
-    <p><b>Vigência.</b> Sessenta dias a partir da publicação, prorrogados uma vez por igual
-      período, com a contagem suspensa no recesso (art. 62 da Constituição). Quando a data não
-      vem dos Dados Abertos do Senado, ela é estimada a partir do início do prazo de emendas —
-      cada ficha informa a origem.</p>
-    <p><b>Programática.</b> O anexo que a Presidência envia com cada MP traz o código da
-      unidade orçamentária e o código da ação. É por esse par que a linha do SIOP é localizada —
-      cruzamento exato, sem casar nome de unidade nem presumir ações. Quando o anexo não é
-      obtido, a ficha avisa e o painel recai no método antigo, aproximado.</p>
-    <p><b>Execução.</b> Vem do SIOP pela API da SOF, via pacote <code>orcamentoBR</code>. Mesmo
-      com a ação certa, o SIOP não separa o que foi gasto por conta da LOA do que foi por conta
-      do crédito, então a atribuição aparece em dois modos.
-      <b>Direta:</b> a ação nasceu do crédito, dotação inicial zero — a execução da ação é a do
-      crédito. <b>Piso (≥):</b> a ação já existia na LOA e foi reforçada; o painel conta apenas
-      o empenho que excede a dotação inicial, porque só esse excedente veio necessariamente do
-      crédito. Quando duas ou mais MPs
-      alimentam a mesma ação no exercício, cada uma responde pela fração que abriu, e a ficha
-      traz o selo de execução rateada.</p>
-    <p><b>Vigência.</b> Vem da janela de deliberação publicada na página da MP, que é a do
+
+    <p><b>Vigência.</b> Vem da janela de deliberação publicada na página de cada MP, que é a do
       período corrente. Como a prorrogação por mais sessenta dias é automática (art. 62, § 7º),
-      a data em que a MP de fato caduca é o fim do segundo período — a régua vai até lá, e a
-      marca no meio é o dia em que a prorrogação ocorre. Enquanto ela não é publicada, essa
-      segunda metade é projeção; depois, passa a vir do Ato da Mesa. O cálculo do art. 62 ficou
-      como último recurso: na prática o Congresso nem sempre suspende a contagem no recesso,
-      ainda que suspenda o prazo de emendas.</p>
-    <p>Fontes: Congresso Nacional, Propostas Orçamentárias (PLNs e MPVs); Dados Abertos do
-      Senado Federal; SIOP/Secretaria de Orçamento Federal.</p>
+      a data em que a medida de fato caduca é o fim do segundo período: a régua vai até lá, e a
+      marca no meio é o dia em que a prorrogação ocorre. Cada ficha reproduz o calendário da
+      página — publicação no DOU, deliberação, emendas e regime de urgência — para conferência
+      direta.</p>
+
+    <p><b>Programática.</b> O anexo que a Presidência envia com cada MP sai do próprio SIOP e
+      traz unidade orçamentária, ação e <b>subtítulo</b>. O cruzamento é feito por esses três, e
+      é o subtítulo que resolve: o crédito extraordinário abre subtítulo próprio, com código que
+      o identifica como tal, então a linha localizada no SIOP é a do crédito e de mais nada —
+      mesmo quando a ação já existia na lei orçamentária e tem outras linhas.</p>
+
+    <p><b>Execução.</b> Vem do SIOP pela API da Secretaria de Orçamento Federal, via pacote
+      <code>orcamentoBR</code>, consultada com a dimensão de subtítulo. Crédito extraordinário
+      não reforça o orçamento vigente: é extraorçamentário e vive em linha separada, então nada
+      se desconta da dotação inicial — o empenho da linha é o empenho do crédito. Quando duas
+      medidas alimentam exatamente a mesma linha, cada uma responde pela fração que abriu, e a
+      ficha traz o selo de execução rateada.</p>
+
+    <p>Fontes: Congresso Nacional, propostas orçamentárias e páginas das medidas provisórias;
+      anexo da MP enviado pela Presidência da República; SIOP, Secretaria de Orçamento Federal.
+      Fichas com sinalização de cruzamento aproximado ou execução em piso indicam que o anexo ou
+      o subtítulo não foram obtidos, e que o número ali é uma aproximação.</p>
   </div>
 </footer>
 
@@ -279,6 +333,7 @@ const esc = s => (s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;
 const ancora = id => 'mp-'+id.replace(/[^\w]/g,'-');
 
 let base = null, medidas = [];
+const selecionadas = new Set();
 
 function estado(m){
   if(m.encerrada || m.vigente===false) return 'encerrada';
@@ -389,15 +444,23 @@ function fasePrazo(m){
 }
 
 function prazosOficiais(m){
-  const itens = [];
+  const l = [];
+  if(m.publicacao_dou) l.push(['Publicação no DOU', dia(m.publicacao_dou)]);
   if(m.inicio_periodo_atual && m.fim_periodo_atual)
-    itens.push(`<span>Deliberação <b>${dia(m.inicio_periodo_atual)}–${dia(m.fim_periodo_atual)}</b>${m.prorrogada?' (prorrogada)':''}</span>`);
+    l.push(['Deliberação da Medida Provisória',
+      `${dia(m.inicio_periodo_atual)} a ${dia(m.fim_periodo_atual)}`
+      + (m.prorrogada?' (prorrogada)':'')]);
   if(m.emendas_inicio && m.emendas_fim)
-    itens.push(`<span>Emendas <b>${dia(m.emendas_inicio)}–${dia(m.emendas_fim)}</b></span>`);
-  if(m.urgencia) itens.push(`<span>Urgência <b>a partir de ${dia(m.urgencia)}</b></span>`);
+    l.push(['Apresentação de emendas',
+      `${dia(m.emendas_inicio)} a ${dia(m.emendas_fim)}`
+      + (m.emendas_abertas?' · aberto':(m.situacao_prazo?' · '+esc(m.situacao_prazo.toLowerCase()):''))]);
+  if(m.urgencia) l.push(['Regime de urgência, a partir de', dia(m.urgencia)]);
   if(!m.prorrogada && m.vigencia_fim)
-    itens.push(`<span>Caduca <b>${dia(m.vigencia_fim)}</b> se prorrogada</span>`);
-  return itens.length ? `<div class="prazos">${itens.join('')}</div>` : '';
+    l.push(['Caducidade com a prorrogação', dia(m.vigencia_fim)]);
+  if(!l.length) return '';
+  return `<dl class="calendario">`
+    + l.map(([r,v])=>`<dt>${r}</dt><dd>${v}</dd>`).join('')
+    + `</dl>`;
 }
 
 function ficha(m){
@@ -408,6 +471,9 @@ function ficha(m){
     : `${m.emendas_total??0}`;
   return `<article class="ficha" id="${ancora(m.identificacao)}" data-estado="${est}">
     <div class="cabeca">
+      <label class="marcar" title="selecionar para exportação">
+        <input type="checkbox" class="sel" value="${esc(m.identificacao)}"
+          ${selecionadas.has(m.identificacao)?'checked':''}></label>
       <h2 class="numero"><a href="${esc(m.url_materia||'#')}" target="_blank" rel="noopener">${esc(m.identificacao)}</a></h2>
       <span class="apresentada">apresentada em ${dia(m.publicacao)}</span>
       <span class="selo ${selo}">${esc(m.situacao||'sem situação')}</span>
@@ -543,6 +609,127 @@ function render(){
   document.getElementById('lista').innerHTML = lista.length
     ? lista.map(ficha).join('')
     : '<p class="vazio">Nenhuma medida provisória corresponde a esses filtros. Limpe a busca ou troque o ano.</p>';
+
+  document.querySelectorAll('.sel').forEach(c=>{
+    c.addEventListener('change', ()=>{
+      c.checked ? selecionadas.add(c.value) : selecionadas.delete(c.value);
+      atualizarBotao();
+    });
+  });
+  atualizarBotao();
+}
+
+/* ── exportação em PDF, pela impressão do navegador ──────
+   Sem biblioteca externa: o navegador já gera PDF, e assim a página continua
+   funcionando offline e sem depender de CDN. */
+function reguaRel(m){
+  if(!m.publicacao || !m.vigencia_fim) return '';
+  const ini = new Date(m.publicacao+'T00:00:00'), fim = new Date(m.vigencia_fim+'T00:00:00');
+  const total = Math.max(1, fim-ini), L = 420, H = 13;
+  const x = d => Math.max(0, Math.min(L, L*(new Date(d+'T00:00:00')-ini)/total));
+  const hj = Math.max(0, Math.min(L, L*(hoje-ini)/total));
+  const partes = [`<rect x="0" y="0" width="${L}" height="${H}" fill="#fff" stroke="#999"/>`,
+                  `<rect x="0" y="0" width="${hj}" height="${H}" fill="#c9d3cd"/>`];
+  if(m.emendas_inicio && m.emendas_fim){
+    const a = x(m.emendas_inicio), b = x(m.emendas_fim);
+    partes.push(`<rect x="${a}" y="0" width="${Math.max(1.5,b-a)}" height="${H}" fill="#C2410C" opacity=".55"/>`);
+  }
+  if(m.vigencia_60) partes.push(`<line x1="${x(m.vigencia_60)}" y1="0" x2="${x(m.vigencia_60)}" y2="${H}" stroke="#333" stroke-dasharray="2,2"/>`);
+  if(m.urgencia) partes.push(`<line x1="${x(m.urgencia)}" y1="0" x2="${x(m.urgencia)}" y2="${H}" stroke="#C2410C" stroke-dasharray="1,2"/>`);
+  if(hj>0&&hj<L) partes.push(`<line x1="${hj}" y1="-2" x2="${hj}" y2="${H+2}" stroke="#000" stroke-width="1.5"/>`);
+  const e = m.execucao||{};
+  if(e.base){
+    const emp = L*Math.min(1,(e.empenhado||0)/e.base), pg = L*Math.min(1,(e.pago||0)/e.base);
+    partes.push(`<rect x="0" y="${H+5}" width="${L}" height="${H}" fill="#fff" stroke="#999"/>`);
+    partes.push(`<rect x="0" y="${H+5}" width="${emp}" height="${H}" fill="#3F6B4A" opacity=".4"/>`);
+    partes.push(`<rect x="0" y="${H+5}" width="${pg}" height="${H}" fill="#3F6B4A"/>`);
+  }
+  const alt = e.base ? 2*H+5 : H;
+  return `<div class="rel-regua">
+    <svg viewBox="0 -3 ${L} ${alt+6}" width="100%" height="${alt+6}"
+         preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">${partes.join('')}</svg>
+    <div class="rel-eixo"><span>${dia(m.publicacao)}</span>
+      <span>vigência${e.base?' · execução':''}</span><span>${dia(m.vigencia_fim)}</span></div>
+  </div>`;
+}
+
+function linhaRel(rot, val){ return val ? `<div><b>${rot}</b><span>${val}</span></div>` : ''; }
+
+function relatorioMP(m){
+  const e = m.execucao||{};
+  const sinal = e.modo==='piso' ? '≥' : '';
+  const uos = (m.unidades||[]).map(u=>{
+    const ue = u.execucao||{};
+    const acoes = (ue.detalhe_acoes||[])
+      .map(a=>`${a.acao}${a.subtitulo?'/'+a.subtitulo:''}`).join(', ');
+    return `<tr>
+      <td>${esc(u.unidade)}${u.codigo_uo?` <span style="color:#777">(UO ${esc(u.codigo_uo)})</span>`:''}
+        ${acoes?`<br><span style="color:#777">ações ${esc(acoes)}</span>`:''}</td>
+      <td class="n">${compacto(u.valor_credito)}</td>
+      <td class="n">${ue.base?sinal+compacto(ue.empenhado):'—'}</td>
+      <td class="n">${ue.base?sinal+compacto(ue.pago):'—'}</td></tr>`;
+  }).join('');
+
+  return `<article class="rel-mp">
+    <div class="rel-cab">
+      <h2>${esc(m.identificacao)}${m.numero_camara&&m.numero_camara!==m.identificacao?` · ${esc(m.numero_camara)}`:''}</h2>
+      <span class="v">${compacto(m.valor_total)}</span>
+    </div>
+    <p class="rel-ementa">${esc(m.ementa||'—')}</p>
+    <div class="rel-grade">
+      ${linhaRel('Situação', esc(m.situacao||'—'))}
+      ${linhaRel('Relator', esc(m.relator||'não designado'))}
+      ${linhaRel('Publicação no DOU', dia(m.publicacao_dou||m.publicacao))}
+      ${linhaRel('Mensagem', esc(m.mensagem||''))}
+      ${linhaRel('Deliberação', m.inicio_periodo_atual?`${dia(m.inicio_periodo_atual)} a ${dia(m.fim_periodo_atual)}${m.prorrogada?' (prorrogada)':''}`:'')}
+      ${linhaRel('Despacho', dia(m.despacho))}
+      ${linhaRel('Emendas', m.emendas_inicio?`${dia(m.emendas_inicio)} a ${dia(m.emendas_fim)} · ${m.emendas_total??0} apresentada(s)`:`${m.emendas_total??0} apresentada(s)`)}
+      ${linhaRel('Regime de urgência', dia(m.urgencia))}
+      ${linhaRel('Caducidade', dia(m.vigencia_fim)+(m.prorrogada?'':' (com a prorrogação)'))}
+      ${linhaRel('Norma', esc(m.norma||''))}
+      ${linhaRel('Execução', e.base?`${sinal}${(e.pct_empenhado??0).toFixed(0)}% empenhado · ${sinal}${(e.pct_pago??0).toFixed(0)}% pago`:'sem dados do SIOP')}
+      ${linhaRel('Atribuição', esc((e.modo||'—')+(e.rateado?' com rateio':'')))}
+    </div>
+    ${reguaRel(m)}
+    ${uos?`<table class="rel-uo"><thead><tr><th>Unidade orçamentária</th>
+      <th class="n">Crédito</th><th class="n">Empenhado</th><th class="n">Pago</th></tr></thead>
+      <tbody>${uos}</tbody></table>`:''}
+  </article>`;
+}
+
+function exportar(){
+  const escolhidas = medidas.filter(m=>selecionadas.has(m.identificacao));
+  if(!escolhidas.length) return;
+  const agora = new Date();
+  document.getElementById('relatorio').innerHTML = `
+    <div class="rel-capa">
+      <h1>Créditos extraordinários</h1>
+      <p>${escolhidas.length} medida${escolhidas.length===1?'':'s'} provisória${escolhidas.length===1?'':'s'} ·
+         emitido em ${DATA.format(agora)} ·
+         dados de ${DATA.format(new Date(base.atualizado_em))}</p>
+    </div>
+    ${escolhidas.map(relatorioMP).join('')}
+    <p class="rel-rodape">Fontes: Congresso Nacional (propostas orçamentárias e páginas das MPs);
+      anexo da MP enviado pela Presidência da República; SIOP/Secretaria de Orçamento Federal.
+      Execução marcada com ≥ é piso: conta apenas o empenho que excede a dotação inicial.</p>`;
+  const titulo = document.title;
+  document.title = `creditos-extraordinarios-${agora.toISOString().slice(0,10)}`;
+  window.addEventListener('afterprint', ()=>{ document.title = titulo; }, {once:true});
+  window.print();
+}
+
+function atualizarBotao(){
+  const b = document.getElementById('exportar');
+  const n = selecionadas.size;
+  b.disabled = n === 0;
+  b.textContent = n ? `Exportar PDF (${n})` : 'Exportar PDF';
+  document.getElementById('aviso-sel').textContent = n
+    ? `${n} medida${n===1?'':'s'} no relatório`
+    : 'marque as medidas que quer no relatório';
+  const visiveis = [...document.querySelectorAll('.sel')];
+  const todas = document.getElementById('marcar-todas');
+  todas.checked = visiveis.length > 0 && visiveis.every(c=>c.checked);
+  todas.indeterminate = !todas.checked && visiveis.some(c=>c.checked);
 }
 
 async function iniciar(){
@@ -570,6 +757,14 @@ async function iniciar(){
   document.getElementById('situacao').insertAdjacentHTML('beforeend',
     sits.map(s=>`<option>${esc(s)}</option>`).join(''));
 
+  document.getElementById('exportar').addEventListener('click', exportar);
+  document.getElementById('marcar-todas').addEventListener('change', e=>{
+    document.querySelectorAll('.sel').forEach(c=>{
+      c.checked = e.target.checked;
+      c.checked ? selecionadas.add(c.value) : selecionadas.delete(c.value);
+    });
+    atualizarBotao();
+  });
   ['busca','ano','situacao','so-vigentes','so-emendas','so-sem-relator'].forEach(id=>{
     const el = document.getElementById(id);
     el.addEventListener(el.type==='search'?'input':'change', render);
