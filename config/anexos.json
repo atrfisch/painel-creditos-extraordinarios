@@ -1092,5 +1092,53 @@
       }
     ],
     "total_anexo": 250000000.0
+  },
+  "MPV 1385/2026": {
+    "situacao_prazo": null,
+    "despacho": null,
+    "numero_camara": "MPV 1385/2026",
+    "mensagem": "MSG 703/2026",
+    "publicacao_dou": "2026-08-13",
+    "deliberacao_inicio": "2026-08-13",
+    "deliberacao_fim": "2026-10-11",
+    "ato_prorrogacao": null,
+    "emendas_inicio_oficial": "2026-08-13",
+    "emendas_fim_oficial": "2026-08-19",
+    "urgencia": "2026-09-27",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297155&ts=1786633235913&disposition=inline",
+    "programatica": [],
+    "total_anexo": 0
+  },
+  "MPV 1384/2026": {
+    "situacao_prazo": null,
+    "despacho": null,
+    "numero_camara": "MPV 1384/2026",
+    "mensagem": "MSG 701/2026",
+    "publicacao_dou": "2026-08-13",
+    "deliberacao_inicio": "2026-08-13",
+    "deliberacao_fim": "2026-10-11",
+    "ato_prorrogacao": null,
+    "emendas_inicio_oficial": "2026-08-13",
+    "emendas_fim_oficial": "2026-08-19",
+    "urgencia": "2026-09-27",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297135&ts=1786633182031&disposition=inline",
+    "programatica": [],
+    "total_anexo": 0
+  },
+  "MPV 1383/2026": {
+    "situacao_prazo": null,
+    "despacho": null,
+    "numero_camara": "MPV 1383/2026",
+    "mensagem": "MSG 700/2026",
+    "publicacao_dou": "2026-08-13",
+    "deliberacao_inicio": "2026-08-13",
+    "deliberacao_fim": "2026-10-11",
+    "ato_prorrogacao": null,
+    "emendas_inicio_oficial": "2026-08-13",
+    "emendas_fim_oficial": "2026-08-19",
+    "urgencia": "2026-09-27",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297043&ts=1786632823512&disposition=inline",
+    "programatica": [],
+    "total_anexo": 0
   }
 }

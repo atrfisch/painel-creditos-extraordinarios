@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-13T10:01:07+00:00",
+  "atualizado_em": "2026-08-13T17:44:52+00:00",
   "anos": [
     2026
   ],
@@ -8,10 +8,355 @@
     "programatica": "Anexo da MP enviado pela Presidência da República",
     "execucao": "SIOP/SOF via pacote orcamentoBR"
   },
-  "uo_sem_correspondencia": [],
-  "sem_anexo": [],
+  "uo_sem_correspondencia": [
+    "Companhia Nacional de Abastecimento",
+    "Ministério da Integração e do Desenvolvimento Regional",
+    "Ministério das Cidades",
+    "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome"
+  ],
+  "sem_anexo": [
+    "MPV 1383/2026",
+    "MPV 1384/2026",
+    "MPV 1385/2026"
+  ],
   "acoes_ausentes_no_siop": [],
   "medidas": [
+    {
+      "identificacao": "MPV 1385/2026",
+      "especie": "MPV",
+      "numero": 1385,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "",
+      "valor_total": 3500000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-08-13",
+      "emendas_fim": "2026-08-19",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO DESPACHO",
+      "norma": null,
+      "codigo_materia": "175457",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175457",
+      "unidades": [
+        {
+          "orgao": "Ministério das Cidades",
+          "unidade": "Ministério das Cidades",
+          "codigo_uo": null,
+          "valor_credito": 750000000.0,
+          "acoes_credito": [],
+          "acoes_ausentes": [],
+          "qualificadores": [],
+          "execucao": {
+            "modo": "direta",
+            "rateado": false,
+            "contaminadas": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "credito_no_ano": 0.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
+          }
+        },
+        {
+          "orgao": "Encargos Financeiros da União",
+          "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+          "codigo_uo": "71101",
+          "valor_credito": 2750000000.0,
+          "acoes_credito": [],
+          "acoes_ausentes": [],
+          "qualificadores": [],
+          "execucao": {
+            "modo": "piso",
+            "rateado": true,
+            "contaminadas": 1,
+            "base": 2750000000.0,
+            "empenhado": 2739003432.28,
+            "liquidado": 2720481174.18,
+            "pago": 2720481174.18,
+            "credito_no_ano": 2830381652.0,
+            "dotacao_inicial": 186204651.0,
+            "dotacao_atual": 3016586303.0,
+            "acoes": 4,
+            "detalhe_acoes": [
+              {
+                "acao": "00ED",
+                "descricao": "Integralização de cotas do Fundo Garantidor para Investimentos - FGI no âmbito do Programa Emergencial de Acesso a Crédito - PEAC-FGI",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
+                "valor_mp": 1943200838.7,
+                "credito_no_ano": 2000000000.0,
+                "fator": 0.9716,
+                "dotacao_inicial": 0.0,
+                "empenhado": 1943200838.7,
+                "pago": 1943200838.7
+              },
+              {
+                "acao": "00Y7",
+                "descricao": "Integralização de Cotas do Fundo Garantidor de Operações de Comércio Exterior - FGCE",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
+                "valor_mp": 485800209.67,
+                "credito_no_ano": 500000000.0,
+                "fator": 0.9716,
+                "dotacao_inicial": 0.0,
+                "empenhado": 485800209.67,
+                "pago": 485800209.67
+              },
+              {
+                "acao": "00Y0",
+                "descricao": "Integralização de Cotas do Fundo Garantidor de Operações (FGO) destinada a garantir financiamento para pessoas físicas ou jurídicas afetadas pelos eventos climáticos ocorridos em fevereiro e março de 2026",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
+                "valor_mp": 291480125.8,
+                "credito_no_ano": 300000000.0,
+                "fator": 0.9716,
+                "dotacao_inicial": 0.0,
+                "empenhado": 291480125.8,
+                "pago": 291480125.8
+              },
+              {
+                "acao": "000K",
+                "descricao": "Subvenção Econômica em Operações de Financiamento no âmbito do Programa de Sustentação do Investimento - PSI e do Programa Emergencial de Reconstrução de Municípios Afetados por Desastres Naturais (Leis nº 12.096, de 2009 e nº 12.409, de 2011)",
+                "modo": "piso",
+                "subtitulo": "0001",
+                "subtitulo_desc": "Nacional",
+                "valor_mp": 29518825.82,
+                "credito_no_ano": 30381652.0,
+                "fator": 0.9716,
+                "dotacao_inicial": 186204651.0,
+                "empenhado": 18522258.11,
+                "pago": 0.0
+              }
+            ]
+          }
+        }
+      ],
+      "publicacao": "2026-08-13",
+      "vigencia_fonte": "oficial + prorrogação projetada",
+      "vigencia_60": "2026-10-11",
+      "vigencia_fim": "2026-12-10",
+      "prorrogada": false,
+      "ato_prorrogacao": null,
+      "fim_periodo_atual": "2026-10-11",
+      "inicio_periodo_atual": "2026-08-13",
+      "urgencia": "2026-09-27",
+      "situacao_prazo": null,
+      "despacho": null,
+      "numero_camara": "MPV 1385/2026",
+      "mensagem": "MSG 703/2026",
+      "publicacao_dou": "2026-08-13",
+      "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
+      "dias_para_prorrogacao": 59,
+      "dias_para_urgencia": 45,
+      "dias_para_vigencia": 119,
+      "dias_para_emendas": 6,
+      "emendas_abertas": true,
+      "execucao": {
+        "origem": "nome da unidade",
+        "modo": "piso",
+        "contaminadas": 1,
+        "rateado": true,
+        "base": 2750000000.0,
+        "credito_no_ano": 2830381652.0,
+        "empenhado": 2739003432.28,
+        "liquidado": 2720481174.18,
+        "pago": 2720481174.18,
+        "acoes": 4,
+        "acoes_ausentes": 0,
+        "pct_empenhado": 99.6,
+        "pct_pago": 98.9
+      }
+    },
+    {
+      "identificacao": "MPV 1384/2026",
+      "especie": "MPV",
+      "numero": 1384,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "",
+      "valor_total": 924985960.0,
+      "relator": null,
+      "emendas_inicio": "2026-08-13",
+      "emendas_fim": "2026-08-19",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO DESPACHO",
+      "norma": null,
+      "codigo_materia": "175455",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175455",
+      "unidades": [
+        {
+          "orgao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
+          "unidade": "Companhia Nacional de Abastecimento",
+          "codigo_uo": null,
+          "valor_credito": 849786560.0,
+          "acoes_credito": [],
+          "acoes_ausentes": [],
+          "qualificadores": [],
+          "execucao": {
+            "modo": "direta",
+            "rateado": false,
+            "contaminadas": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "credito_no_ano": 0.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
+          }
+        },
+        {
+          "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+          "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+          "codigo_uo": null,
+          "valor_credito": 75199400.0,
+          "acoes_credito": [],
+          "acoes_ausentes": [],
+          "qualificadores": [],
+          "execucao": {
+            "modo": "direta",
+            "rateado": false,
+            "contaminadas": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "credito_no_ano": 0.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
+          }
+        }
+      ],
+      "publicacao": "2026-08-13",
+      "vigencia_fonte": "oficial + prorrogação projetada",
+      "vigencia_60": "2026-10-11",
+      "vigencia_fim": "2026-12-10",
+      "prorrogada": false,
+      "ato_prorrogacao": null,
+      "fim_periodo_atual": "2026-10-11",
+      "inicio_periodo_atual": "2026-08-13",
+      "urgencia": "2026-09-27",
+      "situacao_prazo": null,
+      "despacho": null,
+      "numero_camara": "MPV 1384/2026",
+      "mensagem": "MSG 701/2026",
+      "publicacao_dou": "2026-08-13",
+      "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
+      "dias_para_prorrogacao": 59,
+      "dias_para_urgencia": 45,
+      "dias_para_vigencia": 119,
+      "dias_para_emendas": 6,
+      "emendas_abertas": true,
+      "execucao": {
+        "origem": "nome da unidade",
+        "modo": "direta",
+        "contaminadas": 0,
+        "rateado": false,
+        "base": 0.0,
+        "credito_no_ano": 0.0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "acoes": 0,
+        "acoes_ausentes": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
+      }
+    },
+    {
+      "identificacao": "MPV 1383/2026",
+      "especie": "MPV",
+      "numero": 1383,
+      "ano": 2026,
+      "tipo": "Crédito Extraordinário",
+      "ementa": "",
+      "valor_total": 360000000.0,
+      "relator": null,
+      "emendas_inicio": "2026-08-13",
+      "emendas_fim": "2026-08-19",
+      "emendas_total": 0,
+      "situacao": "AGUARDANDO DESPACHO",
+      "norma": null,
+      "codigo_materia": "175449",
+      "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175449",
+      "unidades": [
+        {
+          "orgao": "Ministério da Integração e do Desenvolvimento Regional",
+          "unidade": "Ministério da Integração e do Desenvolvimento Regional",
+          "codigo_uo": null,
+          "valor_credito": 360000000.0,
+          "acoes_credito": [],
+          "acoes_ausentes": [],
+          "qualificadores": [],
+          "execucao": {
+            "modo": "direta",
+            "rateado": false,
+            "contaminadas": 0,
+            "base": 0.0,
+            "empenhado": 0.0,
+            "liquidado": 0.0,
+            "pago": 0.0,
+            "credito_no_ano": 0.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 0.0,
+            "acoes": 0,
+            "detalhe_acoes": []
+          }
+        }
+      ],
+      "publicacao": "2026-08-13",
+      "vigencia_fonte": "oficial + prorrogação projetada",
+      "vigencia_60": "2026-10-11",
+      "vigencia_fim": "2026-12-10",
+      "prorrogada": false,
+      "ato_prorrogacao": null,
+      "fim_periodo_atual": "2026-10-11",
+      "inicio_periodo_atual": "2026-08-13",
+      "urgencia": "2026-09-27",
+      "situacao_prazo": null,
+      "despacho": null,
+      "numero_camara": "MPV 1383/2026",
+      "mensagem": "MSG 700/2026",
+      "publicacao_dou": "2026-08-13",
+      "vigente": true,
+      "encerrada": false,
+      "sem_relator": true,
+      "dias_para_prorrogacao": 59,
+      "dias_para_urgencia": 45,
+      "dias_para_vigencia": 119,
+      "dias_para_emendas": 6,
+      "emendas_abertas": true,
+      "execucao": {
+        "origem": "nome da unidade",
+        "modo": "direta",
+        "contaminadas": 0,
+        "rateado": false,
+        "base": 0.0,
+        "credito_no_ano": 0.0,
+        "empenhado": 0.0,
+        "liquidado": 0.0,
+        "pago": 0.0,
+        "acoes": 0,
+        "acoes_ausentes": 0,
+        "pct_empenhado": null,
+        "pct_pago": null
+      }
+    },
     {
       "identificacao": "MPV 1381/2026",
       "especie": "MPV",
@@ -47,9 +392,9 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 3473000000.0,
-            "empenhado": 8167963.1,
-            "liquidado": 8167963.1,
-            "pago": 8167963.1,
+            "empenhado": 11163704.68,
+            "liquidado": 11163704.68,
+            "pago": 11163704.68,
             "credito_no_ano": 6803000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 6803000000.0,
@@ -78,8 +423,8 @@
                 "credito_no_ano": 2473000000.0,
                 "fator": 0.5026,
                 "dotacao_inicial": 0.0,
-                "empenhado": 8167963.1,
-                "pago": 8167963.1
+                "empenhado": 11163704.68,
+                "pago": 11163704.68
               }
             ]
           }
@@ -114,13 +459,13 @@
         "rateado": true,
         "base": 3473000000.0,
         "credito_no_ano": 6803000000.0,
-        "empenhado": 8167963.1,
-        "liquidado": 8167963.1,
-        "pago": 8167963.1,
+        "empenhado": 11163704.68,
+        "liquidado": 11163704.68,
+        "pago": 11163704.68,
         "acoes": 2,
         "acoes_ausentes": 0,
-        "pct_empenhado": 0.2,
-        "pct_pago": 0.2
+        "pct_empenhado": 0.3,
+        "pct_pago": 0.3
       }
     },
     {
@@ -158,9 +503,9 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 3330000000.0,
-            "empenhado": 8082537.9,
-            "liquidado": 8082537.9,
-            "pago": 8082537.9,
+            "empenhado": 11046948.32,
+            "liquidado": 11046948.32,
+            "pago": 11046948.32,
             "credito_no_ano": 6803000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 6803000000.0,
@@ -189,8 +534,8 @@
                 "credito_no_ano": 2473000000.0,
                 "fator": 0.4974,
                 "dotacao_inicial": 0.0,
-                "empenhado": 8082537.9,
-                "pago": 8082537.9
+                "empenhado": 11046948.32,
+                "pago": 11046948.32
               }
             ]
           }
@@ -225,13 +570,13 @@
         "rateado": true,
         "base": 3330000000.0,
         "credito_no_ano": 6803000000.0,
-        "empenhado": 8082537.9,
-        "liquidado": 8082537.9,
-        "pago": 8082537.9,
+        "empenhado": 11046948.32,
+        "liquidado": 11046948.32,
+        "pago": 11046948.32,
         "acoes": 2,
         "acoes_ausentes": 0,
-        "pct_empenhado": 0.2,
-        "pct_pago": 0.2
+        "pct_empenhado": 0.3,
+        "pct_pago": 0.3
       }
     },
     {
@@ -269,8 +614,8 @@
             "contaminadas": 0,
             "base": 547000000.0,
             "empenhado": 547000000.0,
-            "liquidado": 43483706.0,
-            "pago": 43483706.0,
+            "liquidado": 60375370.0,
+            "pago": 60375370.0,
             "credito_no_ano": 547000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 547000000.0,
@@ -287,7 +632,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 547000000.0,
-                "pago": 43483706.0
+                "pago": 60375370.0
               }
             ]
           }
@@ -323,12 +668,12 @@
         "base": 547000000.0,
         "credito_no_ano": 547000000.0,
         "empenhado": 547000000.0,
-        "liquidado": 43483706.0,
-        "pago": 43483706.0,
+        "liquidado": 60375370.0,
+        "pago": 60375370.0,
         "acoes": 1,
         "acoes_ausentes": 0,
         "pct_empenhado": 100.0,
-        "pct_pago": 7.9
+        "pct_pago": 11.0
       }
     },
     {
@@ -449,8 +794,8 @@
             "contaminadas": 0,
             "base": 4000000000.0,
             "empenhado": 4000000000.0,
-            "liquidado": 0.0,
-            "pago": 0.0,
+            "liquidado": 1500000000.0,
+            "pago": 1500000000.0,
             "credito_no_ano": 4000000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 4000000000.0,
@@ -467,7 +812,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 3000000000.0,
-                "pago": 0.0
+                "pago": 1500000000.0
               },
               {
                 "acao": "00YG",
@@ -557,12 +902,12 @@
         "base": 13285000000.0,
         "credito_no_ano": 13285000000.0,
         "empenhado": 4015000000.0,
-        "liquidado": 15000000.0,
-        "pago": 15000000.0,
+        "liquidado": 1515000000.0,
+        "pago": 1515000000.0,
         "acoes": 5,
         "acoes_ausentes": 0,
         "pct_empenhado": 30.2,
-        "pct_pago": 0.1
+        "pct_pago": 11.4
       }
     },
     {
@@ -893,7 +1238,7 @@
             "base": 194417722.0,
             "empenhado": 194417722.0,
             "liquidado": 15536746.0,
-            "pago": 4160860.0,
+            "pago": 4723004.0,
             "credito_no_ano": 194417722.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 194417722.0,
@@ -910,7 +1255,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 149274818.0,
-                "pago": 4160860.0
+                "pago": 4723004.0
               },
               {
                 "acao": "214N",
@@ -946,8 +1291,8 @@
             "contaminadas": 0,
             "base": 143065710.0,
             "empenhado": 129114695.0,
-            "liquidado": 17072690.0,
-            "pago": 16769013.0,
+            "liquidado": 17569691.0,
+            "pago": 17059960.0,
             "credito_no_ano": 143065710.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 143065710.0,
@@ -964,7 +1309,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 129114695.0,
-                "pago": 16769013.0
+                "pago": 17059960.0
               }
             ]
           }
@@ -1000,12 +1345,12 @@
         "base": 337483432.0,
         "credito_no_ano": 337483432.0,
         "empenhado": 323532417.0,
-        "liquidado": 32609436.0,
-        "pago": 20929873.0,
+        "liquidado": 33106437.0,
+        "pago": 21782964.0,
         "acoes": 3,
         "acoes_ausentes": 0,
         "pct_empenhado": 95.9,
-        "pct_pago": 6.2
+        "pct_pago": 6.5
       }
     },
     {
@@ -1444,9 +1789,9 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 305000000.0,
-            "empenhado": 255507422.03,
+            "empenhado": 255507417.12,
             "liquidado": 113873813.62,
-            "pago": 106755516.6,
+            "pago": 110910545.2,
             "credito_no_ano": 806616313.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 806616313.0,
@@ -1462,8 +1807,8 @@
                 "credito_no_ano": 806616313.0,
                 "fator": 0.3781,
                 "dotacao_inicial": 0.0,
-                "empenhado": 255507422.03,
-                "pago": 106755516.6
+                "empenhado": 255507417.12,
+                "pago": 110910545.2
               }
             ]
           }
@@ -1498,13 +1843,13 @@
         "rateado": true,
         "base": 305000000.0,
         "credito_no_ano": 806616313.0,
-        "empenhado": 255507422.03,
+        "empenhado": 255507417.12,
         "liquidado": 113873813.62,
-        "pago": 106755516.6,
+        "pago": 110910545.2,
         "acoes": 1,
         "acoes_ausentes": 0,
         "pct_empenhado": 83.8,
-        "pct_pago": 35.0
+        "pct_pago": 36.4
       }
     },
     {
@@ -1887,9 +2232,9 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 285000000.0,
-            "empenhado": 238752836.98,
+            "empenhado": 238752832.39,
             "liquidado": 106406678.3,
-            "pago": 99755154.86,
+            "pago": 103637722.57,
             "credito_no_ano": 806616313.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 806616313.0,
@@ -1905,8 +2250,8 @@
                 "credito_no_ano": 806616313.0,
                 "fator": 0.3533,
                 "dotacao_inicial": 0.0,
-                "empenhado": 238752836.98,
-                "pago": 99755154.86
+                "empenhado": 238752832.39,
+                "pago": 103637722.57
               }
             ]
           }
@@ -1941,13 +2286,13 @@
         "rateado": true,
         "base": 285000000.0,
         "credito_no_ano": 806616313.0,
-        "empenhado": 238752836.98,
+        "empenhado": 238752832.39,
         "liquidado": 106406678.3,
-        "pago": 99755154.86,
+        "pago": 103637722.57,
         "acoes": 1,
         "acoes_ausentes": 0,
         "pct_empenhado": 83.8,
-        "pct_pago": 35.0
+        "pct_pago": 36.4
       }
     },
     {
@@ -2591,9 +2936,9 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 220000000.0,
-            "empenhado": 184300435.57,
+            "empenhado": 184300432.02,
             "liquidado": 82138488.51,
-            "pago": 77003979.19,
+            "pago": 80001049.0,
             "credito_no_ano": 806616313.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 806616313.0,
@@ -2609,8 +2954,8 @@
                 "credito_no_ano": 806616313.0,
                 "fator": 0.2727,
                 "dotacao_inicial": 0.0,
-                "empenhado": 184300435.57,
-                "pago": 77003979.19
+                "empenhado": 184300432.02,
+                "pago": 80001049.0
               }
             ]
           }
@@ -2686,13 +3031,13 @@
         "rateado": true,
         "base": 250000000.0,
         "credito_no_ano": 836616313.0,
-        "empenhado": 214300435.57,
+        "empenhado": 214300432.02,
         "liquidado": 82138488.51,
-        "pago": 77003979.19,
+        "pago": 80001049.0,
         "acoes": 2,
         "acoes_ausentes": 0,
         "pct_empenhado": 85.7,
-        "pct_pago": 30.8
+        "pct_pago": 32.0
       }
     }
   ]
