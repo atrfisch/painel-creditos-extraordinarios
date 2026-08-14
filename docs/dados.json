@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-14T12:58:04+00:00",
+  "atualizado_em": "2026-08-14T13:16:58+00:00",
   "anos": [
     2026
   ],
@@ -8,17 +8,8 @@
     "programatica": "Anexo da MP enviado pela Presidência da República",
     "execucao": "SIOP/SOF via pacote orcamentoBR"
   },
-  "uo_sem_correspondencia": [
-    "Companhia Nacional de Abastecimento",
-    "Ministério da Integração e do Desenvolvimento Regional",
-    "Ministério das Cidades",
-    "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome"
-  ],
-  "sem_anexo": [
-    "MPV 1383/2026",
-    "MPV 1384/2026",
-    "MPV 1385/2026"
-  ],
+  "uo_sem_correspondencia": [],
+  "sem_anexo": [],
   "acoes_ausentes_no_siop": [],
   "medidas": [
     {
@@ -40,25 +31,43 @@
       "unidades": [
         {
           "orgao": "Ministério das Cidades",
-          "unidade": "Ministério das Cidades",
-          "codigo_uo": null,
+          "unidade": "Ministério das Cidades - Administração Direta",
+          "codigo_uo": "56101",
           "valor_credito": 750000000.0,
-          "acoes_credito": [],
+          "acoes_credito": [
+            "00VE/6500"
+          ],
           "acoes_ausentes": [],
-          "qualificadores": [],
+          "qualificadores": [
+            "5-IFI · RP 3 · fonte 1000"
+          ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
             "contaminadas": 0,
-            "base": 0.0,
+            "base": 750000000.0,
             "empenhado": 0.0,
             "liquidado": 0.0,
             "pago": 0.0,
-            "credito_no_ano": 0.0,
+            "credito_no_ano": 750000000.0,
             "dotacao_inicial": 0.0,
-            "dotacao_atual": 0.0,
-            "acoes": 0,
-            "detalhe_acoes": []
+            "dotacao_atual": 750000000.0,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "acao": "00VE",
+                "descricao": "Integralização de cotas do Fundo Garantidor da Habitação Popular - FGHab",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
+                "valor_mp": 750000000.0,
+                "credito_no_ano": 750000000.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              }
+            ]
           }
         },
         {
@@ -66,21 +75,26 @@
           "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
           "codigo_uo": "71101",
           "valor_credito": 2750000000.0,
-          "acoes_credito": [],
+          "acoes_credito": [
+            "00ED/6500",
+            "00EE/6500"
+          ],
           "acoes_ausentes": [],
-          "qualificadores": [],
+          "qualificadores": [
+            "5-IFI · RP 2 · fonte 1000"
+          ],
           "execucao": {
-            "modo": "piso",
+            "modo": "exata",
             "rateado": true,
-            "contaminadas": 1,
+            "contaminadas": 0,
             "base": 2750000000.0,
-            "empenhado": 1389228469.12,
-            "liquidado": 1379833939.72,
-            "pago": 1379833939.72,
-            "credito_no_ano": 5580381652.0,
-            "dotacao_inicial": 186204651.0,
-            "dotacao_atual": 5766586303.0,
-            "acoes": 5,
+            "empenhado": 1000000000.0,
+            "liquidado": 1000000000.0,
+            "pago": 1000000000.0,
+            "credito_no_ano": 4750000000.0,
+            "dotacao_inicial": 0.0,
+            "dotacao_atual": 4750000000.0,
+            "acoes": 2,
             "detalhe_acoes": [
               {
                 "acao": "00ED",
@@ -88,12 +102,12 @@
                 "modo": "exata",
                 "subtitulo": "6500",
                 "subtitulo_desc": "Nacional (Crédito Extraordinário)",
-                "valor_mp": 1971191342.45,
+                "valor_mp": 2000000000.0,
                 "credito_no_ano": 4000000000.0,
-                "fator": 0.4928,
+                "fator": 0.5,
                 "dotacao_inicial": 0.0,
-                "empenhado": 985595671.23,
-                "pago": 985595671.23
+                "empenhado": 1000000000.0,
+                "pago": 1000000000.0
               },
               {
                 "acao": "00EE",
@@ -101,50 +115,11 @@
                 "modo": "exata",
                 "subtitulo": "6500",
                 "subtitulo_desc": "Nacional (Crédito Extraordinário)",
-                "valor_mp": 369598376.71,
+                "valor_mp": 750000000.0,
                 "credito_no_ano": 750000000.0,
-                "fator": 0.4928,
+                "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 0.0,
-                "pago": 0.0
-              },
-              {
-                "acao": "00Y7",
-                "descricao": "Integralização de Cotas do Fundo Garantidor de Operações de Comércio Exterior - FGCE",
-                "modo": "exata",
-                "subtitulo": "6500",
-                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
-                "valor_mp": 246398917.81,
-                "credito_no_ano": 500000000.0,
-                "fator": 0.4928,
-                "dotacao_inicial": 0.0,
-                "empenhado": 246398917.81,
-                "pago": 246398917.81
-              },
-              {
-                "acao": "00Y0",
-                "descricao": "Integralização de Cotas do Fundo Garantidor de Operações (FGO) destinada a garantir financiamento para pessoas físicas ou jurídicas afetadas pelos eventos climáticos ocorridos em fevereiro e março de 2026",
-                "modo": "exata",
-                "subtitulo": "6500",
-                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
-                "valor_mp": 147839350.68,
-                "credito_no_ano": 300000000.0,
-                "fator": 0.4928,
-                "dotacao_inicial": 0.0,
-                "empenhado": 147839350.68,
-                "pago": 147839350.68
-              },
-              {
-                "acao": "000K",
-                "descricao": "Subvenção Econômica em Operações de Financiamento no âmbito do Programa de Sustentação do Investimento - PSI e do Programa Emergencial de Reconstrução de Municípios Afetados por Desastres Naturais (Leis nº 12.096, de 2009 e nº 12.409, de 2011)",
-                "modo": "piso",
-                "subtitulo": "0001",
-                "subtitulo_desc": "Nacional",
-                "valor_mp": 14972012.35,
-                "credito_no_ano": 30381652.0,
-                "fator": 0.4928,
-                "dotacao_inicial": 186204651.0,
-                "empenhado": 9394529.4,
                 "pago": 0.0
               }
             ]
@@ -161,7 +136,7 @@
       "inicio_periodo_atual": "2026-08-13",
       "urgencia": "2026-09-27",
       "situacao_prazo": null,
-      "despacho": null,
+      "despacho": "2026-08-13",
       "numero_camara": "MPV 1385/2026",
       "mensagem": "MSG 703/2026",
       "publicacao_dou": "2026-08-13",
@@ -174,19 +149,19 @@
       "dias_para_emendas": 5,
       "emendas_abertas": true,
       "execucao": {
-        "origem": "nome da unidade",
-        "modo": "piso",
-        "contaminadas": 1,
+        "origem": "anexo",
+        "modo": "exata",
+        "contaminadas": 0,
         "rateado": true,
-        "base": 2750000000.0,
-        "credito_no_ano": 5580381652.0,
-        "empenhado": 1389228469.12,
-        "liquidado": 1379833939.72,
-        "pago": 1379833939.72,
-        "acoes": 5,
+        "base": 3500000000.0,
+        "credito_no_ano": 5500000000.0,
+        "empenhado": 1000000000.0,
+        "liquidado": 1000000000.0,
+        "pago": 1000000000.0,
+        "acoes": 3,
         "acoes_ausentes": 0,
-        "pct_empenhado": 50.5,
-        "pct_pago": 50.2
+        "pct_empenhado": 28.6,
+        "pct_pago": 28.6
       }
     },
     {
@@ -208,48 +183,98 @@
       "unidades": [
         {
           "orgao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
-          "unidade": "Companhia Nacional de Abastecimento",
-          "codigo_uo": null,
+          "unidade": "Companhia Nacional de Abastecimento - CONAB",
+          "codigo_uo": "49202",
           "valor_credito": 849786560.0,
-          "acoes_credito": [],
+          "acoes_credito": [
+            "2130/6502"
+          ],
           "acoes_ausentes": [],
-          "qualificadores": [],
+          "qualificadores": [
+            "3-ODC · RP 2 · fonte 1000"
+          ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
             "contaminadas": 0,
-            "base": 0.0,
+            "base": 849786560.0,
             "empenhado": 0.0,
             "liquidado": 0.0,
             "pago": 0.0,
-            "credito_no_ano": 0.0,
+            "credito_no_ano": 849786560.0,
             "dotacao_inicial": 0.0,
-            "dotacao_atual": 0.0,
-            "acoes": 0,
-            "detalhe_acoes": []
+            "dotacao_atual": 849786560.0,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "acao": "2130",
+                "descricao": "Formação de Estoques Públicos - AGF",
+                "modo": "exata",
+                "subtitulo": "6502",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
+                "valor_mp": 849786560.0,
+                "credito_no_ano": 849786560.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              }
+            ]
           }
         },
         {
           "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
-          "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
-          "codigo_uo": null,
+          "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome - Adm. Direta",
+          "codigo_uo": "55101",
           "valor_credito": 75199400.0,
-          "acoes_credito": [],
+          "acoes_credito": [
+            "2792/6508",
+            "2798/6510"
+          ],
           "acoes_ausentes": [],
-          "qualificadores": [],
+          "qualificadores": [
+            "3-ODC · RP 2 · fonte 1000"
+          ],
           "execucao": {
-            "modo": "direta",
+            "modo": "exata",
             "rateado": false,
             "contaminadas": 0,
-            "base": 0.0,
+            "base": 75199400.0,
             "empenhado": 0.0,
             "liquidado": 0.0,
             "pago": 0.0,
-            "credito_no_ano": 0.0,
+            "credito_no_ano": 75199400.0,
             "dotacao_inicial": 0.0,
-            "dotacao_atual": 0.0,
-            "acoes": 0,
-            "detalhe_acoes": []
+            "dotacao_atual": 75199400.0,
+            "acoes": 2,
+            "detalhe_acoes": [
+              {
+                "acao": "2792",
+                "descricao": "Distribuição de Alimentos a Grupos Populacionais Tradicionais e Específicos e a Famílias em Situação de Insegurança Alimentar e Nutricional Advindas de Situações de Emergência ou Calamidade Pública",
+                "modo": "exata",
+                "subtitulo": "6508",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
+                "valor_mp": 61969400.0,
+                "credito_no_ano": 61969400.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              },
+              {
+                "acao": "2798",
+                "descricao": "Aquisição e Distribuição de Alimentos da Agricultura Familiar para Promoção da Segurança Alimentar e Nutricional",
+                "modo": "exata",
+                "subtitulo": "6510",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
+                "valor_mp": 13230000.0,
+                "credito_no_ano": 13230000.0,
+                "fator": 1.0,
+                "dotacao_inicial": 0.0,
+                "empenhado": 0.0,
+                "pago": 0.0
+              }
+            ]
           }
         }
       ],
@@ -263,7 +288,7 @@
       "inicio_periodo_atual": "2026-08-13",
       "urgencia": "2026-09-27",
       "situacao_prazo": null,
-      "despacho": null,
+      "despacho": "2026-08-13",
       "numero_camara": "MPV 1384/2026",
       "mensagem": "MSG 701/2026",
       "publicacao_dou": "2026-08-13",
@@ -276,19 +301,19 @@
       "dias_para_emendas": 5,
       "emendas_abertas": true,
       "execucao": {
-        "origem": "nome da unidade",
-        "modo": "direta",
+        "origem": "anexo",
+        "modo": "exata",
         "contaminadas": 0,
         "rateado": false,
-        "base": 0.0,
-        "credito_no_ano": 0.0,
+        "base": 924985960.0,
+        "credito_no_ano": 924985960.0,
         "empenhado": 0.0,
         "liquidado": 0.0,
         "pago": 0.0,
-        "acoes": 0,
+        "acoes": 3,
         "acoes_ausentes": 0,
-        "pct_empenhado": null,
-        "pct_pago": null
+        "pct_empenhado": 0.0,
+        "pct_pago": 0.0
       }
     },
     {
@@ -310,25 +335,43 @@
       "unidades": [
         {
           "orgao": "Ministério da Integração e do Desenvolvimento Regional",
-          "unidade": "Ministério da Integração e do Desenvolvimento Regional",
-          "codigo_uo": null,
+          "unidade": "Ministério da Integração e do Desenvolvimento Regional - Administração Direta",
+          "codigo_uo": "53101",
           "valor_credito": 360000000.0,
-          "acoes_credito": [],
+          "acoes_credito": [
+            "22BO/6500"
+          ],
           "acoes_ausentes": [],
-          "qualificadores": [],
+          "qualificadores": [
+            "4-INV · RP 2 · fonte 1000"
+          ],
           "execucao": {
-            "modo": "direta",
-            "rateado": false,
+            "modo": "exata",
+            "rateado": true,
             "contaminadas": 0,
-            "base": 0.0,
-            "empenhado": 0.0,
-            "liquidado": 0.0,
-            "pago": 0.0,
-            "credito_no_ano": 0.0,
+            "base": 360000000.0,
+            "empenhado": 208309259.67,
+            "liquidado": 92932042.58,
+            "pago": 90513729.03,
+            "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
-            "dotacao_atual": 0.0,
-            "acoes": 0,
-            "detalhe_acoes": []
+            "dotacao_atual": 1166616313.0,
+            "acoes": 1,
+            "detalhe_acoes": [
+              {
+                "acao": "22BO",
+                "descricao": "Ações de Proteção e Defesa Civil",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
+                "valor_mp": 360000000.0,
+                "credito_no_ano": 1166616313.0,
+                "fator": 0.3086,
+                "dotacao_inicial": 0.0,
+                "empenhado": 208309259.67,
+                "pago": 90513729.03
+              }
+            ]
           }
         }
       ],
@@ -342,7 +385,7 @@
       "inicio_periodo_atual": "2026-08-13",
       "urgencia": "2026-09-27",
       "situacao_prazo": null,
-      "despacho": null,
+      "despacho": "2026-08-13",
       "numero_camara": "MPV 1383/2026",
       "mensagem": "MSG 700/2026",
       "publicacao_dou": "2026-08-13",
@@ -355,19 +398,19 @@
       "dias_para_emendas": 5,
       "emendas_abertas": true,
       "execucao": {
-        "origem": "nome da unidade",
-        "modo": "direta",
+        "origem": "anexo",
+        "modo": "exata",
         "contaminadas": 0,
-        "rateado": false,
-        "base": 0.0,
-        "credito_no_ano": 0.0,
-        "empenhado": 0.0,
-        "liquidado": 0.0,
-        "pago": 0.0,
-        "acoes": 0,
+        "rateado": true,
+        "base": 360000000.0,
+        "credito_no_ano": 1166616313.0,
+        "empenhado": 208309259.67,
+        "liquidado": 92932042.58,
+        "pago": 90513729.03,
+        "acoes": 1,
         "acoes_ausentes": 0,
-        "pct_empenhado": null,
-        "pct_pago": null
+        "pct_empenhado": 57.9,
+        "pct_pago": 25.1
       }
     },
     {

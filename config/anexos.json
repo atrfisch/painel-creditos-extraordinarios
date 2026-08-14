@@ -1095,7 +1095,7 @@
   },
   "MPV 1385/2026": {
     "situacao_prazo": null,
-    "despacho": null,
+    "despacho": "2026-08-13",
     "numero_camara": "MPV 1385/2026",
     "mensagem": "MSG 703/2026",
     "publicacao_dou": "2026-08-13",
@@ -1105,13 +1105,88 @@
     "emendas_inicio_oficial": "2026-08-13",
     "emendas_fim_oficial": "2026-08-19",
     "urgencia": "2026-09-27",
-    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297155&ts=1786633235913&disposition=inline",
-    "programatica": [],
-    "total_anexo": 0
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297155&ts=1786659011662&disposition=inline",
+    "candidatos": [
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297155&ts=1786659011662&disposition=inline",
+        "rotulo": "Medida Provisória (13/08/2026)",
+        "ordem": 0
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10298297&ts=1786659011632&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 2
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297164&ts=1786659012290&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 3
+      }
+    ],
+    "tentado_em": "2026-08-14",
+    "tentativas": 1,
+    "programatica": [
+      {
+        "orgao_codigo": "56000",
+        "orgao": "Ministério das Cidades",
+        "uo_codigo": "56101",
+        "unidade": "Ministério das Cidades - Administração Direta",
+        "programa": "2320",
+        "acao": "00VE",
+        "localizador": "6500",
+        "descricao": "Integralização de cotas do Fundo Garantidor da Habitação Popular – FGHab -",
+        "funcao": "28",
+        "subfuncao": "846",
+        "esfera": "F",
+        "gnd": "5-IFI",
+        "rp": "3",
+        "modalidade": "90",
+        "fonte": "1000",
+        "valor": 750000000.0
+      },
+      {
+        "orgao_codigo": "71000",
+        "orgao": "Encargos Financeiros da União",
+        "uo_codigo": "71101",
+        "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+        "programa": "0909",
+        "acao": "00ED",
+        "localizador": "6500",
+        "descricao": "Integralização de cotas do Fundo Garantidor para Investimentos – FGI no",
+        "funcao": "28",
+        "subfuncao": "846",
+        "esfera": "F",
+        "gnd": "5-IFI",
+        "rp": "2",
+        "modalidade": "90",
+        "fonte": "1000",
+        "valor": 2000000000.0
+      },
+      {
+        "orgao_codigo": "71000",
+        "orgao": "Encargos Financeiros da União",
+        "uo_codigo": "71101",
+        "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
+        "programa": "0909",
+        "acao": "00EE",
+        "localizador": "6500",
+        "descricao": "Integralização de Cotas no Fundo Garantidor de Operações (FGO) para o",
+        "funcao": "28",
+        "subfuncao": "846",
+        "esfera": "F",
+        "gnd": "5-IFI",
+        "rp": "2",
+        "modalidade": "90",
+        "fonte": "1000",
+        "valor": 750000000.0
+      }
+    ],
+    "total_anexo": 3500000000.0,
+    "metodo": "texto"
   },
   "MPV 1384/2026": {
     "situacao_prazo": null,
-    "despacho": null,
+    "despacho": "2026-08-13",
     "numero_camara": "MPV 1384/2026",
     "mensagem": "MSG 701/2026",
     "publicacao_dou": "2026-08-13",
@@ -1121,13 +1196,88 @@
     "emendas_inicio_oficial": "2026-08-13",
     "emendas_fim_oficial": "2026-08-19",
     "urgencia": "2026-09-27",
-    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297135&ts=1786633182031&disposition=inline",
-    "programatica": [],
-    "total_anexo": 0
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297135&ts=1786655078479&disposition=inline",
+    "candidatos": [
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297135&ts=1786655078479&disposition=inline",
+        "rotulo": "Medida Provisória (13/08/2026)",
+        "ordem": 0
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10298226&ts=1786655078545&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 2
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297123&ts=1786655078630&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 3
+      }
+    ],
+    "tentado_em": "2026-08-14",
+    "tentativas": 1,
+    "programatica": [
+      {
+        "orgao_codigo": "49000",
+        "orgao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
+        "uo_codigo": "49202",
+        "unidade": "Companhia Nacional de Abastecimento - CONAB",
+        "programa": "5636",
+        "acao": "2130",
+        "localizador": "6502",
+        "descricao": "Formação de Estoques Públicos - AGF - Nacional (Crédito Extraordinário)",
+        "funcao": "20",
+        "subfuncao": "605",
+        "esfera": "F",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "modalidade": "90",
+        "fonte": "1000",
+        "valor": 849786560.0
+      },
+      {
+        "orgao_codigo": "55000",
+        "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+        "uo_codigo": "55101",
+        "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome - Adm. Direta",
+        "programa": "5133",
+        "acao": "2792",
+        "localizador": "6508",
+        "descricao": "Distribuição de Alimentos a Grupos Populacionais Tradicionais e Específicos e",
+        "funcao": "08",
+        "subfuncao": "244",
+        "esfera": "S",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "modalidade": "90",
+        "fonte": "1000",
+        "valor": 61969400.0
+      },
+      {
+        "orgao_codigo": "55000",
+        "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+        "uo_codigo": "55101",
+        "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome - Adm. Direta",
+        "programa": "5133",
+        "acao": "2798",
+        "localizador": "6510",
+        "descricao": "Aquisição e Distribuição de Alimentos da Agricultura Familiar para Promoção da",
+        "funcao": "08",
+        "subfuncao": "306",
+        "esfera": "S",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "modalidade": "90",
+        "fonte": "1000",
+        "valor": 13230000.0
+      }
+    ],
+    "total_anexo": 924985960.0,
+    "metodo": "texto"
   },
   "MPV 1383/2026": {
     "situacao_prazo": null,
-    "despacho": null,
+    "despacho": "2026-08-13",
     "numero_camara": "MPV 1383/2026",
     "mensagem": "MSG 700/2026",
     "publicacao_dou": "2026-08-13",
@@ -1137,8 +1287,47 @@
     "emendas_inicio_oficial": "2026-08-13",
     "emendas_fim_oficial": "2026-08-19",
     "urgencia": "2026-09-27",
-    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297043&ts=1786632823512&disposition=inline",
-    "programatica": [],
-    "total_anexo": 0
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297043&ts=1786654978094&disposition=inline",
+    "candidatos": [
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297043&ts=1786654978094&disposition=inline",
+        "rotulo": "Medida Provisória (13/08/2026)",
+        "ordem": 0
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10298179&ts=1786654978050&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 2
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10297080&ts=1786654979151&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 3
+      }
+    ],
+    "tentado_em": "2026-08-14",
+    "tentativas": 1,
+    "programatica": [
+      {
+        "orgao_codigo": "53000",
+        "orgao": "Ministério da Integração e do Desenvolvimento Regional",
+        "uo_codigo": "53101",
+        "unidade": "Ministério da Integração e do Desenvolvimento Regional - Administração Direta",
+        "programa": "2318",
+        "acao": "22BO",
+        "localizador": "6500",
+        "descricao": "Ações de Proteção e Defesa Civil - Nacional (Crédito Extraordinário)",
+        "funcao": "06",
+        "subfuncao": "182",
+        "esfera": "F",
+        "gnd": "4-INV",
+        "rp": "2",
+        "modalidade": "30",
+        "fonte": "1000",
+        "valor": 360000000.0
+      }
+    ],
+    "total_anexo": 360000000.0,
+    "metodo": "texto"
   }
 }
