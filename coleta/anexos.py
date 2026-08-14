@@ -45,14 +45,19 @@ CACHE = Path("config/anexos.json")
 RE_ORGAO = re.compile(r"ÓRGÃO\s*:\s*(\d{4,5})\s*[-–—]\s*([^\n]+)")
 RE_UNIDADE = re.compile(r"UNIDADE\s*:\s*(\d{4,6})\s*[-–—]\s*([^\n]+)")
 # programa | ação | localizador | descrição | função | subfunção | valor
+# O valor exige grupos de milhar bem formados e nada de dígito ou ponto logo
+# depois. Sem o lookahead, um "985.600.0000" mal lido pelo OCR casaria como
+# 985.600 e entraria no painel truncado; assim ele simplesmente não casa, a
+# linha cai fora e a conferência do total acusa.
+VALOR = r"\d{1,3}(?:\.\d{3})+(?![\d.])|\d{4,}(?![\d.])"
 RE_ACAO = re.compile(
     r"\b(\d{4})\s+([0-9A-Z]{4})\s+(\d{4})\s+(.{0,220}?)\s+(\d{2})\s+(\d{3})\s+"
-    r"(\d{1,3}(?:\.\d{3})+|\d{4,})\b"
+    r"(" + VALOR + r")"
 )
 # esfera | GND | resultado primário | modalidade | IU | fonte | valor
 RE_QUALIF = re.compile(
     r"\b([SF])\s+(\d)-([A-Z]{3})\s+(\d)\s+(\d{2})\s+(\d)\s+(\d{3,4})\s+"
-    r"(\d{1,3}(?:\.\d{3})+|\d{4,})\b"
+    r"(" + VALOR + r")"
 )
 
 RE_DOU = re.compile(r"Publicação no DOU\s*:?\s*(\d{2}/\d{2}/\d{4})")
@@ -132,20 +137,35 @@ def ler_pagina(codigo: str) -> dict:
     urg = RE_URGENCIA.search(texto)
     urgencia = next((g for g in urg.groups() if g), None) if urg else None
 
-    documento = None
+    # Todos os documentos da página, em ordem de preferência. Guardar só o
+    # primeiro que casa com um rótulo estreito deixava de fora MPs cujo rótulo
+    # varia; e quando o PDF escolhido vem sem camada de texto, é preciso ter
+    # outro a tentar. A coleta percorre a lista até um deles render programática.
+    def prioridade(rotulo: str, titulo: str) -> int:
+        r = f"{rotulo} {titulo}".lower()
+        if r.startswith("medida provisória") or r.startswith("mpv "):
+            return 0
+        if "medida provisória" in r or re.search(r"\bmpv\b", r):
+            return 1
+        if "avulso" in r or "texto" in r or "integral" in r:
+            return 2
+        if "mensagem" in r or "msg" in r:
+            return 4
+        return 3
+
+    vistos, candidatos = set(), []
     for a in sopa.find_all("a", href=True):
-        if "sdleg-getter" not in a["href"]:
+        if "sdleg-getter" not in a["href"] or a["href"] in vistos:
             continue
-        rotulo = _limpa(a.get_text(" ")).lower()
-        titulo = _limpa(a.get("title", "")).lower()
-        if rotulo.startswith("medida provisória") or titulo.startswith("mpv "):
-            documento = a["href"]
-            break
-    if not documento:  # o avulso inicial contém o mesmo anexo
-        for a in sopa.find_all("a", href=True):
-            if "sdleg-getter" in a["href"] and "avulso" in _limpa(a.get_text(" ")).lower():
-                documento = a["href"]
-                break
+        vistos.add(a["href"])
+        rotulo = _limpa(a.get_text(" "))
+        candidatos.append({
+            "url": a["href"],
+            "rotulo": rotulo or _limpa(a.get("title", "")),
+            "ordem": prioridade(rotulo, _limpa(a.get("title", ""))),
+        })
+    candidatos.sort(key=lambda c: c["ordem"])
+    documento = candidatos[0]["url"] if candidatos else None
 
     # A janela de deliberação publicada é a do período corrente: 60 dias no
     # início e cerca de 120 depois da prorrogação, que o art. 62, § 7º torna
@@ -184,6 +204,7 @@ def ler_pagina(codigo: str) -> dict:
         "emendas_fim_oficial": _iso(e_fim),
         "urgencia": _iso(urgencia),
         "documento": documento,
+        "candidatos": candidatos[:6],
     }
 
 
@@ -233,12 +254,31 @@ def parsear_anexo(texto: str) -> list[dict]:
     return linhas
 
 
-def texto_do_pdf(conteudo: bytes) -> str:
-    """Texto do PDF, tentando mais de um arranjo de layout.
+def _corrigir_codigos(texto: str) -> str:
+    """Desfaz confusões típicas de OCR nos campos de código.
+
+    Os códigos de ação do SIOP não usam as letras O e I justamente para evitar
+    ambiguidade com 0 e 1, então trocar de volta é seguro. A correção é aplicada
+    só em blocos de quatro caracteres cercados por espaço, para não estragar
+    palavras da descrição.
+    """
+    def trocar(m: re.Match) -> str:
+        codigo = m.group(0)
+        return codigo.translate(str.maketrans({"O": "0", "o": "0", "I": "1", "l": "1"}))
+
+    return re.sub(r"(?<= )[0-9OIl][0-9A-Za-z]{3}(?= )", trocar, texto)
+
+
+def texto_do_pdf(conteudo: bytes, permitir_ocr: bool = True) -> tuple[str, str]:
+    """Texto do PDF e o método que o produziu.
 
     O anexo é uma tabela, e extratores diferentes intercalam as colunas de
-    formas diferentes. Se o modo padrão não produzir as marcas esperadas, vale
-    tentar o modo com layout preservado antes de desistir.
+    formas diferentes — daí a segunda tentativa com layout preservado.
+
+    Alguns anexos, sobretudo os das MPs recém-publicadas, vêm como digitalização
+    sem camada de texto: o PDF é imagem, e não há nada a extrair. Nesses casos
+    entra o OCR, cujo resultado é sempre conferido contra o valor total que a
+    tabela do Congresso informa antes de ser aproveitado.
     """
     import pdfplumber
 
@@ -250,51 +290,140 @@ def texto_do_pdf(conteudo: bytes) -> str:
         return "\n".join(partes)
 
     texto = extrair()
-    if not RE_UNIDADE.search(texto or ""):
-        alternativo = extrair(layout=True)
-        if RE_UNIDADE.search(alternativo or ""):
-            return alternativo
-    return texto
+    if RE_UNIDADE.search(texto or ""):
+        return texto, "texto"
+
+    alternativo = extrair(layout=True)
+    if RE_UNIDADE.search(alternativo or ""):
+        return alternativo, "texto (layout)"
+
+    if permitir_ocr:
+        try:
+            return _ocr(conteudo), "ocr"
+        except Exception as e:  # noqa: BLE001
+            print(f"    OCR indisponível ({e})", file=sys.stderr)
+
+    return texto, "vazio"
+
+
+def _ocr(conteudo: bytes) -> str:
+    """Rasteriza o PDF e passa o tesseract, página a página."""
+    import subprocess
+    import tempfile
+
+    import pytesseract
+    from PIL import Image
+
+    idiomas = ""
+    try:
+        disponiveis = pytesseract.get_languages(config="")
+        if "por" in disponiveis:
+            idiomas = "por"
+        elif "eng" in disponiveis:
+            idiomas = "eng"
+    except Exception:  # noqa: BLE001
+        idiomas = "eng"
+
+    with tempfile.TemporaryDirectory() as tmp:
+        origem = Path(tmp) / "anexo.pdf"
+        origem.write_bytes(conteudo)
+        subprocess.run(["pdftoppm", "-r", "300", "-png", str(origem), f"{tmp}/pg"],
+                       check=True, capture_output=True, timeout=300)
+        partes = []
+        for png in sorted(Path(tmp).glob("pg*.png")):
+            partes.append(pytesseract.image_to_string(
+                Image.open(png), lang=idiomas or None, config="--psm 6"))
+    return _corrigir_codigos("\n".join(partes))
 
 
 def coletar(mpvs: list[dict], cache: dict) -> dict:
+    """Baixa página e anexo de cada MP que ainda não tem programática válida.
+
+    Uma coleta sem programática NÃO é gravada como definitiva: fica marcada
+    como pendente e é tentada de novo na execução seguinte. Isso importa porque
+    o PDF de uma MP recém-publicada costuma ser digitalização sem camada de
+    texto, e a versão com texto aparece dias depois — se a falha virasse cache,
+    a MP ficaria para sempre sem anexo mesmo quando o documento bom chegasse.
+    """
+    hoje = date.today().isoformat()
+
     for p in mpvs:
         ident, codigo = p["identificacao"], p.get("codigo_materia")
-        if not codigo or ident in cache:
+        if not codigo:
             continue
+
+        anterior = cache.get(ident)
+        if anterior and anterior.get("programatica"):
+            continue  # já resolvida
+        if anterior and anterior.get("tentado_em") == hoje:
+            continue  # já tentada hoje, não insiste na mesma execução
+
         try:
             registro = ler_pagina(codigo)
-            if registro.get("documento"):
-                bruto = baixar(registro["documento"], binario=True)
-                registro["programatica"] = parsear_anexo(texto_do_pdf(bruto))
-            else:
-                registro["programatica"] = []
-            registro["total_anexo"] = round(
-                sum(l["valor"] for l in registro["programatica"]), 2)
-            cache[ident] = registro
-            n = len(registro["programatica"])
-            if not registro.get("deliberacao_fim"):
-                print(f"::warning::{ident}: prazos oficiais não encontrados na página — "
-                      "a vigência ficará estimada", file=sys.stderr)
-            if n == 0 and registro.get("documento"):
-                print(f"::warning::{ident}: anexo baixado mas sem programática legível",
+            registro["tentado_em"] = hoje
+            registro["tentativas"] = (anterior or {}).get("tentativas", 0) + 1
+            registro["programatica"] = []
+
+            esperado = p.get("valor_total")
+            tentativas = registro.get("candidatos") or (
+                [{"url": registro["documento"], "rotulo": "documento"}]
+                if registro.get("documento") else [])
+
+            for cand in tentativas:
+                try:
+                    bruto = baixar(cand["url"], binario=True)
+                except Exception as e:  # noqa: BLE001
+                    print(f"    {cand['rotulo'][:40]}: download falhou ({e})", file=sys.stderr)
+                    continue
+
+                texto, metodo = texto_do_pdf(bruto)
+                linhas = parsear_anexo(texto)
+                if not linhas:
+                    print(f"    {cand['rotulo'][:40]} [{metodo}]: sem programática legível",
+                          file=sys.stderr)
+                    continue
+
+                total = round(sum(l["valor"] for l in linhas), 2)
+                # O total do anexo tem de bater com o valor que a tabela do
+                # Congresso publica. É o que impede um OCR mal lido de virar
+                # número no painel: sem conferência, um dígito trocado passaria.
+                if esperado and abs(total - esperado) > 1:
+                    print(f"    {cand['rotulo'][:40]} [{metodo}]: total {total:,.0f} "
+                          f"≠ {esperado:,.0f} da tabela — descartado", file=sys.stderr)
+                    if metodo == "ocr":
+                        registro["ocr_divergente"] = True
+                    continue
+
+                registro["programatica"] = linhas
+                registro["total_anexo"] = total
+                registro["metodo"] = metodo
+                registro["documento"] = cand["url"]
+                print(f"  {ident}: {len(linhas)} linha(s) de programática [{metodo}]",
                       file=sys.stderr)
+                break
+
+            if not registro["programatica"]:
+                n = registro["tentativas"]
+                print(f"::warning::{ident}: anexo não obtido em {n} tentativa(s) — "
+                      f"{len(tentativas)} documento(s) testado(s). Será tentado de novo "
+                      "na próxima execução", file=sys.stderr)
+                if registro.get("ocr_divergente"):
+                    print(f"    (o OCR leu o anexo mas o total não confere; "
+                          "provavelmente o PDF ainda é digitalização)", file=sys.stderr)
                 despejo = Path("dados") / f"anexo_{ident.replace('/', '-').replace(' ', '_')}.txt"
                 despejo.parent.mkdir(exist_ok=True)
                 try:
-                    despejo.write_text(texto_do_pdf(bruto)[:20000], encoding="utf-8")
-                    print(f"    texto salvo em {despejo} para inspeção", file=sys.stderr)
+                    if tentativas:
+                        t, _ = texto_do_pdf(baixar(tentativas[0]["url"], binario=True))
+                        despejo.write_text(t[:20000], encoding="utf-8")
                 except Exception:  # noqa: BLE001
                     pass
-            aviso = ""
-            if p.get("valor_total") and registro["total_anexo"]:
-                dif = abs(registro["total_anexo"] - p["valor_total"])
-                if dif > 1:
-                    aviso = f"  ⚠ anexo soma {registro['total_anexo']:,.0f}, tabela {p['valor_total']:,.0f}"
-            print(f"  {ident}: {n} linha(s) de programática{aviso}", file=sys.stderr)
+
+            cache[ident] = registro
         except Exception as e:  # noqa: BLE001
             print(f"  {ident}: falhou ({e})", file=sys.stderr)
         time.sleep(1.2)
+
     return cache
 
 
@@ -310,13 +439,16 @@ def main() -> None:
     Path("dados").mkdir(exist_ok=True)
     Path("dados/uos.txt").write_text("\n".join(uos), encoding="utf-8")
 
+    pendentes = [k for k, v in cache.items() if not v.get("programatica")]
     com_prog = sum(1 for v in cache.values() if v.get("programatica"))
     print(f"  {len(uos)} unidades orçamentárias -> dados/uos.txt", file=sys.stderr)
     if not uos:
         print("::error::nenhuma programática extraída dos anexos — sem os códigos de "
               "unidade o cruzamento com o SIOP não tem como acontecer", file=sys.stderr)
-    print(f"anexos: {len(cache)} em cache ({len(cache) - antes} novos), "
-          f"{com_prog} com programática", file=sys.stderr)
+    print(f"anexos: {len(cache)} em cache, {com_prog} com programática", file=sys.stderr)
+    if pendentes:
+        print(f"  pendentes, serão tentadas de novo: {', '.join(sorted(pendentes))}",
+              file=sys.stderr)
 
 
 if __name__ == "__main__":
