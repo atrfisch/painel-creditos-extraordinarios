@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-14T13:16:58+00:00",
+  "atualizado_em": "2026-08-14T21:21:55+00:00",
   "anos": [
     2026
   ],
@@ -24,7 +24,7 @@
       "emendas_inicio": "2026-08-13",
       "emendas_fim": "2026-08-19",
       "emendas_total": 0,
-      "situacao": "MATÉRIA DESPACHADA",
+      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
       "norma": null,
       "codigo_materia": "175457",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175457",
@@ -176,7 +176,7 @@
       "emendas_inicio": "2026-08-13",
       "emendas_fim": "2026-08-19",
       "emendas_total": 0,
-      "situacao": "MATÉRIA DESPACHADA",
+      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
       "norma": null,
       "codigo_materia": "175455",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175455",
@@ -328,7 +328,7 @@
       "emendas_inicio": "2026-08-13",
       "emendas_fim": "2026-08-19",
       "emendas_total": 0,
-      "situacao": "MATÉRIA DESPACHADA",
+      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
       "norma": null,
       "codigo_materia": "175449",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175449",
