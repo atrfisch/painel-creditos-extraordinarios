@@ -86,6 +86,18 @@ def main() -> int:
     if texto("6500") != "6500":
         falhas.append("texto() está descartando valor válido")
 
+    # OCR: normalização de códigos e recusa de valores mal formados
+    from anexos import _corrigir_codigos, RE_ACAO, _num  # noqa: E402
+    if _corrigir_codigos(" OOED 6520 ") != " 00ED 6520 ":
+        falhas.append("O/0 do OCR não normalizado no código de ação")
+    if _corrigir_codigos(" Cotas do Fundo ") != " Cotas do Fundo ":
+        falhas.append("a normalização de código está alterando palavras")
+    bom = RE_ACAO.search("2314 00XK 6500 Ressarcimento 09 271 547.000.000 x")
+    if not bom or _num(bom.group(7)) != 547_000_000:
+        falhas.append("valor bem formado deixou de ser lido")
+    if RE_ACAO.search("0910 00ED 6520 Integralização 28 846 985.600.0000 x"):
+        falhas.append("valor com grupo de milhar mal formado foi aceito e truncado")
+
     # o anexo da MP: programática exata a partir do texto real do PDF
     from anexos import parsear_anexo  # noqa: E402
     prog = parsear_anexo((RAIZ / "tests/anexo_1378.txt").read_text(encoding="utf-8"))
