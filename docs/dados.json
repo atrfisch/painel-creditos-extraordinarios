@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-14T09:59:42+00:00",
+  "atualizado_em": "2026-08-14T12:58:04+00:00",
   "anos": [
     2026
   ],
@@ -74,13 +74,13 @@
             "rateado": true,
             "contaminadas": 1,
             "base": 2750000000.0,
-            "empenhado": 2739003432.28,
-            "liquidado": 2720481174.18,
-            "pago": 2720481174.18,
-            "credito_no_ano": 2830381652.0,
+            "empenhado": 1389228469.12,
+            "liquidado": 1379833939.72,
+            "pago": 1379833939.72,
+            "credito_no_ano": 5580381652.0,
             "dotacao_inicial": 186204651.0,
-            "dotacao_atual": 3016586303.0,
-            "acoes": 4,
+            "dotacao_atual": 5766586303.0,
+            "acoes": 5,
             "detalhe_acoes": [
               {
                 "acao": "00ED",
@@ -88,12 +88,25 @@
                 "modo": "exata",
                 "subtitulo": "6500",
                 "subtitulo_desc": "Nacional (Crédito Extraordinário)",
-                "valor_mp": 1943200838.7,
-                "credito_no_ano": 2000000000.0,
-                "fator": 0.9716,
+                "valor_mp": 1971191342.45,
+                "credito_no_ano": 4000000000.0,
+                "fator": 0.4928,
                 "dotacao_inicial": 0.0,
-                "empenhado": 1943200838.7,
-                "pago": 1943200838.7
+                "empenhado": 985595671.23,
+                "pago": 985595671.23
+              },
+              {
+                "acao": "00EE",
+                "descricao": "Integralização de Cotas no Fundo Garantidor de Operações (FGO) para o Programa Nacional de Apoio às Microempresas e Empresas de Pequeno Porte (Pronampe)",
+                "modo": "exata",
+                "subtitulo": "6500",
+                "subtitulo_desc": "Nacional (Crédito Extraordinário)",
+                "valor_mp": 369598376.71,
+                "credito_no_ano": 750000000.0,
+                "fator": 0.4928,
+                "dotacao_inicial": 0.0,
+                "empenhado": 0.0,
+                "pago": 0.0
               },
               {
                 "acao": "00Y7",
@@ -101,12 +114,12 @@
                 "modo": "exata",
                 "subtitulo": "6500",
                 "subtitulo_desc": "Nacional (Crédito Extraordinário)",
-                "valor_mp": 485800209.67,
+                "valor_mp": 246398917.81,
                 "credito_no_ano": 500000000.0,
-                "fator": 0.9716,
+                "fator": 0.4928,
                 "dotacao_inicial": 0.0,
-                "empenhado": 485800209.67,
-                "pago": 485800209.67
+                "empenhado": 246398917.81,
+                "pago": 246398917.81
               },
               {
                 "acao": "00Y0",
@@ -114,12 +127,12 @@
                 "modo": "exata",
                 "subtitulo": "6500",
                 "subtitulo_desc": "Nacional (Crédito Extraordinário)",
-                "valor_mp": 291480125.8,
+                "valor_mp": 147839350.68,
                 "credito_no_ano": 300000000.0,
-                "fator": 0.9716,
+                "fator": 0.4928,
                 "dotacao_inicial": 0.0,
-                "empenhado": 291480125.8,
-                "pago": 291480125.8
+                "empenhado": 147839350.68,
+                "pago": 147839350.68
               },
               {
                 "acao": "000K",
@@ -127,11 +140,11 @@
                 "modo": "piso",
                 "subtitulo": "0001",
                 "subtitulo_desc": "Nacional",
-                "valor_mp": 29518825.82,
+                "valor_mp": 14972012.35,
                 "credito_no_ano": 30381652.0,
-                "fator": 0.9716,
+                "fator": 0.4928,
                 "dotacao_inicial": 186204651.0,
-                "empenhado": 18522258.11,
+                "empenhado": 9394529.4,
                 "pago": 0.0
               }
             ]
@@ -166,14 +179,14 @@
         "contaminadas": 1,
         "rateado": true,
         "base": 2750000000.0,
-        "credito_no_ano": 2830381652.0,
-        "empenhado": 2739003432.28,
-        "liquidado": 2720481174.18,
-        "pago": 2720481174.18,
-        "acoes": 4,
+        "credito_no_ano": 5580381652.0,
+        "empenhado": 1389228469.12,
+        "liquidado": 1379833939.72,
+        "pago": 1379833939.72,
+        "acoes": 5,
         "acoes_ausentes": 0,
-        "pct_empenhado": 99.6,
-        "pct_pago": 98.9
+        "pct_empenhado": 50.5,
+        "pct_pago": 50.2
       }
     },
     {
@@ -614,8 +627,8 @@
             "contaminadas": 0,
             "base": 547000000.0,
             "empenhado": 547000000.0,
-            "liquidado": 60375370.0,
-            "pago": 60375370.0,
+            "liquidado": 71764477.0,
+            "pago": 71763866.0,
             "credito_no_ano": 547000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 547000000.0,
@@ -632,7 +645,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 547000000.0,
-                "pago": 60375370.0
+                "pago": 71763866.0
               }
             ]
           }
@@ -668,12 +681,12 @@
         "base": 547000000.0,
         "credito_no_ano": 547000000.0,
         "empenhado": 547000000.0,
-        "liquidado": 60375370.0,
-        "pago": 60375370.0,
+        "liquidado": 71764477.0,
+        "pago": 71763866.0,
         "acoes": 1,
         "acoes_ausentes": 0,
         "pct_empenhado": 100.0,
-        "pct_pago": 11.0
+        "pct_pago": 13.1
       }
     },
     {
@@ -794,8 +807,8 @@
             "contaminadas": 0,
             "base": 4000000000.0,
             "empenhado": 4000000000.0,
-            "liquidado": 1500000000.0,
-            "pago": 1500000000.0,
+            "liquidado": 2000000000.0,
+            "pago": 2000000000.0,
             "credito_no_ano": 4000000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 4000000000.0,
@@ -825,7 +838,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 1000000000.0,
-                "pago": 0.0
+                "pago": 500000000.0
               }
             ]
           }
@@ -902,12 +915,12 @@
         "base": 13285000000.0,
         "credito_no_ano": 13285000000.0,
         "empenhado": 4015000000.0,
-        "liquidado": 1515000000.0,
-        "pago": 1515000000.0,
+        "liquidado": 2015000000.0,
+        "pago": 2015000000.0,
         "acoes": 5,
         "acoes_ausentes": 0,
         "pct_empenhado": 30.2,
-        "pct_pago": 11.4
+        "pct_pago": 15.2
       }
     },
     {
@@ -1038,15 +1051,15 @@
           ],
           "execucao": {
             "modo": "exata",
-            "rateado": false,
+            "rateado": true,
             "contaminadas": 0,
             "base": 2000000000.0,
-            "empenhado": 2000000000.0,
-            "liquidado": 2000000000.0,
-            "pago": 2000000000.0,
-            "credito_no_ano": 2000000000.0,
+            "empenhado": 1000000000.0,
+            "liquidado": 1000000000.0,
+            "pago": 1000000000.0,
+            "credito_no_ano": 4000000000.0,
             "dotacao_inicial": 0.0,
-            "dotacao_atual": 2000000000.0,
+            "dotacao_atual": 4000000000.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
@@ -1056,11 +1069,11 @@
                 "subtitulo": "6500",
                 "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 2000000000.0,
-                "credito_no_ano": 2000000000.0,
-                "fator": 1.0,
+                "credito_no_ano": 4000000000.0,
+                "fator": 0.5,
                 "dotacao_inicial": 0.0,
-                "empenhado": 2000000000.0,
-                "pago": 2000000000.0
+                "empenhado": 1000000000.0,
+                "pago": 1000000000.0
               }
             ]
           }
@@ -1092,16 +1105,16 @@
         "origem": "anexo",
         "modo": "exata",
         "contaminadas": 0,
-        "rateado": false,
+        "rateado": true,
         "base": 2000000000.0,
-        "credito_no_ano": 2000000000.0,
-        "empenhado": 2000000000.0,
-        "liquidado": 2000000000.0,
-        "pago": 2000000000.0,
+        "credito_no_ano": 4000000000.0,
+        "empenhado": 1000000000.0,
+        "liquidado": 1000000000.0,
+        "pago": 1000000000.0,
         "acoes": 1,
         "acoes_ausentes": 0,
-        "pct_empenhado": 100.0,
-        "pct_pago": 100.0
+        "pct_empenhado": 50.0,
+        "pct_pago": 50.0
       }
     },
     {
@@ -1291,8 +1304,8 @@
             "contaminadas": 0,
             "base": 143065710.0,
             "empenhado": 129114695.0,
-            "liquidado": 17569691.0,
-            "pago": 17059960.0,
+            "liquidado": 18487667.0,
+            "pago": 17099576.0,
             "credito_no_ano": 143065710.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 143065710.0,
@@ -1309,7 +1322,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 129114695.0,
-                "pago": 17059960.0
+                "pago": 17099576.0
               }
             ]
           }
@@ -1345,8 +1358,8 @@
         "base": 337483432.0,
         "credito_no_ano": 337483432.0,
         "empenhado": 323532417.0,
-        "liquidado": 33106437.0,
-        "pago": 21782964.0,
+        "liquidado": 34024413.0,
+        "pago": 21822580.0,
         "acoes": 3,
         "acoes_ausentes": 0,
         "pct_empenhado": 95.9,
@@ -1789,12 +1802,12 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 305000000.0,
-            "empenhado": 255507417.12,
-            "liquidado": 113873813.62,
-            "pago": 110910545.2,
-            "credito_no_ano": 806616313.0,
+            "empenhado": 176484233.89,
+            "liquidado": 78734091.63,
+            "pago": 76685242.65,
+            "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
-            "dotacao_atual": 806616313.0,
+            "dotacao_atual": 1166616313.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
@@ -1804,11 +1817,11 @@
                 "subtitulo": "6500",
                 "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 305000000.0,
-                "credito_no_ano": 806616313.0,
-                "fator": 0.3781,
+                "credito_no_ano": 1166616313.0,
+                "fator": 0.2614,
                 "dotacao_inicial": 0.0,
-                "empenhado": 255507417.12,
-                "pago": 110910545.2
+                "empenhado": 176484233.89,
+                "pago": 76685242.65
               }
             ]
           }
@@ -1842,14 +1855,14 @@
         "contaminadas": 0,
         "rateado": true,
         "base": 305000000.0,
-        "credito_no_ano": 806616313.0,
-        "empenhado": 255507417.12,
-        "liquidado": 113873813.62,
-        "pago": 110910545.2,
+        "credito_no_ano": 1166616313.0,
+        "empenhado": 176484233.89,
+        "liquidado": 78734091.63,
+        "pago": 76685242.65,
         "acoes": 1,
         "acoes_ausentes": 0,
-        "pct_empenhado": 83.8,
-        "pct_pago": 36.4
+        "pct_empenhado": 57.9,
+        "pct_pago": 25.1
       }
     },
     {
@@ -1884,15 +1897,15 @@
           ],
           "execucao": {
             "modo": "exata",
-            "rateado": false,
+            "rateado": true,
             "contaminadas": 0,
             "base": 2500000000.0,
-            "empenhado": 2500000000.0,
-            "liquidado": 2500000000.0,
-            "pago": 2500000000.0,
-            "credito_no_ano": 2500000000.0,
+            "empenhado": 1500000000.0,
+            "liquidado": 1500000000.0,
+            "pago": 1500000000.0,
+            "credito_no_ano": 4500000000.0,
             "dotacao_inicial": 0.0,
-            "dotacao_atual": 2500000000.0,
+            "dotacao_atual": 4500000000.0,
             "acoes": 2,
             "detalhe_acoes": [
               {
@@ -1902,11 +1915,11 @@
                 "subtitulo": "6500",
                 "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 2000000000.0,
-                "credito_no_ano": 2000000000.0,
-                "fator": 1.0,
+                "credito_no_ano": 4000000000.0,
+                "fator": 0.5,
                 "dotacao_inicial": 0.0,
-                "empenhado": 2000000000.0,
-                "pago": 2000000000.0
+                "empenhado": 1000000000.0,
+                "pago": 1000000000.0
               },
               {
                 "acao": "00Y7",
@@ -1992,16 +2005,16 @@
         "origem": "anexo",
         "modo": "exata",
         "contaminadas": 0,
-        "rateado": false,
+        "rateado": true,
         "base": 17000000000.0,
-        "credito_no_ano": 17000000000.0,
-        "empenhado": 17000000000.0,
-        "liquidado": 17000000000.0,
-        "pago": 17000000000.0,
+        "credito_no_ano": 19000000000.0,
+        "empenhado": 16000000000.0,
+        "liquidado": 16000000000.0,
+        "pago": 16000000000.0,
         "acoes": 3,
         "acoes_ausentes": 0,
-        "pct_empenhado": 100.0,
-        "pct_pago": 100.0
+        "pct_empenhado": 94.1,
+        "pct_pago": 94.1
       }
     },
     {
@@ -2232,12 +2245,12 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 285000000.0,
-            "empenhado": 238752832.39,
-            "liquidado": 106406678.3,
-            "pago": 103637722.57,
-            "credito_no_ano": 806616313.0,
+            "empenhado": 164911497.24,
+            "liquidado": 73571200.38,
+            "pago": 71656702.15,
+            "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
-            "dotacao_atual": 806616313.0,
+            "dotacao_atual": 1166616313.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
@@ -2247,11 +2260,11 @@
                 "subtitulo": "6500",
                 "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 285000000.0,
-                "credito_no_ano": 806616313.0,
-                "fator": 0.3533,
+                "credito_no_ano": 1166616313.0,
+                "fator": 0.2443,
                 "dotacao_inicial": 0.0,
-                "empenhado": 238752832.39,
-                "pago": 103637722.57
+                "empenhado": 164911497.24,
+                "pago": 71656702.15
               }
             ]
           }
@@ -2285,14 +2298,14 @@
         "contaminadas": 0,
         "rateado": true,
         "base": 285000000.0,
-        "credito_no_ano": 806616313.0,
-        "empenhado": 238752832.39,
-        "liquidado": 106406678.3,
-        "pago": 103637722.57,
+        "credito_no_ano": 1166616313.0,
+        "empenhado": 164911497.24,
+        "liquidado": 73571200.38,
+        "pago": 71656702.15,
         "acoes": 1,
         "acoes_ausentes": 0,
-        "pct_empenhado": 83.8,
-        "pct_pago": 36.4
+        "pct_empenhado": 57.9,
+        "pct_pago": 25.1
       }
     },
     {
@@ -2936,12 +2949,12 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 220000000.0,
-            "empenhado": 184300432.02,
-            "liquidado": 82138488.51,
-            "pago": 80001049.0,
-            "credito_no_ano": 806616313.0,
+            "empenhado": 127300103.13,
+            "liquidado": 56791803.8,
+            "pago": 55313945.52,
+            "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
-            "dotacao_atual": 806616313.0,
+            "dotacao_atual": 1166616313.0,
             "acoes": 1,
             "detalhe_acoes": [
               {
@@ -2951,11 +2964,11 @@
                 "subtitulo": "6500",
                 "subtitulo_desc": "Nacional (Crédito Extraordinário)",
                 "valor_mp": 220000000.0,
-                "credito_no_ano": 806616313.0,
-                "fator": 0.2727,
+                "credito_no_ano": 1166616313.0,
+                "fator": 0.1886,
                 "dotacao_inicial": 0.0,
-                "empenhado": 184300432.02,
-                "pago": 80001049.0
+                "empenhado": 127300103.13,
+                "pago": 55313945.52
               }
             ]
           }
@@ -3030,14 +3043,14 @@
         "contaminadas": 0,
         "rateado": true,
         "base": 250000000.0,
-        "credito_no_ano": 836616313.0,
-        "empenhado": 214300432.02,
-        "liquidado": 82138488.51,
-        "pago": 80001049.0,
+        "credito_no_ano": 1196616313.0,
+        "empenhado": 157300103.13,
+        "liquidado": 56791803.8,
+        "pago": 55313945.52,
         "acoes": 2,
         "acoes_ausentes": 0,
-        "pct_empenhado": 85.7,
-        "pct_pago": 32.0
+        "pct_empenhado": 62.9,
+        "pct_pago": 22.1
       }
     }
   ]
