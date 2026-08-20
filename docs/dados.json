@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-20T09:30:05+00:00",
+  "atualizado_em": "2026-08-20T21:24:41+00:00",
   "anos": [
     2026
   ],
@@ -24,7 +24,7 @@
       "emendas_inicio": "2026-08-13",
       "emendas_fim": "2026-08-19",
       "emendas_total": 0,
-      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
       "norma": null,
       "codigo_materia": "175457",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175457",
@@ -176,7 +176,7 @@
       "emendas_inicio": "2026-08-13",
       "emendas_fim": "2026-08-19",
       "emendas_total": 0,
-      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
       "norma": null,
       "codigo_materia": "175455",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175455",
@@ -328,7 +328,7 @@
       "emendas_inicio": "2026-08-13",
       "emendas_fim": "2026-08-19",
       "emendas_total": 0,
-      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
       "norma": null,
       "codigo_materia": "175449",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175449",
@@ -351,7 +351,7 @@
             "contaminadas": 0,
             "base": 360000000.0,
             "empenhado": 224531078.75,
-            "liquidado": 92497353.76,
+            "liquidado": 92501761.89,
             "pago": 92310741.14,
             "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
@@ -405,7 +405,7 @@
         "base": 360000000.0,
         "credito_no_ano": 1166616313.0,
         "empenhado": 224531078.75,
-        "liquidado": 92497353.76,
+        "liquidado": 92501761.89,
         "pago": 92310741.14,
         "acoes": 1,
         "acoes_ausentes": 0,
@@ -450,7 +450,7 @@
             "base": 3473000000.0,
             "empenhado": 354773304.16,
             "liquidado": 354773304.16,
-            "pago": 336204686.94,
+            "pago": 354773304.16,
             "credito_no_ano": 6803000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 6803000000.0,
@@ -467,7 +467,7 @@
                 "fator": 0.515,
                 "dotacao_inicial": 0.0,
                 "empenhado": 94355189.88,
-                "pago": 75786572.66
+                "pago": 94355189.88
               },
               {
                 "acao": "00YN",
@@ -517,11 +517,11 @@
         "credito_no_ano": 6803000000.0,
         "empenhado": 354773304.16,
         "liquidado": 354773304.16,
-        "pago": 336204686.94,
+        "pago": 354773304.16,
         "acoes": 2,
         "acoes_ausentes": 0,
         "pct_empenhado": 10.2,
-        "pct_pago": 9.7
+        "pct_pago": 10.2
       }
     },
     {
@@ -561,7 +561,7 @@
             "base": 3330000000.0,
             "empenhado": 346549176.84,
             "liquidado": 346549176.84,
-            "pago": 329063035.06,
+            "pago": 346549176.84,
             "credito_no_ano": 6803000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 6803000000.0,
@@ -578,7 +578,7 @@
                 "fator": 0.485,
                 "dotacao_inicial": 0.0,
                 "empenhado": 88854663.12,
-                "pago": 71368521.34
+                "pago": 88854663.12
               },
               {
                 "acao": "00YN",
@@ -628,11 +628,11 @@
         "credito_no_ano": 6803000000.0,
         "empenhado": 346549176.84,
         "liquidado": 346549176.84,
-        "pago": 329063035.06,
+        "pago": 346549176.84,
         "acoes": 2,
         "acoes_ausentes": 0,
         "pct_empenhado": 10.4,
-        "pct_pago": 9.9
+        "pct_pago": 10.4
       }
     },
     {
@@ -670,8 +670,8 @@
             "contaminadas": 0,
             "base": 547000000.0,
             "empenhado": 547000000.0,
-            "liquidado": 99886760.0,
-            "pago": 99886760.0,
+            "liquidado": 159152613.0,
+            "pago": 159151672.0,
             "credito_no_ano": 547000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 547000000.0,
@@ -688,7 +688,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 547000000.0,
-                "pago": 99886760.0
+                "pago": 159151672.0
               }
             ]
           }
@@ -724,12 +724,12 @@
         "base": 547000000.0,
         "credito_no_ano": 547000000.0,
         "empenhado": 547000000.0,
-        "liquidado": 99886760.0,
-        "pago": 99886760.0,
+        "liquidado": 159152613.0,
+        "pago": 159151672.0,
         "acoes": 1,
         "acoes_ausentes": 0,
         "pct_empenhado": 100.0,
-        "pct_pago": 18.3
+        "pct_pago": 29.1
       }
     },
     {
@@ -1293,7 +1293,7 @@
             "contaminadas": 0,
             "base": 194417722.0,
             "empenhado": 194417722.0,
-            "liquidado": 15776746.0,
+            "liquidado": 15782678.0,
             "pago": 15536746.0,
             "credito_no_ano": 194417722.0,
             "dotacao_inicial": 0.0,
@@ -1347,8 +1347,8 @@
             "contaminadas": 0,
             "base": 143065710.0,
             "empenhado": 129114695.0,
-            "liquidado": 26805895.0,
-            "pago": 25676398.0,
+            "liquidado": 27672467.0,
+            "pago": 25933313.0,
             "credito_no_ano": 143065710.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 143065710.0,
@@ -1365,7 +1365,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 129114695.0,
-                "pago": 25676398.0
+                "pago": 25933313.0
               }
             ]
           }
@@ -1401,12 +1401,12 @@
         "base": 337483432.0,
         "credito_no_ano": 337483432.0,
         "empenhado": 323532417.0,
-        "liquidado": 42582641.0,
-        "pago": 41213144.0,
+        "liquidado": 43455145.0,
+        "pago": 41470059.0,
         "acoes": 3,
         "acoes_ausentes": 0,
         "pct_empenhado": 95.9,
-        "pct_pago": 12.2
+        "pct_pago": 12.3
       }
     },
     {
@@ -1846,7 +1846,7 @@
             "contaminadas": 0,
             "base": 305000000.0,
             "empenhado": 190227719.49,
-            "liquidado": 78365813.6,
+            "liquidado": 78369548.27,
             "pago": 78207711.24,
             "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
@@ -1900,7 +1900,7 @@
         "base": 305000000.0,
         "credito_no_ano": 1166616313.0,
         "empenhado": 190227719.49,
-        "liquidado": 78365813.6,
+        "liquidado": 78369548.27,
         "pago": 78207711.24,
         "acoes": 1,
         "acoes_ausentes": 0,
@@ -2289,7 +2289,7 @@
             "contaminadas": 0,
             "base": 285000000.0,
             "empenhado": 177753770.67,
-            "liquidado": 73227071.72,
+            "liquidado": 73230561.49,
             "pago": 73079336.74,
             "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
@@ -2343,7 +2343,7 @@
         "base": 285000000.0,
         "credito_no_ano": 1166616313.0,
         "empenhado": 177753770.67,
-        "liquidado": 73227071.72,
+        "liquidado": 73230561.49,
         "pago": 73079336.74,
         "acoes": 1,
         "acoes_ausentes": 0,
@@ -2993,7 +2993,7 @@
             "contaminadas": 0,
             "base": 220000000.0,
             "empenhado": 137213437.01,
-            "liquidado": 56526160.63,
+            "liquidado": 56528854.49,
             "pago": 56412119.59,
             "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
@@ -3088,7 +3088,7 @@
         "base": 250000000.0,
         "credito_no_ano": 1196616313.0,
         "empenhado": 167213437.01,
-        "liquidado": 56526160.63,
+        "liquidado": 56528854.49,
         "pago": 56412119.59,
         "acoes": 2,
         "acoes_ausentes": 0,
