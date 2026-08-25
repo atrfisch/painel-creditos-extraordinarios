@@ -81,12 +81,20 @@ def _janela(texto: str, rotulo: str) -> tuple[str | None, str | None]:
 
 
 ROTULO_DELIB = r"Deliberação da Medida Provisória"
-ROTULO_EMENDAS = r"Apresentação de [Ee]mendas(?:\s+à Medida Provisória)?"
+ROTULO_EMENDAS = r"Apresentação de [Ee]mendas(?:\s+ao?\s+[^:\d]{0,40})?"
 RE_URGENCIA = re.compile(
     r"(?:Regime de [Uu]rgência,?\s*a partir de\s*:?\s*(\d{2}/\d{2}/\d{4})"
     r"|Regime de [Uu]rgência\s*(\d{2}/\d{2}/\d{4})\s*em diante"
     r"|(\d{2}/\d{2}/\d{4})\s*em diante)")
 RE_ATO = re.compile(r"Ato do Presidente da Mesa do Congresso Nacional n[ºo°]?\s*([\d./-]+)", re.I)
+# O anexo de um PLN de crédito vem em duas partes: o Anexo I lista o que será
+# suplementado ou aberto, e o Anexo II, as dotações anuladas para financiar. Os
+# dois têm a mesma estrutura e os mesmos valores — somar ambos dobra o crédito.
+# O cabeçalho de cada bloco diz qual é qual, e é por ele que o texto é fatiado.
+RE_SECAO = re.compile(
+    r"PROGRAMA DE TRABALHO\s*\(\s*(SUPLEMENTA[ÇC][ÃA]O|CANCELAMENTO|APLICA[ÇC][ÃA]O)\s*\)",
+    re.I)
+
 RE_SITUACAO_PRAZO = re.compile(r"Situação do prazo\s*:?\s*(Aberto|Encerrado|Suspenso)", re.I)
 RE_ULTIMO_ESTADO = re.compile(r"Último estado\s*:?\s*([A-ZÁÂÃÀÉÊÍÓÔÕÚÇ][^\n|]{3,80}?)\s*(?:Prazos|Calendário|$)")
 RE_DESPACHO = re.compile(r"Despacho\s*:?\s*(\d{2}/\d{2}/\d{4})")
@@ -208,12 +216,49 @@ def ler_pagina(codigo: str) -> dict:
     }
 
 
-def parsear_anexo(texto: str) -> list[dict]:
+def _secoes(texto: str) -> list[tuple[str, str]]:
+    """Fatia o anexo em (tipo, trecho) pelos cabeçalhos de programa de trabalho.
+
+    Sem cabeçalho nenhum — caso dos anexos mais antigos — o texto inteiro é
+    tratado como aplicação, que é o comportamento das medidas provisórias.
+    """
+    marcas = [(m.start(), m.group(1).upper()) for m in RE_SECAO.finditer(texto)]
+    if not marcas:
+        return [("APLICACAO", texto)]
+
+    partes = []
+    for i, (pos, rotulo) in enumerate(marcas):
+        fim = marcas[i + 1][0] if i + 1 < len(marcas) else len(texto)
+        tipo = ("CANCELAMENTO" if rotulo.startswith("CANCEL")
+                else "SUPLEMENTACAO" if rotulo.startswith("SUPLEMENTA")
+                else "APLICACAO")
+        # o cabeçalho ÓRGÃO/UNIDADE vem antes do cabeçalho da seção, então o
+        # trecho recua até a marca de unidade mais próxima acima
+        anteriores = [m.start() for m in RE_UNIDADE.finditer(texto[:pos])]
+        inicio = anteriores[-1] if anteriores else pos
+        anterior_fim = marcas[i - 1][0] if i else 0
+        partes.append((tipo, texto[max(inicio, anterior_fim):fim]))
+    return partes
+
+
+def parsear_anexo(texto: str, secao: str = "credito") -> list[dict]:
     """Extrai as linhas de programática do texto do PDF.
 
     O texto do PDF quebra descrições em várias linhas, então o bloco de cada
     unidade é normalizado para uma linha só antes das expressões regulares.
     """
+    if secao != "tudo":
+        alvo = {"credito": ("SUPLEMENTACAO", "APLICACAO"),
+                "cancelamento": ("CANCELAMENTO",)}[secao]
+        trechos = [t for tipo, t in _secoes(texto) if tipo in alvo]
+        if not trechos:
+            return []
+        if len(trechos) > 1 or trechos[0] != texto:
+            linhas: list[dict] = []
+            for t in trechos:
+                linhas.extend(parsear_anexo(t, secao="tudo"))
+            return linhas
+
     marcas = []
     for m in RE_ORGAO.finditer(texto):
         marcas.append(("orgao", m.start(), m.group(1), _limpa(m.group(2))))
