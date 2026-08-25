@@ -1,6 +1,7 @@
 """Testes offline do parser, do cálculo de vigência e do cruzamento. Não usa rede."""
 
 import json
+import os
 import subprocess
 import sys
 from dataclasses import asdict
@@ -24,6 +25,11 @@ SIOP = """codigo_uo,unidade,codigo_acao,codigo_subtitulo,subtitulo,acao,loa,loa_
 53101,MIDR,00XZ,6500,Nacional (Crédito Extraordinário),Apoio financeiro a famílias,0,150000000,150000000,140000000,135000000
 53101,MIDR,22BO,0031,Zona da Mata,Ações de defesa civil,300000000,300000000,260000000,240000000,232000000
 53101,MIDR,22BO,6502,Nacional (Crédito Extraordinário),Ações de defesa civil,0,116512000,110000000,100000000,96000000
+33904,FRGPS,00SJ,0001,Nacional,Benefícios Previdenciários,600000000000,600000000000,400000000000,380000000000,370000000000
+55901,FNAS,00H5,0001,Nacional,BPC à Pessoa Idosa,90000000000,90000000000,60000000000,55000000000,52000000000
+32264,ANEEL,2000,0001,Nacional,Administração da Unidade,34000000,34000000,20000000,18000000,17000000
+36212,ANVISA,20AK,0001,Nacional,Vigilância Sanitária de Produtos,84000000,84000000,50000000,44000000,42000000
+36901,FNS,21DK,0001,Nacional,Compensação Previdenciária - COMPREV,0,0,0,0,0
 """
 
 
@@ -33,8 +39,8 @@ def main() -> int:
     propostas = congresso.parsear(html)
     por_id = {p.identificacao: p for p in propostas}
 
-    if len(propostas) != 6:
-        falhas.append(f"esperava 6 propostas, achei {len(propostas)}")
+    if len(propostas) != 8:
+        falhas.append(f"esperava 8 propostas, achei {len(propostas)}")
 
     mpv = por_id.get("MPV 1367/2026")
     if not mpv:
@@ -97,6 +103,25 @@ def main() -> int:
         falhas.append("valor bem formado deixou de ser lido")
     if RE_ACAO.search("0910 00ED 6520 Integralização 28 846 985.600.0000 x"):
         falhas.append("valor com grupo de milhar mal formado foi aceito e truncado")
+
+    # anexo de PLN: Anexo I (suplementação) e Anexo II (cancelamento) têm os
+    # mesmos códigos e valores — somar os dois dobraria o crédito
+    from anexos import parsear_anexo as _pa  # noqa: E402
+    pln = (RAIZ / "tests/anexo_pln23.txt").read_text(encoding="utf-8")
+    esperado_parte = 150_995_494_425 + 7_178_287_214
+    sup = _pa(pln)
+    canc = _pa(pln, secao="cancelamento")
+    if round(sum(l["valor"] for l in sup)) != esperado_parte:
+        falhas.append(f"suplementação do PLN somou {sum(l['valor'] for l in sup):,.0f} "
+                      f"(esperado {esperado_parte:,.0f}) — o Anexo II está sendo contado junto")
+    if round(sum(l["valor"] for l in canc)) != esperado_parte:
+        falhas.append("Anexo II (cancelamento) não foi lido")
+    if len(sup) != 2 or len(canc) != 2:
+        falhas.append(f"seções do anexo de PLN: {len(sup)} sup, {len(canc)} canc")
+    # anexo de MPV, que só tem APLICAÇÃO, não pode ser afetado
+    mpv_linhas = _pa((RAIZ / "tests/anexo_1378.txt").read_text(encoding="utf-8"))
+    if len(mpv_linhas) != 1 or mpv_linhas[0]["valor"] != 547_000_000:
+        falhas.append("o corte por seção quebrou a leitura do anexo de MPV")
 
     # o anexo da MP: programática exata a partir do texto real do PDF
     from anexos import parsear_anexo  # noqa: E402
@@ -199,13 +224,68 @@ def main() -> int:
         if ibama.get("execucao", {}).get("empenhado") != 190_000_000:
             falhas.append(f"execução direta: {ibama.get('execucao', {}).get('empenhado')}")
 
+    # ── PLNs: suplementar mede acréscimo, especial identifica ação nova ──
+    shutil.copy(RAIZ / "tests/anexos_plns_fixture.json", RAIZ / "config/anexos_plns.json")
+    amb = dict(os.environ, PYTHONPATH=str(RAIZ / "coleta"))
+    r = subprocess.run([sys.executable, "coleta/consolidar_plns.py"], cwd=RAIZ,
+                       capture_output=True, text=True, env=amb)
+    if r.returncode != 0:
+        falhas.append(f"consolidar_plns.py: {r.stderr[-400:]}")
+
+    saida_plns = RAIZ / "docs/dados-plns.json"
+    if saida_plns.exists():
+        pl = {x["identificacao"]: x for x in
+              json.loads(saida_plns.read_text(encoding="utf-8"))["plns"]}
+
+        # o painel de PLN não pode herdar nada de vigência: PLN não caduca
+        for r_ in pl.values():
+            for campo in ("vigencia_fim", "vigencia_60", "prorrogada", "dias_para_vigencia"):
+                if r_.get(campo) is not None:
+                    falhas.append(f"{r_['identificacao']}: PLN não caduca, mas tem {campo}")
+
+        sup = pl.get("PLN 15/2026", {})
+        if sup.get("especie_credito") != "suplementar":
+            falhas.append(f"espécie do PLN 15: {sup.get('especie_credito')}")
+        if sup.get("acoes_total") != 2 or sup.get("acoes_novas") != 0:
+            falhas.append("suplementar não deveria ter ação nova")
+        # crédito de 1,7 mi sobre LOA de 34 mi = +5%
+        acoes = [a for u in sup.get("unidades", []) for a in u["acoes"]]
+        aneel = next((a for a in acoes if a["codigo"] == "2000"), {})
+        if aneel.get("dotacao_inicial") != 34_000_000:
+            falhas.append(f"dotação da ação suplementada: {aneel.get('dotacao_inicial')}")
+        if aneel.get("aumento_pct") != 5.0:
+            falhas.append(f"percentual de aumento: {aneel.get('aumento_pct')} (esperado 5.0)")
+
+        esp = pl.get("PLN 14/2026", {})
+        if esp.get("especie_credito") != "especial":
+            falhas.append(f"espécie do PLN 14: {esp.get('especie_credito')}")
+        if esp.get("acoes_novas") != 1:
+            falhas.append("crédito especial deveria marcar a ação como nova")
+        nova = [a for u in esp.get("unidades", []) for a in u["acoes"]][0]
+        if not nova.get("nova") or nova.get("aumento_pct") is not None:
+            falhas.append("ação nova não tem base de comparação, logo não tem percentual")
+
+        # o lado do cancelamento entra na ficha
+        grande = pl.get("PLN 23/2026", {})
+        if not grande.get("cancelamentos"):
+            falhas.append("as anulações que financiam o crédito não chegaram ao painel")
+        if grande.get("total_cancelamento") != esperado_parte:
+            falhas.append(f"total anulado: {grande.get('total_cancelamento')}")
+        corte = grande.get("cancelamentos", [{}])[0].get("acoes", [{}])[0]
+        if corte.get("reducao_pct") is None:
+            falhas.append("percentual de redução sobre a LOA não calculado")
+
+        # PLN com anexo não pode mais cair para o nível da unidade
+        if grande.get("origem") != "anexo":
+            falhas.append("PLN com anexo deveria ser cruzado por ele")
+
     if falhas:
         print("FALHOU")
         for f in falhas:
             print("  -", f)
         return 1
     print(f"OK — {len(propostas)} propostas; subtítulo, cruzamento exato, prorrogação, "
-          f"prazos da página e corte entre registros conferidos")
+          f"prazos, PLNs (suplementar x especial) e corte entre registros conferidos")
     return 0
 
 

@@ -1,0 +1,108 @@
+{
+  "PLN 15/2026": {
+    "apresentacao": "2026-07-06",
+    "despacho": "2026-07-13",
+    "mensagem": "MSG 501/2026",
+    "situacao_prazo": "Encerrado",
+    "emendas_inicio_oficial": "2026-07-13",
+    "emendas_fim_oficial": "2026-08-05",
+    "programatica": [
+      {
+        "orgao": "MME",
+        "uo_codigo": "32264",
+        "unidade": "Agência Nacional de Energia Elétrica",
+        "programa": "0032",
+        "acao": "2000",
+        "localizador": "0001",
+        "descricao": "Administração da Unidade",
+        "valor": 1700000.0
+      },
+      {
+        "orgao": "MS",
+        "uo_codigo": "36212",
+        "unidade": "Agência Nacional de Vigilância Sanitária",
+        "programa": "5018",
+        "acao": "20AK",
+        "localizador": "0001",
+        "descricao": "Vigilância Sanitária de Produtos",
+        "valor": 4200000.0
+      }
+    ]
+  },
+  "PLN 14/2026": {
+    "apresentacao": "2026-06-09",
+    "despacho": "2026-06-16",
+    "situacao_prazo": "Encerrado",
+    "emendas_inicio_oficial": "2026-06-16",
+    "emendas_fim_oficial": "2026-06-23",
+    "programatica": [
+      {
+        "orgao": "MS",
+        "uo_codigo": "36901",
+        "unidade": "Fundo Nacional da Saúde",
+        "programa": "5019",
+        "acao": "21DK",
+        "localizador": "0001",
+        "descricao": "Compensação Previdenciária - COMPREV",
+        "valor": 3000000.0
+      }
+    ]
+  },
+  "PLN 23/2026": {
+    "url_pagina": "https://www.congressonacional.leg.br/materias/pesquisa/-/materia/175221",
+    "autor": "Presidência da República",
+    "local": "Mesa Diretora do Congresso Nacional",
+    "apresentacao": "2026-07-17",
+    "mensagem": "MSG 605/2026",
+    "acao_legislativa": "Recebida a Mensagem Presidencial nº 605/2026 em 17/07/2026.",
+    "situacao_prazo": null,
+    "programatica": [
+      {
+        "orgao": "",
+        "uo_codigo": "33904",
+        "unidade": "Fundo do Regime Geral de Previdência Social",
+        "programa": "2314",
+        "acao": "00SJ",
+        "localizador": "0001",
+        "descricao": "Benefícios Previdenciários - Nacional",
+        "fonte": "7444",
+        "valor": 150995494425.0
+      },
+      {
+        "orgao": "",
+        "uo_codigo": "55901",
+        "unidade": "Fundo Nacional de Assistência Social",
+        "programa": "2314",
+        "acao": "00H5",
+        "localizador": "0001",
+        "descricao": "BPC à Pessoa Idosa e RMV por Idade - Nacional",
+        "fonte": "7444",
+        "valor": 7178287214.0
+      }
+    ],
+    "cancelamento": [
+      {
+        "orgao": "",
+        "uo_codigo": "33904",
+        "unidade": "Fundo do Regime Geral de Previdência Social",
+        "programa": "2314",
+        "acao": "00SJ",
+        "localizador": "0001",
+        "descricao": "Benefícios Previdenciários - Nacional",
+        "fonte": "9444",
+        "valor": 150995494425.0
+      },
+      {
+        "orgao": "",
+        "uo_codigo": "55901",
+        "unidade": "Fundo Nacional de Assistência Social",
+        "programa": "2314",
+        "acao": "00H5",
+        "localizador": "0001",
+        "descricao": "BPC à Pessoa Idosa e RMV por Idade - Nacional",
+        "fonte": "9444",
+        "valor": 7178287214.0
+      }
+    ]
+  }
+}

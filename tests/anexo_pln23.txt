@@ -1,0 +1,40 @@
+PL-CRÉD SUPLEM MPS MDS R$ 185.555.629.364,00 (EM 1496 MPO) 1
+ÓRGÃO: 33000 - Ministério da Previdência Social
+UNIDADE: 33904 - Fundo do Regime Geral de Previdência Social
+ANEXO I Crédito Suplementar
+PROGRAMA DE TRABALHO (SUPLEMENTAÇÃO) Recurso de Todas as Fontes R$ 1,00
+2314 Previdência Social: Promoção, Garantia de Direitos e Cidadania 150.995.494.425
+OPERAÇÕES ESPECIAIS
+2314 00SJ Benefícios Previdenciários 09 271 150.995.494.425
+2314 00SJ 0001 Benefícios Previdenciários - Nacional 09 271 150.995.494.425
+S 3-
+ODC
+1 90 0 7444 150.995.494.425
+TOTAL - SEGURIDADE 150.995.494.425
+ÓRGÃO: 55000 - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome
+UNIDADE: 55901 - Fundo Nacional de Assistência Social
+ANEXO I Crédito Suplementar
+PROGRAMA DE TRABALHO (SUPLEMENTAÇÃO) Recurso de Todas as Fontes R$ 1,00
+5131 00H5 0001 Benefícios de Prestação Continuada – BPC à Pessoa Idosa e da Renda Mensal Vitalícia – RMV por Idade - Nacional 08 241 7.178.287.214
+S 3-
+ODC
+1 90 0 7444 7.178.287.214
+TOTAL - GERAL 7.178.287.214
+ÓRGÃO: 33000 - Ministério da Previdência Social
+UNIDADE: 33904 - Fundo do Regime Geral de Previdência Social
+ANEXO II Crédito Suplementar
+PROGRAMA DE TRABALHO (CANCELAMENTO) Recurso de Todas as Fontes R$ 1,00
+2314 00SJ 0001 Benefícios Previdenciários - Nacional 09 271 150.995.494.425
+S 3-
+ODC
+1 90 0 9444 150.995.494.425
+TOTAL - SEGURIDADE 150.995.494.425
+ÓRGÃO: 55000 - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome
+UNIDADE: 55901 - Fundo Nacional de Assistência Social
+ANEXO II Crédito Suplementar
+PROGRAMA DE TRABALHO (CANCELAMENTO) Recurso de Todas as Fontes R$ 1,00
+5131 00H5 0001 Benefícios de Prestação Continuada – BPC à Pessoa Idosa e da Renda Mensal Vitalícia – RMV por Idade - Nacional 08 241 7.178.287.214
+S 3-
+ODC
+1 90 0 9444 7.178.287.214
+TOTAL - GERAL 7.178.287.214
