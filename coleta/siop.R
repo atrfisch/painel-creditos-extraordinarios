@@ -26,12 +26,16 @@ message("orcamentoBR ", as.character(packageVersion("orcamentoBR")))
 dir.create("dados", showWarnings = FALSE, recursive = TRUE)
 
 ler_uos <- function() {
-  if (!file.exists("dados/uos.txt")) {
-    message("::warning::dados/uos.txt não existe — a coleta de anexos não rodou ",
-            "ou não achou programática")
+  # as unidades vêm dos anexos das MPs e dos PLNs; os dois painéis compartilham
+  # a mesma consulta ao SIOP para não duplicar chamadas
+  arquivos <- c("dados/uos.txt", "dados/uos_plns.txt")
+  existentes <- arquivos[file.exists(arquivos)]
+  if (!length(existentes)) {
+    message("::warning::nenhuma lista de unidades encontrada — a coleta de anexos ",
+            "não rodou ou não achou programática")
     return(character(0))
   }
-  uos <- trimws(readLines("dados/uos.txt", warn = FALSE))
+  uos <- unlist(lapply(existentes, function(a) trimws(readLines(a, warn = FALSE))))
   unique(uos[nzchar(uos)])
 }
 
