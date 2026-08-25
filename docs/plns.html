@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Créditos suplementares e especiais — painel de acompanhamento</title>
+<meta name="description" content="PLNs de crédito suplementar e especial: tramitação, ações afetadas e acréscimo sobre a lei orçamentária.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --papel:#F2F4F2; --branco:#fff; --tinta:#10161B; --suave:#5D6B75;
+  --linha:#D9DEDA; --linha-forte:#B9C2BC;
+  --processo:#1B4B5A; --execucao:#3F6B4A;
+  --emendas:#C2410C; --urgente:#B3261E; --vencido:#7A2E28;
+  --especial:#6B4E8F; --alerta:#B07A18;
+  --cond:"IBM Plex Sans Condensed",system-ui,sans-serif;
+  --corpo:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--corpo);
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+a{color:var(--processo)}
+:focus-visible{outline:2px solid var(--processo);outline-offset:2px}
+
+.topo{border-bottom:1px solid var(--linha-forte);background:var(--branco)}
+.topo .wrap{padding-top:26px;padding-bottom:22px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--suave);margin:0 0 8px}
+h1{font-family:var(--cond);font-size:clamp(30px,5vw,46px);font-weight:700;letter-spacing:-.015em;
+  line-height:1.02;margin:0 0 6px}
+.subtitulo{max-width:60ch;color:var(--suave);margin:0}
+.carimbo{font-family:var(--mono);font-size:11.5px;color:var(--suave);margin-top:14px}
+
+/* ── indicadores ───────────────────────────────────────── */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:1px;
+  background:var(--linha-forte);border-bottom:1px solid var(--linha-forte)}
+.kpi{background:var(--branco);padding:15px 18px}
+.kpi dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--suave);margin:0 0 4px}
+.kpi dd{margin:0;font-family:var(--cond);font-size:25px;font-weight:600;letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums}
+.kpi .nota{display:block;font-family:var(--corpo);font-size:12px;font-weight:400;color:var(--suave)}
+.kpi--alerta dd{color:var(--urgente)}
+
+/* ── quadros ───────────────────────────────────────────── */
+.quadros{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linha-forte);
+  border-bottom:1px solid var(--linha-forte)}
+.quadro{background:var(--branco);padding:16px 18px 14px}
+.quadro h2{font-family:var(--cond);font-size:15px;font-weight:600;margin:0;
+  display:flex;align-items:baseline;gap:8px}
+.quadro h2 em{font-family:var(--mono);font-size:11px;font-style:normal;font-weight:400;
+  color:var(--suave);margin-left:auto}
+.quadro .risco{width:26px;height:3px;display:block;margin:7px 0 10px}
+.quadro--prazo .risco{background:var(--urgente)}
+.quadro--emendas .risco{background:var(--emendas)}
+.quadro--volume .risco{background:var(--processo)}
+.quadro--execucao .risco{background:var(--execucao)}
+.pilha{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.pilha li{display:grid;grid-template-columns:96px 1fr auto;gap:10px;align-items:baseline;
+  font-size:13px;cursor:pointer;padding:2px 0}
+.pilha li:hover .rotulo{text-decoration:underline}
+.rotulo{font-family:var(--mono);font-size:12px;font-weight:500;white-space:nowrap}
+.resumo{color:var(--suave);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.metrica{font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.quadro--prazo .metrica{color:var(--urgente)}
+.quadro--emendas .metrica{color:var(--emendas)}
+.quadro--execucao .metrica{color:var(--execucao)}
+.quadro-vazio{font-size:13px;color:var(--suave);font-style:italic;margin:0}
+
+/* ── filtros ───────────────────────────────────────────── */
+.filtros{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0}
+.filtros input[type=search],.filtros select{font-family:var(--corpo);font-size:14px;
+  padding:7px 10px;border:1px solid var(--linha-forte);background:var(--branco);
+  color:var(--tinta);border-radius:2px}
+.filtros input[type=search]{flex:1;min-width:200px}
+.chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12px;
+  padding:7px 11px;border:1px solid var(--linha-forte);background:var(--branco);
+  border-radius:2px;cursor:pointer;user-select:none}
+.chip input{margin:0}
+.contagem{font-family:var(--mono);font-size:12px;color:var(--suave);margin-left:auto}
+
+/* ── ficha ─────────────────────────────────────────────── */
+.lista{display:flex;flex-direction:column;gap:1px;background:var(--linha-forte);
+  border-block:1px solid var(--linha-forte);margin-bottom:40px}
+.ficha{background:var(--branco);padding:18px 20px;border-left:4px solid var(--linha-forte)}
+.ficha[data-estado=vigente]{border-left-color:var(--processo)}
+.ficha[data-estado=urgente]{border-left-color:var(--urgente)}
+.ficha[data-estado=encerrada]{border-left-color:var(--linha-forte)}
+.ficha[data-estado=encerrada] .cabeca{opacity:.72}
+.ficha:target{box-shadow:inset 0 0 0 2px var(--processo)}
+
+.cabeca{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.marcar{align-self:center;display:flex;cursor:pointer}
+.marcar input{width:15px;height:15px;cursor:pointer;accent-color:var(--processo)}
+.barra-sel{display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  padding:11px 14px;margin-bottom:1px;background:var(--branco);
+  border:1px solid var(--linha-forte);border-bottom:none}
+.botao-pdf{font-family:var(--cond);font-size:14px;font-weight:600;letter-spacing:.01em;
+  padding:8px 16px;border:1px solid var(--processo);background:var(--processo);
+  color:#fff;border-radius:2px;cursor:pointer}
+.botao-pdf:disabled{background:var(--papel);color:var(--suave);
+  border-color:var(--linha-forte);cursor:default}
+.botao-pdf:not(:disabled):hover{background:#123742}
+.aviso-sel{font-family:var(--mono);font-size:11.5px;color:var(--suave)}
+.numero{font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:-.01em;margin:0}
+.numero a{text-decoration:none;border-bottom:1px solid var(--linha-forte)}
+.numero a:hover{border-bottom-color:var(--processo)}
+.apresentada{font-family:var(--mono);font-size:11.5px;color:var(--suave);white-space:nowrap}
+.valor{font-family:var(--mono);font-size:16px;font-weight:500;margin-left:auto;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.ementa{margin:6px 0 0;max-width:78ch}
+.ementa--vazia{color:var(--suave);font-style:italic}
+
+
+/* ── abas ──────────────────────────────────────────────── */
+.abas{display:flex;gap:0;border-bottom:1px solid var(--linha-forte);background:var(--branco)}
+.abas .wrap{display:flex;gap:2px;padding-top:0;padding-bottom:0}
+.aba{font-family:var(--cond);font-size:14.5px;font-weight:600;letter-spacing:.01em;
+  padding:11px 18px;color:var(--suave);text-decoration:none;border-bottom:3px solid transparent}
+.aba:hover{color:var(--tinta)}
+.aba[aria-current=page]{color:var(--tinta);border-bottom-color:var(--processo)}
+
+/* ── barra de composição do crédito ────────────────────── */
+.composicao{margin:14px 0 10px;display:grid;grid-template-columns:96px 1fr 176px;
+  gap:8px 12px;align-items:center}
+.comp-rot{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--suave)}
+.trilho{position:relative;height:18px;background:var(--papel);
+  border:1px solid var(--linha);overflow:hidden}
+.faixa{position:absolute;inset-block:0}
+.faixa--loa{background:var(--linha-forte)}
+.faixa--credito{background:var(--processo)}
+.faixa--nova{background:var(--especial)}
+.comp-nota{font-family:var(--mono);font-size:11.5px;color:var(--suave);
+  font-variant-numeric:tabular-nums}
+.comp-nota b{color:var(--tinta);font-weight:600}
+.comp-nota--vazia{font-style:italic}
+
+/* ── tabela de ações ───────────────────────────────────── */
+table.acoes{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+table.acoes th{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--suave);text-align:left;font-weight:400;
+  padding:5px 8px;border-bottom:1px solid var(--linha)}
+table.acoes td{padding:6px 8px;border-bottom:1px solid var(--linha);vertical-align:top}
+table.acoes td.n{font-family:var(--mono);text-align:right;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+table.acoes tr.uo td{background:var(--papel);font-weight:500;font-size:12.5px}
+.cod{font-family:var(--mono);font-size:11.5px;color:var(--tinta)}
+.pct{font-family:var(--mono);font-weight:600;white-space:nowrap}
+.pct--alto{color:var(--vencido)}
+.pct--corte{color:var(--emendas)}
+.nota-fonte{font-size:12px;color:var(--suave);margin:8px 0 0}
+.pct--medio{color:var(--alerta,#B07A18)}
+.selo-nova{font-family:var(--mono);font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--especial);border:1px solid var(--especial);
+  padding:1px 5px;white-space:nowrap}
+.sem-dado{color:var(--suave)}
+.aviso{font-size:12.5px;color:var(--vencido);margin:8px 0 0}
+.detalhe{margin-top:12px}
+.detalhe summary{font-family:var(--mono);font-size:11.5px;color:var(--suave);cursor:pointer}
+.detalhe summary:hover{color:var(--processo)}
+
+.vazio{background:var(--branco);padding:40px 20px;text-align:center;color:var(--suave)}
+.rodape{border-top:1px solid var(--linha-forte);background:var(--branco);padding:24px 0 48px}
+.rodape .wrap{font-size:13px;color:var(--suave)}
+.rodape p{margin:0 0 8px;max-width:78ch}
+.legenda{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:14px;font-family:var(--mono);font-size:11px}
+.legenda i{display:inline-block;width:22px;height:9px;margin-right:6px;vertical-align:middle}
+
+.meta{display:flex;flex-wrap:wrap;gap:7px 20px;align-items:center;
+  padding-top:12px;border-top:1px solid var(--linha);font-size:13.5px}
+.meta span.campo{color:var(--suave)}
+.meta b{font-weight:500;color:var(--tinta)}
+.selo{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+  padding:3px 8px;border:1px solid var(--linha-forte);color:var(--suave);white-space:nowrap}
+.selo--ativo{border-color:var(--processo);color:var(--processo)}
+.selo--emendas{border-color:var(--emendas);background:var(--emendas);color:#fff;font-weight:500}
+.selo--fim{border-color:var(--vencido);color:var(--vencido)}
+.selo--esp{border-color:var(--especial);background:var(--especial);color:#fff;font-weight:500}
+.selo--sup{border-color:var(--processo);background:var(--processo);color:#fff;font-weight:500}
+.selo--nota{border-style:dashed}
+.calendario{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin:12px 0 0;
+  font-size:12.5px;align-items:baseline}
+.calendario dt{color:var(--suave);white-space:nowrap}
+.calendario dd{margin:0;font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums}
+
+.ficha{background:var(--branco);padding:18px 20px;border-left:4px solid var(--linha-forte)}
+.ficha[data-especie=suplementar]{border-left-color:var(--processo)}
+.ficha[data-especie=especial]{border-left-color:var(--especial)}
+.ficha[data-encerrado="1"] .cabeca{opacity:.72}
+.lista{display:flex;flex-direction:column;gap:1px;background:var(--linha-forte);
+  border-block:1px solid var(--linha-forte);margin-bottom:40px}
+.cabeca{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.numero{font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:-.01em;margin:0}
+.numero a{text-decoration:none;border-bottom:1px solid var(--linha-forte)}
+.numero a:hover{border-bottom-color:var(--processo)}
+.valor{font-family:var(--mono);font-size:16px;font-weight:500;margin-left:auto;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.ementa{margin:6px 0 0;max-width:78ch}
+.ementa--vazia{color:var(--suave);font-style:italic}
+
+@media(max-width:820px){
+  .composicao{grid-template-columns:1fr;gap:4px}
+  .comp-rot{margin-top:8px}
+  .valor{margin-left:0;width:100%}
+}
+</style>
+</head>
+<body>
+
+<nav class="abas"><div class="wrap">
+  <a class="aba" href="index.html">Créditos extraordinários</a>
+  <a class="aba" href="plns.html" aria-current="page">Suplementares e especiais</a>
+</div></nav>
+
+<header class="topo">
+  <div class="wrap">
+    <p class="eyebrow">Congresso Nacional · SIOP/SOF</p>
+    <h1>Suplementares e especiais</h1>
+    <p class="subtitulo">Projetos de lei do Congresso que abrem crédito suplementar ou
+      especial. Diferente das medidas provisórias, não há prazo correndo contra a matéria —
+      o que interessa aqui é o que cada projeto faz com a lei orçamentária.</p>
+    <p class="carimbo" id="carimbo">carregando…</p>
+  </div>
+</header>
+
+<dl class="kpis" id="kpis"></dl>
+
+<main class="wrap">
+  <div class="filtros">
+    <input type="search" id="busca" placeholder="Buscar por número, ementa, relator, órgão ou ação"
+           aria-label="Buscar">
+    <select id="ano" aria-label="Ano"></select>
+    <select id="especie" aria-label="Espécie">
+      <option value="">Suplementares e especiais</option>
+      <option value="suplementar">Só suplementares</option>
+      <option value="especial">Só especiais</option>
+    </select>
+    <select id="situacao" aria-label="Situação"><option value="">Todas as situações</option></select>
+    <label class="chip"><input type="checkbox" id="so-tramitando"> em tramitação</label>
+    <label class="chip"><input type="checkbox" id="so-emendas"> emendas abertas</label>
+    <span class="contagem" id="contagem"></span>
+  </div>
+
+  <section class="lista" id="lista" aria-live="polite"></section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="legenda">
+      <span><i style="background:var(--linha-forte)"></i>dotação já existente na LOA</span>
+      <span><i style="background:var(--processo)"></i>acréscimo do crédito suplementar</span>
+      <span><i style="background:var(--especial)"></i>ação nova (crédito especial)</span>
+    </div>
+
+    <p><b>PLN não caduca.</b> Projeto de lei do Congresso não tem prazo constitucional de
+      vigência: tramita até ser aprovado, rejeitado ou arquivado. Por isso este painel não tem
+      régua de vigência nem data de caducidade — ao contrário do painel de créditos
+      extraordinários, onde a medida provisória perde eficácia se não for votada. O que se
+      acompanha aqui é o andamento e a situação.</p>
+
+    <p><b>Especial e suplementar não são a mesma coisa.</b> O <b>crédito especial</b> cria
+      programação que não existia na lei orçamentária: a ação é nova, e no SIOP aparece sem
+      dotação inicial. O <b>crédito suplementar</b> reforça ação que já existe, e aí a pergunta
+      relevante é de quanto foi o reforço em relação ao que já estava orçado. Para cada ação
+      suplementada o painel mostra a dotação da lei orçamentária, o valor acrescentado e o
+      aumento em percentual.</p>
+
+    <p><b>De onde sai o dinheiro.</b> O anexo do projeto tem duas partes: o Anexo I lista o
+      que será suplementado ou aberto, e o Anexo II, as dotações anuladas para financiar. Como
+      crédito suplementar por anulação não cria recurso novo — remaneja dotação de uma
+      programação para outra —, a ficha mostra as duas metades. Os valores costumam se
+      equivaler.</p>
+
+    <p><b>Programática.</b> Vem do anexo do projeto, com unidade orçamentária, ação e subtítulo,
+      cruzados com o SIOP para obter a dotação vigente. Quando o anexo não é obtido, a ficha
+      mostra apenas as unidades orçamentárias da tabela do Congresso e avisa — sem as ações não
+      há como medir o acréscimo.</p>
+
+    <p>Fontes: Congresso Nacional, propostas orçamentárias e páginas das matérias; anexo do PLN;
+      SIOP, Secretaria de Orçamento Federal.</p>
+  </div>
+</footer>
+
+<script>
+const BRL = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+const DATA = new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'});
+
+const compacto = v => {
+  if(v==null) return '—';
+  const abs = Math.abs(v);
+  if(abs>=1e9) return 'R$ '+(v/1e9).toLocaleString('pt-BR',{maximumFractionDigits:2})+' bi';
+  if(abs>=1e6) return 'R$ '+(v/1e6).toLocaleString('pt-BR',{maximumFractionDigits:1})+' mi';
+  return BRL.format(v);
+};
+const dia = iso => iso ? DATA.format(new Date(iso+'T00:00:00')) : '—';
+const esc = s => (s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+let base = null, plns = [];
+
+/* A barra mostra o que o crédito faz com a programação: para suplementar, a
+   dotação que já havia e o quanto se acrescenta sobre ela; para especial, a
+   ação inteira é nova e não há base contra a qual comparar. */
+function composicao(r){
+  if(r.especie_credito==='especial'){
+    const n = r.acoes_total;
+    return `<div class="trilho"><div class="faixa faixa--nova" style="width:100%"></div></div>
+      <div class="comp-nota">${n?`<b>${n}</b> ação${n===1?'':'ões'} nova${n===1?'':'s'}`:'programação nova'}</div>`;
+  }
+  const loa = r.base_loa, credito = r.valor_total||0;
+  if(!loa) return `<div class="trilho"></div>
+    <div class="comp-nota comp-nota--vazia">sem base da LOA para comparar</div>`;
+  const total = loa + credito;
+  const pLoa = 100*loa/total, pCred = 100*credito/total;
+  return `<div class="trilho">
+      <div class="faixa faixa--loa" style="left:0;width:${pLoa}%"></div>
+      <div class="faixa faixa--credito" style="left:${pLoa}%;width:${pCred}%"></div>
+    </div>
+    <div class="comp-nota"><b>+${r.aumento_medio_pct}%</b> sobre ${compacto(loa)}</div>`;
+}
+
+function classePct(p){
+  if(p==null) return '';
+  if(p>=100) return ' pct--alto';
+  if(p>=25) return ' pct--medio';
+  return '';
+}
+
+function tabelaAcoes(r){
+  if(!r.unidades.length) return '';
+  const temAcoes = r.acoes_total > 0;
+  const linhas = r.unidades.map(u=>{
+    const cab = `<tr class="uo"><td colspan="5">${esc(u.unidade)}
+      <span class="sem-dado">${u.codigo_uo?'· UO '+esc(u.codigo_uo):'· sem código'}</span></td></tr>`;
+    if(!u.acoes.length){
+      const pct = u.aumento_uo_pct;
+      return cab + `<tr><td colspan="2"><span class="sem-dado">ações não disponíveis</span></td>
+        <td class="n">${compacto(u.valor_credito)}</td>
+        <td class="n">${u.loa_unidade?compacto(u.loa_unidade):'<span class="sem-dado">—</span>'}</td>
+        <td class="n">${pct!=null?`<span class="pct${classePct(pct)}">+${pct}%</span>`
+          :'<span class="sem-dado">—</span>'}</td></tr>`;
+    }
+    return cab + u.acoes.map(a=>`<tr>
+      <td><span class="cod">${esc(a.codigo)}${a.subtitulo?'/'+esc(a.subtitulo):''}</span></td>
+      <td>${esc(a.descricao||a.descricao_siop||'—')}
+        ${a.nova?' <span class="selo-nova">ação nova</span>':''}</td>
+      <td class="n">${compacto(a.valor)}</td>
+      <td class="n">${a.dotacao_inicial?compacto(a.dotacao_inicial)
+        :(a.encontrada?'<span class="sem-dado">sem dotação</span>':'<span class="sem-dado">—</span>')}</td>
+      <td class="n">${a.aumento_pct!=null
+        ? `<span class="pct${classePct(a.aumento_pct)}">+${a.aumento_pct}%</span>`
+        : '<span class="sem-dado">—</span>'}</td>
+    </tr>`).join('');
+  }).join('');
+
+  return `<details class="detalhe"${temAcoes?' open':''}>
+    <summary>${temAcoes?`${r.acoes_total} ação(ões) em ${r.unidades.length} unidade(s)`
+      :'Unidades orçamentárias'}</summary>
+    <table class="acoes"><thead><tr>
+      <th>Ação</th><th>Descrição</th><th class="n">Crédito</th>
+      <th class="n">Já na LOA</th><th class="n">Aumento</th>
+    </tr></thead><tbody>${linhas}</tbody></table>
+    ${r.origem!=='anexo'?`<p class="aviso">Anexo do projeto não obtido: sem as ações não há como
+      medir o acréscimo por programação. Os valores acima são por unidade orçamentária.</p>`:''}
+  </details>`;
+}
+
+/* O Anexo II do projeto lista as dotações anuladas. Crédito suplementar por
+   anulação não cria recurso: move dotação de uma programação para outra, então
+   mostrar só o que ganha conta metade da história. */
+function tabelaCancelamento(r){
+  if(!r.cancelamentos || !r.cancelamentos.length) return '';
+  const linhas = r.cancelamentos.map(u=>{
+    const cab = `<tr class="uo"><td colspan="4">${esc(u.unidade)}
+      <span class="sem-dado">· UO ${esc(u.codigo_uo)}</span></td></tr>`;
+    return cab + u.acoes.map(a=>`<tr>
+      <td><span class="cod">${esc(a.codigo)}${a.subtitulo?'/'+esc(a.subtitulo):''}</span></td>
+      <td>${esc(a.descricao||'—')}</td>
+      <td class="n">−${compacto(a.valor)}</td>
+      <td class="n">${a.reducao_pct!=null
+        ? `<span class="pct pct--corte">−${a.reducao_pct}%</span>`
+        : '<span class="sem-dado">—</span>'}</td>
+    </tr>`).join('');
+  }).join('');
+  return `<details class="detalhe">
+    <summary>Anulações que financiam o crédito · ${compacto(r.total_cancelamento)}</summary>
+    <table class="acoes"><thead><tr>
+      <th>Ação</th><th>Descrição</th><th class="n">Anulado</th><th class="n">Sobre a LOA</th>
+    </tr></thead><tbody>${linhas}</tbody></table>
+    <p class="nota-fonte">Crédito suplementar por anulação de dotações não cria recurso novo:
+      remaneja dotação de uma programação para outra.</p>
+  </details>`;
+}
+
+function calendario(r){
+  const l = [];
+  if(r.autor) l.push(['Autor', esc(r.autor)]);
+  if(r.apresentacao) l.push(['Apresentação', dia(r.apresentacao)]);
+  if(r.mensagem) l.push(['Mensagem', esc(r.mensagem)]);
+  if(r.local) l.push(['Local', esc(r.local)]);
+  if(r.despacho) l.push(['Despacho', dia(r.despacho)]);
+  if(r.emendas_inicio && r.emendas_fim)
+    l.push(['Apresentação de emendas', `${dia(r.emendas_inicio)} a ${dia(r.emendas_fim)}`
+      + (r.emendas_abertas?' · aberto':(r.situacao_prazo?' · '+esc(r.situacao_prazo.toLowerCase()):''))]);
+  if(r.norma) l.push(['Norma', esc(r.norma)]);
+  if(!l.length) return '';
+  return `<dl class="calendario">${l.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>`;
+}
+
+function ficha(r){
+  const esp = r.especie_credito;
+  return `<article class="ficha" data-especie="${esp}" data-encerrado="${r.encerrado?1:0}">
+    <div class="cabeca">
+      <h2 class="numero"><a href="${esc(r.url_materia||'#')}" target="_blank" rel="noopener">${esc(r.identificacao)}</a></h2>
+      <span class="selo selo--${esp==='especial'?'esp':'sup'}">${esp}</span>
+      <span class="selo ${r.encerrado?'selo--fim':'selo--ativo'}">${esc(r.situacao||'sem situação')}</span>
+      <span class="valor">${compacto(r.valor_total)}</span>
+    </div>
+    <p class="ementa${r.ementa?'':' ementa--vazia'}">${esc(r.ementa||'sem ementa publicada')}</p>
+    <div class="composicao">
+      <span class="comp-rot">${esp==='especial'?'Programação':'Acréscimo'}</span>
+      ${composicao(r)}
+    </div>
+    ${calendario(r)}
+    <div class="meta">
+      <span class="campo">Relator <b>${esc(r.relator||'não designado')}</b></span>
+      <span class="campo">Emendas <b>${r.emendas_total??0}</b></span>
+      ${r.emendas_abertas?'<span class="selo selo--emendas">emendas abertas</span>':''}
+      ${r.maior_aumento&&r.maior_aumento.pct>=100
+        ? `<span class="selo selo--nota">maior aumento: ${esc(r.maior_aumento.acao)} +${r.maior_aumento.pct}%</span>`:''}
+      ${r.origem!=='anexo'?'<span class="selo selo--nota">sem anexo</span>':''}
+    </div>
+    ${tabelaAcoes(r)}
+    ${tabelaCancelamento(r)}
+  </article>`;
+}
+
+function indicadores(lista){
+  const sup = lista.filter(r=>r.especie_credito==='suplementar');
+  const esp = lista.filter(r=>r.especie_credito==='especial');
+  const total = lista.reduce((s,r)=>s+(r.valor_total||0),0);
+  const novas = lista.reduce((s,r)=>s+r.acoes_novas,0);
+  const abertas = lista.filter(r=>r.emendas_abertas).length;
+  const anulado = lista.reduce((s,r)=>s+(r.total_cancelamento||0),0);
+  const kpis = [
+    ['Projetos', lista.length, `${sup.length} suplementar${sup.length===1?'':'es'} · ${esp.length} especia${esp.length===1?'l':'is'}`],
+    ['Valor total', compacto(total), 'soma dos créditos propostos'],
+    ['Ações novas', novas, novas?'abertas por crédito especial':'nenhuma no recorte'],
+    ['Emendas abertas', abertas, abertas?'janela em curso':'nenhuma janela aberta'],
+    ['Por anulação', compacto(anulado), anulado?'remanejado de outras dotações':'nenhuma anulação identificada'],
+  ];
+  document.getElementById('kpis').innerHTML = kpis.map(([r,v,n])=>
+    `<div class="kpi"><dt>${r}</dt><dd>${v}<span class="nota">${n}</span></dd></div>`).join('');
+}
+
+function render(){
+  const q = document.getElementById('busca').value.trim().toLowerCase();
+  const ano = document.getElementById('ano').value;
+  const esp = document.getElementById('especie').value;
+  const sit = document.getElementById('situacao').value;
+  const soTram = document.getElementById('so-tramitando').checked;
+  const soEme = document.getElementById('so-emendas').checked;
+
+  const porAno = plns.filter(r=>!ano || String(r.ano)===ano);
+  const lista = porAno.filter(r=>{
+    if(esp && r.especie_credito!==esp) return false;
+    if(sit && r.situacao!==sit) return false;
+    if(soTram && r.encerrado) return false;
+    if(soEme && !r.emendas_abertas) return false;
+    if(q){
+      const alvo = [r.identificacao,r.ementa,r.relator,r.situacao,
+        ...r.unidades.flatMap(u=>[u.unidade,u.orgao,...u.acoes.map(a=>a.codigo+' '+(a.descricao||''))])
+      ].join(' ').toLowerCase();
+      if(!alvo.includes(q)) return false;
+    }
+    return true;
+  });
+
+  indicadores(porAno);
+  document.getElementById('contagem').textContent = `${lista.length} de ${porAno.length} projetos`;
+  document.getElementById('lista').innerHTML = lista.length
+    ? lista.map(ficha).join('')
+    : '<p class="vazio">Nenhum projeto corresponde a esses filtros.</p>';
+}
+
+async function iniciar(){
+  try{
+    const r = await fetch('dados-plns.json?v='+Date.now());
+    if(!r.ok) throw new Error(r.status);
+    base = await r.json();
+  }catch(e){
+    document.getElementById('carimbo').textContent =
+      'Não foi possível carregar dados-plns.json. Rode a coleta e publique o arquivo em docs/.';
+    document.getElementById('lista').innerHTML = '<p class="vazio">Sem dados para exibir ainda.</p>';
+    return;
+  }
+  plns = base.plns||[];
+  const dt = new Date(base.atualizado_em);
+  document.getElementById('carimbo').textContent =
+    `Atualizado em ${DATA.format(dt)}, ${dt.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})} · ${plns.length} projetos`;
+
+  const anos = [...new Set(plns.map(r=>r.ano))].sort((a,b)=>b-a);
+  document.getElementById('ano').innerHTML =
+    '<option value="">Todos os anos</option>'+anos.map(a=>`<option>${a}</option>`).join('');
+  if(anos.length) document.getElementById('ano').value = String(anos[0]);
+
+  const sits = [...new Set(plns.map(r=>r.situacao).filter(Boolean))].sort();
+  document.getElementById('situacao').insertAdjacentHTML('beforeend',
+    sits.map(s=>`<option>${esc(s)}</option>`).join(''));
+
+  ['busca','ano','especie','situacao','so-tramitando','so-emendas'].forEach(id=>{
+    const el = document.getElementById(id);
+    el.addEventListener(el.type==='search'?'input':'change', render);
+  });
+  render();
+}
+iniciar();
+</script>
+</body>
+</html>
