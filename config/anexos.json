@@ -1329,5 +1329,65 @@
     ],
     "total_anexo": 360000000.0,
     "metodo": "texto"
+  },
+  "MPV 1388/2026": {
+    "situacao_prazo": null,
+    "despacho": null,
+    "numero_camara": "MPV 1388/2026",
+    "mensagem": "MSG 728/2026",
+    "publicacao_dou": "2026-08-25",
+    "deliberacao_inicio": "2026-08-25",
+    "deliberacao_fim": "2026-10-23",
+    "ato_prorrogacao": null,
+    "emendas_inicio_oficial": "2026-08-25",
+    "emendas_fim_oficial": "2026-08-31",
+    "urgencia": "2026-10-09",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304964&ts=1787673288281&disposition=inline",
+    "candidatos": [
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304964&ts=1787673288281&disposition=inline",
+        "rotulo": "Medida Provisória (25/08/2026)",
+        "ordem": 0
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304973&ts=1787673288240&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 3
+      }
+    ],
+    "tentado_em": "2026-08-25",
+    "tentativas": 1,
+    "programatica": [],
+    "ocr_divergente": true
+  },
+  "MPV 1387/2026": {
+    "situacao_prazo": null,
+    "despacho": null,
+    "numero_camara": "MPV 1387/2026",
+    "mensagem": "MSG 727/2026",
+    "publicacao_dou": "2026-08-25",
+    "deliberacao_inicio": "2026-08-25",
+    "deliberacao_fim": "2026-10-23",
+    "ato_prorrogacao": null,
+    "emendas_inicio_oficial": "2026-08-25",
+    "emendas_fim_oficial": "2026-08-31",
+    "urgencia": "2026-10-09",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304949&ts=1787673397523&disposition=inline",
+    "candidatos": [
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304949&ts=1787673397523&disposition=inline",
+        "rotulo": "Medida Provisória (25/08/2026)",
+        "ordem": 0
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304959&ts=1787673397487&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 3
+      }
+    ],
+    "tentado_em": "2026-08-25",
+    "tentativas": 1,
+    "programatica": [],
+    "ocr_divergente": true
   }
 }
