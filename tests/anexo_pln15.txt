@@ -1,0 +1,81 @@
+ 1
+ÓRGÃO: 32000 - Ministério de Minas e Energia
+UNIDADE: 32266 - Agência Nacional de Energia Elétrica – ANEEL
+ANEXO I Crédito Suplementar
+PROGRAMA DE TRABALHO (SUPLEMENTAÇÃO) Recurso de Todas as Fontes R$ 1,00
+PROGRAMÁTICA PROGRAMA/AÇÃO/LOCALIZADOR/PRODUTO FUNCIONAL
+E
+S
+F
+G
+N
+D
+R
+P
+M
+O
+D
+I
+U
+F
+T
+E
+VALOR
+0032 Programa de Gestão e Manutenção do Poder Executivo 1.700.000
+ATIVIDADES
+0032 2000 Administração da Unidade 25 122 1.700.000
+0032 2000 0001 Administração da Unidade - Nacional 25 122 1.700.000
+F 3-ODC 2 90 0 1000 1.700.000
+TOTAL - FISCAL 1.700.000
+TOTAL - GERAL 1.700.000
+ÓRGÃO: 32000 - Ministério de Minas e Energia
+UNIDADE: 32396 - Agência Nacional de Mineração – ANM
+ANEXO I Crédito Suplementar
+PROGRAMA DE TRABALHO (SUPLEMENTAÇÃO) Recurso de Todas as Fontes R$ 1,00
+0032 21F6 5664 Modernização e Gestão dos Recursos de Tecnologia da Informação, Comunicação e Inovação Institucional - Em Brasília - DF
+04 126 2.700.000
+F 3-ODC 2 90 0 1053 2.700.000
+3102 215Z 0001 Regulação, Outorga e Fiscalização da Mineração - Nacional 22 125 1.080.000
+F 3-ODC 2 90 0 1053 1.080.000
+TOTAL - GERAL 3.780.000
+ÓRGÃO: 36000 - Ministério da Saúde
+UNIDADE: 36212 - Agência Nacional de Vigilância Sanitária – ANVISA
+ANEXO I Crédito Suplementar
+PROGRAMA DE TRABALHO (SUPLEMENTAÇÃO) Recurso de Todas as Fontes R$ 1,00
+5123 8719 0001 Vigilância Sanitária de Produtos, Serviços e Ambientes - Nacional 10 304 4.200.000
+S 3-ODC 2 90 6 1000 4.200.000
+TOTAL - GERAL 4.200.000
+ÓRGÃO: 53000 - Ministério da Integração e do Desenvolvimento Regional
+UNIDADE: 53210 - Agência Nacional de Águas e Saneamento Básico – ANA
+ANEXO I Crédito Suplementar
+PROGRAMA DE TRABALHO (SUPLEMENTAÇÃO) Recurso de Todas as Fontes R$ 1,00
+0032 2000 0001 Administração da Unidade - Nacional 18 122 3.400.000
+F 3-ODC 2 90 0 1000 3.400.000
+TOTAL - GERAL 3.400.000
+ÓRGÃO: 68000 - Ministério de Portos e Aeroportos
+UNIDADE: 68201 - Agência Nacional de Transportes Aquaviários – ANTAQ
+ANEXO I Crédito Suplementar
+PROGRAMA DE TRABALHO (SUPLEMENTAÇÃO) Recurso de Todas as Fontes R$ 1,00
+0032 2000 0001 Administração da Unidade - Nacional 26 122 3.283.712
+F 3-ODC 2 90 0 3052 3.283.712
+0032 20UC 0001 Estudos, Projetos e Planejamento de Infraestrutura de Transportes - Nacional 26 121 3.016.288
+F 3-ODC 2 90 0 1052 3.016.288
+TOTAL - GERAL 6.300.000
+ÓRGÃO: 68000 - Ministério de Portos e Aeroportos
+UNIDADE: 68213 - Agência Nacional de Aviação Civil – ANAC
+ANEXO I Crédito Suplementar
+PROGRAMA DE TRABALHO (SUPLEMENTAÇÃO) Recurso de Todas as Fontes R$ 1,00
+0032 2000 0001 Administração da Unidade - Nacional 26 122 500.000
+F 3-ODC 2 90 0 1050 500.000
+3104 2912 0001 Regulação e Fiscalização da Aviação Civil - Nacional 26 125 4.551.895
+F 3-ODC 2 90 0 1050 2.551.895
+F 4-INV 2 90 0 1050 2.000.000
+TOTAL - GERAL 5.051.895
+ÓRGÃO: 39000 - Ministério dos Transportes
+UNIDADE: 39250 - Agência Nacional de Transportes Terrestres – ANTT
+ANEXO II Crédito Suplementar
+PROGRAMA DE TRABALHO (CANCELAMENTO) Recurso de Todas as Fontes R$ 1,00
+3108 21DO 0001 Fiscalização dos Serviços de Transporte Terrestre e da Infraestrutura Concedida - Nacional
+26 125 24.431.895
+F 3-ODC 2 90 0 1000 24.431.895
+TOTAL - GERAL 24.431.895

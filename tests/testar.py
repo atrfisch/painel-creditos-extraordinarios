@@ -95,18 +95,51 @@ def main() -> int:
     # OCR: normalização de códigos e recusa de valores mal formados
     from anexos import _corrigir_codigos, RE_ACAO, _num  # noqa: E402
     if _corrigir_codigos(" OOED 6520 ") != " 00ED 6520 ":
-        falhas.append("O/0 do OCR não normalizado no código de ação")
+        falhas.append("O/0 do OCR não normalizado nas duas primeiras posições")
     if _corrigir_codigos(" Cotas do Fundo ") != " Cotas do Fundo ":
         falhas.append("a normalização de código está alterando palavras")
+    # existem códigos reais com O e I nas duas últimas posições: 21DO (ANTT),
+    # 22BO, 00YO, 00IN. Corrigi-los inventaria uma ação inexistente.
+    for real in ("21DO", "22BO", "00YO", "00IN", "00YI"):
+        if _corrigir_codigos(f" {real} ") != f" {real} ":
+            falhas.append(f"código real {real} foi alterado pela correção de OCR")
+
+    # ordenação de documentos: prioriza sem descartar, e desduplica
+    from anexos import ordenar_documentos  # noqa: E402
+    docs = [{"url": "https://x/documento?dm=1&ts=9", "rotulo": "Mensagem"},
+            {"url": "https://x/documento?dm=2", "rotulo": "Projeto de Lei Ordinária"},
+            {"url": "https://x/documento?dm=1", "rotulo": "Mensagem (repetida)"},
+            {"url": "https://x/documento?dm=3", "rotulo": "PDF"}]
+    ordenados = ordenar_documentos(docs, ("projeto de lei", "pln", "avulso"))
+    if len(ordenados) != 3:
+        falhas.append(f"documentos duplicados não removidos: {len(ordenados)}")
+    if not ordenados or "Projeto de Lei" not in ordenados[0]["rotulo"]:
+        falhas.append("o texto do projeto deveria vir primeiro")
+    if not any(d["rotulo"] == "PDF" for d in ordenados):
+        falhas.append("documento com rótulo genérico foi descartado em vez de rebaixado")
     bom = RE_ACAO.search("2314 00XK 6500 Ressarcimento 09 271 547.000.000 x")
     if not bom or _num(bom.group(7)) != 547_000_000:
         falhas.append("valor bem formado deixou de ser lido")
     if RE_ACAO.search("0910 00ED 6520 Integralização 28 846 985.600.0000 x"):
         falhas.append("valor com grupo de milhar mal formado foi aceito e truncado")
 
+    from anexos import parsear_anexo as _pa  # noqa: E402
+
+    # PLN 15: anexo com 6 unidades e 9 ações, mais o cancelamento em outra UO
+    pln15 = (RAIZ / "tests/anexo_pln15.txt").read_text(encoding="utf-8")
+    s15 = _pa(pln15)
+    c15 = _pa(pln15, secao="cancelamento")
+    if round(sum(l["valor"] for l in s15)) != 24_431_895:
+        falhas.append(f"PLN 15 somou {sum(l['valor'] for l in s15):,.0f} (esperado 24.431.895)")
+    if len(s15) != 9:
+        falhas.append(f"PLN 15: esperava 9 ações suplementadas, achei {len(s15)}")
+    if len({l["uo_codigo"] for l in s15}) != 6:
+        falhas.append("PLN 15: as 6 unidades do anexo não foram separadas")
+    if len(c15) != 1 or c15[0]["acao"] != "21DO":
+        falhas.append(f"cancelamento do PLN 15: {[l['acao'] for l in c15]}")
+
     # anexo de PLN: Anexo I (suplementação) e Anexo II (cancelamento) têm os
     # mesmos códigos e valores — somar os dois dobraria o crédito
-    from anexos import parsear_anexo as _pa  # noqa: E402
     pln = (RAIZ / "tests/anexo_pln23.txt").read_text(encoding="utf-8")
     esperado_parte = 150_995_494_425 + 7_178_287_214
     sup = _pa(pln)
