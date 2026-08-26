@@ -33,6 +33,7 @@ from datetime import date
 from pathlib import Path
 
 import requests
+import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 
 PAGINA_MP = "https://www.congressonacional.leg.br/materias/medidas-provisorias/-/mpv/{codigo}"
@@ -41,6 +42,7 @@ HEADERS = {
     "Accept-Language": "pt-BR,pt;q=0.9",
 }
 CACHE = Path("config/anexos.json")
+API_TEXTOS = "https://legis.senado.leg.br/dadosabertos/materia/textos/{codigo}"
 
 RE_ORGAO = re.compile(r"ÓRGÃO\s*:\s*(\d{4,5})\s*[-–—]\s*([^\n]+)")
 RE_UNIDADE = re.compile(r"UNIDADE\s*:\s*(\d{4,6})\s*[-–—]\s*([^\n]+)")
@@ -134,7 +136,7 @@ def baixar(url: str, binario: bool = False, tentativas: int = 3):
 
 
 def ler_pagina(codigo: str) -> dict:
-    """Prazos oficiais e link do documento da Presidência."""
+    """Prazos oficiais e documentos da matéria."""
     html = baixar(PAGINA_MP.format(codigo=codigo))
     sopa = BeautifulSoup(html, "html.parser")
     texto = _limpa(sopa.get_text(" "))
@@ -172,7 +174,11 @@ def ler_pagina(codigo: str) -> dict:
             "rotulo": rotulo or _limpa(a.get("title", "")),
             "ordem": prioridade(rotulo, _limpa(a.get("title", ""))),
         })
-    candidatos.sort(key=lambda c: c["ordem"])
+    for c in candidatos:
+        c["origem"] = "página"
+    candidatos = ordenar_documentos(
+        documentos_da_materia(codigo) + candidatos,
+        ("medida provisória", "mpv", "avulso", "texto", "projeto"))
     documento = candidatos[0]["url"] if candidatos else None
 
     # A janela de deliberação publicada é a do período corrente: 60 dias no
@@ -299,19 +305,86 @@ def parsear_anexo(texto: str, secao: str = "credito") -> list[dict]:
     return linhas
 
 
-def _corrigir_codigos(texto: str) -> str:
-    """Desfaz confusões típicas de OCR nos campos de código.
+def documentos_da_materia(codigo: str) -> list[dict]:
+    """Documentos da matéria pelos Dados Abertos do Senado.
 
-    Os códigos de ação do SIOP não usam as letras O e I justamente para evitar
-    ambiguidade com 0 e 1, então trocar de volta é seguro. A correção é aplicada
-    só em blocos de quatro caracteres cercados por espaço, para não estragar
-    palavras da descrição.
+    Fonte estruturada, preferível a raspar o HTML da página: devolve código,
+    descrição, data e a URL direta de cada documento. É o caminho que encontra
+    anexos que não aparecem como link na página, ou aparecem sem rótulo
+    reconhecível.
+
+    O serviço traz aviso de descontinuação com data já vencida, mas segue
+    respondendo. Por isso ele não substitui a raspagem — soma-se a ela.
+    """
+    try:
+        xml = baixar(API_TEXTOS.format(codigo=codigo))
+    except Exception:  # noqa: BLE001
+        return []
+    try:
+        raiz = ET.fromstring(xml)
+    except ET.ParseError:
+        return []
+
+    def campo(no, nome: str) -> str:
+        el = no.find(nome)
+        return _limpa(el.text) if el is not None and el.text else ""
+
+    documentos = []
+    for texto in raiz.iter("Texto"):
+        url = campo(texto, "UrlTexto")
+        if not url:
+            continue
+        if campo(texto, "FormatoTexto") not in ("", "application/pdf"):
+            continue
+        documentos.append({
+            "url": url.replace("http://", "https://"),
+            "rotulo": campo(texto, "DescricaoTipoTexto") or campo(texto, "DescricaoTexto"),
+            "data": campo(texto, "DataTexto"),
+            "origem": "dados abertos",
+        })
+    return documentos
+
+
+def ordenar_documentos(documentos: list[dict], preferidos: tuple[str, ...]) -> list[dict]:
+    """Ordena por probabilidade de conter o anexo, sem descartar nada.
+
+    Descartar por rótulo já custou caro: documentos vêm rotulados de formas que
+    não se antecipam, e um filtro estreito deixa de fora o anexo que existe. A
+    ordem apenas evita baixar PDFs improváveis primeiro.
+    """
+    def chave(d: dict) -> tuple:
+        r = (d.get("rotulo") or "").lower()
+        for i, termo in enumerate(preferidos):
+            if termo in r:
+                return (i, d.get("data") or "")
+        if "mensagem" in r or "msg" in r or "ofício" in r:
+            return (len(preferidos) + 1, d.get("data") or "")
+        return (len(preferidos), d.get("data") or "")
+
+    vistos, saida = set(), []
+    for d in sorted(documentos, key=chave):
+        chave_url = re.sub(r"[?&]ts=\d+", "", d["url"])
+        if chave_url in vistos:
+            continue
+        vistos.add(chave_url)
+        saida.append(d)
+    return saida
+
+
+def _corrigir_codigos(texto: str) -> str:
+    """Desfaz confusões típicas de OCR nos códigos de ação — só onde é seguro.
+
+    As duas primeiras posições do código são sempre dígitos (00XK, 21C0, 2000,
+    8719), então ali O vira 0 e I vira 1 sem risco. As duas últimas NÃO podem
+    ser tocadas: existem códigos reais com essas letras — 21DO, 22BO, 00YO,
+    00IN —, e corrigi-las inventaria uma ação que não existe.
     """
     def trocar(m: re.Match) -> str:
-        codigo = m.group(0)
-        return codigo.translate(str.maketrans({"O": "0", "o": "0", "I": "1", "l": "1"}))
+        prefixo = m.group(1).translate(str.maketrans({"O": "0", "o": "0",
+                                                      "I": "1", "l": "1"}))
+        return prefixo + m.group(2)
 
-    return re.sub(r"(?<= )[0-9OIl][0-9A-Za-z]{3}(?= )", trocar, texto)
+    return re.sub(r"(?<= )([0-9OIl]{2})([0-9A-Za-z]{2})(?= )", trocar, texto)
 
 
 def texto_do_pdf(conteudo: bytes, permitir_ocr: bool = True) -> tuple[str, str]:

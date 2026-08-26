@@ -27,6 +27,7 @@ from bs4 import BeautifulSoup
 
 from anexos import (RE_DESPACHO, RE_MSG, RE_SITUACAO_PRAZO, ROTULO_EMENDAS,
                     RE_UNIDADE, _iso, _janela, _limpa, baixar,
+                    documentos_da_materia, ordenar_documentos,
                     parsear_anexo, texto_do_pdf)
 
 CACHE = Path("config/anexos_plns.json")
@@ -66,26 +67,20 @@ def ler_pagina(codigo: str) -> dict:
         msg = RE_MSG.search(texto)
         lei = RE_LEI.search(texto)
 
-        vistos, candidatos = set(), []
+        candidatos = []
         for a in sopa.find_all("a", href=True):
-            href = a["href"]
-            if "sdleg-getter" not in href or href in vistos:
+            if "sdleg-getter" not in a["href"]:
                 continue
-            vistos.add(href)
-            rotulo = _limpa(a.get_text(" ")) or _limpa(a.get("title", ""))
-            r = rotulo.lower()
-            if "pln" in r or "projeto" in r or "avulso" in r or "texto" in r:
-                ordem = 0
-            elif "mensagem" in r or "msg" in r:
-                ordem = 2
-            else:
-                ordem = 1
-            candidatos.append({"url": href, "rotulo": rotulo, "ordem": ordem})
-        candidatos.sort(key=lambda c: c["ordem"])
-
-        autor = RE_AUTOR.search(texto)
-        local = RE_LOCAL.search(texto)
-        acao_leg = RE_ACAO_LEG.search(texto)
+            candidatos.append({
+                "url": a["href"],
+                "rotulo": _limpa(a.get_text(" ")) or _limpa(a.get("title", "")),
+                "origem": "página",
+            })
+        # Os Dados Abertos listam documentos que a página nem sempre expõe como
+        # link com rótulo reconhecível — foi o que faltou no PLN 15.
+        candidatos = ordenar_documentos(
+            documentos_da_materia(codigo) + candidatos,
+            ("projeto de lei", "pln", "avulso", "texto"))
 
         registro = {
             "url_pagina": url,
@@ -131,7 +126,7 @@ def coletar(plns: list[dict], cache: dict) -> dict:
             registro["programatica"] = []
             esperado = p.get("valor_total")
 
-            for cand in registro.get("candidatos", []):
+            for cand in (registro.get("candidatos") or [])[:6]:
                 try:
                     bruto = baixar(cand["url"], binario=True)
                 except Exception as e:  # noqa: BLE001
@@ -163,8 +158,13 @@ def coletar(plns: list[dict], cache: dict) -> dict:
                 break
 
             if not registro["programatica"]:
-                print(f"::warning::{ident}: anexo não obtido — será tentado de novo",
-                      file=sys.stderr)
+                cands = registro.get("candidatos") or []
+                fontes = ", ".join(sorted({c.get("origem", "?") for c in cands})) or "nenhuma"
+                print(f"::warning::{ident}: anexo não obtido — {len(cands)} documento(s) "
+                      f"testado(s) (fontes: {fontes}). Será tentado de novo", file=sys.stderr)
+                for c in cands[:4]:
+                    print(f"    testado: {c.get('rotulo','')[:50]} [{c.get('origem','?')}]",
+                          file=sys.stderr)
             cache[ident] = registro
         except Exception as e:  # noqa: BLE001
             print(f"  {ident}: falhou ({e})", file=sys.stderr)
