@@ -1332,7 +1332,7 @@
   },
   "MPV 1388/2026": {
     "situacao_prazo": null,
-    "despacho": null,
+    "despacho": "2026-08-25",
     "numero_camara": "MPV 1388/2026",
     "mensagem": "MSG 728/2026",
     "publicacao_dou": "2026-08-25",
@@ -1342,27 +1342,70 @@
     "emendas_inicio_oficial": "2026-08-25",
     "emendas_fim_oficial": "2026-08-31",
     "urgencia": "2026-10-09",
-    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304964&ts=1787673288281&disposition=inline",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304964&ts=1787702167254&disposition=inline",
     "candidatos": [
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304964&ts=1787673288281&disposition=inline",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304964&ts=1787702167254&disposition=inline",
         "rotulo": "Medida Provisória (25/08/2026)",
         "ordem": 0
       },
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304973&ts=1787673288240&disposition=inline",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10305333&ts=1787702167302&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 2
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304973&ts=1787702167212&disposition=inline",
         "rotulo": "PDF",
         "ordem": 3
       }
     ],
-    "tentado_em": "2026-08-25",
-    "tentativas": 1,
-    "programatica": [],
-    "ocr_divergente": true
+    "tentado_em": "2026-08-26",
+    "tentativas": 2,
+    "programatica": [
+      {
+        "orgao_codigo": "",
+        "orgao": "",
+        "uo_codigo": "32265",
+        "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis – ANP",
+        "programa": "0909",
+        "acao": "00YN",
+        "localizador": "6500",
+        "descricao": "Subvenção Econômica à Produção e à Importação de Combustíveis Derivados",
+        "funcao": "28",
+        "subfuncao": "846",
+        "esfera": "F",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "modalidade": "90",
+        "fonte": "3000",
+        "valor": 600000000.0
+      },
+      {
+        "orgao_codigo": "",
+        "orgao": "",
+        "uo_codigo": "32265",
+        "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis – ANP",
+        "programa": "0909",
+        "acao": "00YO",
+        "localizador": "6500",
+        "descricao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso",
+        "funcao": "28",
+        "subfuncao": "846",
+        "esfera": "F",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "modalidade": "90",
+        "fonte": "1000",
+        "valor": 2552000000.0
+      }
+    ],
+    "total_anexo": 3152000000.0,
+    "metodo": "texto"
   },
   "MPV 1387/2026": {
     "situacao_prazo": null,
-    "despacho": null,
+    "despacho": "2026-08-25",
     "numero_camara": "MPV 1387/2026",
     "mensagem": "MSG 727/2026",
     "publicacao_dou": "2026-08-25",
@@ -1372,22 +1415,47 @@
     "emendas_inicio_oficial": "2026-08-25",
     "emendas_fim_oficial": "2026-08-31",
     "urgencia": "2026-10-09",
-    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304949&ts=1787673397523&disposition=inline",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304949&ts=1787702166011&disposition=inline",
     "candidatos": [
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304949&ts=1787673397523&disposition=inline",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304949&ts=1787702166011&disposition=inline",
         "rotulo": "Medida Provisória (25/08/2026)",
         "ordem": 0
       },
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304959&ts=1787673397487&disposition=inline",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10305311&ts=1787702166059&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 2
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10304959&ts=1787702165963&disposition=inline",
         "rotulo": "PDF",
         "ordem": 3
       }
     ],
-    "tentado_em": "2026-08-25",
-    "tentativas": 1,
-    "programatica": [],
-    "ocr_divergente": true
+    "tentado_em": "2026-08-26",
+    "tentativas": 2,
+    "programatica": [
+      {
+        "orgao_codigo": "",
+        "orgao": "",
+        "uo_codigo": "71905",
+        "unidade": "Fundo de Garantia à Exportação - Recursos sob Supervisão do Ministério da Fazenda",
+        "programa": "0909",
+        "acao": "00XO",
+        "localizador": "6500",
+        "descricao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras",
+        "funcao": "28",
+        "subfuncao": "846",
+        "esfera": "F",
+        "gnd": "5-IFI",
+        "rp": "0",
+        "modalidade": "90",
+        "fonte": "3050",
+        "valor": 7000000000.0
+      }
+    ],
+    "total_anexo": 7000000000.0,
+    "metodo": "texto"
   }
 }
