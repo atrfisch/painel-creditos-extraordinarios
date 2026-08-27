@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-08-26T14:09:39+00:00",
+  "atualizado_em": "2026-08-27T14:40:47+00:00",
   "anos": [
     2026
   ],
@@ -88,8 +88,8 @@
               "dotacao_inicial": 54992331122.0,
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
-              "empenhado": 34796084359.0,
-              "pago": 32512351704.0,
+              "empenhado": 43212253652.0,
+              "pago": 32960455239.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -103,8 +103,8 @@
               "dotacao_inicial": 68247715106.0,
               "dotacao_atual": 68247715106.0,
               "aumento_pct": 2.0,
-              "empenhado": 50421575841.0,
-              "pago": 46818665174.0,
+              "empenhado": 54241575841.0,
+              "pago": 47474011076.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
