@@ -65,16 +65,16 @@ jobs:
       - name: Calcular vigência
         run: python coleta/vigencia.py
 
+      - name: Baixar anexos dos PLNs
+        run: python coleta/anexos_plns.py
+        continue-on-error: true
+
       - name: Baixar execução do SIOP
         run: Rscript coleta/siop.R $ANOS
         continue-on-error: true
 
       - name: Consolidar créditos extraordinários
         run: python coleta/consolidar.py
-
-      - name: Baixar anexos dos PLNs
-        run: python coleta/anexos_plns.py
-        continue-on-error: true
 
       - name: Consolidar suplementares e especiais
         run: PYTHONPATH=coleta python coleta/consolidar_plns.py
