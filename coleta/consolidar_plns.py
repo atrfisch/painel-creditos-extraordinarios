@@ -143,6 +143,25 @@ def main() -> None:
 
     registros, sem_anexo = [], []
 
+    # As unidades do anexo precisam estar na consulta ao SIOP, senão não há
+    # dotação da LOA para comparar e todo suplementar aparece sem base. Isso já
+    # aconteceu por ordem de etapas: o arquivo com as unidades dos PLNs era
+    # escrito depois de a consulta rodar, e nunca chegava a tempo.
+    pedidas = {l["uo_codigo"] for v in anexos.values() for l in v.get("programatica", [])}
+    pedidas |= {l["uo_codigo"] for v in anexos.values() for l in v.get("cancelamento", [])}
+    disponiveis = {l["codigo_uo"] for linhas in siop.values() for l in linhas}
+    faltando = sorted(pedidas - disponiveis)
+    if pedidas:
+        print(f"  unidades do anexo no SIOP: {len(pedidas) - len(faltando)}/{len(pedidas)}",
+              file=sys.stderr)
+    if pedidas and not (pedidas & disponiveis):
+        print("::error::nenhuma unidade dos PLNs está nos dados do SIOP — a consulta não as "
+              "incluiu. Confira se coleta/anexos_plns.py roda ANTES de coleta/siop.R, para "
+              "que dados/uos_plns.txt exista quando a consulta acontecer", file=sys.stderr)
+    elif faltando:
+        print(f"::warning::sem dados do SIOP para as unidades: {', '.join(faltando)}",
+              file=sys.stderr)
+
     for p in plns:
         ident = p["identificacao"]
         especie = TIPOS[p["tipo"].lower()]
