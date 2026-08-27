@@ -35,6 +35,12 @@ ler_uos <- function() {
             "não rodou ou não achou programática")
     return(character(0))
   }
+  for (a in arquivos) {
+    if (!(a %in% existentes)) {
+      message("::warning::", a, " não existe — as unidades desse painel ficarão fora da ",
+              "consulta. A coleta de anexos correspondente precisa rodar ANTES deste passo")
+    }
+  }
   uos <- unlist(lapply(existentes, function(a) trimws(readLines(a, warn = FALSE))))
   unique(uos[nzchar(uos)])
 }
