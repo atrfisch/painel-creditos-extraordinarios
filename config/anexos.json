@@ -1457,5 +1457,67 @@
     ],
     "total_anexo": 7000000000.0,
     "metodo": "texto"
+  },
+  "MPV 1390/2026": {
+    "situacao_prazo": null,
+    "despacho": null,
+    "numero_camara": "MPV 1390/2026",
+    "mensagem": "MSG 745/2026",
+    "publicacao_dou": null,
+    "deliberacao_inicio": null,
+    "deliberacao_fim": null,
+    "ato_prorrogacao": null,
+    "emendas_inicio_oficial": null,
+    "emendas_fim_oficial": null,
+    "urgencia": null,
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427&ts=1788957826581&disposition=inline",
+    "candidatos": [
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427&ts=1788957826581&disposition=inline",
+        "rotulo": "Medida Provisória (09/09/2026)",
+        "ordem": 0,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427",
+        "rotulo": "Medida Provisória",
+        "data": "2026-09-09",
+        "origem": "dados abertos"
+      }
+    ],
+    "tentado_em": "2026-09-09",
+    "tentativas": 1,
+    "programatica": []
+  },
+  "MPV 1389/2026": {
+    "situacao_prazo": null,
+    "despacho": null,
+    "numero_camara": "MPV 1389/2026",
+    "mensagem": "MSG 744/2026",
+    "publicacao_dou": null,
+    "deliberacao_inicio": null,
+    "deliberacao_fim": null,
+    "ato_prorrogacao": null,
+    "emendas_inicio_oficial": null,
+    "emendas_fim_oficial": null,
+    "urgencia": null,
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421&ts=1788957770282&disposition=inline",
+    "candidatos": [
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421&ts=1788957770282&disposition=inline",
+        "rotulo": "Medida Provisória (09/09/2026)",
+        "ordem": 0,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421",
+        "rotulo": "Medida Provisória",
+        "data": "2026-09-09",
+        "origem": "dados abertos"
+      }
+    ],
+    "tentado_em": "2026-09-09",
+    "tentativas": 1,
+    "programatica": []
   }
 }
