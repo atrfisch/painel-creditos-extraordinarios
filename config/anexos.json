@@ -1463,17 +1463,17 @@
     "despacho": null,
     "numero_camara": "MPV 1390/2026",
     "mensagem": "MSG 745/2026",
-    "publicacao_dou": null,
-    "deliberacao_inicio": null,
-    "deliberacao_fim": null,
+    "publicacao_dou": "2026-09-09",
+    "deliberacao_inicio": "2026-09-09",
+    "deliberacao_fim": "2026-11-07",
     "ato_prorrogacao": null,
-    "emendas_inicio_oficial": null,
-    "emendas_fim_oficial": null,
-    "urgencia": null,
-    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427&ts=1788957826581&disposition=inline",
+    "emendas_inicio_oficial": "2026-09-09",
+    "emendas_fim_oficial": "2026-09-15",
+    "urgencia": "2026-10-24",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427&ts=1788961260990&disposition=inline",
     "candidatos": [
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427&ts=1788957826581&disposition=inline",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427&ts=1788961260990&disposition=inline",
         "rotulo": "Medida Provisória (09/09/2026)",
         "ordem": 0,
         "origem": "página"
@@ -1483,10 +1483,22 @@
         "rotulo": "Medida Provisória",
         "data": "2026-09-09",
         "origem": "dados abertos"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317436&ts=1788961261052&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 3,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317436",
+        "rotulo": "Calendário",
+        "data": "2026-09-09",
+        "origem": "dados abertos"
       }
     ],
-    "tentado_em": "2026-09-09",
-    "tentativas": 1,
+    "tentado_em": "2026-09-10",
+    "tentativas": 2,
     "programatica": []
   },
   "MPV 1389/2026": {
@@ -1494,17 +1506,17 @@
     "despacho": null,
     "numero_camara": "MPV 1389/2026",
     "mensagem": "MSG 744/2026",
-    "publicacao_dou": null,
-    "deliberacao_inicio": null,
-    "deliberacao_fim": null,
+    "publicacao_dou": "2026-09-09",
+    "deliberacao_inicio": "2026-09-09",
+    "deliberacao_fim": "2026-11-07",
     "ato_prorrogacao": null,
-    "emendas_inicio_oficial": null,
-    "emendas_fim_oficial": null,
-    "urgencia": null,
-    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421&ts=1788957770282&disposition=inline",
+    "emendas_inicio_oficial": "2026-09-09",
+    "emendas_fim_oficial": "2026-09-15",
+    "urgencia": "2026-10-24",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421&ts=1788966481455&disposition=inline",
     "candidatos": [
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421&ts=1788957770282&disposition=inline",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421&ts=1788966481455&disposition=inline",
         "rotulo": "Medida Provisória (09/09/2026)",
         "ordem": 0,
         "origem": "página"
@@ -1514,10 +1526,22 @@
         "rotulo": "Medida Provisória",
         "data": "2026-09-09",
         "origem": "dados abertos"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317448&ts=1788966481403&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 3,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317448",
+        "rotulo": "Calendário",
+        "data": "2026-09-09",
+        "origem": "dados abertos"
       }
     ],
-    "tentado_em": "2026-09-09",
-    "tentativas": 1,
+    "tentado_em": "2026-09-10",
+    "tentativas": 2,
     "programatica": []
   }
 }
