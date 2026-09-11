@@ -1460,7 +1460,7 @@
   },
   "MPV 1390/2026": {
     "situacao_prazo": null,
-    "despacho": null,
+    "despacho": "2026-09-10",
     "numero_camara": "MPV 1390/2026",
     "mensagem": "MSG 745/2026",
     "publicacao_dou": "2026-09-09",
@@ -1470,10 +1470,10 @@
     "emendas_inicio_oficial": "2026-09-09",
     "emendas_fim_oficial": "2026-09-15",
     "urgencia": "2026-10-24",
-    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427&ts=1788961260990&disposition=inline",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427&ts=1789069083999&disposition=inline",
     "candidatos": [
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427&ts=1788961260990&disposition=inline",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317427&ts=1789069083999&disposition=inline",
         "rotulo": "Medida Provisória (09/09/2026)",
         "ordem": 0,
         "origem": "página"
@@ -1485,25 +1485,58 @@
         "origem": "dados abertos"
       },
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317436&ts=1788961261052&disposition=inline",
-        "rotulo": "PDF",
-        "ordem": 3,
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10318104&ts=1789069084618&disposition=inline&ts=1789069084618",
+        "rotulo": "EMENDA 1 - MPV 1390/2026",
+        "ordem": 1,
         "origem": "página"
       },
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317436",
-        "rotulo": "Calendário",
-        "data": "2026-09-09",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10318355",
+        "rotulo": "Avulso inicial da matéria",
+        "data": "2026-09-10",
         "origem": "dados abertos"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10318355&ts=1789069083760&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 2,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317436&ts=1789069084269&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 3,
+        "origem": "página"
       }
     ],
-    "tentado_em": "2026-09-10",
-    "tentativas": 2,
-    "programatica": []
+    "tentado_em": "2026-09-11",
+    "tentativas": 3,
+    "programatica": [
+      {
+        "orgao_codigo": "",
+        "orgao": "",
+        "uo_codigo": "74101",
+        "unidade": "Recursos sob Supervisão da Secretaria do Tesouro Nacional - Ministério da Fazenda",
+        "programa": "0902",
+        "acao": "0A81",
+        "localizador": "6500",
+        "descricao": "Financiamento de Operações no âmbito do Programa Nacional de",
+        "funcao": "20",
+        "subfuncao": "608",
+        "esfera": "F",
+        "gnd": "5-IFI",
+        "rp": "0",
+        "modalidade": "90",
+        "fonte": "1000",
+        "valor": 375000000.0
+      }
+    ],
+    "total_anexo": 375000000.0,
+    "metodo": "texto"
   },
   "MPV 1389/2026": {
     "situacao_prazo": null,
-    "despacho": null,
+    "despacho": "2026-09-10",
     "numero_camara": "MPV 1389/2026",
     "mensagem": "MSG 744/2026",
     "publicacao_dou": "2026-09-09",
@@ -1513,10 +1546,10 @@
     "emendas_inicio_oficial": "2026-09-09",
     "emendas_fim_oficial": "2026-09-15",
     "urgencia": "2026-10-24",
-    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421&ts=1788966481455&disposition=inline",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421&ts=1789065860675&disposition=inline",
     "candidatos": [
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421&ts=1788966481455&disposition=inline",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317421&ts=1789065860675&disposition=inline",
         "rotulo": "Medida Provisória (09/09/2026)",
         "ordem": 0,
         "origem": "página"
@@ -1528,20 +1561,71 @@
         "origem": "dados abertos"
       },
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317448&ts=1788966481403&disposition=inline",
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10318198",
+        "rotulo": "Avulso inicial da matéria",
+        "data": "2026-09-10",
+        "origem": "dados abertos"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10318198&ts=1789065860582&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 2,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317448&ts=1789065860643&disposition=inline",
         "rotulo": "PDF",
         "ordem": 3,
         "origem": "página"
       },
       {
-        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10317448",
-        "rotulo": "Calendário",
-        "data": "2026-09-09",
-        "origem": "dados abertos"
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10318259&ts=1789065860718&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 3,
+        "origem": "página"
       }
     ],
-    "tentado_em": "2026-09-10",
-    "tentativas": 2,
-    "programatica": []
+    "tentado_em": "2026-09-11",
+    "tentativas": 3,
+    "programatica": [
+      {
+        "orgao_codigo": "",
+        "orgao": "",
+        "uo_codigo": "32265",
+        "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis – ANP",
+        "programa": "0909",
+        "acao": "00YN",
+        "localizador": "6500",
+        "descricao": "Subvenção Econômica à Produção e à Importação de Combustíveis Derivados",
+        "funcao": "28",
+        "subfuncao": "846",
+        "esfera": "F",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "modalidade": "90",
+        "fonte": "1000",
+        "valor": 998000000.0
+      },
+      {
+        "orgao_codigo": "",
+        "orgao": "",
+        "uo_codigo": "32265",
+        "unidade": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis – ANP",
+        "programa": "0909",
+        "acao": "00YO",
+        "localizador": "6500",
+        "descricao": "Subvenção Econômica à Produção e à Importação de Óleo Diesel de Uso",
+        "funcao": "28",
+        "subfuncao": "846",
+        "esfera": "F",
+        "gnd": "3-ODC",
+        "rp": "2",
+        "modalidade": "90",
+        "fonte": "1000",
+        "valor": 5607000000.0
+      }
+    ],
+    "total_anexo": 6605000000.0,
+    "metodo": "texto"
   }
 }
