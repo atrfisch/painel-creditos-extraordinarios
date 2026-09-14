@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-14T15:38:38+00:00",
+  "atualizado_em": "2026-09-14T23:42:23+00:00",
   "anos": [
     2026
   ],
@@ -23,7 +23,7 @@
       "relator": null,
       "emendas_inicio": "2026-09-09",
       "emendas_fim": "2026-09-15",
-      "emendas_total": 1,
+      "emendas_total": 2,
       "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
       "norma": null,
       "codigo_materia": "175759",
@@ -121,7 +121,7 @@
       "emendas_inicio": "2026-09-09",
       "emendas_fim": "2026-09-15",
       "emendas_total": 0,
-      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
+      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
       "norma": null,
       "codigo_materia": "175758",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175758",
