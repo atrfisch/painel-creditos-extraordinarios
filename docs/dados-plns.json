@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-14T23:42:23+00:00",
+  "atualizado_em": "2026-09-15T14:10:31+00:00",
   "anos": [
     2026
   ],
@@ -45,7 +45,7 @@
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
               "empenhado": 829805027919.0,
-              "pago": 726748650614.0,
+              "pago": 727267183222.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -91,7 +91,7 @@
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
               "empenhado": 43212753652.0,
-              "pago": 36218346346.0,
+              "pago": 36236867104.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -106,7 +106,7 @@
               "dotacao_atual": 68247715106.0,
               "aumento_pct": 2.0,
               "empenhado": 54243910841.0,
-              "pago": 52098219778.0,
+              "pago": 52172868705.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -2161,7 +2161,7 @@
               "dotacao_atual": 1297274.0,
               "aumento_pct": 1034.5,
               "empenhado": 1297274.0,
-              "pago": 363153.0,
+              "pago": 423025.0,
               "descricao_siop": "Construção do Edifício-Sede da Justiça Federal em Blumenau - SC",
               "subtitulo_desc": "No Município de Blumenau - SC"
             },
@@ -2221,7 +2221,7 @@
               "dotacao_inicial": 2310555.0,
               "dotacao_atual": 2887555.0,
               "aumento_pct": 364.5,
-              "empenhado": 553546.0,
+              "empenhado": 554446.0,
               "pago": 419895.0,
               "descricao_siop": "Conservação e Recuperação do Patrimônio da União",
               "subtitulo_desc": "Na 4ª Região da Justiça Federal - PR, RS, SC"
@@ -2244,8 +2244,8 @@
               "dotacao_inicial": 89868054.0,
               "dotacao_atual": 111875278.0,
               "aumento_pct": 8.9,
-              "empenhado": 75695775.0,
-              "pago": 43475022.0,
+              "empenhado": 75715586.0,
+              "pago": 43945870.0,
               "descricao_siop": "Julgamento de Causas na Justiça Federal",
               "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
             }
@@ -2939,8 +2939,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 503409914.0,
               "aumento_pct": 27.1,
-              "empenhado": 423556206.0,
-              "pago": 262000773.0,
+              "empenhado": 424474887.0,
+              "pago": 262607528.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -2954,8 +2954,8 @@
               "dotacao_inicial": 339885557.0,
               "dotacao_atual": 424856946.0,
               "aumento_pct": 2.0,
-              "empenhado": 234687097.0,
-              "pago": 217539287.0,
+              "empenhado": 234652981.0,
+              "pago": 217585753.0,
               "descricao_siop": "Manutenção do Sistema de Emissão de Passaporte, Controle do Tráfego Internacional e de Registros de Estrangeiros",
               "subtitulo_desc": "Nacional"
             }
@@ -2978,7 +2978,7 @@
               "dotacao_atual": 150001250.0,
               "aumento_pct": 4.1,
               "empenhado": 42017846.0,
-              "pago": 22189085.0,
+              "pago": 22218115.0,
               "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
               "subtitulo_desc": "Nacional"
             }
@@ -3001,7 +3001,7 @@
               "dotacao_atual": 17683325.0,
               "aumento_pct": 14.1,
               "empenhado": 10731535.0,
-              "pago": 9250256.0,
+              "pago": 9382645.0,
               "descricao_siop": "Administração da Unidade",
               "subtitulo_desc": "Nacional"
             },
@@ -3015,8 +3015,8 @@
               "dotacao_inicial": 11544660.0,
               "dotacao_atual": 14430825.0,
               "aumento_pct": 4.4,
-              "empenhado": 11321627.0,
-              "pago": 8827383.0,
+              "empenhado": 11321637.0,
+              "pago": 8887621.0,
               "descricao_siop": "Suporte à Fiscalização em Instalações sob Controle Regulatório, nas Áreas de Proteção Radiológica Ambiental, Ocupacional e do Paciente",
               "subtitulo_desc": "Nacional"
             }
@@ -3291,7 +3291,7 @@
               "dotacao_atual": 411043307.0,
               "aumento_pct": 58.4,
               "empenhado": 118122522.0,
-              "pago": 2808395.0,
+              "pago": 2808941.0,
               "descricao_siop": "Implantação das Soluções Tecnológicas Decorrentes da Reforma Tributária",
               "subtitulo_desc": "Nacional"
             }
