@@ -1627,5 +1627,75 @@
     ],
     "total_anexo": 6605000000.0,
     "metodo": "texto"
+  },
+  "MPV 1392/2026": {
+    "situacao_prazo": null,
+    "despacho": null,
+    "numero_camara": "MPV 1392/2026",
+    "mensagem": "MSG 762/2026",
+    "publicacao_dou": null,
+    "deliberacao_inicio": null,
+    "deliberacao_fim": null,
+    "ato_prorrogacao": null,
+    "emendas_inicio_oficial": null,
+    "emendas_fim_oficial": null,
+    "urgencia": null,
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10322633&ts=1790073602022&disposition=inline",
+    "candidatos": [
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10322633&ts=1790073602022&disposition=inline",
+        "rotulo": "Medida Provisória (22/09/2026)",
+        "ordem": 0,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10322633",
+        "rotulo": "Medida Provisória",
+        "data": "2026-09-22",
+        "origem": "dados abertos"
+      }
+    ],
+    "tentado_em": "2026-09-22",
+    "tentativas": 1,
+    "programatica": [
+      {
+        "orgao_codigo": "",
+        "orgao": "",
+        "uo_codigo": "55101",
+        "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome - Adm.",
+        "programa": "5133",
+        "acao": "2798",
+        "localizador": "6510",
+        "descricao": "Aquisição e Distribuição de Alimentos da Agricultura Familiar para",
+        "funcao": "08",
+        "subfuncao": "306",
+        "esfera": null,
+        "gnd": null,
+        "rp": null,
+        "modalidade": null,
+        "fonte": null,
+        "valor": 40264400.0
+      },
+      {
+        "orgao_codigo": "",
+        "orgao": "",
+        "uo_codigo": "84201",
+        "unidade": "Fundação Nacional dos Povos Indígenas - FUNAI",
+        "programa": "5838",
+        "acao": "21BO",
+        "localizador": "6503",
+        "descricao": "Direitos Pluriétnicos Culturais e Sociais dos Povos Indígenas -",
+        "funcao": "14",
+        "subfuncao": "423",
+        "esfera": null,
+        "gnd": null,
+        "rp": null,
+        "modalidade": null,
+        "fonte": null,
+        "valor": 24025000.0
+      }
+    ],
+    "total_anexo": 64289400.0,
+    "metodo": "texto"
   }
 }
