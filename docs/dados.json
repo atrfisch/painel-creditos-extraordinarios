@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-22T13:54:19+00:00",
+  "atualizado_em": "2026-09-22T23:28:47+00:00",
   "anos": [
     2026
   ],
@@ -19,12 +19,12 @@
       "ano": 2026,
       "tipo": "Crédito Extraordinário",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 64289400.0,
       "relator": null,
-      "emendas_inicio": null,
-      "emendas_fim": null,
-      "emendas_total": 0,
-      "situacao": null,
+      "emendas_inicio": "2026-09-22",
+      "emendas_fim": "2026-09-28",
+      "emendas_total": 1,
+      "situacao": "AGUARDANDO DESPACHO",
       "norma": null,
       "codigo_materia": "175829",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175829",
@@ -128,8 +128,8 @@
       "dias_para_prorrogacao": 59,
       "dias_para_urgencia": null,
       "dias_para_vigencia": 160,
-      "dias_para_emendas": null,
-      "emendas_abertas": false,
+      "dias_para_emendas": 6,
+      "emendas_abertas": true,
       "execucao": {
         "origem": "anexo",
         "modo": "piso",
