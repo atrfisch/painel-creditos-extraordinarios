@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-22T23:28:47+00:00",
+  "atualizado_em": "2026-09-23T23:27:10+00:00",
   "anos": [
     2026
   ],
@@ -44,8 +44,8 @@
               "dotacao_inicial": 1065720991305.0,
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
-              "empenhado": 829813627919.0,
-              "pago": 728316784587.0,
+              "empenhado": 829817127919.0,
+              "pago": 728341568503.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -91,7 +91,7 @@
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
               "empenhado": 43212978830.0,
-              "pago": 36287260085.0,
+              "pago": 36289014731.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -106,7 +106,7 @@
               "dotacao_atual": 68247715106.0,
               "aumento_pct": 2.0,
               "empenhado": 54244012930.0,
-              "pago": 52342632265.0,
+              "pago": 52346558107.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -1990,7 +1990,7 @@
       "numero": 12,
       "ano": 2026,
       "tipo": "Crédito Suplementar",
-      "ementa": "Operações Oficiais de Crédito, Ministérios da Justiça e outros",
+      "ementa": "Operações Oficiais de Crédito, Ministérios da Justiça, Comunicações, Cultura e Integração",
       "valor_total": 543145850.0,
       "relator": null,
       "emendas_inicio": "2026-06-16",
@@ -2161,7 +2161,7 @@
               "dotacao_atual": 1297274.0,
               "aumento_pct": 1034.5,
               "empenhado": 1297274.0,
-              "pago": 423025.0,
+              "pago": 444738.0,
               "descricao_siop": "Construção do Edifício-Sede da Justiça Federal em Blumenau - SC",
               "subtitulo_desc": "No Município de Blumenau - SC"
             },
@@ -2244,8 +2244,8 @@
               "dotacao_inicial": 89868054.0,
               "dotacao_atual": 112660736.0,
               "aumento_pct": 8.9,
-              "empenhado": 75880844.0,
-              "pago": 44689012.0,
+              "empenhado": 75878644.0,
+              "pago": 44751987.0,
               "descricao_siop": "Julgamento de Causas na Justiça Federal",
               "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
             }
@@ -2939,8 +2939,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 504209914.0,
               "aumento_pct": 27.1,
-              "empenhado": 432146707.0,
-              "pago": 273220215.0,
+              "empenhado": 432662364.0,
+              "pago": 274107261.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -2954,8 +2954,8 @@
               "dotacao_inicial": 339885557.0,
               "dotacao_atual": 424856946.0,
               "aumento_pct": 2.0,
-              "empenhado": 244812795.0,
-              "pago": 218979634.0,
+              "empenhado": 257401817.0,
+              "pago": 219089493.0,
               "descricao_siop": "Manutenção do Sistema de Emissão de Passaporte, Controle do Tráfego Internacional e de Registros de Estrangeiros",
               "subtitulo_desc": "Nacional"
             }
@@ -2977,8 +2977,8 @@
               "dotacao_inicial": 120001000.0,
               "dotacao_atual": 150001250.0,
               "aumento_pct": 4.1,
-              "empenhado": 50814199.0,
-              "pago": 22295047.0,
+              "empenhado": 50867822.0,
+              "pago": 22308253.0,
               "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
               "subtitulo_desc": "Nacional"
             }
@@ -3000,8 +3000,8 @@
               "dotacao_inicial": 14146660.0,
               "dotacao_atual": 17683325.0,
               "aumento_pct": 14.1,
-              "empenhado": 10937656.0,
-              "pago": 9703325.0,
+              "empenhado": 10937745.0,
+              "pago": 9705124.0,
               "descricao_siop": "Administração da Unidade",
               "subtitulo_desc": "Nacional"
             },
@@ -3016,7 +3016,7 @@
               "dotacao_atual": 14430825.0,
               "aumento_pct": 4.4,
               "empenhado": 11554571.0,
-              "pago": 9311508.0,
+              "pago": 9311477.0,
               "descricao_siop": "Suporte à Fiscalização em Instalações sob Controle Regulatório, nas Áreas de Proteção Radiológica Ambiental, Ocupacional e do Paciente",
               "subtitulo_desc": "Nacional"
             }
@@ -3150,7 +3150,7 @@
               "dotacao_atual": 23241205.0,
               "aumento_pct": 2.8,
               "empenhado": 18592964.0,
-              "pago": 10305968.0,
+              "pago": 11719880.0,
               "descricao_siop": "Transferência dos Recursos da Cobrança às Agências de Águas (Leis nº 9.433/1997 e nº 10.881/2004)",
               "subtitulo_desc": "Na Bacia do Rio Grande"
             },
@@ -3180,7 +3180,7 @@
               "dotacao_atual": 23711411.0,
               "aumento_pct": 0.7,
               "empenhado": 18969129.0,
-              "pago": 9574608.0,
+              "pago": 11673756.0,
               "descricao_siop": "Transferência dos Recursos da Cobrança às Agências de Águas (Leis nº 9.433/1997 e nº 10.881/2004)",
               "subtitulo_desc": "Na Bacia do Rio Doce"
             },
@@ -3371,7 +3371,7 @@
               "dotacao_inicial": 15255476.0,
               "dotacao_atual": 18669345.0,
               "aumento_pct": 86.4,
-              "empenhado": 6256478.0,
+              "empenhado": 6259478.0,
               "pago": 3517828.0,
               "descricao_siop": "Fomento à Pesquisa e ao Desenvolvimento Científico e Tecnológico",
               "subtitulo_desc": "Nacional"
