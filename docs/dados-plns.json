@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-24T14:00:56+00:00",
+  "atualizado_em": "2026-09-24T23:47:19+00:00",
   "anos": [
     2026
   ],
@@ -1991,7 +1991,7 @@
       "ano": 2026,
       "tipo": "Crédito Suplementar",
       "ementa": "Operações Oficiais de Crédito, Ministérios da Justiça, Comunicações, Cultura e Integração",
-      "valor_total": 543145850.0,
+      "valor_total": 168145850.0,
       "relator": null,
       "emendas_inicio": "2026-06-16",
       "emendas_fim": "2026-06-23",
@@ -2060,15 +2060,6 @@
           "unidade": "Companhia de Desenvolvimento dos Vales do São Francisco e do Parnaíba",
           "codigo_uo": null,
           "valor_credito": 914569.0,
-          "acoes": [],
-          "loa_unidade": null,
-          "aumento_uo_pct": null
-        },
-        {
-          "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
-          "unidade": "Recursos sob a Supervisão da Secretaria do Tesouro Nacional",
-          "codigo_uo": null,
-          "valor_credito": 375000000.0,
           "acoes": [],
           "loa_unidade": null,
           "aumento_uo_pct": null

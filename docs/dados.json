@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-24T14:00:56+00:00",
+  "atualizado_em": "2026-09-24T23:47:19+00:00",
   "anos": [
     2026
   ],
@@ -18,13 +18,13 @@
       "numero": 1392,
       "ano": 2026,
       "tipo": "Crédito Extraordinário",
-      "ementa": "",
+      "ementa": "Resposta aos impactos causados pelo El Niño",
       "valor_total": 64289400.0,
       "relator": null,
       "emendas_inicio": "2026-09-22",
       "emendas_fim": "2026-09-28",
       "emendas_total": 1,
-      "situacao": "AGUARDANDO DESPACHO",
+      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
       "norma": null,
       "codigo_materia": "175829",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175829",
