@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-09-25T23:48:20+00:00",
+  "atualizado_em": "2026-09-28T13:42:07+00:00",
   "anos": [
     2026
   ],
@@ -125,10 +125,10 @@
       "numero_camara": null,
       "mensagem": null,
       "publicacao_dou": null,
-      "dias_para_prorrogacao": 56,
+      "dias_para_prorrogacao": 53,
       "dias_para_urgencia": null,
-      "dias_para_vigencia": 157,
-      "dias_para_emendas": 3,
+      "dias_para_vigencia": 154,
+      "dias_para_emendas": 0,
       "emendas_abertas": true,
       "execucao": {
         "origem": "anexo",
@@ -222,10 +222,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": 43,
-      "dias_para_urgencia": 29,
-      "dias_para_vigencia": 103,
-      "dias_para_emendas": -10,
+      "dias_para_prorrogacao": 40,
+      "dias_para_urgencia": 26,
+      "dias_para_vigencia": 100,
+      "dias_para_emendas": -13,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -333,10 +333,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": 43,
-      "dias_para_urgencia": 29,
-      "dias_para_vigencia": 103,
-      "dias_para_emendas": -10,
+      "dias_para_prorrogacao": 40,
+      "dias_para_urgencia": 26,
+      "dias_para_vigencia": 100,
+      "dias_para_emendas": -13,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -445,10 +445,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": 28,
-      "dias_para_urgencia": 14,
-      "dias_para_vigencia": 88,
-      "dias_para_emendas": -25,
+      "dias_para_prorrogacao": 25,
+      "dias_para_urgencia": 11,
+      "dias_para_vigencia": 85,
+      "dias_para_emendas": -28,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -542,10 +542,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": 28,
-      "dias_para_urgencia": 14,
-      "dias_para_vigencia": 88,
-      "dias_para_emendas": -25,
+      "dias_para_prorrogacao": 25,
+      "dias_para_urgencia": 11,
+      "dias_para_vigencia": 85,
+      "dias_para_emendas": -28,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -694,10 +694,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": 16,
-      "dias_para_urgencia": 2,
-      "dias_para_vigencia": 76,
-      "dias_para_emendas": -37,
+      "dias_para_prorrogacao": 13,
+      "dias_para_urgencia": -1,
+      "dias_para_vigencia": 73,
+      "dias_para_emendas": -40,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -791,7 +791,7 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 75199400.0,
-            "empenhado": 12673143.0,
+            "empenhado": 13345947.0,
             "liquidado": 1030097.0,
             "pago": 1030097.0,
             "credito_no_ano": 115463800.0,
@@ -809,7 +809,7 @@
                 "credito_no_ano": 61969400.0,
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
-                "empenhado": 12673143.0,
+                "empenhado": 13345947.0,
                 "pago": 1030097.0
               },
               {
@@ -846,10 +846,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": 16,
-      "dias_para_urgencia": 2,
-      "dias_para_vigencia": 76,
-      "dias_para_emendas": -37,
+      "dias_para_prorrogacao": 13,
+      "dias_para_urgencia": -1,
+      "dias_para_vigencia": 73,
+      "dias_para_emendas": -40,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -858,12 +858,12 @@
         "rateado": true,
         "base": 924985960.0,
         "credito_no_ano": 965250360.0,
-        "empenhado": 19324082.0,
+        "empenhado": 19996886.0,
         "liquidado": 1030097.0,
         "pago": 1030097.0,
         "acoes": 3,
         "acoes_ausentes": 0,
-        "pct_empenhado": 2.1,
+        "pct_empenhado": 2.2,
         "pct_pago": 0.1
       }
     },
@@ -901,9 +901,9 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 360000000.0,
-            "empenhado": 273185914.18,
-            "liquidado": 111573076.9,
-            "pago": 107961405.03,
+            "empenhado": 274319797.41,
+            "liquidado": 111898886.54,
+            "pago": 110922142.37,
             "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 1166616313.0,
@@ -919,8 +919,8 @@
                 "credito_no_ano": 1166616313.0,
                 "fator": 0.3086,
                 "dotacao_inicial": 0.0,
-                "empenhado": 273185914.18,
-                "pago": 107961405.03
+                "empenhado": 274319797.41,
+                "pago": 110922142.37
               }
             ]
           }
@@ -943,10 +943,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": 16,
-      "dias_para_urgencia": 2,
-      "dias_para_vigencia": 76,
-      "dias_para_emendas": -37,
+      "dias_para_prorrogacao": 13,
+      "dias_para_urgencia": -1,
+      "dias_para_vigencia": 73,
+      "dias_para_emendas": -40,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -955,13 +955,13 @@
         "rateado": true,
         "base": 360000000.0,
         "credito_no_ano": 1166616313.0,
-        "empenhado": 273185914.18,
-        "liquidado": 111573076.9,
-        "pago": 107961405.03,
+        "empenhado": 274319797.41,
+        "liquidado": 111898886.54,
+        "pago": 110922142.37,
         "acoes": 1,
         "acoes_ausentes": 0,
-        "pct_empenhado": 75.9,
-        "pct_pago": 30.0
+        "pct_empenhado": 76.2,
+        "pct_pago": 30.8
       }
     },
     {
@@ -1054,10 +1054,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": 3,
-      "dias_para_urgencia": -11,
-      "dias_para_vigencia": 63,
-      "dias_para_emendas": -46,
+      "dias_para_prorrogacao": 0,
+      "dias_para_urgencia": -14,
+      "dias_para_vigencia": 60,
+      "dias_para_emendas": -49,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -1165,10 +1165,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": -5,
-      "dias_para_urgencia": -19,
-      "dias_para_vigencia": 55,
-      "dias_para_emendas": -46,
+      "dias_para_prorrogacao": -8,
+      "dias_para_urgencia": -22,
+      "dias_para_vigencia": 52,
+      "dias_para_emendas": -49,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -1221,8 +1221,8 @@
             "contaminadas": 0,
             "base": 547000000.0,
             "empenhado": 547000000.0,
-            "liquidado": 317124710.0,
-            "pago": 317124710.0,
+            "liquidado": 319885880.0,
+            "pago": 319885880.0,
             "credito_no_ano": 547000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 547000000.0,
@@ -1239,7 +1239,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 547000000.0,
-                "pago": 317124710.0
+                "pago": 319885880.0
               }
             ]
           }
@@ -1262,10 +1262,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": -7,
-      "dias_para_urgencia": -21,
-      "dias_para_vigencia": 53,
-      "dias_para_emendas": -46,
+      "dias_para_prorrogacao": -10,
+      "dias_para_urgencia": -24,
+      "dias_para_vigencia": 50,
+      "dias_para_emendas": -49,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -1275,12 +1275,12 @@
         "base": 547000000.0,
         "credito_no_ano": 547000000.0,
         "empenhado": 547000000.0,
-        "liquidado": 317124710.0,
-        "pago": 317124710.0,
+        "liquidado": 319885880.0,
+        "pago": 319885880.0,
         "acoes": 1,
         "acoes_ausentes": 0,
         "pct_empenhado": 100.0,
-        "pct_pago": 58.0
+        "pct_pago": 58.5
       }
     },
     {
@@ -1318,8 +1318,8 @@
             "contaminadas": 0,
             "base": 270000000.0,
             "empenhado": 269999991.0,
-            "liquidado": 123338.0,
-            "pago": 123338.0,
+            "liquidado": 202573.0,
+            "pago": 202573.0,
             "credito_no_ano": 270000000.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 270000000.0,
@@ -1336,7 +1336,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 269999991.0,
-                "pago": 123338.0
+                "pago": 202573.0
               }
             ]
           }
@@ -1496,10 +1496,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": -12,
-      "dias_para_urgencia": -26,
-      "dias_para_vigencia": 48,
-      "dias_para_emendas": -49,
+      "dias_para_prorrogacao": -15,
+      "dias_para_urgencia": -29,
+      "dias_para_vigencia": 45,
+      "dias_para_emendas": -52,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -1509,8 +1509,8 @@
         "base": 13285000000.0,
         "credito_no_ano": 13285000000.0,
         "empenhado": 4284999991.0,
-        "liquidado": 2665123338.0,
-        "pago": 2665123338.0,
+        "liquidado": 2665202573.0,
+        "pago": 2665202573.0,
         "acoes": 5,
         "acoes_ausentes": 0,
         "pct_empenhado": 32.3,
@@ -1593,10 +1593,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": -29,
-      "dias_para_urgencia": -43,
-      "dias_para_vigencia": 31,
-      "dias_para_emendas": -81,
+      "dias_para_prorrogacao": -32,
+      "dias_para_urgencia": -46,
+      "dias_para_vigencia": 28,
+      "dias_para_emendas": -84,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -1690,10 +1690,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": -35,
-      "dias_para_urgencia": -49,
-      "dias_para_vigencia": 25,
-      "dias_para_emendas": -87,
+      "dias_para_prorrogacao": -38,
+      "dias_para_urgencia": -52,
+      "dias_para_vigencia": 22,
+      "dias_para_emendas": -90,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -1787,10 +1787,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": false,
-      "dias_para_prorrogacao": -39,
-      "dias_para_urgencia": -53,
-      "dias_para_vigencia": 21,
-      "dias_para_emendas": -92,
+      "dias_para_prorrogacao": -42,
+      "dias_para_urgencia": -56,
+      "dias_para_vigencia": 18,
+      "dias_para_emendas": -95,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -1844,8 +1844,8 @@
             "contaminadas": 0,
             "base": 194417722.0,
             "empenhado": 189235778.0,
-            "liquidado": 36056720.0,
-            "pago": 33866417.0,
+            "liquidado": 40776802.0,
+            "pago": 34778899.0,
             "credito_no_ano": 194417722.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 194417722.0,
@@ -1862,7 +1862,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 144092874.0,
-                "pago": 13590037.0
+                "pago": 14502519.0
               },
               {
                 "acao": "214N",
@@ -1898,8 +1898,8 @@
             "contaminadas": 0,
             "base": 143065710.0,
             "empenhado": 129434803.0,
-            "liquidado": 48509023.0,
-            "pago": 44970953.0,
+            "liquidado": 48780260.0,
+            "pago": 44978939.0,
             "credito_no_ano": 143065710.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 143065710.0,
@@ -1916,7 +1916,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 129434803.0,
-                "pago": 44970953.0
+                "pago": 44978939.0
               }
             ]
           }
@@ -1939,10 +1939,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": false,
-      "dias_para_prorrogacao": -43,
-      "dias_para_urgencia": -57,
-      "dias_para_vigencia": 17,
-      "dias_para_emendas": -95,
+      "dias_para_prorrogacao": -46,
+      "dias_para_urgencia": -60,
+      "dias_para_vigencia": 14,
+      "dias_para_emendas": -98,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -1952,12 +1952,12 @@
         "base": 337483432.0,
         "credito_no_ano": 337483432.0,
         "empenhado": 318670581.0,
-        "liquidado": 84565743.0,
-        "pago": 78837370.0,
+        "liquidado": 89557062.0,
+        "pago": 79757838.0,
         "acoes": 3,
         "acoes_ausentes": 0,
         "pct_empenhado": 94.4,
-        "pct_pago": 23.4
+        "pct_pago": 23.6
       }
     },
     {
@@ -2036,10 +2036,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": true,
-      "dias_para_prorrogacao": -50,
-      "dias_para_urgencia": -64,
-      "dias_para_vigencia": 10,
-      "dias_para_emendas": -102,
+      "dias_para_prorrogacao": -53,
+      "dias_para_urgencia": -67,
+      "dias_para_vigencia": 7,
+      "dias_para_emendas": -105,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -2147,10 +2147,10 @@
       "vigente": true,
       "encerrada": false,
       "sem_relator": false,
-      "dias_para_prorrogacao": -56,
-      "dias_para_urgencia": -70,
-      "dias_para_vigencia": 4,
-      "dias_para_emendas": -109,
+      "dias_para_prorrogacao": -59,
+      "dias_para_urgencia": -73,
+      "dias_para_vigencia": 1,
+      "dias_para_emendas": -112,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -2244,10 +2244,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": true,
-      "dias_para_prorrogacao": -63,
-      "dias_para_urgencia": -77,
-      "dias_para_vigencia": -3,
-      "dias_para_emendas": -116,
+      "dias_para_prorrogacao": -66,
+      "dias_para_urgencia": -80,
+      "dias_para_vigencia": -6,
+      "dias_para_emendas": -119,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -2341,10 +2341,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
-      "dias_para_prorrogacao": -53,
-      "dias_para_urgencia": -83,
-      "dias_para_vigencia": 7,
-      "dias_para_emendas": -122,
+      "dias_para_prorrogacao": -56,
+      "dias_para_urgencia": -86,
+      "dias_para_vigencia": 4,
+      "dias_para_emendas": -125,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -2396,9 +2396,9 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 305000000.0,
-            "empenhado": 231449177.29,
-            "liquidado": 94527190.15,
-            "pago": 91467301.48,
+            "empenhado": 232409828.36,
+            "liquidado": 94803223.32,
+            "pago": 93975703.95,
             "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 1166616313.0,
@@ -2414,8 +2414,8 @@
                 "credito_no_ano": 1166616313.0,
                 "fator": 0.2614,
                 "dotacao_inicial": 0.0,
-                "empenhado": 231449177.29,
-                "pago": 91467301.48
+                "empenhado": 232409828.36,
+                "pago": 93975703.95
               }
             ]
           }
@@ -2438,10 +2438,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
-      "dias_para_prorrogacao": -85,
-      "dias_para_urgencia": -99,
-      "dias_para_vigencia": -25,
-      "dias_para_emendas": -137,
+      "dias_para_prorrogacao": -88,
+      "dias_para_urgencia": -102,
+      "dias_para_vigencia": -28,
+      "dias_para_emendas": -140,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -2450,13 +2450,13 @@
         "rateado": true,
         "base": 305000000.0,
         "credito_no_ano": 1166616313.0,
-        "empenhado": 231449177.29,
-        "liquidado": 94527190.15,
-        "pago": 91467301.48,
+        "empenhado": 232409828.36,
+        "liquidado": 94803223.32,
+        "pago": 93975703.95,
         "acoes": 1,
         "acoes_ausentes": 0,
-        "pct_empenhado": 75.9,
-        "pct_pago": 30.0
+        "pct_empenhado": 76.2,
+        "pct_pago": 30.8
       }
     },
     {
@@ -2590,10 +2590,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": true,
-      "dias_para_prorrogacao": -89,
-      "dias_para_urgencia": -103,
-      "dias_para_vigencia": -29,
-      "dias_para_emendas": -142,
+      "dias_para_prorrogacao": -92,
+      "dias_para_urgencia": -106,
+      "dias_para_vigencia": -32,
+      "dias_para_emendas": -145,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -2687,10 +2687,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": true,
-      "dias_para_prorrogacao": -90,
-      "dias_para_urgencia": -104,
-      "dias_para_vigencia": -30,
-      "dias_para_emendas": -143,
+      "dias_para_prorrogacao": -93,
+      "dias_para_urgencia": -107,
+      "dias_para_vigencia": -33,
+      "dias_para_emendas": -146,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -2784,10 +2784,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
-      "dias_para_prorrogacao": -91,
-      "dias_para_urgencia": -105,
-      "dias_para_vigencia": -31,
-      "dias_para_emendas": -144,
+      "dias_para_prorrogacao": -94,
+      "dias_para_urgencia": -108,
+      "dias_para_vigencia": -34,
+      "dias_para_emendas": -147,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -2839,9 +2839,9 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 285000000.0,
-            "empenhado": 216272182.06,
-            "liquidado": 88328685.88,
-            "pago": 85469445.65,
+            "empenhado": 217169839.62,
+            "liquidado": 88586618.51,
+            "pago": 87813362.71,
             "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 1166616313.0,
@@ -2857,8 +2857,8 @@
                 "credito_no_ano": 1166616313.0,
                 "fator": 0.2443,
                 "dotacao_inicial": 0.0,
-                "empenhado": 216272182.06,
-                "pago": 85469445.65
+                "empenhado": 217169839.62,
+                "pago": 87813362.71
               }
             ]
           }
@@ -2881,10 +2881,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
-      "dias_para_prorrogacao": -123,
-      "dias_para_urgencia": -137,
-      "dias_para_vigencia": -63,
-      "dias_para_emendas": -172,
+      "dias_para_prorrogacao": -126,
+      "dias_para_urgencia": -140,
+      "dias_para_vigencia": -66,
+      "dias_para_emendas": -175,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -2893,13 +2893,13 @@
         "rateado": true,
         "base": 285000000.0,
         "credito_no_ano": 1166616313.0,
-        "empenhado": 216272182.06,
-        "liquidado": 88328685.88,
-        "pago": 85469445.65,
+        "empenhado": 217169839.62,
+        "liquidado": 88586618.51,
+        "pago": 87813362.71,
         "acoes": 1,
         "acoes_ausentes": 0,
-        "pct_empenhado": 75.9,
-        "pct_pago": 30.0
+        "pct_empenhado": 76.2,
+        "pct_pago": 30.8
       }
     },
     {
@@ -3019,10 +3019,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
-      "dias_para_prorrogacao": -123,
-      "dias_para_urgencia": -137,
-      "dias_para_vigencia": -63,
-      "dias_para_emendas": -172,
+      "dias_para_prorrogacao": -126,
+      "dias_para_urgencia": -140,
+      "dias_para_vigencia": -66,
+      "dias_para_emendas": -175,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -3116,10 +3116,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
-      "dias_para_prorrogacao": -131,
-      "dias_para_urgencia": -145,
-      "dias_para_vigencia": -71,
-      "dias_para_emendas": -184,
+      "dias_para_prorrogacao": -134,
+      "dias_para_urgencia": -148,
+      "dias_para_vigencia": -74,
+      "dias_para_emendas": -187,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -3377,10 +3377,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
-      "dias_para_prorrogacao": -132,
-      "dias_para_urgencia": -146,
-      "dias_para_vigencia": -72,
-      "dias_para_emendas": -185,
+      "dias_para_prorrogacao": -135,
+      "dias_para_urgencia": -149,
+      "dias_para_vigencia": -75,
+      "dias_para_emendas": -188,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -3435,7 +3435,7 @@
             "base": 266512000.0,
             "empenhado": 222368171.72,
             "liquidado": 103945532.0,
-            "pago": 100046803.0,
+            "pago": 103945532.0,
             "credito_no_ano": 341856207.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 341856207.0,
@@ -3452,7 +3452,7 @@
                 "fator": 1.0,
                 "dotacao_inicial": 0.0,
                 "empenhado": 186611622.0,
-                "pago": 64298292.0
+                "pago": 68197021.0
               },
               {
                 "acao": "00XZ",
@@ -3488,10 +3488,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": false,
-      "dias_para_prorrogacao": -141,
-      "dias_para_urgencia": -155,
-      "dias_para_vigencia": -81,
-      "dias_para_emendas": -193,
+      "dias_para_prorrogacao": -144,
+      "dias_para_urgencia": -158,
+      "dias_para_vigencia": -84,
+      "dias_para_emendas": -196,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -3502,11 +3502,11 @@
         "credito_no_ano": 341856207.0,
         "empenhado": 222368171.72,
         "liquidado": 103945532.0,
-        "pago": 100046803.0,
+        "pago": 103945532.0,
         "acoes": 2,
         "acoes_ausentes": 0,
         "pct_empenhado": 83.4,
-        "pct_pago": 37.5
+        "pct_pago": 39.0
       }
     },
     {
@@ -3543,9 +3543,9 @@
             "rateado": true,
             "contaminadas": 0,
             "base": 220000000.0,
-            "empenhado": 166946947.55,
-            "liquidado": 68183546.99,
-            "pago": 65976414.18,
+            "empenhado": 167639876.2,
+            "liquidado": 68382652.88,
+            "pago": 67785753.67,
             "credito_no_ano": 1166616313.0,
             "dotacao_inicial": 0.0,
             "dotacao_atual": 1166616313.0,
@@ -3561,8 +3561,8 @@
                 "credito_no_ano": 1166616313.0,
                 "fator": 0.1886,
                 "dotacao_inicial": 0.0,
-                "empenhado": 166946947.55,
-                "pago": 65976414.18
+                "empenhado": 167639876.2,
+                "pago": 67785753.67
               }
             ]
           }
@@ -3626,10 +3626,10 @@
       "vigente": false,
       "encerrada": true,
       "sem_relator": true,
-      "dias_para_prorrogacao": -176,
-      "dias_para_urgencia": -190,
-      "dias_para_vigencia": -116,
-      "dias_para_emendas": -228,
+      "dias_para_prorrogacao": -179,
+      "dias_para_urgencia": -193,
+      "dias_para_vigencia": -119,
+      "dias_para_emendas": -231,
       "emendas_abertas": false,
       "execucao": {
         "origem": "anexo",
@@ -3638,13 +3638,13 @@
         "rateado": true,
         "base": 250000000.0,
         "credito_no_ano": 1196616313.0,
-        "empenhado": 196946947.55,
-        "liquidado": 68183546.99,
-        "pago": 65976414.18,
+        "empenhado": 197639876.2,
+        "liquidado": 68382652.88,
+        "pago": 67785753.67,
         "acoes": 2,
         "acoes_ausentes": 0,
-        "pct_empenhado": 78.8,
-        "pct_pago": 26.4
+        "pct_empenhado": 79.1,
+        "pct_pago": 27.1
       }
     }
   ]
