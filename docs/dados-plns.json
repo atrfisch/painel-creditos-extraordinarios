@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-02T00:31:44+00:00",
+  "atualizado_em": "2026-10-02T17:31:23+00:00",
   "anos": [
     2026
   ],
@@ -39,15 +39,13 @@
               "subtitulo": "0001",
               "descricao": "Benefícios Previdenciários - Nacional",
               "valor": 150995494425.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 1065720991305.0,
-              "dotacao_atual": 1065720991305.0,
-              "aumento_pct": 14.2,
-              "empenhado": 873636555931.0,
-              "pago": 746423869846.0,
-              "descricao_siop": "Benefícios Previdenciários",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -62,15 +60,13 @@
               "subtitulo": "0001",
               "descricao": "Transferência Direta e Condicionada de Renda às",
               "valor": 26000000000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 158632791717.0,
-              "dotacao_atual": 156632791717.0,
-              "aumento_pct": 16.4,
-              "empenhado": 129823725747.0,
-              "pago": 116409132198.0,
-              "descricao_siop": "Transferência Direta e Condicionada de Renda às Famílias Beneficiárias do Programa Bolsa Família",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -85,30 +81,26 @@
               "subtitulo": "0001",
               "descricao": "Benefícios de Prestação Continuada – BPC à Pessoa",
               "valor": 7178287214.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 54992331122.0,
-              "dotacao_atual": 54992331122.0,
-              "aumento_pct": 13.1,
-              "empenhado": 43212978830.0,
-              "pago": 38398832745.0,
-              "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             },
             {
               "codigo": "00IN",
               "subtitulo": "0001",
               "descricao": "Benefícios de Prestação Continuada – BPC à Pessoa",
               "valor": 1381847725.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 68247715106.0,
-              "dotacao_atual": 68247715106.0,
-              "aumento_pct": 2.0,
-              "empenhado": 59452937890.0,
-              "pago": 55261898486.0,
-              "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         }
@@ -125,8 +117,8 @@
               "subtitulo": "0001",
               "descricao": "Benefícios Previdenciários - Nacional",
               "valor": 150995494425.0,
-              "dotacao_inicial": 1065720991305.0,
-              "reducao_pct": 14.2
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -140,8 +132,8 @@
               "subtitulo": "0001",
               "descricao": "Transferência Direta e Condicionada de Renda às",
               "valor": 26000000000.0,
-              "dotacao_inicial": 158632791717.0,
-              "reducao_pct": 16.4
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -155,16 +147,16 @@
               "subtitulo": "0001",
               "descricao": "Benefícios de Prestação Continuada – BPC à Pessoa",
               "valor": 7178287214.0,
-              "dotacao_inicial": 54992331122.0,
-              "reducao_pct": 13.1
+              "dotacao_inicial": null,
+              "reducao_pct": null
             },
             {
               "codigo": "00IN",
               "subtitulo": "0001",
               "descricao": "Benefícios de Prestação Continuada – BPC à Pessoa",
               "valor": 1381847725.0,
-              "dotacao_inicial": 68247715106.0,
-              "reducao_pct": 2.0
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         }
@@ -183,13 +175,9 @@
       "emendas_abertas": false,
       "acoes_novas": 0,
       "acoes_total": 4,
-      "base_loa": 1347593829250.0,
-      "aumento_medio_pct": 13.8,
-      "maior_aumento": {
-        "acao": "8442",
-        "pct": 16.4,
-        "descricao": "Transferência Direta e Condicionada de Renda às"
-      }
+      "base_loa": null,
+      "aumento_medio_pct": null,
+      "maior_aumento": null
     },
     {
       "identificacao": "PLN 22/2026",
@@ -877,8 +865,8 @@
               "subtitulo": "0053",
               "descricao": "Ativos Civis da União - No Distrito Federal",
               "valor": 2224926.0,
-              "dotacao_inicial": 2342328038.0,
-              "reducao_pct": 0.1
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -892,8 +880,8 @@
               "subtitulo": "0053",
               "descricao": "Ativos Civis da União - No Distrito Federal",
               "valor": 60019.0,
-              "dotacao_inicial": 362203003.0,
-              "reducao_pct": 0.0
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         }
@@ -944,15 +932,13 @@
               "subtitulo": "5664",
               "descricao": "Ajuda de Custo para Moradia ou Auxílio-Moradia a Agentes Públicos - Em",
               "valor": 104699.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 150000.0,
-              "dotacao_atual": 187500.0,
-              "aumento_pct": 69.8,
-              "empenhado": 187500.0,
-              "pago": 176986.0,
-              "descricao_siop": "Ajuda de Custo para Moradia ou Auxílio-Moradia a Agentes Públicos",
-              "subtitulo_desc": "Em Brasília - DF"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -990,60 +976,52 @@
               "subtitulo": "0001",
               "descricao": "Apoio à Implantação, Ampliação ou Melhorias de Infraestruturas de Oferta de",
               "valor": 6000000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 183598965.0,
-              "dotacao_atual": 327240437.0,
-              "aumento_pct": 3.3,
-              "empenhado": 214978161.0,
-              "pago": 164882249.0,
-              "descricao_siop": "Apoio à Implantação, Ampliação ou Melhorias de Infraestruturas de Oferta de Água para Segurança Hídrica",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             },
             {
               "codigo": "21DE",
               "subtitulo": "0001",
               "descricao": "Estudos e Projetos de Infraestrutura para Segurança Hídrica - Nacional",
               "valor": 5000000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 13901069.0,
-              "dotacao_atual": 16681283.0,
-              "aumento_pct": 36.0,
-              "empenhado": 767231.0,
-              "pago": 767231.0,
-              "descricao_siop": "Estudos e Projetos de Infraestrutura para Segurança Hídrica",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             },
             {
               "codigo": "00TE",
               "subtitulo": "0001",
               "descricao": "Apoio à Gestão de Projetos Públicos de Irrigação - Nacional",
               "valor": 540000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 1400000.0,
-              "dotacao_atual": 400000.0,
-              "aumento_pct": 38.6,
-              "empenhado": 400000.0,
-              "pago": 0.0,
-              "descricao_siop": "Apoio à Gestão de Projetos Públicos de Irrigação",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             },
             {
               "codigo": "21IE",
               "subtitulo": "0001",
               "descricao": "Fomento aos objetivos e instrumentos da Política Nacional de Irrigação -",
               "valor": 150000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 500000.0,
-              "dotacao_atual": 500000.0,
-              "aumento_pct": 30.0,
-              "empenhado": 499503.0,
-              "pago": 499503.0,
-              "descricao_siop": "Fomento aos objetivos e instrumentos da Política Nacional de Irrigação",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -1110,7 +1088,7 @@
               "dotacao_atual": 2093863.0,
               "aumento_pct": 1.9,
               "empenhado": 2093863.0,
-              "pago": 1342592.0,
+              "pago": 1469440.0,
               "descricao_siop": "Ajuda de Custo para Moradia ou Auxílio-Moradia a Agentes Públicos",
               "subtitulo_desc": "Nacional"
             }
@@ -1129,16 +1107,16 @@
               "subtitulo": "0027",
               "descricao": "Apoio à Construção do Canal Adutor do Sertão Alagoano - No Estado de",
               "valor": 11000000.0,
-              "dotacao_inicial": 201941169.0,
-              "reducao_pct": 5.4
+              "dotacao_inicial": null,
+              "reducao_pct": null
             },
             {
               "codigo": "00TD",
               "subtitulo": "0001",
               "descricao": "Apoio aos Polos e Projetos de Agricultura Irrigada - Nacional",
               "valor": 690000.0,
-              "dotacao_inicial": 31800596.0,
-              "reducao_pct": 2.2
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -1167,8 +1145,8 @@
               "subtitulo": "5664",
               "descricao": "Gestão de Políticas de Proteção de Dados - Em Brasília - DF",
               "valor": 104699.0,
-              "dotacao_inicial": 34381176.0,
-              "reducao_pct": 0.3
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -1202,8 +1180,8 @@
       "emendas_abertas": false,
       "acoes_novas": 0,
       "acoes_total": 9,
-      "base_loa": 1926665738.0,
-      "aumento_medio_pct": 27.0,
+      "base_loa": 1727115704.0,
+      "aumento_medio_pct": 30.1,
       "maior_aumento": {
         "acao": "20ZF",
         "pct": 157.1,
@@ -1417,8 +1395,8 @@
               "subtitulo": "0001",
               "descricao": "Aprimoramento do Sistema Penitenciário Nacional e Incentivo ao",
               "valor": 40161829.0,
-              "dotacao_inicial": 99579236.0,
-              "reducao_pct": 40.3
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -1479,8 +1457,8 @@
               "subtitulo": "0013",
               "descricao": "Capacitação de Servidores Públicos Federais em Processo de Qualificação e",
               "valor": 13000.0,
-              "dotacao_inicial": 300000.0,
-              "reducao_pct": 4.3
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         }
@@ -1545,11 +1523,11 @@
         {
           "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
           "unidade": "Recursos sob Supervisão do Ministério da Fazenda",
-          "codigo_uo": "71101",
+          "codigo_uo": null,
           "valor_credito": 4000000000.0,
           "acoes": [],
-          "loa_unidade": 24922083722.0,
-          "aumento_uo_pct": 16.1
+          "loa_unidade": null,
+          "aumento_uo_pct": null
         },
         {
           "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
@@ -1948,16 +1926,16 @@
               "subtitulo": "0002",
               "descricao": "Pagamentos no âmbito do Seguro de Crédito à Exportação - Exterior",
               "valor": 60000000.0,
-              "dotacao_inicial": 700000000.0,
-              "reducao_pct": 8.6
+              "dotacao_inicial": null,
+              "reducao_pct": null
             },
             {
               "codigo": "0027",
               "subtitulo": "0001",
               "descricao": "Pagamentos no âmbito do Seguro de Crédito à Exportação - Nacional",
               "valor": 40000000.0,
-              "dotacao_inicial": 700000000.0,
-              "reducao_pct": 5.7
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         }
@@ -2131,45 +2109,39 @@
               "subtitulo": "4129",
               "descricao": "Construção do Edifício-Sede da Justiça Federal em Foz do Iguaçu - PR - No",
               "valor": 11350000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 14600000.0,
-              "dotacao_atual": 18250000.0,
-              "aumento_pct": 77.7,
-              "empenhado": 18250000.0,
-              "pago": 17430879.0,
-              "descricao_siop": "Construção do Edifício-Sede da Justiça Federal em Foz do Iguaçu - PR",
-              "subtitulo_desc": "No Município de Foz do Iguaçu - PR"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             },
             {
               "codigo": "11KR",
               "subtitulo": "4446",
               "descricao": "Construção do Edifício-Sede da Justiça Federal em Blumenau - SC - No",
               "valor": 10741000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 1038274.0,
-              "dotacao_atual": 1297274.0,
-              "aumento_pct": 1034.5,
-              "empenhado": 1237274.0,
-              "pago": 444738.0,
-              "descricao_siop": "Construção do Edifício-Sede da Justiça Federal em Blumenau - SC",
-              "subtitulo_desc": "No Município de Blumenau - SC"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             },
             {
               "codigo": "102S",
               "subtitulo": "1088",
               "descricao": "Construção de Edifício-Sede da Justiça Federal em Juazeiro do Norte - CE - No",
               "valor": 3128000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 3000000.0,
-              "dotacao_atual": 3750000.0,
-              "aumento_pct": 104.3,
-              "empenhado": 3394550.0,
-              "pago": 2206833.0,
-              "descricao_siop": "Construção de Edifício-Sede da Justiça Federal em Juazeiro do Norte - CE",
-              "subtitulo_desc": "No Município de Juazeiro do Norte - CE"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -2184,15 +2156,13 @@
               "subtitulo": "6012",
               "descricao": "Publicidade Institucional e de Utilidade Pública - Na 1ª Região da Justiça",
               "valor": 250000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 2348973.0,
-              "dotacao_atual": 2918973.0,
-              "aumento_pct": 10.6,
-              "empenhado": 2819192.0,
-              "pago": 1731160.0,
-              "descricao_siop": "Publicidade Institucional e de Utilidade Pública",
-              "subtitulo_desc": "Na 1ª Região da Justiça Federal - AC, AM, AP, BA, DF, GO, MA, MT, PA, PI, RO, RR, TO"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -2207,15 +2177,13 @@
               "subtitulo": "6015",
               "descricao": "Conservação e Recuperação do Patrimônio da União - Na 4ª Região da Justiça",
               "valor": 8423000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 2310555.0,
-              "dotacao_atual": 2887555.0,
-              "aumento_pct": 364.5,
-              "empenhado": 554446.0,
-              "pago": 419895.0,
-              "descricao_siop": "Conservação e Recuperação do Patrimônio da União",
-              "subtitulo_desc": "Na 4ª Região da Justiça Federal - PR, RS, SC"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -2230,15 +2198,13 @@
               "subtitulo": "6044",
               "descricao": "Julgamento de Causas na Justiça Federal - Na 6ª Região da Justiça Federal -",
               "valor": 8000000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 89868054.0,
-              "dotacao_atual": 112660736.0,
-              "aumento_pct": 8.9,
-              "empenhado": 76871176.0,
-              "pago": 46307774.0,
-              "descricao_siop": "Julgamento de Causas na Justiça Federal",
-              "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -2253,15 +2219,13 @@
               "subtitulo": "0027",
               "descricao": "Ajuda de Custo para Moradia ou Auxílio-Moradia a Agentes Públicos - No",
               "valor": 85000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 1000.0,
-              "dotacao_atual": 1000.0,
-              "aumento_pct": 8500.0,
-              "empenhado": 0.0,
-              "pago": 0.0,
-              "descricao_siop": "Ajuda de Custo para Moradia ou Auxílio-Moradia a Agentes Públicos",
-              "subtitulo_desc": "No Estado de Alagoas"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -2276,15 +2240,13 @@
               "subtitulo": "0022",
               "descricao": "Ajuda de Custo para Moradia ou Auxílio-Moradia a Agentes Públicos - No",
               "valor": 18667.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 57333.0,
-              "dotacao_atual": 71666.0,
-              "aumento_pct": 32.6,
-              "empenhado": 71666.0,
-              "pago": 65037.0,
-              "descricao_siop": "Ajuda de Custo para Moradia ou Auxílio-Moradia a Agentes Públicos",
-              "subtitulo_desc": "No Estado do Piauí"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -2299,15 +2261,13 @@
               "subtitulo": "1262",
               "descricao": "Construção do Edifício-Sede da Procuradoria da República de Natal - RN - No",
               "valor": 14254425.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 12000000.0,
-              "dotacao_atual": 15000000.0,
-              "aumento_pct": 118.8,
-              "empenhado": 15000000.0,
-              "pago": 14877541.0,
-              "descricao_siop": "Construção do Edifício-Sede da Procuradoria da República de Natal - RN",
-              "subtitulo_desc": "No Município de Natal - RN"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         }
@@ -2324,16 +2284,16 @@
               "subtitulo": "0001",
               "descricao": "Julgamento de Causas na Justiça Federal - Nacional",
               "valor": 39014000.0,
-              "dotacao_inicial": 1217347249.0,
-              "reducao_pct": 3.2
+              "dotacao_inicial": null,
+              "reducao_pct": null
             },
             {
               "codigo": "219Z",
               "subtitulo": "6016",
               "descricao": "Conservação e Recuperação do Patrimônio da União - Na 5ª Região da Justiça",
               "valor": 2878000.0,
-              "dotacao_inicial": 80494278.0,
-              "reducao_pct": 3.6
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -2347,8 +2307,8 @@
               "subtitulo": "0001",
               "descricao": "Ativos Civis da União - Nacional",
               "valor": 14254425.0,
-              "dotacao_inicial": 3580841548.0,
-              "reducao_pct": 0.4
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -2362,8 +2322,8 @@
               "subtitulo": "0027",
               "descricao": "Apreciação de Causas na Justiça do Trabalho - No Estado de Alagoas",
               "valor": 85000.0,
-              "dotacao_inicial": 26878197.0,
-              "reducao_pct": 0.3
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -2377,8 +2337,8 @@
               "subtitulo": "0022",
               "descricao": "Apreciação de Causas na Justiça do Trabalho - No Estado do Piauí",
               "valor": 18667.0,
-              "dotacao_inicial": 24415027.0,
-              "reducao_pct": 0.1
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         }
@@ -2397,13 +2357,9 @@
       "emendas_abertas": false,
       "acoes_novas": 0,
       "acoes_total": 9,
-      "base_loa": 125224189.0,
-      "aumento_medio_pct": 44.9,
-      "maior_aumento": {
-        "acao": "216H",
-        "pct": 8500.0,
-        "descricao": "Ajuda de Custo para Moradia ou Auxílio-Moradia a Agentes Públicos - No"
-      }
+      "base_loa": null,
+      "aumento_medio_pct": null,
+      "maior_aumento": null
     },
     {
       "identificacao": "PLN 10/2026",
@@ -2534,8 +2490,8 @@
               "subtitulo": "0001",
               "descricao": "Proteção dos Direitos de Propriedade Industrial - Nacional",
               "valor": 300000.0,
-              "dotacao_inicial": 102299082.0,
-              "reducao_pct": 0.3
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -2549,16 +2505,16 @@
               "subtitulo": "0015",
               "descricao": "Funcionamento de Instituições Federais de Ensino Superior - No Estado",
               "valor": 8776.0,
-              "dotacao_inicial": 21141116.0,
-              "reducao_pct": 0.0
+              "dotacao_inicial": null,
+              "reducao_pct": null
             },
             {
               "codigo": "00PW",
               "subtitulo": "0001",
               "descricao": "Contribuições Regulares a Entidades ou Organismos Nacionais sem",
               "valor": 1624.0,
-              "dotacao_inicial": 33000.0,
-              "reducao_pct": 4.9
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         }
@@ -2653,8 +2609,8 @@
               "subtitulo": "0041",
               "descricao": "Apreciação de Causas na Justiça do Trabalho - No Estado do Paraná",
               "valor": 3925000.0,
-              "dotacao_inicial": 85443992.0,
-              "reducao_pct": 4.6
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         },
@@ -2668,8 +2624,8 @@
               "subtitulo": "0027",
               "descricao": "Julgamento de Causas e Gestão Administrativa na Justiça Eleitoral - No",
               "valor": 283728.0,
-              "dotacao_inicial": 27414498.0,
-              "reducao_pct": 1.0
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         }
@@ -2712,11 +2668,11 @@
         {
           "orgao": "JUSTIÇA FEDERAL",
           "unidade": "Justiça Federal de Primeiro Grau",
-          "codigo_uo": "12101",
+          "codigo_uo": null,
           "valor_credito": 4540300.0,
           "acoes": [],
-          "loa_unidade": 14899676799.0,
-          "aumento_uo_pct": 0.0
+          "loa_unidade": null,
+          "aumento_uo_pct": null
         },
         {
           "orgao": "JUSTIÇA FEDERAL",
@@ -2730,11 +2686,11 @@
         {
           "orgao": "JUSTIÇA FEDERAL",
           "unidade": "Tribunal Regional Federal da 4ª Região",
-          "codigo_uo": "12105",
+          "codigo_uo": null,
           "valor_credito": 650000.0,
           "acoes": [],
-          "loa_unidade": 636497408.0,
-          "aumento_uo_pct": 0.1
+          "loa_unidade": null,
+          "aumento_uo_pct": null
         },
         {
           "orgao": "JUSTIÇA DO TRABALHO",
@@ -2902,15 +2858,13 @@
               "subtitulo": "0001",
               "descricao": "Desenvolvimento de Políticas de Segurança Pública, Prevenção e",
               "valor": 9822328.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 104580102.0,
-              "dotacao_atual": 129225127.0,
-              "aumento_pct": 9.4,
-              "empenhado": 82155985.0,
-              "pago": 34320985.0,
-              "descricao_siop": "Desenvolvimento de Políticas de Segurança Pública, Prevenção e Enfrentamento à Criminalidade",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -2925,30 +2879,26 @@
               "subtitulo": "0001",
               "descricao": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados",
               "valor": 103125723.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 380258708.0,
-              "dotacao_atual": 504209914.0,
-              "aumento_pct": 27.1,
-              "empenhado": 437448902.0,
-              "pago": 285685883.0,
-              "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             },
             {
               "codigo": "2586",
               "subtitulo": "0001",
               "descricao": "Manutenção do Sistema de Emissão de Passaporte, Controle do Tráfego",
               "valor": 6838211.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 339885557.0,
-              "dotacao_atual": 424856946.0,
-              "aumento_pct": 2.0,
-              "empenhado": 259854257.0,
-              "pago": 242690791.0,
-              "descricao_siop": "Manutenção do Sistema de Emissão de Passaporte, Controle do Tráfego Internacional e de Registros de Estrangeiros",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -2963,15 +2913,13 @@
               "subtitulo": "0001",
               "descricao": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos - Nacional",
               "valor": 4872418.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 120001000.0,
-              "dotacao_atual": 150001250.0,
-              "aumento_pct": 4.1,
-              "empenhado": 51695299.0,
-              "pago": 22550425.0,
-              "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -2986,30 +2934,26 @@
               "subtitulo": "0001",
               "descricao": "Administração da Unidade - Nacional",
               "valor": 2000000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 14146660.0,
-              "dotacao_atual": 17683325.0,
-              "aumento_pct": 14.1,
-              "empenhado": 10947246.0,
-              "pago": 9729347.0,
-              "descricao_siop": "Administração da Unidade",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             },
             {
               "codigo": "21E0",
               "subtitulo": "0001",
               "descricao": "Suporte à Fiscalização em Instalações sob Controle Regulatório, nas Áreas de",
               "valor": 505522.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 11544660.0,
-              "dotacao_atual": 14430825.0,
-              "aumento_pct": 4.4,
-              "empenhado": 11714505.0,
-              "pago": 9942898.0,
-              "descricao_siop": "Suporte à Fiscalização em Instalações sob Controle Regulatório, nas Áreas de Proteção Radiológica Ambiental, Ocupacional e do Paciente",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         },
@@ -3069,8 +3013,8 @@
       "emendas_abertas": false,
       "acoes_novas": 0,
       "acoes_total": 7,
-      "base_loa": 2104349065.0,
-      "aumento_medio_pct": 25.8,
+      "base_loa": 1133932378.0,
+      "aumento_medio_pct": 47.9,
       "maior_aumento": {
         "acao": "0355",
         "pct": 36.7,
@@ -3276,15 +3220,13 @@
               "subtitulo": "0001",
               "descricao": "Implantação das Soluções Tecnológicas Decorrentes da Reforma",
               "valor": 240000000.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 411043307.0,
-              "dotacao_atual": 388982538.0,
-              "aumento_pct": 58.4,
-              "empenhado": 122566958.0,
-              "pago": 2918664.0,
-              "descricao_siop": "Implantação das Soluções Tecnológicas Decorrentes da Reforma Tributária",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         }
@@ -3301,8 +3243,8 @@
               "subtitulo": "0001",
               "descricao": "Implantação das Soluções Tecnológicas Decorrentes da Reforma",
               "valor": 240000000.0,
-              "dotacao_inicial": 411043307.0,
-              "reducao_pct": 58.4
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         }
@@ -3321,13 +3263,9 @@
       "emendas_abertas": false,
       "acoes_novas": 0,
       "acoes_total": 1,
-      "base_loa": 411043307.0,
-      "aumento_medio_pct": 58.4,
-      "maior_aumento": {
-        "acao": "166O",
-        "pct": 58.4,
-        "descricao": "Implantação das Soluções Tecnológicas Decorrentes da Reforma"
-      }
+      "base_loa": null,
+      "aumento_medio_pct": null,
+      "maior_aumento": null
     },
     {
       "identificacao": "PLN 3/2026",
@@ -3357,15 +3295,13 @@
               "subtitulo": "0001",
               "descricao": "Fomento à Pesquisa e ao Desenvolvimento Científico e Tecnológico -",
               "valor": 13186131.0,
-              "encontrada": true,
-              "nova": false,
-              "dotacao_inicial": 15255476.0,
-              "dotacao_atual": 19177264.0,
-              "aumento_pct": 86.4,
-              "empenhado": 5784478.0,
-              "pago": 3548313.0,
-              "descricao_siop": "Fomento à Pesquisa e ao Desenvolvimento Científico e Tecnológico",
-              "subtitulo_desc": "Nacional"
+              "encontrada": false,
+              "dotacao_inicial": null,
+              "dotacao_atual": null,
+              "aumento_pct": null,
+              "empenhado": null,
+              "pago": null,
+              "nova": false
             }
           ]
         }
@@ -3382,8 +3318,8 @@
               "subtitulo": "0001",
               "descricao": "Apoio a Projetos de Desenvolvimento Sustentável Local Integrado -",
               "valor": 13186131.0,
-              "dotacao_inicial": 3719443755.0,
-              "reducao_pct": 0.4
+              "dotacao_inicial": null,
+              "reducao_pct": null
             }
           ]
         }
@@ -3402,13 +3338,9 @@
       "emendas_abertas": false,
       "acoes_novas": 0,
       "acoes_total": 1,
-      "base_loa": 15255476.0,
-      "aumento_medio_pct": 86.4,
-      "maior_aumento": {
-        "acao": "215L",
-        "pct": 86.4,
-        "descricao": "Fomento à Pesquisa e ao Desenvolvimento Científico e Tecnológico -"
-      }
+      "base_loa": null,
+      "aumento_medio_pct": null,
+      "maior_aumento": null
     }
   ]
 }
