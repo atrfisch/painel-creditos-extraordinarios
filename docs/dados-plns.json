@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-03T00:09:09+00:00",
+  "atualizado_em": "2026-10-05T17:50:32+00:00",
   "anos": [
     2026
   ],
@@ -45,7 +45,7 @@
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
               "empenhado": 873636555931.0,
-              "pago": 772455362878.0,
+              "pago": 790688414022.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -91,7 +91,7 @@
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
               "empenhado": 43212978830.0,
-              "pago": 39374925365.0,
+              "pago": 40066078428.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -106,7 +106,7 @@
               "dotacao_atual": 68247715106.0,
               "aumento_pct": 2.0,
               "empenhado": 59452937890.0,
-              "pago": 56524894028.0,
+              "pago": 57420891203.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -2235,8 +2235,8 @@
               "dotacao_inicial": 89868054.0,
               "dotacao_atual": 112660736.0,
               "aumento_pct": 8.9,
-              "empenhado": 76921561.0,
-              "pago": 46988379.0,
+              "empenhado": 76816162.0,
+              "pago": 48591131.0,
               "descricao_siop": "Julgamento de Causas na Justiça Federal",
               "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
             }
@@ -2907,8 +2907,8 @@
               "dotacao_inicial": 104580102.0,
               "dotacao_atual": 129225127.0,
               "aumento_pct": 9.4,
-              "empenhado": 82155985.0,
-              "pago": 34471119.0,
+              "empenhado": 82408785.0,
+              "pago": 34569562.0,
               "descricao_siop": "Desenvolvimento de Políticas de Segurança Pública, Prevenção e Enfrentamento à Criminalidade",
               "subtitulo_desc": "Nacional"
             }
@@ -2930,8 +2930,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 504209914.0,
               "aumento_pct": 27.1,
-              "empenhado": 437605142.0,
-              "pago": 286680602.0,
+              "empenhado": 437745806.0,
+              "pago": 289199664.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -2945,8 +2945,8 @@
               "dotacao_inicial": 339885557.0,
               "dotacao_atual": 424856946.0,
               "aumento_pct": 2.0,
-              "empenhado": 265183431.0,
-              "pago": 243097643.0,
+              "empenhado": 265183433.0,
+              "pago": 243644461.0,
               "descricao_siop": "Manutenção do Sistema de Emissão de Passaporte, Controle do Tráfego Internacional e de Registros de Estrangeiros",
               "subtitulo_desc": "Nacional"
             }
@@ -2968,8 +2968,8 @@
               "dotacao_inicial": 120001000.0,
               "dotacao_atual": 150001250.0,
               "aumento_pct": 4.1,
-              "empenhado": 52393038.0,
-              "pago": 22550425.0,
+              "empenhado": 53666728.0,
+              "pago": 23182420.0,
               "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
               "subtitulo_desc": "Nacional"
             }
@@ -2992,7 +2992,7 @@
               "dotacao_atual": 17683325.0,
               "aumento_pct": 14.1,
               "empenhado": 10888551.0,
-              "pago": 9901195.0,
+              "pago": 10030405.0,
               "descricao_siop": "Administração da Unidade",
               "subtitulo_desc": "Nacional"
             },
@@ -3282,7 +3282,7 @@
               "dotacao_atual": 388982538.0,
               "aumento_pct": 58.4,
               "empenhado": 112770800.0,
-              "pago": 2918664.0,
+              "pago": 2921743.0,
               "descricao_siop": "Implantação das Soluções Tecnológicas Decorrentes da Reforma Tributária",
               "subtitulo_desc": "Nacional"
             }
