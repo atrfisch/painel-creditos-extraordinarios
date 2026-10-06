@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-06T01:41:05+00:00",
+  "atualizado_em": "2026-10-06T15:42:23+00:00",
   "anos": [
     2026
   ],
@@ -44,8 +44,8 @@
               "dotacao_inicial": 1065720991305.0,
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
-              "empenhado": 873636555931.0,
-              "pago": 790688414022.0,
+              "empenhado": 873636855931.0,
+              "pago": 798982856214.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -91,7 +91,7 @@
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
               "empenhado": 43212978830.0,
-              "pago": 40066078428.0,
+              "pago": 40377862952.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -106,7 +106,7 @@
               "dotacao_atual": 68247715106.0,
               "aumento_pct": 2.0,
               "empenhado": 59452937890.0,
-              "pago": 57420891203.0,
+              "pago": 57855710695.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -1063,8 +1063,8 @@
               "dotacao_inicial": 1133932378.0,
               "dotacao_atual": 1417415472.0,
               "aumento_pct": 9.6,
-              "empenhado": 709447974.0,
-              "pago": 709447974.0,
+              "empenhado": 790994839.0,
+              "pago": 712153320.0,
               "descricao_siop": "Financiamento de Projetos do Setor Produtivo no âmbito do Fundo de Desenvolvimento do Nordeste - FDNE (Lei Complementar nº 125, de 3 de janeiro de 2007)",
               "subtitulo_desc": "Nacional"
             }
@@ -2137,7 +2137,7 @@
               "dotacao_atual": 18250000.0,
               "aumento_pct": 77.7,
               "empenhado": 18250000.0,
-              "pago": 17658600.0,
+              "pago": 16847674.0,
               "descricao_siop": "Construção do Edifício-Sede da Justiça Federal em Foz do Iguaçu - PR",
               "subtitulo_desc": "No Município de Foz do Iguaçu - PR"
             },
@@ -2235,8 +2235,8 @@
               "dotacao_inicial": 89868054.0,
               "dotacao_atual": 112660736.0,
               "aumento_pct": 8.9,
-              "empenhado": 76816162.0,
-              "pago": 48591131.0,
+              "empenhado": 76842271.0,
+              "pago": 48676896.0,
               "descricao_siop": "Julgamento de Causas na Justiça Federal",
               "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
             }
@@ -2930,8 +2930,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 504209914.0,
               "aumento_pct": 27.1,
-              "empenhado": 437745806.0,
-              "pago": 289199664.0,
+              "empenhado": 438541390.0,
+              "pago": 289760357.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -2968,8 +2968,8 @@
               "dotacao_inicial": 120001000.0,
               "dotacao_atual": 150001250.0,
               "aumento_pct": 4.1,
-              "empenhado": 53666728.0,
-              "pago": 23182420.0,
+              "empenhado": 53667963.0,
+              "pago": 23588967.0,
               "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
               "subtitulo_desc": "Nacional"
             }
@@ -2992,7 +2992,7 @@
               "dotacao_atual": 17683325.0,
               "aumento_pct": 14.1,
               "empenhado": 10888551.0,
-              "pago": 10030405.0,
+              "pago": 10148162.0,
               "descricao_siop": "Administração da Unidade",
               "subtitulo_desc": "Nacional"
             },
@@ -3029,8 +3029,8 @@
               "dotacao_inicial": 1133932378.0,
               "dotacao_atual": 1417415472.0,
               "aumento_pct": 36.7,
-              "empenhado": 709447974.0,
-              "pago": 709447974.0,
+              "empenhado": 790994839.0,
+              "pago": 712153320.0,
               "descricao_siop": "Financiamento de Projetos do Setor Produtivo no âmbito do Fundo de Desenvolvimento do Nordeste - FDNE (Lei Complementar nº 125, de 3 de janeiro de 2007)",
               "subtitulo_desc": "Nacional"
             }
