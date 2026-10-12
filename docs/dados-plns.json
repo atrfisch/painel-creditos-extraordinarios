@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-10T00:31:01+00:00",
+  "atualizado_em": "2026-10-12T18:34:56+00:00",
   "anos": [
     2026
   ],
@@ -45,7 +45,7 @@
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
               "empenhado": 873657855931.0,
-              "pago": 808176533663.0,
+              "pago": 808656124123.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -91,7 +91,7 @@
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
               "empenhado": 43213578830.0,
-              "pago": 40791464745.0,
+              "pago": 40806037197.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -106,7 +106,7 @@
               "dotacao_atual": 68247715106.0,
               "aumento_pct": 2.0,
               "empenhado": 59453937890.0,
-              "pago": 58670040858.0,
+              "pago": 58730189274.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -2137,7 +2137,7 @@
               "dotacao_atual": 18250000.0,
               "aumento_pct": 77.7,
               "empenhado": 18250000.0,
-              "pago": 16847674.0,
+              "pago": 16900218.0,
               "descricao_siop": "Construção do Edifício-Sede da Justiça Federal em Foz do Iguaçu - PR",
               "subtitulo_desc": "No Município de Foz do Iguaçu - PR"
             },
@@ -2235,8 +2235,8 @@
               "dotacao_inicial": 89868054.0,
               "dotacao_atual": 112660736.0,
               "aumento_pct": 8.9,
-              "empenhado": 77055375.0,
-              "pago": 49596539.0,
+              "empenhado": 77526519.0,
+              "pago": 49740396.0,
               "descricao_siop": "Julgamento de Causas na Justiça Federal",
               "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
             }
@@ -2930,8 +2930,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 504209914.0,
               "aumento_pct": 27.1,
-              "empenhado": 445250472.0,
-              "pago": 294745212.0,
+              "empenhado": 445864448.0,
+              "pago": 295714109.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -2946,7 +2946,7 @@
               "dotacao_atual": 424856946.0,
               "aumento_pct": 2.0,
               "empenhado": 265183324.0,
-              "pago": 244317283.0,
+              "pago": 247632360.0,
               "descricao_siop": "Manutenção do Sistema de Emissão de Passaporte, Controle do Tráfego Internacional e de Registros de Estrangeiros",
               "subtitulo_desc": "Nacional"
             }
@@ -2968,7 +2968,7 @@
               "dotacao_inicial": 120001000.0,
               "dotacao_atual": 150001250.0,
               "aumento_pct": 4.1,
-              "empenhado": 53635882.0,
+              "empenhado": 57682354.0,
               "pago": 23588967.0,
               "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
               "subtitulo_desc": "Nacional"
@@ -2992,7 +2992,7 @@
               "dotacao_atual": 17683325.0,
               "aumento_pct": 14.1,
               "empenhado": 11587322.0,
-              "pago": 10187091.0,
+              "pago": 10324001.0,
               "descricao_siop": "Administração da Unidade",
               "subtitulo_desc": "Nacional"
             },
@@ -3282,7 +3282,7 @@
               "dotacao_atual": 388982538.0,
               "aumento_pct": 58.4,
               "empenhado": 114286431.0,
-              "pago": 3523665.0,
+              "pago": 3522915.0,
               "descricao_siop": "Implantação das Soluções Tecnológicas Decorrentes da Reforma Tributária",
               "subtitulo_desc": "Nacional"
             }
