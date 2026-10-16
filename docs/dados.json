@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-16T13:53:17+00:00",
+  "atualizado_em": "2026-10-16T23:16:53+00:00",
   "anos": [
     2026
   ],
@@ -218,7 +218,7 @@
         }
       ],
       "publicacao": "2026-09-22",
-      "vigencia_fonte": "estimado (início do prazo de emendas)",
+      "vigencia_fonte": "senado",
       "vigencia_60": "2026-11-20",
       "vigencia_fim": "2027-03-01",
       "vigente": true,
