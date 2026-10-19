@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-16T23:16:53+00:00",
+  "atualizado_em": "2026-10-19T16:12:13+00:00",
   "anos": [
     2026
   ],
@@ -140,7 +140,7 @@
       "ano": 2026,
       "tipo": "Crédito Suplementar",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 223198.0,
       "relator": null,
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
@@ -149,7 +149,17 @@
       "norma": null,
       "codigo_materia": "175946",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175946",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "CONSELHO NACIONAL DO MINISTÉRIO PÚBLICO",
+          "unidade": "Conselho Nacional do Ministério Público",
+          "codigo_uo": null,
+          "valor_credito": 223198.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        }
+      ],
       "especie_credito": "suplementar",
       "cancelamentos": [],
       "total_cancelamento": null,
@@ -177,7 +187,7 @@
       "ano": 2026,
       "tipo": "Crédito Especial",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 2758001.0,
       "relator": null,
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
@@ -186,7 +196,44 @@
       "norma": null,
       "codigo_materia": "175945",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175945",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "Ministério da Agricultura e Pecuária",
+          "unidade": "Ministério da Agricultura e Pecuária - Adm. Direta",
+          "codigo_uo": null,
+          "valor_credito": 603000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério do Trabalho e Emprego",
+          "unidade": "Fundo de Amparo ao Trabalhador",
+          "codigo_uo": null,
+          "valor_credito": 1000000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "- Ministério da Gestão e da Inovação em Serviços Públicos",
+          "unidade": "Ministério da Gestão e da Inovação em Serviços Públicos- Administração Direta",
+          "codigo_uo": null,
+          "valor_credito": 140001.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "MINISTÉRIO DAS CIDADES",
+          "unidade": "Ministério das Cidades - Administração Direta",
+          "codigo_uo": "56101",
+          "valor_credito": 1015000.0,
+          "acoes": [],
+          "loa_unidade": 13783114007.0,
+          "aumento_uo_pct": 0.0
+        }
+      ],
       "especie_credito": "especial",
       "cancelamentos": [],
       "total_cancelamento": null,
@@ -214,7 +261,7 @@
       "ano": 2026,
       "tipo": "Crédito Suplementar",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 420770561.0,
       "relator": null,
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
@@ -223,7 +270,89 @@
       "norma": null,
       "codigo_materia": "175944",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175944",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "MINISTÉRIO DA FAZENDA",
+          "unidade": "Fundo de Compensação e Variações Salariais",
+          "codigo_uo": null,
+          "valor_credito": 370642722.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério da Justiça e Segurança Pública",
+          "unidade": "Departamento de Polícia Rodoviária Federal",
+          "codigo_uo": null,
+          "valor_credito": 134400.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério da Justiça e Segurança Pública",
+          "unidade": "Departamento de Polícia Federal",
+          "codigo_uo": "30108",
+          "valor_credito": 6979679.0,
+          "acoes": [],
+          "loa_unidade": 12079939944.0,
+          "aumento_uo_pct": 0.1
+        },
+        {
+          "orgao": "Ministério da Justiça e Segurança Pública",
+          "unidade": "Agência Nacional de Proteção de Dados – ANPD",
+          "codigo_uo": "30212",
+          "valor_credito": 77524.0,
+          "acoes": [],
+          "loa_unidade": 43323270.0,
+          "aumento_uo_pct": 0.2
+        },
+        {
+          "orgao": "Ministério da Justiça e Segurança Pública",
+          "unidade": "Fundo de Defesa de Direitos Difusos",
+          "codigo_uo": "30905",
+          "valor_credito": 20150000.0,
+          "acoes": [],
+          "loa_unidade": 646464948.0,
+          "aumento_uo_pct": 3.1
+        },
+        {
+          "orgao": "Ministério dos Transportes",
+          "unidade": "Agência Nacional de Transportes Terrestres - ANTT",
+          "codigo_uo": null,
+          "valor_credito": 11134730.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "MINISTÉRIO DA CULTURA",
+          "unidade": "Fundação Cultural Palmares",
+          "codigo_uo": null,
+          "valor_credito": 188118.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério da Integração e do Desenvolvimento Regional",
+          "unidade": "Ministério da Integração e do Desenvolvimento Regional - Adm. Direta",
+          "codigo_uo": null,
+          "valor_credito": 4000000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "OPERAÇÕES OFICIAIS DE CRÉDITO",
+          "unidade": "Recursos sob Supervisão do Fundo de Desenvolvimento do Nordeste - FDNE - MDR",
+          "codigo_uo": "74918",
+          "valor_credito": 7463388.0,
+          "acoes": [],
+          "loa_unidade": 1133932378.0,
+          "aumento_uo_pct": 0.7
+        }
+      ],
       "especie_credito": "suplementar",
       "cancelamentos": [],
       "total_cancelamento": null,
@@ -251,7 +380,7 @@
       "ano": 2026,
       "tipo": "Crédito Suplementar",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 11785853.0,
       "relator": null,
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
@@ -260,7 +389,44 @@
       "norma": null,
       "codigo_materia": "175943",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175943",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "SUPERIOR TRIBUNAL DE JUSTIÇA",
+          "unidade": "Superior Tribunal de Justiça",
+          "codigo_uo": null,
+          "valor_credito": 3400000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "JUSTIÇA FEDERAL",
+          "unidade": "Justiça Federal de Primeiro Grau",
+          "codigo_uo": "12101",
+          "valor_credito": 3700000.0,
+          "acoes": [],
+          "loa_unidade": 14899676799.0,
+          "aumento_uo_pct": 0.0
+        },
+        {
+          "orgao": "JUSTIÇA FEDERAL",
+          "unidade": "Tribunal Regional Federal da 3a. Região",
+          "codigo_uo": null,
+          "valor_credito": 4426353.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "JUSTIÇA MILITAR DA UNIÃO",
+          "unidade": "Justiça Militar da União",
+          "codigo_uo": null,
+          "valor_credito": 259500.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        }
+      ],
       "especie_credito": "suplementar",
       "cancelamentos": [],
       "total_cancelamento": null,
@@ -288,7 +454,7 @@
       "ano": 2026,
       "tipo": "Crédito Suplementar",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 39002919.0,
       "relator": null,
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
@@ -297,7 +463,152 @@
       "norma": null,
       "codigo_materia": "175942",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175942",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "Presidência da República",
+          "unidade": "Presidência a República",
+          "codigo_uo": null,
+          "valor_credito": 500000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "MINISTÉRIO DA CIÊNCIA, TECNOLOGIA e INOVAÇÃO",
+          "unidade": "Conselho Nacional de Desenvolvimento Científico e Tecnológico",
+          "codigo_uo": null,
+          "valor_credito": 200000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "MINISTÉRIO DA SAÚDE",
+          "unidade": "Fundação Oswaldo Cruz",
+          "codigo_uo": null,
+          "valor_credito": 300000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "MINISTÉRIO DA SAÚDE",
+          "unidade": "Fundo Nacional de Saúde",
+          "codigo_uo": "36901",
+          "valor_credito": 32506934.0,
+          "acoes": [],
+          "loa_unidade": 253055551321.0,
+          "aumento_uo_pct": 0.0
+        },
+        {
+          "orgao": "MINISTÉRIO DA CULTURA",
+          "unidade": "Ministério da Cultura - Administração Direta",
+          "codigo_uo": null,
+          "valor_credito": 100000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "MINISTÉRIO DA CULTURA",
+          "unidade": "Fundo Nacional de Cultura",
+          "codigo_uo": null,
+          "valor_credito": 200000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério do Meio Ambiente e Mudança do Clima",
+          "unidade": "Ministério do Meio Ambiente e Mudança do Clima - Administração Direta",
+          "codigo_uo": null,
+          "valor_credito": 50000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério do Desenvolvimento Agrário e Agricultura Familiar",
+          "unidade": "Instituto Nacional de Colonização e Reforma Agrária – INCRA",
+          "codigo_uo": "49201",
+          "valor_credito": 900000.0,
+          "acoes": [],
+          "loa_unidade": 2823251364.0,
+          "aumento_uo_pct": 0.0
+        },
+        {
+          "orgao": "MINISTÉRIO DO ESPORTE",
+          "unidade": "Ministério do Esporte - Administração Direta",
+          "codigo_uo": null,
+          "valor_credito": 300000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério da Integração e do Desenvolvimento Regional",
+          "unidade": "Companhia de Desenvolvimento dos Vales do São Francisco e do Parnaíba - CODEVASF",
+          "codigo_uo": null,
+          "valor_credito": 750000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério do Turismo",
+          "unidade": "Ministério do Turismo - Administração Direta",
+          "codigo_uo": null,
+          "valor_credito": 196000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+          "unidade": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome - Adm. Direta",
+          "codigo_uo": "55101",
+          "valor_credito": 949985.0,
+          "acoes": [],
+          "loa_unidade": 166928390425.0,
+          "aumento_uo_pct": 0.0
+        },
+        {
+          "orgao": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+          "unidade": "Fundo Nacional de Assistência Social",
+          "codigo_uo": "55901",
+          "valor_credito": 350000.0,
+          "acoes": [],
+          "loa_unidade": 135920894873.0,
+          "aumento_uo_pct": 0.0
+        },
+        {
+          "orgao": "65000 - MINISTÉRIO DAS MULHERES",
+          "unidade": "65101 - Ministério das Mulheres - Administração Direta",
+          "codigo_uo": null,
+          "valor_credito": 500000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte",
+          "unidade": "Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte - Administração",
+          "codigo_uo": null,
+          "valor_credito": 700000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Transferências a Estados, Distrito Federal e Municípios",
+          "unidade": "Recursos sob Supervisão do Ministério do Planejamento, Desenvolvimento e Gestão",
+          "codigo_uo": null,
+          "valor_credito": 500000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        }
+      ],
       "especie_credito": "suplementar",
       "cancelamentos": [],
       "total_cancelamento": null,
@@ -325,7 +636,7 @@
       "ano": 2026,
       "tipo": "Crédito Especial",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 115000000.0,
       "relator": "Senador Eduardo Braga (MDB/AM)",
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
@@ -334,7 +645,44 @@
       "norma": null,
       "codigo_materia": "175941",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175941",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "MINISTÉRIO DA EDUCAÇÃO",
+          "unidade": "Fundo Nacional de Desenvolvimento da Educação",
+          "codigo_uo": null,
+          "valor_credito": 10000000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério da Justiça e Segurança Pública",
+          "unidade": "Fundo Penitenciário Nacional",
+          "codigo_uo": "30907",
+          "valor_credito": 6000000.0,
+          "acoes": [],
+          "loa_unidade": 607261638.0,
+          "aumento_uo_pct": 1.0
+        },
+        {
+          "orgao": "Ministério da Justiça e Segurança Pública",
+          "unidade": "Fundo Nacional de Segurança Pública",
+          "codigo_uo": "30911",
+          "valor_credito": 63000000.0,
+          "acoes": [],
+          "loa_unidade": 2107237340.0,
+          "aumento_uo_pct": 3.0
+        },
+        {
+          "orgao": "MINISTÉRIO DA SAÚDE",
+          "unidade": "Fundo Nacional de Saúde",
+          "codigo_uo": "36901",
+          "valor_credito": 36000000.0,
+          "acoes": [],
+          "loa_unidade": 253055551321.0,
+          "aumento_uo_pct": 0.0
+        }
+      ],
       "especie_credito": "especial",
       "cancelamentos": [],
       "total_cancelamento": null,
@@ -362,7 +710,7 @@
       "ano": 2026,
       "tipo": "Crédito Especial",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 4856104.0,
       "relator": null,
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
@@ -371,7 +719,71 @@
       "norma": null,
       "codigo_materia": "175940",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175940",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "JUSTIÇA FEDERAL",
+          "unidade": "Tribunal Regional Federal da 1a. Região",
+          "codigo_uo": "12102",
+          "valor_credito": 546000.0,
+          "acoes": [],
+          "loa_unidade": 829541512.0,
+          "aumento_uo_pct": 0.1
+        },
+        {
+          "orgao": "JUSTIÇA DO TRABALHO",
+          "unidade": "Tribunal Regional do Trabalho da 12a. Região - Santa Catarina",
+          "codigo_uo": null,
+          "valor_credito": 500000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Presidência da República",
+          "unidade": "Agência Brasileira de Inteligência - ABIN",
+          "codigo_uo": null,
+          "valor_credito": 250000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "MINISTÉRIO DA SAÚDE",
+          "unidade": "Agência Nacional de Vigilância Sanitária - ANVISA",
+          "codigo_uo": null,
+          "valor_credito": 140140.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério do Meio Ambiente e Mudança do Clima",
+          "unidade": "Serviço Florestal Brasileiro - SFB",
+          "codigo_uo": null,
+          "valor_credito": 34216.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério do Meio Ambiente e Mudança do Clima",
+          "unidade": "Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis – IBAMA",
+          "codigo_uo": "44201",
+          "valor_credito": 2000000.0,
+          "acoes": [],
+          "loa_unidade": 2356718827.0,
+          "aumento_uo_pct": 0.1
+        },
+        {
+          "orgao": "Ministério do Meio Ambiente e Mudança do Clima",
+          "unidade": "Instituto Chico Mendes de Conservação da Biodiversidade",
+          "codigo_uo": "44207",
+          "valor_credito": 1385748.0,
+          "acoes": [],
+          "loa_unidade": 1104029810.0,
+          "aumento_uo_pct": 0.1
+        }
+      ],
       "especie_credito": "especial",
       "cancelamentos": [],
       "total_cancelamento": null,
@@ -399,7 +811,7 @@
       "ano": 2026,
       "tipo": "Crédito Suplementar",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 290058339.0,
       "relator": null,
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
@@ -408,7 +820,17 @@
       "norma": null,
       "codigo_materia": "175939",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175939",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "Ministério de Minas e Energia",
+          "unidade": "Eletrobrás Termonuclear S.A. - ELETRONUCLEAR",
+          "codigo_uo": null,
+          "valor_credito": 290058339.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        }
+      ],
       "especie_credito": "suplementar",
       "cancelamentos": [],
       "total_cancelamento": null,
@@ -463,7 +885,7 @@
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
               "empenhado": 873661855931.0,
-              "pago": 809161230731.0,
+              "pago": 809190881231.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -486,7 +908,7 @@
               "dotacao_atual": 161658837717.0,
               "aumento_pct": 16.4,
               "empenhado": 135621762288.0,
-              "pago": 131412316098.0,
+              "pago": 131412315973.0,
               "descricao_siop": "Transferência Direta e Condicionada de Renda às Famílias Beneficiárias do Programa Bolsa Família",
               "subtitulo_desc": "Nacional"
             }
@@ -509,7 +931,7 @@
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
               "empenhado": 43213678830.0,
-              "pago": 40811195327.0,
+              "pago": 40812999392.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -524,7 +946,7 @@
               "dotacao_atual": 68247715106.0,
               "aumento_pct": 2.0,
               "empenhado": 59454257890.0,
-              "pago": 58744670378.0,
+              "pago": 58748544378.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -1390,7 +1812,7 @@
               "dotacao_inicial": 926000.0,
               "dotacao_atual": 926000.0,
               "aumento_pct": 157.1,
-              "empenhado": 649835.0,
+              "empenhado": 659435.0,
               "pago": 342476.0,
               "descricao_siop": "Promoção e Fomento à Cultura Brasileira",
               "subtitulo_desc": "Nacional"
@@ -1414,7 +1836,7 @@
               "dotacao_atual": 327240437.0,
               "aumento_pct": 3.3,
               "empenhado": 247859633.0,
-              "pago": 165118214.0,
+              "pago": 197999686.0,
               "descricao_siop": "Apoio à Implantação, Ampliação ou Melhorias de Infraestruturas de Oferta de Água para Segurança Hídrica",
               "subtitulo_desc": "Nacional"
             },
@@ -1428,7 +1850,7 @@
               "dotacao_inicial": 13901069.0,
               "dotacao_atual": 16681283.0,
               "aumento_pct": 36.0,
-              "empenhado": 1767231.0,
+              "empenhado": 2130231.0,
               "pago": 767231.0,
               "descricao_siop": "Estudos e Projetos de Infraestrutura para Segurança Hídrica",
               "subtitulo_desc": "Nacional"
@@ -2607,7 +3029,7 @@
               "dotacao_inicial": 2348973.0,
               "dotacao_atual": 2918973.0,
               "aumento_pct": 10.6,
-              "empenhado": 2819192.0,
+              "empenhado": 2814822.0,
               "pago": 1733676.0,
               "descricao_siop": "Publicidade Institucional e de Utilidade Pública",
               "subtitulo_desc": "Na 1ª Região da Justiça Federal - AC, AM, AP, BA, DF, GO, MA, MT, PA, PI, RO, RR, TO"
@@ -2653,8 +3075,8 @@
               "dotacao_inicial": 89868054.0,
               "dotacao_atual": 112660736.0,
               "aumento_pct": 8.9,
-              "empenhado": 77538419.0,
-              "pago": 49909759.0,
+              "empenhado": 77814697.0,
+              "pago": 50289390.0,
               "descricao_siop": "Julgamento de Causas na Justiça Federal",
               "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
             }
@@ -3326,7 +3748,7 @@
               "dotacao_atual": 129225127.0,
               "aumento_pct": 9.4,
               "empenhado": 85248224.0,
-              "pago": 37273631.0,
+              "pago": 39713896.0,
               "descricao_siop": "Desenvolvimento de Políticas de Segurança Pública, Prevenção e Enfrentamento à Criminalidade",
               "subtitulo_desc": "Nacional"
             }
@@ -3348,8 +3770,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 504209914.0,
               "aumento_pct": 27.1,
-              "empenhado": 453279315.0,
-              "pago": 298926125.0,
+              "empenhado": 455298988.0,
+              "pago": 302976449.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -3363,8 +3785,8 @@
               "dotacao_inicial": 339885557.0,
               "dotacao_atual": 424856946.0,
               "aumento_pct": 2.0,
-              "empenhado": 291504830.0,
-              "pago": 247653774.0,
+              "empenhado": 291402016.0,
+              "pago": 247703295.0,
               "descricao_siop": "Manutenção do Sistema de Emissão de Passaporte, Controle do Tráfego Internacional e de Registros de Estrangeiros",
               "subtitulo_desc": "Nacional"
             }
@@ -3386,7 +3808,7 @@
               "dotacao_inicial": 120001000.0,
               "dotacao_atual": 150001250.0,
               "aumento_pct": 4.1,
-              "empenhado": 57678080.0,
+              "empenhado": 57678780.0,
               "pago": 23594967.0,
               "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
               "subtitulo_desc": "Nacional"
@@ -3409,7 +3831,7 @@
               "dotacao_inicial": 14146660.0,
               "dotacao_atual": 17683325.0,
               "aumento_pct": 14.1,
-              "empenhado": 11724719.0,
+              "empenhado": 11750640.0,
               "pago": 10336305.0,
               "descricao_siop": "Administração da Unidade",
               "subtitulo_desc": "Nacional"
@@ -3700,7 +4122,7 @@
               "dotacao_atual": 388982538.0,
               "aumento_pct": 58.4,
               "empenhado": 114307731.0,
-              "pago": 3551978.0,
+              "pago": 3554140.0,
               "descricao_siop": "Implantação das Soluções Tecnológicas Decorrentes da Reforma Tributária",
               "subtitulo_desc": "Nacional"
             }
@@ -3781,7 +4203,7 @@
               "dotacao_atual": 19177264.0,
               "aumento_pct": 86.4,
               "empenhado": 5789778.0,
-              "pago": 3631823.0,
+              "pago": 3637123.0,
               "descricao_siop": "Fomento à Pesquisa e ao Desenvolvimento Científico e Tecnológico",
               "subtitulo_desc": "Nacional"
             }
