@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-19T16:12:13+00:00",
+  "atualizado_em": "2026-10-20T00:19:19+00:00",
   "anos": [
     2026
   ],
@@ -29,7 +29,7 @@
       "ano": 2026,
       "tipo": "Crédito Especial",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 114969959.0,
       "relator": null,
       "emendas_inicio": null,
       "emendas_fim": null,
@@ -38,7 +38,71 @@
       "norma": null,
       "codigo_materia": "175981",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175981",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "Tribunal de Contas da União",
+          "unidade": "TRIBUNAL DE CONTAS DA UNIÃO",
+          "codigo_uo": null,
+          "valor_credito": 3000000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "JUSTIÇA FEDERAL",
+          "unidade": "Tribunal Regional Federal da 6ª Região",
+          "codigo_uo": "12107",
+          "valor_credito": 380.0,
+          "acoes": [],
+          "loa_unidade": 263943270.0,
+          "aumento_uo_pct": 0.0
+        },
+        {
+          "orgao": "JUSTIÇA ELEITORAL",
+          "unidade": "Tribunal Regional Eleitoral de Goiás",
+          "codigo_uo": "14109",
+          "valor_credito": 41000000.0,
+          "acoes": [],
+          "loa_unidade": 279465705.0,
+          "aumento_uo_pct": 14.7
+        },
+        {
+          "orgao": "JUSTIÇA ELEITORAL",
+          "unidade": "Tribunal Regional Eleitoral do Piauí",
+          "codigo_uo": "14118",
+          "valor_credito": 20293.0,
+          "acoes": [],
+          "loa_unidade": 236529109.0,
+          "aumento_uo_pct": 0.0
+        },
+        {
+          "orgao": "JUSTIÇA DO TRABALHO",
+          "unidade": "Tribunal Regional do Trabalho da 3a. Região - Minas Gerais",
+          "codigo_uo": null,
+          "valor_credito": 46639283.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "DEFENSORIA PÚBLICA DA UNIÃO",
+          "unidade": "Fundo de Fortalecimento do Acesso à Justiça, Promoção dos Direitos Fundamentais e Estruturação da DPU - FDPU",
+          "codigo_uo": null,
+          "valor_credito": 8185514.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "MINISTÉRIO PÚBLICO DA UNIÃO",
+          "unidade": "Fundo de Fortalecimento da Cidadania e Aperfeiçoamento do Ministério Público da União - FMPU",
+          "codigo_uo": null,
+          "valor_credito": 16124489.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        }
+      ],
       "especie_credito": "especial",
       "cancelamentos": [],
       "total_cancelamento": null,
@@ -66,7 +130,7 @@
       "ano": 2026,
       "tipo": "Crédito Suplementar",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 15262700.0,
       "relator": null,
       "emendas_inicio": null,
       "emendas_fim": null,
@@ -75,7 +139,35 @@
       "norma": null,
       "codigo_materia": "175980",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175980",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "MINISTÉRIO DA FAZENDA",
+          "unidade": "ATIVOS S.A. - Securitizadora de Créditos Financeiros",
+          "codigo_uo": null,
+          "valor_credito": 5300000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério de Minas e Energia",
+          "unidade": "Transportadora Brasileira Gasoduto Bolívia-Brasil S.A. - TBG",
+          "codigo_uo": null,
+          "valor_credito": 9362700.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        },
+        {
+          "orgao": "Ministério de Portos e Aeroportos",
+          "unidade": "Companhia Docas do Ceará - CDC",
+          "codigo_uo": null,
+          "valor_credito": 600000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        }
+      ],
       "especie_credito": "suplementar",
       "cancelamentos": [],
       "total_cancelamento": null,
@@ -103,7 +195,7 @@
       "ano": 2026,
       "tipo": "Crédito Especial",
       "ementa": "",
-      "valor_total": null,
+      "valor_total": 700000.0,
       "relator": null,
       "emendas_inicio": null,
       "emendas_fim": null,
@@ -112,7 +204,17 @@
       "norma": null,
       "codigo_materia": "175979",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175979",
-      "unidades": [],
+      "unidades": [
+        {
+          "orgao": "68000-Ministério de Portos e Aeroportos",
+          "unidade": "Companhia das Docas do Estado da Bahia - CODEBA",
+          "codigo_uo": null,
+          "valor_credito": 700000.0,
+          "acoes": [],
+          "loa_unidade": null,
+          "aumento_uo_pct": null
+        }
+      ],
       "especie_credito": "especial",
       "cancelamentos": [],
       "total_cancelamento": null,
