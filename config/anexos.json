@@ -1779,5 +1779,69 @@
     ],
     "total_anexo": 7520000000.0,
     "metodo": "texto"
+  },
+  "MPV 1398/2026": {
+    "situacao_prazo": null,
+    "despacho": null,
+    "numero_camara": "MPV 1398/2026",
+    "mensagem": "MSG 814/2026",
+    "publicacao_dou": "2026-10-21",
+    "deliberacao_inicio": "2026-10-21",
+    "deliberacao_fim": "2026-12-19",
+    "ato_prorrogacao": null,
+    "emendas_inicio_oficial": "2026-10-21",
+    "emendas_fim_oficial": "2026-10-27",
+    "urgencia": "2026-12-05",
+    "documento": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10333146&ts=1792584076813&disposition=inline",
+    "candidatos": [
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10333146&ts=1792584076813&disposition=inline",
+        "rotulo": "Medida Provisória (21/10/2026)",
+        "ordem": 0,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/06bfc3ee-9f56-4936-bbc3-3ba8091c1d5d",
+        "rotulo": "Medida Provisória",
+        "data": "2026-10-21",
+        "origem": "dados abertos"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/documento?dm=10333155&ts=1792584076738&disposition=inline",
+        "rotulo": "PDF",
+        "ordem": 3,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/5bc42f1d-b660-49e4-9b3a-eabac2b5238d",
+        "rotulo": "Calendário",
+        "data": "2026-10-21",
+        "origem": "dados abertos"
+      }
+    ],
+    "tentado_em": "2026-10-21",
+    "tentativas": 1,
+    "programatica": [
+      {
+        "orgao_codigo": "53000",
+        "orgao": "Ministério da Integração e do Desenvolvimento Regional",
+        "uo_codigo": "53101",
+        "unidade": "Ministério da Integração e do Desenvolvimento Regional - Administração Direta",
+        "programa": "2318",
+        "acao": "22BO",
+        "localizador": "6500",
+        "descricao": "Ações de Proteção e Defesa Civil - Nacional (Crédito Extraordinário)",
+        "funcao": "06",
+        "subfuncao": "182",
+        "esfera": null,
+        "gnd": null,
+        "rp": null,
+        "modalidade": null,
+        "fonte": null,
+        "valor": 300000000.0
+      }
+    ],
+    "total_anexo": 300000000.0,
+    "metodo": "texto"
   }
 }
