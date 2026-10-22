@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-21T14:23:55+00:00",
+  "atualizado_em": "2026-10-22T00:00:40+00:00",
   "anos": [
     2026
   ],
@@ -247,7 +247,7 @@
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
       "emendas_total": 0,
-      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
+      "situacao": "AGUARDANDO RECEBIMENTO DE EMENDAS",
       "norma": null,
       "codigo_materia": "175946",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175946",
