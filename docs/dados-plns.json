@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-29T00:37:38+00:00",
+  "atualizado_em": "2026-10-29T15:51:10+00:00",
   "anos": [
     2026
   ],
@@ -987,7 +987,7 @@
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
               "empenhado": 918512271364.0,
-              "pago": 821584161259.0,
+              "pago": 824803833487.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -1033,7 +1033,7 @@
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
               "empenhado": 45911115508.0,
-              "pago": 42171654332.0,
+              "pago": 42596629971.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -1045,10 +1045,10 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 68247715106.0,
-              "dotacao_atual": 68247715106.0,
+              "dotacao_atual": 72974161167.0,
               "aumento_pct": 2.0,
               "empenhado": 65938639542.0,
-              "pago": 60779374836.0,
+              "pago": 61358931135.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -1914,7 +1914,7 @@
               "dotacao_inicial": 926000.0,
               "dotacao_atual": 926000.0,
               "aumento_pct": 157.1,
-              "empenhado": 659435.0,
+              "empenhado": 676213.0,
               "pago": 361726.0,
               "descricao_siop": "Promoção e Fomento à Cultura Brasileira",
               "subtitulo_desc": "Nacional"
@@ -3132,7 +3132,7 @@
               "dotacao_atual": 2918973.0,
               "aumento_pct": 10.6,
               "empenhado": 2816890.0,
-              "pago": 1745658.0,
+              "pago": 1914578.0,
               "descricao_siop": "Publicidade Institucional e de Utilidade Pública",
               "subtitulo_desc": "Na 1ª Região da Justiça Federal - AC, AM, AP, BA, DF, GO, MA, MT, PA, PI, RO, RR, TO"
             }
@@ -3177,8 +3177,8 @@
               "dotacao_inicial": 89868054.0,
               "dotacao_atual": 112660736.0,
               "aumento_pct": 8.9,
-              "empenhado": 78436534.0,
-              "pago": 51921842.0,
+              "empenhado": 78625836.0,
+              "pago": 52034803.0,
               "descricao_siop": "Julgamento de Causas na Justiça Federal",
               "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
             }
@@ -3872,8 +3872,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 504209914.0,
               "aumento_pct": 27.1,
-              "empenhado": 457352756.0,
-              "pago": 316253648.0,
+              "empenhado": 457721230.0,
+              "pago": 318407949.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -3888,7 +3888,7 @@
               "dotacao_atual": 424856946.0,
               "aumento_pct": 2.0,
               "empenhado": 296311212.0,
-              "pago": 250387998.0,
+              "pago": 251798581.0,
               "descricao_siop": "Manutenção do Sistema de Emissão de Passaporte, Controle do Tráfego Internacional e de Registros de Estrangeiros",
               "subtitulo_desc": "Nacional"
             }
@@ -3910,8 +3910,8 @@
               "dotacao_inicial": 120001000.0,
               "dotacao_atual": 150001250.0,
               "aumento_pct": 4.1,
-              "empenhado": 57877376.0,
-              "pago": 23653265.0,
+              "empenhado": 57849474.0,
+              "pago": 23807464.0,
               "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
               "subtitulo_desc": "Nacional"
             }
@@ -3933,7 +3933,7 @@
               "dotacao_inicial": 14146660.0,
               "dotacao_atual": 17683325.0,
               "aumento_pct": 14.1,
-              "empenhado": 12041400.0,
+              "empenhado": 12097062.0,
               "pago": 10859914.0,
               "descricao_siop": "Administração da Unidade",
               "subtitulo_desc": "Nacional"
@@ -3948,7 +3948,7 @@
               "dotacao_inicial": 11544660.0,
               "dotacao_atual": 14430825.0,
               "aumento_pct": 4.4,
-              "empenhado": 12531902.0,
+              "empenhado": 12531892.0,
               "pago": 10576613.0,
               "descricao_siop": "Suporte à Fiscalização em Instalações sob Controle Regulatório, nas Áreas de Proteção Radiológica Ambiental, Ocupacional e do Paciente",
               "subtitulo_desc": "Nacional"
@@ -4053,7 +4053,7 @@
               "dotacao_atual": 49823213.0,
               "aumento_pct": 3.5,
               "empenhado": 48254417.0,
-              "pago": 36259018.0,
+              "pago": 42982915.0,
               "descricao_siop": "Transferência dos Recursos da Cobrança às Agências de Águas (Leis nº 9.433/1997 e nº 10.881/2004)",
               "subtitulo_desc": "Na Bacia do Rio São Francisco"
             },
@@ -4068,7 +4068,7 @@
               "dotacao_atual": 27533962.0,
               "aumento_pct": 3.4,
               "empenhado": 27533962.0,
-              "pago": 20943738.0,
+              "pago": 21942152.0,
               "descricao_siop": "Transferência dos Recursos da Cobrança às Agências de Águas (Leis nº 9.433/1997 e nº 10.881/2004)",
               "subtitulo_desc": "Na Bacia dos Rios Piracicaba, Capivari e Jundiaí"
             },
@@ -4083,7 +4083,7 @@
               "dotacao_atual": 24916250.0,
               "aumento_pct": 2.8,
               "empenhado": 24916250.0,
-              "pago": 16368121.0,
+              "pago": 17905808.0,
               "descricao_siop": "Transferência dos Recursos da Cobrança às Agências de Águas (Leis nº 9.433/1997 e nº 10.881/2004)",
               "subtitulo_desc": "Na Bacia do Rio Grande"
             },
@@ -4113,7 +4113,7 @@
               "dotacao_atual": 25247016.0,
               "aumento_pct": 0.7,
               "empenhado": 21877131.0,
-              "pago": 13046153.0,
+              "pago": 15208516.0,
               "descricao_siop": "Transferência dos Recursos da Cobrança às Agências de Águas (Leis nº 9.433/1997 e nº 10.881/2004)",
               "subtitulo_desc": "Na Bacia do Rio Doce"
             },
@@ -4128,7 +4128,7 @@
               "dotacao_atual": 30262539.0,
               "aumento_pct": 0.1,
               "empenhado": 24934532.0,
-              "pago": 15162253.0,
+              "pago": 17435224.0,
               "descricao_siop": "Transferência dos Recursos da Cobrança às Agências de Águas (Leis nº 9.433/1997 e nº 10.881/2004)",
               "subtitulo_desc": "Na Bacia do Rio Paraíba do Sul"
             },
@@ -4224,7 +4224,7 @@
               "dotacao_atual": 388982538.0,
               "aumento_pct": 58.4,
               "empenhado": 114824850.0,
-              "pago": 3560087.0,
+              "pago": 3561350.0,
               "descricao_siop": "Implantação das Soluções Tecnológicas Decorrentes da Reforma Tributária",
               "subtitulo_desc": "Nacional"
             }

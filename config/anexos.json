@@ -1843,5 +1843,81 @@
     ],
     "total_anexo": 300000000.0,
     "metodo": "texto"
+  },
+  "MPV 1397/2026": {
+    "situacao_prazo": "Encerrado",
+    "despacho": "2026-10-22",
+    "numero_camara": "MPV 1397/2026",
+    "mensagem": "MSG 813/2026",
+    "publicacao_dou": "2026-10-21",
+    "deliberacao_inicio": "2026-10-21",
+    "deliberacao_fim": "2026-12-19",
+    "ato_prorrogacao": null,
+    "emendas_inicio_oficial": "2026-10-21",
+    "emendas_fim_oficial": "2026-10-27",
+    "urgencia": "2026-12-05",
+    "documento": "https://legis.senado.gov.br/sdleg-getter/documento/download/4acb92a9-0de5-4d25-ae2d-8b044d996628?ts=1793278072692&disposition=inline",
+    "candidatos": [
+      {
+        "url": "https://legis.senado.gov.br/sdleg-getter/documento/download/4acb92a9-0de5-4d25-ae2d-8b044d996628?ts=1793278072692&disposition=inline",
+        "rotulo": "Medida Provisória (21/10/2026)",
+        "ordem": 0,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/4acb92a9-0de5-4d25-ae2d-8b044d996628",
+        "rotulo": "Medida Provisória",
+        "data": "2026-10-21",
+        "origem": "dados abertos"
+      },
+      {
+        "url": "https://legis.senado.gov.br/sdleg-getter/documento/download/571ff57e-a887-499c-9d26-df218c07d3e0?ts=1793278073434&disposition=inline&ts=1793278073434",
+        "rotulo": "EMENDA 1 - MPV 1397/2026",
+        "ordem": 1,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.gov.br/sdleg-getter/documento/download/65164e45-1047-4877-a5d7-9a4912699022?ts=1793278073444&disposition=inline&ts=1793278073444",
+        "rotulo": "EMENDA 2 - MPV 1397/2026",
+        "ordem": 1,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.gov.br/sdleg-getter/documento/download/dd7aecf3-1bd1-42ef-90da-f55e6e0b3c11?ts=1793278073310&disposition=inline",
+        "rotulo": "Avulso de Emendas (28/10/2026)",
+        "ordem": 2,
+        "origem": "página"
+      },
+      {
+        "url": "https://legis.senado.leg.br/sdleg-getter/dadosabertos/documento/d66884d7-072e-43c1-a6c3-872ac9ff4d77",
+        "rotulo": "Avulso inicial da matéria",
+        "data": "2026-10-22",
+        "origem": "dados abertos"
+      }
+    ],
+    "tentado_em": "2026-10-29",
+    "tentativas": 1,
+    "programatica": [
+      {
+        "orgao_codigo": "",
+        "orgao": "",
+        "uo_codigo": "71905",
+        "unidade": "Fundo de Garantia à Exportação - Recursos sob Supervisão do Ministério da Fazenda",
+        "programa": "0909",
+        "acao": "00XO",
+        "localizador": "6500",
+        "descricao": "Financiamentos a Pessoas Físicas e Jurídicas de Direito Privado Exportadoras de Bens",
+        "funcao": "28",
+        "subfuncao": "846",
+        "esfera": "F",
+        "gnd": "5-IFI",
+        "rp": "0",
+        "modalidade": "90",
+        "fonte": "3050",
+        "valor": 6494296446.0
+      }
+    ],
+    "total_anexo": 6494296446.0,
+    "metodo": "texto"
   }
 }
