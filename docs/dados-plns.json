@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-10-31T00:22:23+00:00",
+  "atualizado_em": "2026-11-02T19:09:21+00:00",
   "anos": [
     2026
   ],
@@ -961,11 +961,11 @@
       "tipo": "Crédito Suplementar",
       "ementa": "",
       "valor_total": 185555629364.0,
-      "relator": null,
+      "relator": "Deputado Federal Hugo Leal (PSD/RJ)",
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
       "emendas_total": 0,
-      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
+      "situacao": "MATÉRIA COM A RELATORIA",
       "norma": null,
       "codigo_materia": "175221",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175221",
@@ -987,7 +987,7 @@
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
               "empenhado": 918512271364.0,
-              "pago": 828236993748.0,
+              "pago": 828529455014.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -1033,7 +1033,7 @@
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
               "empenhado": 45911115508.0,
-              "pago": 42982472627.0,
+              "pago": 42994744485.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -1048,7 +1048,7 @@
               "dotacao_atual": 72974161167.0,
               "aumento_pct": 2.0,
               "empenhado": 65938639542.0,
-              "pago": 61878936862.0,
+              "pago": 61922849424.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -1117,7 +1117,7 @@
       "acao_legislativa": "Recebida a Mensagem Presidencial nº 605/2026 em 17/07/2026. A matéria aguarda despacho do Presidente do Congresso Nacional para envio à Comissão Mista de Planos, Orçamentos Públicos e Fiscalização.",
       "origem": "anexo",
       "encerrado": false,
-      "sem_relator": true,
+      "sem_relator": false,
       "apresentacao": "2026-07-17",
       "despacho": null,
       "mensagem": "MSG 605/2026",
@@ -1915,7 +1915,7 @@
               "dotacao_atual": 926000.0,
               "aumento_pct": 157.1,
               "empenhado": 676213.0,
-              "pago": 361726.0,
+              "pago": 371326.0,
               "descricao_siop": "Promoção e Fomento à Cultura Brasileira",
               "subtitulo_desc": "Nacional"
             }
@@ -3850,7 +3850,7 @@
               "dotacao_atual": 129225127.0,
               "aumento_pct": 9.4,
               "empenhado": 96406565.0,
-              "pago": 46603643.0,
+              "pago": 46707053.0,
               "descricao_siop": "Desenvolvimento de Políticas de Segurança Pública, Prevenção e Enfrentamento à Criminalidade",
               "subtitulo_desc": "Nacional"
             }
@@ -3872,8 +3872,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 504209914.0,
               "aumento_pct": 27.1,
-              "empenhado": 461610211.0,
-              "pago": 319589945.0,
+              "empenhado": 462306001.0,
+              "pago": 320371908.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -4224,7 +4224,7 @@
               "dotacao_atual": 388982538.0,
               "aumento_pct": 58.4,
               "empenhado": 114824850.0,
-              "pago": 3752417.0,
+              "pago": 3753626.0,
               "descricao_siop": "Implantação das Soluções Tecnológicas Decorrentes da Reforma Tributária",
               "subtitulo_desc": "Nacional"
             }
