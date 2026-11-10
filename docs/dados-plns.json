@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-10T03:10:37+00:00",
+  "atualizado_em": "2026-11-10T16:47:49+00:00",
   "anos": [
     2026
   ],
@@ -986,8 +986,8 @@
               "dotacao_inicial": 1065720991305.0,
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
-              "empenhado": 918517511364.0,
-              "pago": 887868600275.0,
+              "empenhado": 918520511364.0,
+              "pago": 890455145631.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -1033,7 +1033,7 @@
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
               "empenhado": 50542670482.0,
-              "pago": 45297210090.0,
+              "pago": 45409669513.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -1047,8 +1047,8 @@
               "dotacao_inicial": 68247715106.0,
               "dotacao_atual": 72974161167.0,
               "aumento_pct": 2.0,
-              "empenhado": 71484018492.0,
-              "pago": 65121785225.0,
+              "empenhado": 71484176073.0,
+              "pago": 65357396015.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -1914,7 +1914,7 @@
               "dotacao_inicial": 926000.0,
               "dotacao_atual": 926000.0,
               "aumento_pct": 157.1,
-              "empenhado": 676213.0,
+              "empenhado": 726213.0,
               "pago": 399826.0,
               "descricao_siop": "Promoção e Fomento à Cultura Brasileira",
               "subtitulo_desc": "Nacional"
@@ -1938,7 +1938,7 @@
               "dotacao_atual": 327240437.0,
               "aumento_pct": 3.3,
               "empenhado": 249889634.0,
-              "pago": 198038620.0,
+              "pago": 207478540.0,
               "descricao_siop": "Apoio à Implantação, Ampliação ou Melhorias de Infraestruturas de Oferta de Água para Segurança Hídrica",
               "subtitulo_desc": "Nacional"
             },
@@ -2934,11 +2934,11 @@
       "tipo": "Crédito Suplementar",
       "ementa": "",
       "valor_total": 168145850.0,
-      "relator": null,
+      "relator": "Deputado Federal Cleber Verde (MDB/MA)",
       "emendas_inicio": "2026-06-16",
       "emendas_fim": "2026-06-23",
       "emendas_total": 0,
-      "situacao": "AGUARDANDO DESIGNAÇÃO DO RELATOR",
+      "situacao": "MATÉRIA COM A RELATORIA",
       "norma": null,
       "codigo_materia": "174078",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174078",
@@ -3033,7 +3033,7 @@
       "acao_legislativa": "Recebida a Mensagem Presidencial nº 378/2026 em 08/05/2026. A matéria aguarda despacho do Presidente do Congresso Nacional para envio à Comissão Mista de Planos, Orçamentos Públicos e Fiscalização.",
       "origem": "tabela do Congresso",
       "encerrado": false,
-      "sem_relator": true,
+      "sem_relator": false,
       "apresentacao": "2026-05-08",
       "despacho": "2026-06-11",
       "mensagem": "MSG 378/2026",
@@ -3177,8 +3177,8 @@
               "dotacao_inicial": 89868054.0,
               "dotacao_atual": 112660736.0,
               "aumento_pct": 8.9,
-              "empenhado": 78819524.0,
-              "pago": 54826334.0,
+              "empenhado": 78976164.0,
+              "pago": 54872964.0,
               "descricao_siop": "Julgamento de Causas na Justiça Federal",
               "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
             }
@@ -3850,7 +3850,7 @@
               "dotacao_atual": 129225127.0,
               "aumento_pct": 9.4,
               "empenhado": 101856566.0,
-              "pago": 47005034.0,
+              "pago": 47005710.0,
               "descricao_siop": "Desenvolvimento de Políticas de Segurança Pública, Prevenção e Enfrentamento à Criminalidade",
               "subtitulo_desc": "Nacional"
             }
@@ -3872,8 +3872,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 504209914.0,
               "aumento_pct": 27.1,
-              "empenhado": 463710804.0,
-              "pago": 324562974.0,
+              "empenhado": 460800877.0,
+              "pago": 325464672.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -3888,7 +3888,7 @@
               "dotacao_atual": 424856946.0,
               "aumento_pct": 2.0,
               "empenhado": 297187097.0,
-              "pago": 252411341.0,
+              "pago": 253586947.0,
               "descricao_siop": "Manutenção do Sistema de Emissão de Passaporte, Controle do Tráfego Internacional e de Registros de Estrangeiros",
               "subtitulo_desc": "Nacional"
             }
@@ -3910,7 +3910,7 @@
               "dotacao_inicial": 120001000.0,
               "dotacao_atual": 150001250.0,
               "aumento_pct": 4.1,
-              "empenhado": 59470943.0,
+              "empenhado": 59481105.0,
               "pago": 31330667.0,
               "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
               "subtitulo_desc": "Nacional"
@@ -3933,8 +3933,8 @@
               "dotacao_inicial": 14146660.0,
               "dotacao_atual": 17683325.0,
               "aumento_pct": 14.1,
-              "empenhado": 13069891.0,
-              "pago": 10907132.0,
+              "empenhado": 13232028.0,
+              "pago": 10948547.0,
               "descricao_siop": "Administração da Unidade",
               "subtitulo_desc": "Nacional"
             },
@@ -3948,8 +3948,8 @@
               "dotacao_inicial": 11544660.0,
               "dotacao_atual": 14430825.0,
               "aumento_pct": 4.4,
-              "empenhado": 12918614.0,
-              "pago": 11134084.0,
+              "empenhado": 12921114.0,
+              "pago": 11137148.0,
               "descricao_siop": "Suporte à Fiscalização em Instalações sob Controle Regulatório, nas Áreas de Proteção Radiológica Ambiental, Ocupacional e do Paciente",
               "subtitulo_desc": "Nacional"
             }
@@ -4223,8 +4223,8 @@
               "dotacao_inicial": 411043307.0,
               "dotacao_atual": 388982538.0,
               "aumento_pct": 58.4,
-              "empenhado": 202856143.0,
-              "pago": 3839230.0,
+              "empenhado": 328907589.0,
+              "pago": 10937769.0,
               "descricao_siop": "Implantação das Soluções Tecnológicas Decorrentes da Reforma Tributária",
               "subtitulo_desc": "Nacional"
             }
