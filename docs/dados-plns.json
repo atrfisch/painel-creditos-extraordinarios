@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-11T01:02:07+00:00",
+  "atualizado_em": "2026-11-11T16:59:11+00:00",
   "anos": [
     2026
   ],
@@ -368,7 +368,7 @@
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
       "emendas_total": 1,
-      "situacao": "MATÉRIA COM A RELATORIA",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "175944",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175944",
@@ -487,7 +487,7 @@
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
       "emendas_total": 0,
-      "situacao": "PRONTA PARA A PAUTA NA COMISSÃO",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "175943",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175943",
@@ -817,7 +817,7 @@
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
       "emendas_total": 0,
-      "situacao": "MATÉRIA COM A RELATORIA",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "175940",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175940",
@@ -918,7 +918,7 @@
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
       "emendas_total": 0,
-      "situacao": "MATÉRIA COM A RELATORIA",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "175939",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175939",
@@ -987,7 +987,7 @@
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
               "empenhado": 918520511364.0,
-              "pago": 890455145631.0,
+              "pago": 890499795971.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -1033,7 +1033,7 @@
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
               "empenhado": 50542670482.0,
-              "pago": 45409669513.0,
+              "pago": 45411189191.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -1048,7 +1048,7 @@
               "dotacao_atual": 72974161167.0,
               "aumento_pct": 2.0,
               "empenhado": 71484176073.0,
-              "pago": 65357396015.0,
+              "pago": 65361027845.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -1145,7 +1145,7 @@
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
       "emendas_total": 0,
-      "situacao": "MATÉRIA COM A RELATORIA",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "175220",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175220",
@@ -1870,7 +1870,7 @@
       "emendas_inicio": "2026-10-16",
       "emendas_fim": "2026-10-23",
       "emendas_total": 0,
-      "situacao": "MATÉRIA COM A RELATORIA",
+      "situacao": "PRONTA PARA A PAUTA NA COMISSÃO",
       "norma": null,
       "codigo_materia": "175088",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/175088",
@@ -1938,7 +1938,7 @@
               "dotacao_atual": 327240437.0,
               "aumento_pct": 3.3,
               "empenhado": 249889634.0,
-              "pago": 207478540.0,
+              "pago": 207485129.0,
               "descricao_siop": "Apoio à Implantação, Ampliação ou Melhorias de Infraestruturas de Oferta de Água para Segurança Hídrica",
               "subtitulo_desc": "Nacional"
             },
@@ -2535,7 +2535,7 @@
       "emendas_inicio": "2026-07-13",
       "emendas_fim": "2026-08-05",
       "emendas_total": 0,
-      "situacao": "MATÉRIA COM A RELATORIA",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "174654",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174654",
@@ -2744,7 +2744,7 @@
       "emendas_inicio": "2026-06-16",
       "emendas_fim": "2026-06-23",
       "emendas_total": 0,
-      "situacao": "MATÉRIA COM A RELATORIA",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "174331",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174331",
@@ -2938,7 +2938,7 @@
       "emendas_inicio": "2026-06-16",
       "emendas_fim": "2026-06-23",
       "emendas_total": 0,
-      "situacao": "MATÉRIA COM A RELATORIA",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "174078",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174078",
@@ -3178,7 +3178,7 @@
               "dotacao_atual": 112660736.0,
               "aumento_pct": 8.9,
               "empenhado": 78976164.0,
-              "pago": 54872964.0,
+              "pago": 55552889.0,
               "descricao_siop": "Julgamento de Causas na Justiça Federal",
               "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
             }
@@ -3359,7 +3359,7 @@
       "emendas_inicio": "2026-06-16",
       "emendas_fim": "2026-06-23",
       "emendas_total": 0,
-      "situacao": "MATÉRIA COM A RELATORIA",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "174076",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174076",
@@ -3646,7 +3646,7 @@
       "emendas_inicio": "2026-06-16",
       "emendas_fim": "2026-06-23",
       "emendas_total": 0,
-      "situacao": "MATÉRIA COM A RELATORIA",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "174074",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174074",
@@ -3850,7 +3850,7 @@
               "dotacao_atual": 129225127.0,
               "aumento_pct": 9.4,
               "empenhado": 101856566.0,
-              "pago": 47005710.0,
+              "pago": 49598142.0,
               "descricao_siop": "Desenvolvimento de Políticas de Segurança Pública, Prevenção e Enfrentamento à Criminalidade",
               "subtitulo_desc": "Nacional"
             }
@@ -3872,8 +3872,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 504209914.0,
               "aumento_pct": 27.1,
-              "empenhado": 460800877.0,
-              "pago": 325464672.0,
+              "empenhado": 460235126.0,
+              "pago": 326448421.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -3910,7 +3910,7 @@
               "dotacao_inicial": 120001000.0,
               "dotacao_atual": 150001250.0,
               "aumento_pct": 4.1,
-              "empenhado": 59481105.0,
+              "empenhado": 59578690.0,
               "pago": 31330667.0,
               "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
               "subtitulo_desc": "Nacional"
@@ -3933,8 +3933,8 @@
               "dotacao_inicial": 14146660.0,
               "dotacao_atual": 17683325.0,
               "aumento_pct": 14.1,
-              "empenhado": 13232028.0,
-              "pago": 10948547.0,
+              "empenhado": 13288040.0,
+              "pago": 11070756.0,
               "descricao_siop": "Administração da Unidade",
               "subtitulo_desc": "Nacional"
             },
@@ -4224,7 +4224,7 @@
               "dotacao_atual": 388982538.0,
               "aumento_pct": 58.4,
               "empenhado": 328907589.0,
-              "pago": 10937769.0,
+              "pago": 10946090.0,
               "descricao_siop": "Implantação das Soluções Tecnológicas Decorrentes da Reforma Tributária",
               "subtitulo_desc": "Nacional"
             }
