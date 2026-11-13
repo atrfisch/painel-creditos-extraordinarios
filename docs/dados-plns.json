@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-12T17:22:17+00:00",
+  "atualizado_em": "2026-11-13T01:41:23+00:00",
   "anos": [
     2026
   ],
@@ -2461,7 +2461,7 @@
       "emendas_inicio": "2026-07-06",
       "emendas_fim": "2026-07-07",
       "emendas_total": 0,
-      "situacao": "PRONTO PARA DELIBERAÇÃO DO PLENÁRIO",
+      "situacao": null,
       "norma": null,
       "codigo_materia": "174655",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174655",
