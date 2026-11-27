@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-27T03:30:10+00:00",
+  "atualizado_em": "2026-11-27T18:42:58+00:00",
   "anos": [
     2026
   ],
@@ -986,8 +986,8 @@
               "dotacao_inicial": 1065720991305.0,
               "dotacao_atual": 1065720991305.0,
               "aumento_pct": 14.2,
-              "empenhado": 1064030952089.0,
-              "pago": 903482093586.0,
+              "empenhado": 1057304513669.0,
+              "pago": 907040350455.0,
               "descricao_siop": "Benefícios Previdenciários",
               "subtitulo_desc": "Nacional"
             }
@@ -1009,8 +1009,8 @@
               "dotacao_inicial": 158632791717.0,
               "dotacao_atual": 161658837717.0,
               "aumento_pct": 16.4,
-              "empenhado": 160856387717.0,
-              "pago": 146159159438.0,
+              "empenhado": 160856385200.0,
+              "pago": 146075296557.0,
               "descricao_siop": "Transferência Direta e Condicionada de Renda às Famílias Beneficiárias do Programa Bolsa Família",
               "subtitulo_desc": "Nacional"
             }
@@ -1032,8 +1032,8 @@
               "dotacao_inicial": 54992331122.0,
               "dotacao_atual": 54992331122.0,
               "aumento_pct": 13.1,
-              "empenhado": 50542900482.0,
-              "pago": 46773220593.0,
+              "empenhado": 50252288372.0,
+              "pago": 47163184744.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa Idosa e da Renda Mensal Vitalícia (RMV) por Idade",
               "subtitulo_desc": "Nacional"
             },
@@ -1047,8 +1047,8 @@
               "dotacao_inicial": 68247715106.0,
               "dotacao_atual": 72974161167.0,
               "aumento_pct": 2.0,
-              "empenhado": 71484376073.0,
-              "pago": 67386440983.0,
+              "empenhado": 71485376073.0,
+              "pago": 67900088352.0,
               "descricao_siop": "Benefícios de Prestação Continuada (BPC) à Pessoa com Deficiência e da Renda Mensal Vitalícia (RMV) por Invalidez",
               "subtitulo_desc": "Nacional"
             }
@@ -1914,8 +1914,8 @@
               "dotacao_inicial": 926000.0,
               "dotacao_atual": 2381000.0,
               "aumento_pct": 157.1,
-              "empenhado": 1086213.0,
-              "pago": 437826.0,
+              "empenhado": 1178213.0,
+              "pago": 927976.0,
               "descricao_siop": "Promoção e Fomento à Cultura Brasileira",
               "subtitulo_desc": "Nacional"
             }
@@ -1935,7 +1935,7 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 183598965.0,
-              "dotacao_atual": 333240437.0,
+              "dotacao_atual": 340240437.0,
               "aumento_pct": 3.3,
               "empenhado": 284929816.0,
               "pago": 207485129.0,
@@ -1950,7 +1950,7 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 13901069.0,
-              "dotacao_atual": 21681283.0,
+              "dotacao_atual": 22554291.0,
               "aumento_pct": 36.0,
               "empenhado": 2855004.0,
               "pago": 1610122.0,
@@ -2005,7 +2005,7 @@
               "dotacao_inicial": 1133932378.0,
               "dotacao_atual": 1950736762.0,
               "aumento_pct": 9.6,
-              "empenhado": 824499569.0,
+              "empenhado": 836163488.0,
               "pago": 790994839.0,
               "descricao_siop": "Financiamento de Projetos do Setor Produtivo no âmbito do Fundo de Desenvolvimento do Nordeste - FDNE (Lei Complementar nº 125, de 3 de janeiro de 2007)",
               "subtitulo_desc": "Nacional"
@@ -3193,8 +3193,8 @@
               "dotacao_inicial": 89868054.0,
               "dotacao_atual": 120660356.0,
               "aumento_pct": 8.9,
-              "empenhado": 81264470.0,
-              "pago": 58800013.0,
+              "empenhado": 81387115.0,
+              "pago": 58823488.0,
               "descricao_siop": "Julgamento de Causas na Justiça Federal",
               "subtitulo_desc": "Na 6ª Região da Justiça Federal - MG"
             }
@@ -3670,8 +3670,8 @@
       "emendas_inicio": "2026-06-16",
       "emendas_fim": "2026-06-23",
       "emendas_total": 0,
-      "situacao": null,
-      "norma": null,
+      "situacao": "TRANSFORMADA EM NORMA JURÍDICA",
+      "norma": "Lei nº 15.554 de 26/11/2026",
       "codigo_materia": "174074",
       "url_materia": "https://www25.senado.leg.br/web/atividade/materias/-/materia/174074",
       "unidades": [
@@ -3827,7 +3827,7 @@
       "local": "Mesa Diretora do Congresso Nacional",
       "acao_legislativa": "Recebida a Mensagem Presidencial nº 374/2026 em 08/05/2026. A matéria aguarda despacho do Presidente do Congresso Nacional para envio à Comissão Mista de Planos, Orçamentos Públicos e Fiscalização.",
       "origem": "tabela do Congresso",
-      "encerrado": false,
+      "encerrado": true,
       "sem_relator": false,
       "apresentacao": "2026-05-08",
       "despacho": "2026-06-11",
@@ -3873,8 +3873,8 @@
               "dotacao_inicial": 104580102.0,
               "dotacao_atual": 139197455.0,
               "aumento_pct": 9.4,
-              "empenhado": 101992166.0,
-              "pago": 50501718.0,
+              "empenhado": 110580854.0,
+              "pago": 52878708.0,
               "descricao_siop": "Desenvolvimento de Políticas de Segurança Pública, Prevenção e Enfrentamento à Criminalidade",
               "subtitulo_desc": "Nacional"
             }
@@ -3896,8 +3896,8 @@
               "dotacao_inicial": 380258708.0,
               "dotacao_atual": 607335637.0,
               "aumento_pct": 27.1,
-              "empenhado": 466257103.0,
-              "pago": 343094912.0,
+              "empenhado": 467231772.0,
+              "pago": 346440141.0,
               "descricao_siop": "Prevenção e Repressão ao Tráfico Ilícito de Drogas e a Crimes Praticados contra Bens, Serviços e Interesses da União",
               "subtitulo_desc": "Nacional"
             },
@@ -3912,7 +3912,7 @@
               "dotacao_atual": 431695157.0,
               "aumento_pct": 2.0,
               "empenhado": 322036445.0,
-              "pago": 276650326.0,
+              "pago": 277298419.0,
               "descricao_siop": "Manutenção do Sistema de Emissão de Passaporte, Controle do Tráfego Internacional e de Registros de Estrangeiros",
               "subtitulo_desc": "Nacional"
             }
@@ -3934,8 +3934,8 @@
               "dotacao_inicial": 120001000.0,
               "dotacao_atual": 175023668.0,
               "aumento_pct": 4.1,
-              "empenhado": 72749092.0,
-              "pago": 40949481.0,
+              "empenhado": 77418592.0,
+              "pago": 40985077.0,
               "descricao_siop": "Apoio e Fomento a Projetos de Defesa de Direitos Difusos",
               "subtitulo_desc": "Nacional"
             }
@@ -3957,8 +3957,8 @@
               "dotacao_inicial": 14146660.0,
               "dotacao_atual": 19683325.0,
               "aumento_pct": 14.1,
-              "empenhado": 13730668.0,
-              "pago": 12197509.0,
+              "empenhado": 15102557.0,
+              "pago": 12420240.0,
               "descricao_siop": "Administração da Unidade",
               "subtitulo_desc": "Nacional"
             },
@@ -3972,7 +3972,7 @@
               "dotacao_inicial": 11544660.0,
               "dotacao_atual": 14936347.0,
               "aumento_pct": 4.4,
-              "empenhado": 13195661.0,
+              "empenhado": 13211521.0,
               "pago": 11449147.0,
               "descricao_siop": "Suporte à Fiscalização em Instalações sob Controle Regulatório, nas Áreas de Proteção Radiológica Ambiental, Ocupacional e do Paciente",
               "subtitulo_desc": "Nacional"
@@ -3995,7 +3995,7 @@
               "dotacao_inicial": 1133932378.0,
               "dotacao_atual": 1950736762.0,
               "aumento_pct": 36.7,
-              "empenhado": 824499569.0,
+              "empenhado": 836163488.0,
               "pago": 790994839.0,
               "descricao_siop": "Financiamento de Projetos do Setor Produtivo no âmbito do Fundo de Desenvolvimento do Nordeste - FDNE (Lei Complementar nº 125, de 3 de janeiro de 2007)",
               "subtitulo_desc": "Nacional"
@@ -4074,7 +4074,7 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 36504001.0,
-              "dotacao_atual": 49823213.0,
+              "dotacao_atual": 54462258.0,
               "aumento_pct": 3.5,
               "empenhado": 48254417.0,
               "pago": 45358260.0,
@@ -4089,7 +4089,7 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 20560171.0,
-              "dotacao_atual": 27533962.0,
+              "dotacao_atual": 29999358.0,
               "aumento_pct": 3.4,
               "empenhado": 27533962.0,
               "pago": 22949052.0,
@@ -4104,7 +4104,7 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 18592964.0,
-              "dotacao_atual": 24916250.0,
+              "dotacao_atual": 25857986.0,
               "aumento_pct": 2.8,
               "empenhado": 24916250.0,
               "pago": 19152160.0,
@@ -4119,7 +4119,7 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 15623235.0,
-              "dotacao_atual": 20988858.0,
+              "dotacao_atual": 22285085.0,
               "aumento_pct": 3.1,
               "empenhado": 20988858.0,
               "pago": 13075194.0,
@@ -4134,7 +4134,7 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 18969129.0,
-              "dotacao_atual": 25247016.0,
+              "dotacao_atual": 21877131.0,
               "aumento_pct": 0.7,
               "empenhado": 21877131.0,
               "pago": 17280804.0,
@@ -4149,7 +4149,7 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 22552740.0,
-              "dotacao_atual": 30262539.0,
+              "dotacao_atual": 24934532.0,
               "aumento_pct": 0.1,
               "empenhado": 24934532.0,
               "pago": 19383065.0,
@@ -4164,7 +4164,7 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 465872.0,
-              "dotacao_atual": 582340.0,
+              "dotacao_atual": 465872.0,
               "aumento_pct": 3.1,
               "empenhado": 65000.0,
               "pago": 18550.0,
@@ -4248,7 +4248,7 @@
               "dotacao_atual": 388982538.0,
               "aumento_pct": 58.4,
               "empenhado": 353835219.0,
-              "pago": 10984271.0,
+              "pago": 11010603.0,
               "descricao_siop": "Implantação das Soluções Tecnológicas Decorrentes da Reforma Tributária",
               "subtitulo_desc": "Nacional"
             }
@@ -4326,10 +4326,10 @@
               "encontrada": true,
               "nova": false,
               "dotacao_inicial": 15255476.0,
-              "dotacao_atual": 32363395.0,
+              "dotacao_atual": 32293395.0,
               "aumento_pct": 86.4,
-              "empenhado": 6206058.0,
-              "pago": 4224265.0,
+              "empenhado": 7136058.0,
+              "pago": 4172005.0,
               "descricao_siop": "Fomento à Pesquisa e ao Desenvolvimento Científico e Tecnológico",
               "subtitulo_desc": "Nacional"
             }
